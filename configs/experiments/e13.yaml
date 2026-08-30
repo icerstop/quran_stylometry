@@ -1,0 +1,18 @@
+# E-13 — Test kryterium "concurrent smoothness". Zadanie: T-047.
+#
+# Pytanie nie brzmi "czy Koran jest gladki", tylko "czy kryterium w ogole
+# odroznia korpus jednoautorski od mieszanki, gdy znamy prawde". Jesli MIXTURE
+# tez wychodzi gladka, kryterium nie ma mocy diagnostycznej i tak to piszemy.
+id: E-13
+name: concurrent_smoothness
+task: T-047
+markers: baseline_lit           # F9
+evaluate_on:
+  - id: quran
+    orderings: [order_canonical, order_traditional, order_noldeke]
+  - id: pseudo_book
+  - id: mixture_2
+  - id: mixture_5
+  - id: random_sequence
+required_answer: "czy kryterium odroznia mieszanke od jednego autora — jawnie tak/nie"
+figures: [FIG-36]

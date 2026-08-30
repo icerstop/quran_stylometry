@@ -1,0 +1,47 @@
+# pre-commit — black, ruff, mypy na src/ (T-001).
+#
+# `test_no_gold_in_crosscorpus` jest tu jako hook lokalny, bo AGENTS.md zasada 3
+# wymaga, zeby przechodzil PRZED KAZDYM COMMITEM, a nie dopiero w CI.
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ["--maxkb=2048"]
+      - id: check-merge-conflict
+
+  - repo: https://github.com/psf/black
+    rev: 26.5.1
+    hooks:
+      - id: black
+        files: ^(src|tests)/
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.16.5
+    hooks:
+      - id: ruff
+        args: ["--fix"]
+        files: ^(src|tests)/
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v2.3.1
+    hooks:
+      - id: mypy
+        files: ^src/
+        additional_dependencies:
+          - pydantic==2.13.5
+          - types-PyYAML==6.0.12.20260815
+          - types-requests==2.33.0.20260712
+
+  - repo: local
+    hooks:
+      - id: guardrail-g1
+        name: "G1 — brak *_gold w macierzach cross-corpus"
+        entry: python -m pytest tests/test_no_gold_in_crosscorpus.py -q
+        language: system
+        pass_filenames: false
+        always_run: true

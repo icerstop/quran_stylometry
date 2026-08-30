@@ -1,0 +1,18 @@
+# F2 — Function words / czeste morfemy. docs/04_FEATURES.md §F2. Implementacja: T-022.
+#
+# Lista NIE jest pisana recznie: powstaje z tagow POS taggera produkcyjnego
+# na CTRL-TRAIN. Bez segmentacji morfologicznej ta rodzina jest bezwartosciowa
+# dla arabskiego — stad `require_morphological_segmentation: true` i assert w kodzie.
+family: function_words
+feature_id: F2
+status: core
+config_label: FUNCTIONAL      # FUNCTIONAL = F2 + F4 + F5 + F6
+distance_main: burrows_delta
+distance_alt: eders_delta
+requires_tagger: true
+require_morphological_segmentation: true
+pos_whitelist: [PREP, CONJ, PART, PRON, DEM, REL, NEG, INTG, SUB]
+proclitics_as_units: [wa, fa, bi, li, ka, al, sa]
+top_k_grid: [100, 300, 1000]
+value: relative_frequency     # count(w) / n_segments_okna
+fit_on: ctrl_train            # G4

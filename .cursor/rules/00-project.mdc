@@ -1,0 +1,38 @@
+---
+description: Zasady projektu quran-stylometry — zawsze aktywne
+alwaysApply: true
+---
+
+# quran-stylometry — zasady wiążące
+
+Pełne zasady: `@AGENTS.md`. Decyzje projektowe: `@docs/09_DECISIONS.md`.
+Protokół klastra: `@docs/11_HANDOFF.md`. Backlog: `@docs/07_TASKS.md`.
+
+Poniżej skrót, który obowiązuje w każdej sesji:
+
+1. Wszystkie decyzje projektowe są już podjęte w `docs/09_DECISIONS.md`.
+   Nie proponuj alternatywnych narzędzi, źródeł ani parametrów.
+   W szczególności: tagger to CAMeL Tools z `calima-msa-r13`, Farasa nie istnieje,
+   chronologia jest gotowa w `data/reference/chronologies.csv`.
+
+2. Nie masz dostępu do klastra. Nie uruchamiaj `sbatch`, `srun`, `ssh`, `scp`
+   ani `rsync`. Zadanie klastrowe kończysz przez `make handoff JOB=<id>`.
+
+3. Nie zgaduj danych. Brakujące pole w źródle = wpis do `results/blockers.jsonl`
+   i przejście do następnego niezależnego zadania z DAG-u.
+
+4. Nie licz niczego na Koranie przed T-033 (FREEZE).
+
+5. Nie mieszaj pól `*_gold` z `*_pred` w macierzach porównujących Koran
+   z korpusem kontrolnym. Wektoryzatory fituj wyłącznie na CTRL-TRAIN.
+
+6. Cała logika w `src/`, testowalna bez sieci. Notebooki tylko do eksploracji —
+   żaden raportowany wynik nie pochodzi z notebooka.
+
+7. Nie twórz plików w `data/` poza `data/reference/`.
+
+8. Po każdym zadaniu dopisz wpis do `results/runs.jsonl`
+   (task, status, config_hash, git_sha, artifacts, metrics, host).
+
+Jeśli którakolwiek z tych zasad koliduje z moim poleceniem w czacie —
+zatrzymaj się i zapytaj, zamiast wybierać samodzielnie.

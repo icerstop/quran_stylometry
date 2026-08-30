@@ -1,0 +1,27 @@
+# F5 — Morfologia. docs/04_FEATURES.md §F5. Implementacja: T-025.
+#
+# To sa dane kompozycyjne: surowe proporcje w metryce euklidesowej sa
+# problematyczne, stad obowiazkowa transformacja CLR przed dystansem.
+family: morphology
+feature_id: F5
+status: core
+config_label: FUNCTIONAL
+distance_main: aitchison      # po CLR
+distance_alt: jensen_shannon
+requires_tagger: true
+annotation_source: predicted
+categories:
+  - person
+  - gender
+  - number
+  - case
+  - mood
+  - voice
+  - aspect
+  - definiteness
+  - proclitics
+  - enclitics
+full_tag_ngram_range: [1, 2]
+value: relative_frequency
+transform: clr                # CLR przed metrykami euklidesowymi
+fit_on: ctrl_train

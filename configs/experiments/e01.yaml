@@ -1,0 +1,24 @@
+# E-01 — Domain probe (G2). BRAMKA. docs/05_EXPERIMENTS.md. Zadanie: T-029.
+id: E-01
+name: domain_probe
+task: T-029
+kind: gate
+target: "corpus in {quran, ctrl}"
+model: logistic_regression
+grouping: [book_id, surah_id]     # GroupKFold, nie po oknach
+class_balance: balanced
+representations: [CHARACTER, FUNCTIONAL, LEXICAL, BASELINE_LIT]
+metric: roc_auc
+top_features_reported: 20
+# Najwazniejsza pojedyncza liczba diagnostyczna w projekcie: ten sam probe
+# uruchamiany dla par gatunkowych WEWNATRZ CTRL. Jesli AUC dla par gatunkowych
+# jest rownie wysokie jak dla Koran-vs-CTRL, mierzymy gatunek, nie autora.
+genre_pair_probe:
+  enabled: true
+  example_pairs: [[tafsir, poetry_diwan], [hadith_collection, adab_prose]]
+interpretation:
+  acceptable_below: 0.85
+  warn_between: [0.85, 0.98]
+  invalid_above: 0.98             # rodzina traci status `core`
+decision_written_to: configs/base.yaml   # decyzja o statusie rodzin ZAPISANA w configu
+figures: [FIG-07, FIG-08]

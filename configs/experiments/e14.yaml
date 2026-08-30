@@ -1,0 +1,27 @@
+# E-14 — Transformery. EKSPLORACYJNE. Zadanie: T-048.
+#
+# Jeden model, jeden pooling (09_DECISIONS §1). Wyniki wylacznie w osobnej
+# sekcji raportu, oznaczone jako NIEPOTWIERDZAJACE wnioskow glownych.
+id: E-14
+name: transformer_embeddings
+task: T-048
+status: exploratory
+host: cluster                   # H3, opcjonalny
+model: CAMeL-Lab/bert-base-arabic-camelbert-ca
+pooling: mean_last4             # jeden pooling, nie trzy
+max_length: 512
+batch_size: 32
+# Okna maja 400 slow ortograficznych, po segmentacji morfologicznej czesto
+# > 512 subtokenow. Dzielimy na fragmenty z overlapem, usredniamy wagą liczby
+# tokenow, i ZAPISUJEMY n_chunks per okno: jesli koreluje z wynikiem, to artefakt.
+chunking:
+  size: 512
+  overlap: 64
+  aggregate: token_count_weighted_mean
+  record_n_chunks_per_window: true
+tasks: [variance, period_classification, clustering]
+excluded_tasks: [aa_cross_corpus, av_cross_corpus]
+mandatory_figure_annotation: >
+  Model pretrenowany na danych typu OpenITI, ktore zawieraja cytaty koraniczne
+  — kontaminacja prawdopodobna.
+figures: [FIG-37, FIG-38]

@@ -1,0 +1,18 @@
+# F4 — POS n-grams. docs/04_FEATURES.md §F4. Implementacja: T-024.
+#
+# Tagi z taggera produkcyjnego PO OBU STRONACH (G1). Raport zawsze podaje obok
+# accuracy taggera na Quranic Arabic zmierzona w T-014.
+family: pos
+feature_id: F4
+status: core
+config_label: FUNCTIONAL
+distance_main: jensen_shannon
+distance_alt: cosine
+requires_tagger: true
+annotation_source: predicted
+ngram_range: [1, 3]
+representations:
+  - relative_frequency
+  - tfidf
+fit_on: ctrl_train
+report_alongside: tagger_pos_accuracy   # z results/tagger_eval.json (T-014)

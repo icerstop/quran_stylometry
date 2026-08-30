@@ -1,0 +1,90 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quran-stylometry"
+version = "0.1.0"
+description = "Stylometria i authorship verification Koranu w Classical Arabic"
+readme = "docs/00_README.md"
+requires-python = ">=3.12,<3.13"
+license = { text = "MIT" }
+
+# Wersje pinowane dokladnie (08_REPO.md §1: "pyproject.toml — wersje pinowane").
+# Kazdy pin zostal rozwiazany przez pip na tym srodowisku, nie przepisany z pamieci.
+dependencies = [
+  "numpy==2.5.2",
+  "pandas==3.0.5",
+  "scipy==1.18.1",
+  "scikit-learn==1.9.0",
+  "pyarrow==25.0.1",
+  "pydantic==2.13.5",
+  "PyYAML==6.0.3",
+  "matplotlib==3.11.1",
+  "requests==2.34.2",
+  "joblib==1.5.3",
+  "tqdm==4.70.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==9.1.1",
+  "black==26.5.1",
+  "ruff==0.16.5",
+  "mypy==2.3.1",
+  "pre-commit==4.6.2",
+  "types-PyYAML==6.0.12.20260815",
+  "types-requests==2.33.0.20260712",
+  "pandas-stubs==3.0.5.260730",
+]
+
+# Ekstra `nlp` jest odseparowana z powodu wagi drzewa zaleznosci: camel-tools
+# ciagnie torch i transformers (~2.5 GB), co nie ma prawa blokowac `make setup`
+# na czystym srodowisku. Wybor narzedzi pozostaje niezmieniony
+# (09_DECISIONS.md §1: CAMeL Tools + calima-msa-r13, ruptures, datasketch).
+# Instalacja: `make setup-nlp`.
+nlp = [
+  "camel-tools==1.6.0",
+  "datasketch==2.0.0",
+  "ruptures==1.1.10",
+  "lightgbm==4.7.0",
+]
+
+[project.scripts]
+quran-stylometry = "src.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "N", "SIM"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src"]
+strict = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+# Biblioteki naukowe bez pelnych stubow.
+[[tool.mypy.overrides]]
+module = ["matplotlib.*", "sklearn.*", "scipy.*", "joblib.*", "camel_tools.*", "datasketch.*", "ruptures.*", "lightgbm.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = [
+  "network: test wymagajacy sieci (domyslnie nieuruchamiany)",
+]
+filterwarnings = ["error::DeprecationWarning:src.*"]

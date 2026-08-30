@@ -1,0 +1,38 @@
+{
+  "config_hash": "38ec324929d5dbd45667268e58b99ad5841d6679f98b1887fc2603f3fa3b721e",
+  "control_anchor": "synthetic_shuffle (rozklad odniesienia w tym samym panelu)",
+  "data": {
+    "anchor_summary": {
+      "mean": 0.6224852553197648,
+      "median": 0.6228545494777933,
+      "p05": 0.49520063070342835,
+      "p95": 0.7439732188336153
+    },
+    "n_anchor": 400,
+    "n_reference": 400,
+    "note": "Dane syntetyczne. Zadnej tresci badawczej.",
+    "observed": 0.4534804975758861,
+    "reference_summary": {
+      "mean": 0.40318920644483525,
+      "median": 0.4034804975758861,
+      "p05": 0.3115751065879266,
+      "p95": 0.5037644064854443
+    },
+    "seed": 20260830,
+    "stream": "figs_smoke"
+  },
+  "do_not_conclude": "Nie wolno wyciagac z niej ZADNEGO wniosku merytorycznego. Dane sa losowe, wygenerowane z seeda configu, i nie pochodza z zadnego korpusu.",
+  "experiment": "none",
+  "families": [
+    "synthetic"
+  ],
+  "fig_id": "FIG-00",
+  "generated_at": "2026-08-30T19:10:24Z",
+  "git_dirty": null,
+  "git_sha": null,
+  "git_state": "no-commit-or-no-repo",
+  "kind": "result",
+  "reads_as": "Sprawdz, ze istnieja PNG, SVG i JSON o tym samym rdzeniu nazwy, oraz ten wpis w INDEX.md. Nie odczytuj z niej niczego o korpusach.",
+  "shows": "Figura testowa warstwy src/viz: dwa syntetyczne rozklady i pionowa linia obserwacji, w ukladzie identycznym jak FIG-15/FIG-16.",
+  "slug": "smoke_test"
+}

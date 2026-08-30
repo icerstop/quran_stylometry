@@ -1,0 +1,18 @@
+# Sciezka bez klastra — docs/10_COMPUTE.md §2.
+# To jest dozwolona sciezka, nie awaria. Wybor zapisuje sie w PREREGISTRATION.md.
+#
+# Uzycie jako nakladka na base.yaml:
+#   python -m src.cli hash-config --config configs/base.yaml --overlay configs/laptop_only.yaml
+
+corpus:
+  min_authors: 60             # nadal minimum z 09_DECISIONS §6 — wniosek glowny zostaje wazny
+  min_tokens_per_author: 20000
+  max_tokens_per_author: 60000
+
+tagger:
+  disambiguator: mle          # CPU-only, camel_data -i light
+
+av:
+  pairs_max_per_split: 80000
+
+experiments_skip: [E-14]      # transformery wypadaja

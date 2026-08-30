@@ -1,0 +1,29 @@
+# E-09 — Meccan/Medinan z uczciwymi baseline'ami. BRAMKA RQ2. Zadanie: T-043.
+id: E-09
+name: period_classification
+task: T-043
+target: "period in {meccan, medinan}"
+corpus: quran
+cv:
+  kind: GroupKFold
+  groups: surah_id              # po surze, NIE po oknach
+models: [logistic_regression, linear_svc, lightgbm]
+representations: [LEXICAL, FUNCTIONAL, CHARACTER, PROSODIC, SYNTAX_Q, ALL]
+baselines:                      # G7 — obowiazkowe
+  - id: b1_mean_verse_length
+  - id: b2_n_verses_plus_mean_verse_length
+  - id: b3_surah_length
+metrics: [macro_f1, roc_auc]
+delta_vs: b1_mean_verse_length
+delta_ci:
+  method: bootstrap
+  block_unit: surah_id
+residual_variant:
+  enabled: true
+  regress_out: mean_verse_length   # OLS residuals per feature
+criterion: "FUNCTIONAL bije baseline b1 o >= 0.05 macro-F1 przy rozlacznych CI"
+sensitivity:
+  - exclude_composite_windows
+  - exclude_composite_flag_surahs
+  - relabel_exception_verses_as_mixed   # najmocniejsza kontrola (09_DECISIONS §2.4)
+figures: [FIG-26, FIG-27, FIG-28]

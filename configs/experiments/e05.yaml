@@ -1,0 +1,29 @@
+# E-05 — WYNIK GLOWNY: V na skali odniesienia. Zadania: T-035 (+ T-037 dla E-05b).
+#
+# Bootstrap PO AUTORACH, nigdy po parach (G5). Matching n_w i rozkladu dlugosci
+# okien we wszystkich korpusach (G6). Ta sama skala osi we wszystkich panelach.
+id: E-05
+name: variance_scale
+task: T-035
+host: cluster                   # array po rodzinach cech (H2)
+estimators: [med, disp]
+representations: [CHARACTER, FUNCTIONAL, LEXICAL, BASELINE_LIT]
+anchors:
+  - id: V_within-surah
+    role: floor
+    definition: "dwie polowy tej samej dlugiej sury"
+  - id: V_single
+    role: h0
+    definition: "PSEUDO-BOOK: jeden autor, wiele dziel, rozmiar = Koran"
+  - id: V_mixture-k
+    role: h1
+    k: [2, 3, 5]
+  - id: V_multivoice
+    role: upper
+    definition: "kolekcja hadisow, matny wielu nadawcow"
+bootstrap_B: 200
+block_unit: author
+report: [percentile_in_v_single, percentile_in_v_mixture_2, overlapping_coefficient]
+decision_rule: "docs/02_DESIGN.md §3 RQ1 — dokladnie, bez parafrazy"
+required_agreement: "zgodnosc >= 3 z 4 reprezentacji contamination-resistant"
+figures: [FIG-15, FIG-16, FIG-17, FIG-19b]

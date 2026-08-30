@@ -1,0 +1,40 @@
+# --- Dane ---------------------------------------------------------------
+# 09_DECISIONS.md §7: "data/ w .gitignore poza data/reference/".
+# Nie commitujemy tekstow zrodlowych, tylko kod, configi, manifesty, hashe, wyniki.
+data/*
+!data/reference/
+data/reference/*
+!data/reference/*.csv
+
+# --- Srodowisko lokalne -------------------------------------------------
+# 11_HANDOFF.md §6: env.local.yaml trzyma HOST_ROLE i celowo nie jest w repo.
+configs/env.local.yaml
+
+# --- Python -------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.python-version
+
+# --- Narzedzia ----------------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# --- Artefakty ciezkie --------------------------------------------------
+models/*
+!models/.gitkeep
+logs/
+handoff/*/inputs/
+
+# --- System -------------------------------------------------------------
+.DS_Store
+Thumbs.db

@@ -1,0 +1,27 @@
+# E-07 — OOD sanity dla AV. EKSPERYMENT Z PRAWEM WETA. Zadanie: T-039.
+#
+# Agent NIE MA PRAWA uruchomic T-040 (E-08), jesli ta bramka nie przeszla.
+# Fail jest przewidzianym, akceptowalnym wynikiem projektu.
+id: E-07
+name: av_ood_gate
+task: T-039
+kind: gate
+host: cluster                   # ten sam job co E-06 — model musi byc ten sam zamrozony artefakt
+applied_to:
+  - id: diwan_single_poet
+    description: "dywan pojedynczego poety"
+  - id: maqamat_single_author
+    description: "zbior maqamat jednego autora"
+  - id: author_outside_training_era
+    description: "autor z epoki poza zakresem treningu"
+  - id: different_edition_orthography
+    description: "tekst o odmiennej ortografii wydania"
+metrics: [share_same_author_pairs_classified_different, eer]
+criterion:
+  eer_max: 0.35
+  median_p_same_above_threshold_for_all_four: true
+on_fail:
+  rq4_enabled: false
+  action: "RQ4 zamkniete negatywnie na poziomie metody. NIE uruchamiac E-08."
+decision_written_to: results/gates.json
+figures: [FIG-23]

@@ -1,0 +1,21 @@
+# F9 — Baseline literaturowy. docs/04_FEATURES.md §F9. Implementacja: T-028.
+#
+# 09_DECISIONS §2.4: to jest REKONSTRUKCJA RODZINY MARKEROW, nie odtworzenie
+# konkretnej pracy (Arabica 58 jest za paywallem). Tak ma byc opisane w raporcie,
+# a zrodlo listy markerow musi trafic do SOURCES.md.
+family: baseline_lit
+feature_id: F9
+status: core_baseline
+config_label: BASELINE_LIT
+distance_main: burrows_delta
+requires_tagger: true
+definition_operational:
+  - most_frequent_morpheme_frequencies
+  - mean_verse_length
+marker_source: SOURCES.md      # T-028 DoD: skad wzieto liste markerow
+# Krytyczny test kryterium "concurrent smoothness" (E-13): czy kryterium
+# odroznia korpus jednoautorski od MIXTURE, gdy znamy prawde?
+concurrent_smoothness:
+  enabled: true
+  evaluate_on: [quran, pseudo_book, mixture_2, mixture_5, random_sequence]
+  orderings: [order_canonical, order_traditional, order_noldeke]

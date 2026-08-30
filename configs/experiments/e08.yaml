@@ -1,0 +1,17 @@
+# E-08 — AV na Koranie. WARUNKOWE na E-07. Zadanie: T-040.
+id: E-08
+name: av_quran
+task: T-040
+host: laptop
+requires_gate:
+  gate: E-07
+  field: rq4_enabled
+  must_equal: true
+procedure: "zamrozony model AV -> wszystkie pary okien Koranu -> rozklad P(same)"
+compare_against: [pseudo_book, mixture_2, rq6_anchors]
+significance:
+  test: permutation
+  blocking: surah_id            # G5
+# Interpretacja wylacznie na poziomie rozkladu, NIGDY pojedynczej pary.
+interpretation_unit: distribution
+figures: [FIG-24, FIG-25]

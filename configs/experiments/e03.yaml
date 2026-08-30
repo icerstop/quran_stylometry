@@ -1,0 +1,15 @@
+# E-03 — Wplyw gatunku na AA. Zadanie: T-031. Poza sciezka krytyczna.
+id: E-03
+name: aa_cross_genre
+task: T-031
+regimes:
+  - id: within_genre
+    description: "train/test w obrebie jednego gatunku"
+  - id: cross_genre
+    description: "trenuj na prozie, testuj na poezji tego samego autora"
+metric: macro_f1_drop_between_regimes
+# Liczba "ile atrybucji traci na zmianie gatunku" trafia do preregistration.
+# Jesli AA traci 40 punktow F1, zaden wniosek o Koranie oparty na porownaniu
+# z proza sie nie obroni.
+goes_to_preregistration: true
+figures: [FIG-13]

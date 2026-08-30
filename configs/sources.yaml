@@ -1,0 +1,139 @@
+# Rejestr zrodel do `make verify-sources`. Wylacznie deklaracja z docs/09_DECISIONS.md §2.
+# Kod nie zna zadnego URL-a spoza tego pliku.
+#
+# criticality:
+#   required          — fail zatrzymuje pipeline (kod wyjscia != 0)
+#   fallback_allowed  — fail schodzi do statusu `degraded`, bo 09_DECISIONS
+#                       przewiduje dla tego zrodla jawny, udokumentowany fallback
+
+sources:
+  - id: eqtb
+    title: "EQTB — Extended Quranic Treebank (NoorBayan/Quranic)"
+    role: "Podstawowe zrodlo tekstu Koranu"
+    decision_ref: "09_DECISIONS.md §2.1"
+    criticality: required
+    kind: github_repo
+    repo: NoorBayan/Quranic
+    api_url: https://api.github.com/repos/NoorBayan/Quranic
+    contents_url: https://api.github.com/repos/NoorBayan/Quranic/contents/corpus
+    data_file: corpus/Quran.csv
+    raw_url: https://raw.githubusercontent.com/NoorBayan/Quranic/main/corpus/Quran.csv
+    license_expected: MIT
+    # Kolumny wg 09_DECISIONS.md §2.1. README repo jest niekonsekwentne przy
+    # uthmani_unicode / imlaai_unicode — ustalenie empiryczne idzie do
+    # results/eqtb_schema.json w T-009, nie tutaj.
+    expected_columns:
+      - tid
+      - sentence_id
+      - verse_id
+      - word_id
+      - tok_id
+      - location
+      - chapter_id
+      - uthmani_token
+      - imlaai_token
+      - uthmani_unicode
+      - imlaai_unicode
+      - phonetic
+      - trans
+      - pos
+      - pos_ar
+      - features
+      - segment
+      - lemma
+      - lemma_ar
+      - root
+      - root_ar
+      - verb_form
+      - prefix
+      - suffix
+      - verb_aspect
+      - nominal_state
+      - verb_mood
+      - nominal_case
+      - derived_nouns
+      - verb_voice
+      - person
+      - gender
+      - number
+      - special_group
+      - rel_label
+      - rel_label_ar
+      - ref_token_id
+      - is_constituent
+      - constituent_node
+      - constituent_position
+      - constituents
+      - constituent_label
+    pipeline_input_column: imlaai_token   # G2
+    notes:
+      - "Warstwa skladniowa jest czesciowo generowana parserem BiLSTM -> SILVER, nie gold."
+
+  - id: qac
+    title: "QAC — Quranic Arabic Corpus, morfologia"
+    role: "Wylacznie ewaluacja taggera (T-014). Nigdy jako cechy cross-corpus."
+    decision_ref: "09_DECISIONS.md §2.2"
+    criticality: fallback_allowed
+    kind: http_page
+    url: https://corpus.quran.com/download/
+    license_expected: GPL
+    # Pobranie wymaga podania adresu e-mail w formularzu. Nie obchodzimy tego.
+    requires_manual_step: true
+    manual_step: "Formularz na stronie pobierania wymaga adresu e-mail."
+    fallback: >
+      Ewaluacja taggera odbywa sie wobec kolumn morfologicznych EQTB, z adnotacja
+      w raporcie, ze referencja jest EQTB, nie QAC. To jest dozwolony fallback,
+      nie blocker (09_DECISIONS.md §2.2).
+
+  - id: openiti_metadata
+    title: "OpenITI RELEASE — metadane"
+    role: "Korpus kontrolny CTRL: najpierw sam plik metadanych TSV"
+    decision_ref: "09_DECISIONS.md §2.3"
+    criticality: required
+    kind: zenodo_concept
+    concept_recid: "3082463"
+    concept_doi: "10.5281/zenodo.3082463"
+    api_url: https://zenodo.org/api/records/3082463
+    metadata_file_pattern: "OpenITI_metadata_"
+    license_expected: cc-by-nc-sa-4.0
+    notes:
+      - "Nie klonuj calego release (2,27 mld slow). Najpierw metadane, potem ~80 plikow."
+
+  - id: openiti_texts
+    title: "OpenITI — teksty przez raw.githubusercontent.com"
+    role: "Selektywne pobranie wybranych versionURI z repozytoriow 25-letnich"
+    decision_ref: "09_DECISIONS.md §2.3"
+    criticality: required
+    kind: github_repo
+    repo: OpenITI/0525AH
+    api_url: https://api.github.com/repos/OpenITI/0525AH
+    license_expected: null      # repozytoria 25-letnie nie deklaruja SPDX
+    notes:
+      - "Filtr: status == 'pri' AND tag CLEANED_VERSION."
+      - "Oczekiwany rozmiar po selekcji: 1,5-2 GB, nie 25 GB."
+
+  - id: chronologies
+    title: "Chronologia sur — plik dostarczony"
+    role: "Gotowy plik referencyjny, nie modyfikowany recznie"
+    decision_ref: "09_DECISIONS.md §2.4"
+    criticality: required
+    kind: local_csv
+    path: data/reference/chronologies.csv
+    license_expected: "tanzil.net attribution"
+    expected_columns:
+      - surah_id
+      - order_canonical
+      - order_traditional
+      - order_noldeke
+      - period_traditional
+      - composite_flag
+      - exception_verses
+      - exception_period
+      - place_note
+      - source
+    # Liczby deklarowane w §2.4 — weryfikowane programowo, nie przepisywane.
+    expected_rows: 114
+    expected_counts:
+      period_traditional_meccan: 86
+      period_traditional_medinan: 28
+      rows_with_exception_verses: 35

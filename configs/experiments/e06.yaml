@@ -1,0 +1,21 @@
+# E-06 — Trening i kalibracja AV na CTRL. Zadanie: T-038.
+id: E-06
+name: av_train_calibrate
+task: T-038
+host: cluster                   # H2, razem z E-07 w jednym jobie
+split_by: author_id
+pair_representation: [abs_diff, cosine, hadamard, family_distances]
+models: [logistic_regression, linear_svc, lightgbm]
+sampling:
+  pairs_max_per_split: 400000   # limit, nie sugestia (10_COMPUTE §5 pkt 5)
+  hard_negative_ratio: 0.7
+  hard_negative_definition: "ten sam gatunek, ta sama epoka, zblizona dlugosc"
+  report_ratio_same_to_different: true
+  # Dwie rozne trudnosci — raportowane OSOBNO, nigdy zsumowane.
+  same_pair_strata: [same_book, same_author_different_book]
+calibration:
+  on: ctrl_calib                # rozlaczny zbior autorow
+  methods: [platt, isotonic]
+metrics: [roc_auc, pr_auc, eer, brier, calibration_curve]
+criterion: "EER na CTRL-TEST <= 0.25 dla >= 2 rodzin cech"
+figures: [FIG-20, FIG-21, FIG-22]

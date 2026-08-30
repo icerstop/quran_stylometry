@@ -1,0 +1,19 @@
+# E-12 — Unsupervised: PCA / klastrowanie. Zadanie: T-046.
+id: E-12
+name: clustering
+task: T-046
+methods: [pca, ward_hierarchical, hdbscan, gmm]
+gmm:
+  k_range: [1, 10]
+  criterion: bic
+  # Przy ~200 oknach BIC bedzie niestabilny: raportuj KRZYWA BIC, nie samo argmin.
+  report_curve_not_argmin: true
+  space: post_pca
+metrics: [ari, nmi, purity, silhouette]
+labels_assigned: after_clustering    # etykiety `period` przypisywane PO klastrowaniu
+# Bez tego liczba "ARI = 0.31" nie ma skali.
+mandatory_controls: [pseudo_book, mixture_2]
+umap:
+  role: visualization_only
+  never_input_to_statistical_test: true
+figures: [FIG-34, FIG-35]

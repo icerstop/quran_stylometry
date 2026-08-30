@@ -1,0 +1,22 @@
+# E-02 — Walidacja sygnalu autorstwa (AA na CTRL). Zadanie: T-030.
+id: E-02
+name: aa_ctrl
+task: T-030
+target: author_id
+corpus: ctrl
+cv:
+  kind: GroupKFold
+  groups: book_id                 # po book_id, NIE po oknach
+  n_splits: 5
+models: [linear_svc, logistic_regression, multinomial_nb, lightgbm, burrows_delta_nc]
+model_constraints:
+  multinomial_nb: nonnegative_features_only
+  lightgbm: numeric_features_only
+metrics: [macro_f1, accuracy, top3_accuracy, confusion_matrix]
+baselines:
+  - id: random
+  - id: most_frequent_class
+  - id: length_only                # dlugosc dokumentu + srednia dlugosc slowa
+criterion: "macro_f1 istotnie > baseline `length_only` dla >= 3 rodzin cech"
+hard_rule: "Jesli FUNCTIONAL nie ma sygnalu autorstwa na CTRL, nie wolno go uzywac do wnioskow o Koranie."
+figures: [FIG-09, FIG-10, FIG-11, FIG-12]

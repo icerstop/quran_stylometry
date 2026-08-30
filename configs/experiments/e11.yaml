@@ -1,0 +1,33 @@
+# E-11 — Change-point detection. Zadanie: T-045.
+#
+# Penalty ZAMROZONA przed uruchomieniem na Koranie. Dobierana przez BIC/elbow
+# na danych kontrolnych, nigdy dostrajana do "ladnego" wyniku na Koranie.
+id: E-11
+name: change_points
+task: T-045
+algorithms: [pelt, kernel_cpd]  # dwa, nie cztery (09_DECISIONS §1)
+input:
+  reduction: pca
+  max_components: 50
+  fit_on: ctrl_train
+  representations: [FUNCTIONAL, CHARACTER, SYNTAX_Q]
+orderings: [order_canonical, order_traditional, order_noldeke]
+penalty:
+  selection: bic_elbow_on_control
+  frozen_before_quran_run: true
+# G9 — testy negatywne OBOWIAZKOWO w tej samej figurze, nie w zalaczniku.
+negative_controls:
+  - id: shuffled_window_order
+    expectation: "nic ponad losowosc"
+  - id: pseudo_book_ordered
+    expectation: "nic ponad losowosc"
+  - id: mixture_2_blocked
+    expectation: "granica wykryta — test czulosci"
+significance:
+  test: permutation
+  iterations: 10000
+  blocking: surah_id
+residual_variant:
+  enabled: true
+  regress_out: mean_verse_length   # G7
+figures: [FIG-31, FIG-32, FIG-33]

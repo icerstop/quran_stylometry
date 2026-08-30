@@ -1,0 +1,24 @@
+# F1 — Character n-grams. docs/04_FEATURES.md §F1. Implementacja: T-021.
+family: character
+feature_id: F1
+status: core                  # 04_FEATURES §0 pkt 4
+config_label: CHARACTER
+distance_main: cosine_delta
+distance_alt: cosine
+text_field: text_norm_strict  # warstwa imlai po normalizacji strict (G2)
+requires_tagger: false
+vectorizer:
+  kind: tfidf
+  analyzer: char_wb           # char_wb, NIE char — nie sklejamy przez granice slow
+  ngram_range: [3, 5]
+  min_df: 5
+  max_features: 50000
+  sublinear_tf: true
+  lowercase: false
+variants:
+  - id: main
+    description: "Wariant glowny na text_norm_strict."
+  - id: no_diacritics_no_ligatures
+    description: "Obowiazkowy wariant kontrolny (04_FEATURES §F1)."
+# Jesli domain probe E-01 da AUC > 0.98, rodzina traci status `core`.
+demote_on_domain_probe_auc_above: 0.98

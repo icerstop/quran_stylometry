@@ -1,0 +1,22 @@
+# F8 — Prozodia i formuly. docs/04_FEATURES.md §F8. Implementacja: T-028.
+#
+# status: circular. To jest miejsce, gdzie realnie zyje sygnal Meccan/Medinan,
+# i JEDNOCZESNIE miejsce, z ktorego wyprowadzono chronologie. F8 nie moze byc
+# jedynym uzasadnieniem wniosku chronologicznego — sluzy do zmierzenia, ile
+# sygnalu jest "darmowe", i do wyregresowania go przy testach G7.
+family: prosody
+feature_id: F8
+status: circular
+config_label: PROSODIC
+distance_main: euclidean_standardized
+requires_tagger: false
+scope: quran_only
+verse_length_stats: [mean, variance, quantiles]
+rhyme:
+  - fasila_cluster
+  - rhyme_entropy_in_window
+  - same_rhyme_run_length
+  - share_of_typical_rhymed_clauses
+opening_formulas: [qul, ya_ayyuha_alladhina_amanu, ya_ayyuha_al_nas, oath_wa_cosmic, inna]
+surah_opening_types: [muqattaat, oath, praise, call, other]
+may_justify_chronology_alone: false

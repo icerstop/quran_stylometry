@@ -1,0 +1,16 @@
+# E-04 — Wrazliwosc na MFW i dlugosc okna. Zadanie: T-032.
+#
+# 11_HANDOFF §1: T-032 PRZENIESIONE NA LAPTOP wbrew 10_COMPUTE.md. To dwanascie
+# przebiegow AA, ktore przechodza przez noc lokalnie; jeden handoff mniej jest
+# wart wiecej niz te trzy godziny.
+id: E-04
+name: sensitivity_mfw_window
+task: T-032
+host: laptop
+grid:
+  mfw: [100, 300, 1000, 3000]
+  window_size: [250, 400, 800]
+runs: 12
+measured: [aa_macro_f1, v_quran_percentile]
+criterion: "kierunek wniosku stabilny w >= 10 z 12 kombinacji"
+figures: [FIG-14]

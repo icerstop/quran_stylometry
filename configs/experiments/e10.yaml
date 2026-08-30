@@ -1,0 +1,17 @@
+# E-10 — Interpretacja roznic Meccan/Medinan. Zadanie: T-044.
+#
+# Uruchamiane WYLACZNIE dla modelu, ktory przeszedl kryterium E-09.
+# Interpretowanie waznosci cech modelu, ktory nie bije baseline'u dlugosci
+# ajatu, to opisywanie szumu.
+id: E-10
+name: period_interpretation
+task: T-044
+requires:
+  experiment: E-09
+  condition: "model przeszedl kryterium E-09"
+methods:
+  - logreg_coefficients_on_standardized_features
+  - shap_for_lightgbm
+  - top30_feature_distribution_comparison
+feature_names: human_readable   # cechy nazwane po ludzku na figurze
+figures: [FIG-29, FIG-30]

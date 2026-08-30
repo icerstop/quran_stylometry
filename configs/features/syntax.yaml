@@ -1,0 +1,23 @@
+# F7 — Skladnia. docs/04_FEATURES.md §F7. Implementacja: T-027.
+#
+# WYLACZNIE WEWNATRZ KORANU. Nie istnieje porownywalna anotacja po stronie
+# OpenITI (F-15), wiec rodzina jest wylaczona z AA, AV i z porownania V
+# Koran<->CTRL. Zrodlo: warstwa EQTB, ktora jest SILVER (parser BiLSTM),
+# nie gold — musi byc tak oznaczona w metadanych.
+family: syntax
+feature_id: F7
+status: support
+config_label: SYNTAX_Q
+scope: quran_only
+excluded_from: [aa, av, cross_corpus_variance]
+annotation_source: silver_eqtb
+distance_main: cosine
+requires_tagger: false
+metrics:
+  - dependency_relation_frequencies
+  - mean_dependency_distance
+  - tree_depth
+  - branching_factor
+  - relation_bigrams
+  - head_pos_to_dependent_pos
+used_in: [E-09, E-11, E-12]

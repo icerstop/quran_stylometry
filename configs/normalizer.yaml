@@ -1,0 +1,34 @@
+# Normalizator arabskiego — docs/03_DATA.md §4. Implementacja: T-013.
+#
+# Kolejnosc operacji jest czescia decyzji: usuwanie diakrytyki PRZED ujednoliceniem
+# alifow daje inny wynik niz po (alif z hamza `أ` niesie hamze jako znak bazowy,
+# nie jako diakrytyk, ale `ٱ` wasla juz tak - stad kolejnosc 4 -> 5).
+
+version: "1.0.0"
+
+# Kroki wspolne dla obu profili (03_DATA §4 pkt 1-4, 7).
+steps_common:
+  - unicode_nfc
+  - strip_tatweel
+  - strip_quranic_pause_marks
+  - strip_verse_numbers
+  - strip_sajda_marks
+  - strip_ornaments
+  - strip_diacritics          # harakat, shadda, sukun
+  - strip_non_arabic
+  - normalize_whitespace
+
+# Kroki wylacznie dla profilu `strict` (03_DATA §4 pkt 5-6).
+steps_strict_only:
+  - unify_alif                # أ إ آ ٱ -> ا
+  - unify_alif_maqsura        # ى -> ي
+  - unify_ta_marbuta          # ة -> ه
+  - unify_hamza_carriers      # ؤ ئ -> forma bazowa
+
+profiles:
+  strict:
+    description: "Wszystkie kroki. Profil wyniku glownego."
+    apply_strict_only: true
+  light:
+    description: "Bez ujednolicania alifow i nosnikow hamzy. Analiza wrazliwosci."
+    apply_strict_only: false

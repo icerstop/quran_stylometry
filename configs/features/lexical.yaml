@@ -1,0 +1,25 @@
+# F3 — Lexical (words / lemmas / roots). docs/04_FEATURES.md §F3. Implementacja: T-023.
+#
+# Rodzina istnieje po to, zeby zmierzyc GORNA GRANICE wplywu tematu, nie zeby
+# uzasadniac wnioski. Rdzenie arabskie sa bardziej, nie mniej nosnikiem semantyki.
+family: lexical
+feature_id: F3
+status: support
+config_label: LEXICAL
+distance_main: cosine
+distance_alt: cosine_delta
+requires_tagger: true         # lemmas/roots pochodza z taggera produkcyjnego (*_pred)
+annotation_source: predicted  # G1 — nigdy *_gold w porownaniu cross-corpus
+units:
+  - id: word
+    ngram_range: [1, 2]
+  - id: lemma
+    ngram_range: [1, 2]
+  - id: root
+    ngram_range: [1, 2]
+vectorizer:
+  kind: tfidf
+  min_df: 5
+  sublinear_tf: true
+  lowercase: false
+fit_on: ctrl_train

@@ -1,0 +1,70 @@
+# Config glowny — szkielet z docs/08_REPO.md §2, wartosci z docs/09_DECISIONS.md §6.
+# Parametry sa ZAMROZONE. Zmiana po FREEZE (T-033) wymaga wpisu w DEVIATIONS.md.
+
+seed: 20260830
+token_unit: orthographic_word
+
+normalizer:
+  profile: strict            # strict | light; wynik glowny na strict (03_DATA §4)
+  version: "1.0.0"
+
+tagger:
+  backend: camel             # 09_DECISIONS §1 — Farasa odpada calkowicie
+  database: calima-msa-r13
+  disambiguator: mle         # mle na laptopie, bert na klastrze (10_COMPUTE §1)
+  version: "camel-tools-1.6.0"
+
+segmentation:
+  window_size: 400
+  window_size_sensitivity: [250, 800]
+  overlap: 0.0               # overlap_main
+  overlap_local: 0.5         # wylacznie wykresy lokalne i CPD
+  respect_boundaries: [surah_id, book_id]
+  min_tail_ratio: 0.6
+  max_window_ratio: 1.6
+
+corpus:
+  min_authors: 60
+  min_tokens_per_author: 30000
+  min_works_per_author: 2
+  max_tokens_per_author: null
+  death_date_max_ah: 900
+  near_period_max_ah: 500     # <=500 AH => warstwa `near-period`
+
+variance:
+  estimators: [med, disp]
+  n_windows_match: auto       # n_w wyliczane z Koranu, nie wpisywane (G6)
+  bootstrap_B: 200
+  block_unit: author          # G5
+
+significance:
+  permutations: 10000
+  block_unit_quran: surah_id
+  block_unit_ctrl: author_id
+
+features:
+  mfw_grid: [100, 300, 1000, 3000]
+  char_ngram_range: [3, 5]
+  char_max_features: 50000
+  char_min_df: 5              # 10_COMPUTE §5 pkt 3
+
+quotes:
+  quote_ngram_n: 7
+  minhash_num_perm: 128
+  minhash_threshold: 0.8
+  match_margin_tokens: 3
+
+av:
+  pairs_max_per_split: 400000
+  hard_negative_ratio: 0.7    # udzial par DIFFERENT same-genre/same-era
+
+gates:
+  domain_probe_auc_max: 0.98
+  av_ood_eer_max: 0.35
+
+splits:
+  ctrl_train: 0.60
+  ctrl_calib: 0.15
+  ctrl_test: 0.25
+
+experiments_skip: []

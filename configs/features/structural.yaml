@@ -1,0 +1,20 @@
+# F6 — Structural. docs/04_FEATURES.md §F6. Implementacja: T-026.
+#
+# Wszystkie miary bogactwa leksykalnego sa wrazliwe na dlugosc — dlatego G6
+# (matching dlugosci okien) jest tu warunkiem sine qua non, a nie ozdobnikiem.
+# Surowe TTR jest jawnie wykluczone.
+family: structural
+feature_id: F6
+status: core
+config_label: FUNCTIONAL
+distance_main: mahalanobis    # kowariancja estymowana na CTRL-TRAIN
+distance_alt: euclidean_standardized
+requires_tagger: false
+word_length_stats: [mean, median, variance, skew]
+sentence_length_stats: [mean, median, variance]
+lexical_richness: [mtld, hdd, maas, yule_k]   # NIE surowe TTR
+extra: [chars_per_token, lexical_entropy, repetition_rate]
+# Jednostka "zdania" dla CTRL wynika z interpunkcji/mARkdown i MUSI byc
+# udokumentowana — nie jest wprost porownywalna z ajatem.
+ctrl_sentence_unit: markdown_punctuation
+fit_on: ctrl_train
