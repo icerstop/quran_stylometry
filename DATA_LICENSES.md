@@ -25,13 +25,17 @@ poza `data/reference/`.
 - Uwaga metodologiczna: warstwa skladniowa jest czesciowo generowana parserem
   BiLSTM. Traktujemy ja jako **silver**, oznaczamy w metadanych i nie nazywamy gold
 
-> **Rozbieznosc formatu — otwarty blocker.** `make verify-sources` z 2026-08-30
-> ustalil, ze jedynym plikiem tekstowym w `corpus/` jest `Quran.csv`
-> (UTF-16-LE, separator TAB, **5 kolumn**: `aid, chapter, verse, ayah, jmlh`),
-> czyli tabela na poziomie ajatu. Tabela tokenowa o ~43 kolumnach opisana
-> w `09_DECISIONS.md` §2.1 i w README repozytorium nie jest dostepna jako plik
-> tekstowy; jedynym kandydatem na jej kontener jest `corpus/Quranic.rar`.
-> Szczegoly i pytanie: `results/blockers.jsonl`. Nie zmienia to statusu licencji.
+> **Rozbieznosc formatu — rozstrzygnieta 2026-08-30.** `Quran.csv`
+> (UTF-16-LE, TAB, **5 kolumn**: `aid, chapter, verse, ayah, jmlh`) jest tabela
+> na poziomie ajatu i NIE jest uzywany do budowy `Window`. Tabela tokenowa
+> lezy w `corpus/Quranic.rar` -> `Quranic.csv` (51 kolumn); 40/42 kolumn
+> z `09_DECISIONS.md` §2.1 wystepuje werbatim po zmapowaniu
+> `constituents_loc` -> `constituent_position`. `constituent_node` zostaje
+> swiadomie nierozstrzygniete (nullable) — patrz `SOURCES.md` §4 i
+> `DEVIATIONS.md` D-05. Oba wpisy w `results/blockers.jsonl` sa domkniete
+> (`resolved: true`, nie usuniete). Pobranie i parsowanie: `T-009`
+> (`src/data/download_eqtb.py`; `n_surahs=114` zweryfikowane programowo,
+> `results/corpus_stats.json`). Nie zmienia to statusu licencji.
 
 ## 2. QAC — Quranic Arabic Corpus (morfologia)
 

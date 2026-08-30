@@ -17,7 +17,7 @@ HOST_ROLE ?= laptop
 CLUSTER_TASKS := tag-ctrl variance-array av-train embed
 
 .PHONY: help setup setup-nlp verify-sources test lint format \
-        data normalize tag clean-quotes segment features gates freeze main \
+        data download-eqtb normalize tag clean-quotes segment features gates freeze main \
         chrono explore figs figs-smoke dashboard audit sample-run \
         handoff handoff-verify $(CLUSTER_TASKS)
 
@@ -56,6 +56,11 @@ format:
 # --- P1..P6: etapy pipeline'u -------------------------------------------
 data:
 	$(PY) -m src.cli data --config $(CONFIG)
+
+# T-009 samodzielnie (nie czeka na T-010..T-012). Wymaga 7-Zip — patrz
+# pyproject.toml (zaleznosci systemowe) i docs/09_DECISIONS.md §2.1.
+download-eqtb:
+	$(PY) -m src.cli download-eqtb --config $(CONFIG)
 
 normalize:
 	$(PY) -m src.cli normalize --config $(CONFIG)

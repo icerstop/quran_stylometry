@@ -50,12 +50,6 @@ def json_response(payload: Any, url: str = "http://x", status: int = 200) -> Res
     return Response(status_code=status, content=json.dumps(payload).encode("utf-8"), url=url)
 
 
-def csv_response(columns: list[str], *, encoding: str = "utf-8", delimiter: str = ",") -> Response:
-    header = delimiter.join(columns) + "\n"
-    body = header + delimiter.join("x" for _ in columns) + "\n"
-    return Response(status_code=206, content=body.encode(encoding), url="http://x")
-
-
 # --------------------------------------------------------------------------
 # Sniffowanie formatu
 # --------------------------------------------------------------------------
@@ -110,8 +104,8 @@ def eqtb_spec(**overrides: Any) -> dict[str, Any]:
         "criticality": "required",
         "api_url": "https://api/repo",
         "contents_url": "https://api/repo/contents",
-        "data_file": "corpus/Quran.csv",
-        "raw_url": "https://raw/Quran.csv",
+        "data_file": "corpus/Quranic.rar",
+        "archive_url": "https://raw/Quranic.rar",
         "license_expected": "MIT",
         "expected_columns": EQTB_COLUMNS,
     }
@@ -119,16 +113,22 @@ def eqtb_spec(**overrides: Any) -> dict[str, Any]:
     return spec
 
 
-def test_github_source_ok_when_license_and_columns_match() -> None:
+def archive_response(url: str = "https://raw/Quranic.rar", status: int = 206) -> Response:
+    return Response(status_code=status, content=b"\x00", url=url)
+
+
+def test_github_source_ok_when_license_matches_and_archive_reachable() -> None:
+    """09_DECISIONS.md §2.1: verify-sources sprawdza tylko osiagalnosc .rar,
+    nigdy nie rozpakowuje — parsowanie kolumn to T-009."""
     fetcher = FakeFetcher(
         {
             "https://api/repo": json_response(
                 {"license": {"spdx_id": "MIT"}, "default_branch": "main"}
             ),
             "https://api/repo/contents": json_response(
-                [{"path": "corpus/Quran.csv", "size": 5352212, "sha": "deadbeef"}]
+                [{"path": "corpus/Quranic.rar", "size": 4120767, "sha": "deadbeef"}]
             ),
-            "https://raw/Quran.csv": csv_response(EQTB_COLUMNS),
+            "https://raw/Quranic.rar": archive_response(),
         }
     )
     report = verify_sources([eqtb_spec()], fetcher)
@@ -137,40 +137,41 @@ def test_github_source_ok_when_license_and_columns_match() -> None:
     assert check.status == "ok"
     assert check.license_observed == "MIT"
     assert check.license_ok is True
-    assert check.columns_ok is True
+    assert check.resolved["archive_reachable"] is True
+    assert check.resolved["data_file_size"] == 4120767
+    # Kolumny NIE sa sprawdzane rutynowo dla archiwum — to jest T-009.
+    assert check.columns_ok is None
     assert report.overall == "pass"
 
 
-def test_header_probe_uses_range_request() -> None:
-    """Plik ma 5 MB; do sprawdzenia kontraktu wystarczy pierwszy wiersz."""
+def test_archive_probe_uses_a_single_byte_range_request() -> None:
+    """Archiwum nie jest rozpakowywane — tylko maly ranged GET na osiagalnosc."""
     fetcher = FakeFetcher(
         {
             "https://api/repo": json_response({"license": {"spdx_id": "MIT"}}),
-            "https://api/repo/contents": json_response([{"path": "corpus/Quran.csv"}]),
-            "https://raw/Quran.csv": csv_response(EQTB_COLUMNS),
+            "https://api/repo/contents": json_response([{"path": "corpus/Quranic.rar"}]),
+            "https://raw/Quranic.rar": archive_response(),
         }
     )
     verify_sources([eqtb_spec()], fetcher)
 
-    raw_headers = next(h for url, h in fetcher.calls if url == "https://raw/Quran.csv")
-    assert raw_headers["Range"].startswith("bytes=0-")
+    raw_headers = next(h for url, h in fetcher.calls if url == "https://raw/Quranic.rar")
+    assert raw_headers["Range"] == "bytes=0-0"
 
 
-def test_missing_columns_fail_the_required_source() -> None:
-    """Rozbieznosc wobec 09_DECISIONS §2.1 = fail, nie ostrzezenie."""
+def test_unreachable_archive_fails_the_required_source() -> None:
+    """Archiwum niedostepne = fail; nie ma tu ekstrakcji ani parsowania kolumn."""
     fetcher = FakeFetcher(
         {
             "https://api/repo": json_response({"license": {"spdx_id": "MIT"}}),
-            "https://api/repo/contents": json_response([{"path": "corpus/Quran.csv"}]),
-            "https://raw/Quran.csv": csv_response(["aid", "chapter", "verse", "ayah", "jmlh"]),
+            "https://api/repo/contents": json_response([{"path": "corpus/Quranic.rar"}]),
+            "https://raw/Quranic.rar": archive_response(status=404),
         }
     )
     report = verify_sources([eqtb_spec()], fetcher)
     check = report.sources[0]
 
     assert check.status == "fail"
-    assert check.columns_ok is False
-    assert set(check.columns_missing) == set(EQTB_COLUMNS)
     assert report.overall == "fail"
     assert [c.id for c in report.failed_required()] == ["eqtb"]
 
@@ -179,8 +180,8 @@ def test_license_mismatch_degrades_but_does_not_fail() -> None:
     fetcher = FakeFetcher(
         {
             "https://api/repo": json_response({"license": {"spdx_id": "GPL-3.0"}}),
-            "https://api/repo/contents": json_response([{"path": "corpus/Quran.csv"}]),
-            "https://raw/Quran.csv": csv_response(EQTB_COLUMNS),
+            "https://api/repo/contents": json_response([{"path": "corpus/Quranic.rar"}]),
+            "https://raw/Quranic.rar": archive_response(),
         }
     )
     check = verify_sources([eqtb_spec()], fetcher).sources[0]
@@ -196,7 +197,7 @@ def test_missing_data_file_fails() -> None:
             "https://api/repo/contents": json_response([{"path": "corpus/inny.csv"}]),
         }
     )
-    check = verify_sources([eqtb_spec(raw_url=None, expected_columns=None)], fetcher).sources[0]
+    check = verify_sources([eqtb_spec(archive_url=None, expected_columns=None)], fetcher).sources[0]
     assert check.status == "fail"
 
 

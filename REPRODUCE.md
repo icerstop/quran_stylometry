@@ -9,6 +9,9 @@ weryfikacje zrodel i sciezke zapisu figur.
 - Python **3.12** (`requires-python = ">=3.12,<3.13"`)
 - GNU Make (Windows: `winget install --id ezwinports.make -e`)
 - git
+- 7-Zip, dopiero od **T-009** (Windows: `winget install --id 7zip.7zip -e`;
+  Linux: `apt install p7zip-full`; macOS: `brew install sevenzip`). Nie jest
+  potrzebne do P0 ani do `make verify-sources` — patrz `pyproject.toml`.
 
 ## 2. Instalacja
 

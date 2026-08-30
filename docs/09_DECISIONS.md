@@ -41,9 +41,33 @@ zależności zewnętrznych, zero rejestracji.
 - README jest niekonsekwentne przy `uthmani_unicode` / `imlaai_unicode`
   (raz opisane jako Buckwalter, raz jako Unicode) — **sprawdź empirycznie na
   pierwszych 100 wierszach i zapisz ustalenie w `results/eqtb_schema.json`.**
-  To jedyne miejsce w EQTB, gdzie dokumentacji nie ufamy.
 - Warstwa składniowa jest częściowo generowana parserem BiLSTM → traktuj jako
   **silver**, oznacz w metadanych, nie nazywaj gold.
+
+**Rozstrzygnięte empirycznie (T-009, session 2):** tabela na poziomie tokenu
+NIE leży jako płaski plik w `corpus/` — jest spakowana w `corpus/Quranic.rar`
+→ `Quranic.csv` (UTF-16-LE, TAB). Płaski `corpus/Quran.csv` to osobny,
+5-kolumnowy plik na poziomie ajatu, nieużywany do budowy `Window`.
+`T-009` musi: pobrać `.rar`, rozpakować (zależność `7-Zip` w `pyproject.toml`,
+sekcja `[nlp]` lub dedykowana), sparsować `Quranic.csv`.
+
+Mapowanie nazw kolumn (40/42 zgodne werbatim; dwa wyjątki):
+- `constituent_position` → w źródle nazywa się **`constituents_loc`**
+  (format `[start-end]`, zgodny z opisem README). Mapuj 1:1 przy parsowaniu.
+- `constituent_node` → **nierozstrzygnięte, i to jest w porządku.** Kandydat
+  `head_rel` (jedyne pole binarne w próbce) ma tylko poszlakowe dowody, a samo
+  README źródła sygnalizuje niejednoznaczność tej kolumny. Ponieważ żadna
+  rodzina cech w `docs/04_FEATURES.md §F7` nie korzysta z pól `constituent_*`
+  (składnia w tym projekcie opiera się wyłącznie na relacjach zależnościowych:
+  `rel_label`, `ref_token_id`), **to pole zostaje nullable/`unmapped`** w
+  schemacie `Window`. Nie blokuj T-009 na jego rozstrzygnięciu. Jeśli
+  przyszły eksperyment kiedykolwiek będzie go potrzebował — rozstrzygnąć
+  wtedy, z konkretnym kontekstem użycia, nie na sucho.
+
+**Zasada dla `verify-sources`:** sprawdza tylko osiągalność `.rar` (rozmiar,
+opcjonalnie hash), nigdy nie rozpakowuje przy rutynowym uruchomieniu. Pełna
+ekstrakcja i parsowanie kolumn to praca `T-009`, wykonana raz, z wynikiem
+cache'owanym — nie powtarzana przy każdym `make verify-sources`.
 
 ### 2.2. Referencja morfologiczna — QAC
 - `https://corpus.quran.com/` — plik morfologii (`quranic-corpus-morphology-*.txt`).
@@ -63,7 +87,7 @@ zależności zewnętrznych, zero rejestracji.
 - Oczekiwany rozmiar po selekcji: **1,5–2 GB na dysku**, nie 25 GB.
 
 ### 2.4. Chronologia — **plik dostarczony, nic nie wpisujesz ręcznie**
-- `data_reference/chronologies.csv` w tym pakiecie, 114 wierszy, wygenerowany
+- `data/reference/chronologies.csv` (dostarczony w tym repo), 114 wierszy, wygenerowany
   z tabeli Tanzil (`tanzil.net/docs/revelation_order`, oparta na al-Zanjānīm /
   Ibn ʿAbbāsie), zweryfikowany: 86 mekkańskich, 28 medyńskich, 35 sur
   z wersetowymi wyjątkami.
@@ -205,7 +229,7 @@ wszystkich porównań `V` (G6) i jest wyliczana, nie wpisywana.
 |---|---|---|
 | EQTB (`NoorBayan/Quranic`) | MIT | pełna swoboda, wymaga atrybucji |
 | QAC morfologia | GPL-owy model licencyjny corpus.quran.com | używane tylko do ewaluacji, nie redystrybuujemy |
-| OpenITI | open access, teksty z Shamela/JK o różnym pochodzeniu | nie redystrybuuj tekstów w repo; commituj tylko manifest i hashe |
+| OpenITI | **CC-BY-NC-SA-4.0** (zweryfikowane empirycznie, release 2025.1.9, DOI 10.5281/zenodo.17767721) | kompatybilne z niekomercyjnym użyciem badawczym tego projektu **pod dwoma warunkami, oba już wymuszone przez design repo**: (1) nie redystrybuujemy tekstów źródłowych — `.gitignore` wyklucza `data/` poza `data/reference/`, do repo trafiają tylko manifesty, hashe i cechy pochodne; (2) publikacja wyników (raport, dashboard, praca) pozostaje niekomercyjna. Jeśli w przyszłości pojawi się zamiar komercyjnego wykorzystania — ta decyzja wymaga ponownego rozpatrzenia, nie jest generalnym zezwoleniem. |
 | CAMeL Tools kod | MIT | — |
 | `calima-msa-r13` | GPL-2 | jeśli kiedykolwiek redystrybuujesz pipeline z bazą, całość na GPL-2 |
 | CAMeLBERT-CA | licencja modelu na HF | tylko wnioskowanie, nie fine-tuning |

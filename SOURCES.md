@@ -48,3 +48,34 @@ E-13 jest bezposrednia odpowiedzia.
 
 Pelne warunki uzycia, wersje i daty pobrania: `DATA_LICENSES.md`.
 Odczyt maszynowy: `results/source_check.json` (`make verify-sources`).
+
+### Pole niepewne u zrodla: `constituent_node` (EQTB)
+
+`docs/09_DECISIONS.md` §2.1 wymienia `constituent_node` jako jedna z 42
+oczekiwanych kolumn tabeli tokenowej EQTB (`corpus/Quranic.rar` ->
+`Quranic.csv`). Kolumna ta **nie wystepuje pod ta nazwa w zrodle**.
+
+README repozytorium `NoorBayan/Quranic` samo sygnalizuje niejednoznacznosc
+tego pola dopiskiem (parafraza): *"previously classification of binary
+constituent relations, might need clarification or renaming based on your
+exact schema"* — czyli autorzy zrodla sami nie sa pewni aktualnej nazwy/definicji.
+
+Sprawdzone dowody (dochodzenie w `scripts/probe_eqtb_archive.py`, probka 20000
+wierszy z `Quranic.csv`):
+- `head_rel` jest jedynym polem faktycznie **binarnym**: `{0: 19946, 1: 53}`
+  — zgodne z opisem "binary constituent relations", ale to poszlaka, nie
+  potwierdzenie ze strony zrodla.
+- `depend_rel` odpada jako kandydat: ma trzy wartosci (`-1`, `0`, `1`), nie dwie.
+
+**Decyzja (`docs/09_DECISIONS.md` §2.1, 2026-08-30): NIE rozstrzygac.**
+`constituent_node` zostaje nullable/`unmapped` w schemacie `Window`
+(`configs/sources.yaml` -> `unresolved_columns`), bo zadna rodzina cech
+w `docs/04_FEATURES.md` §F7 nie korzysta z pol `constituent_*` — skladnia
+w tym projekcie opiera sie wylacznie na `rel_label` i `ref_token_id`. Jesli
+przyszly eksperyment kiedykolwiek bedzie potrzebowal tego pola, rozstrzygniecie
+ma zapadac wtedy, z konkretnym kontekstem uzycia — nie na sucho, w T-009.
+
+Dla porownania, `constituent_position` **zostalo rozstrzygniete**: w zrodle
+nazywa sie `constituents_loc` (format `[start-end]`, dokladnie zgodny z opisem
+README "start and end token IDs defining the span"), mapowane 1:1 w
+`src/data/download_eqtb.py`.

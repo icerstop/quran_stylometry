@@ -21,6 +21,7 @@ from src.utils.runs import (
     log_blocker,
     log_run,
     read_runs,
+    resolve_blockers,
 )
 
 
@@ -104,6 +105,44 @@ def test_git_sha_is_never_invented(logs: tuple[Path, Path]) -> None:
     else:
         assert len(record.git_sha) == 40
         assert record.git_state is None
+
+
+def test_resolve_blockers_marks_entry_without_deleting_it(logs: tuple[Path, Path]) -> None:
+    """AGENTS.md: log jest append-only — domkniecie dopisuje, nigdy nie usuwa."""
+    _, blockers_path = logs
+    log_blocker("T-009", "Pytanie 1", path=blockers_path)
+    log_blocker("T-009", "Pytanie 2", path=blockers_path)
+    log_blocker("T-011", "Inne zadanie, nie powinno sie zmienic", path=blockers_path)
+
+    changed = resolve_blockers(
+        "T-009", "Rozstrzygniete w 09_DECISIONS.md §2.1.", path=blockers_path
+    )
+    assert changed == 2
+
+    entries = list(read_jsonl(blockers_path))
+    assert len(entries) == 3
+    t009_entries = [e for e in entries if e["task"] == "T-009"]
+    assert all(e["resolved"] is True for e in t009_entries)
+    assert all(e["resolution"] == "Rozstrzygniete w 09_DECISIONS.md §2.1." for e in t009_entries)
+    assert all(e["resolved_ts"] for e in t009_entries)
+    assert {e["question"] for e in t009_entries} == {"Pytanie 1", "Pytanie 2"}
+
+    other = next(e for e in entries if e["task"] == "T-011")
+    assert other["resolved"] is False
+    assert other["resolution"] == ""
+
+
+def test_resolve_blockers_is_idempotent_for_already_resolved_entries(
+    logs: tuple[Path, Path],
+) -> None:
+    _, blockers_path = logs
+    log_blocker("T-009", "Pytanie", path=blockers_path)
+    resolve_blockers("T-009", "Pierwsza odpowiedz.", path=blockers_path)
+    changed_again = resolve_blockers("T-009", "Druga odpowiedz.", path=blockers_path)
+
+    assert changed_again == 0
+    entry = next(iter(read_jsonl(blockers_path)))
+    assert entry["resolution"] == "Pierwsza odpowiedz."
 
 
 def test_unknown_status_is_rejected() -> None:

@@ -40,7 +40,7 @@ DEFAULT_SOURCES = CONFIGS_DIR / "sources.yaml"
 # Etapy pipeline'u, ktore nalezą do pozniejszych faz. Mapowanie na zadania
 # z docs/07_TASKS.md, zeby komunikat mowil, co dokladnie trzeba zrobic.
 PENDING_STAGES: dict[str, str] = {
-    "data": "T-009..T-012 (P1)",
+    "data": "T-010..T-012 (P1) — T-009 zaimplementowane, patrz `make download-eqtb`",
     "normalize": "T-013 (P2)",
     "tag": "T-014, T-015 (P2)",
     "clean-quotes": "T-016, T-017 (P1)",
@@ -165,6 +165,93 @@ def cmd_verify_sources(args: argparse.Namespace) -> int:
     return EXIT_BLOCKED if failed else EXIT_OK
 
 
+def cmd_download_eqtb(args: argparse.Namespace) -> int:
+    """T-009: pobranie + parsowanie EQTB (docs/09_DECISIONS.md §2.1).
+
+    `corpus/Quranic.rar` -> `Quranic.csv`, mapowanie kolumn wg `configs/sources.yaml`
+    (`constituents_loc` -> `constituent_position` potwierdzone; `constituent_node`
+    nierozstrzygniete, zostaje nullable). Liczba sur jest WERYFIKOWANA, nie
+    przepisana (AGENTS.md zasada 8) — 114 to oczekiwanie z 09_DECISIONS.md §2.4,
+    nie zalozenie.
+    """
+    from src.data.download_eqtb import (
+        EqtbDownloadError,
+        MissingSevenZipError,
+        download_and_parse_eqtb,
+    )
+    from src.paths import RESULTS_DIR, rel_to_repo
+    from src.utils.io import read_json, write_json
+    from src.utils.runs import log_blocker, log_run
+
+    config = _load(args)
+    corpus_stats_path = RESULTS_DIR / "corpus_stats.json"
+
+    try:
+        result = download_and_parse_eqtb(force=args.force)
+    except MissingSevenZipError as exc:
+        print(f"BLAD: {exc}", file=sys.stderr)
+        return EXIT_FAIL
+    except EqtbDownloadError as exc:
+        log_blocker(
+            task="T-009",
+            question=f"Pobranie/parsowanie EQTB zawiodlo: {exc}",
+            context="docs/09_DECISIONS.md §2.1",
+            source="https://github.com/NoorBayan/Quranic",
+        )
+        log_run(task="T-009", status="blocked", config_hash=config.config_hash(), note=str(exc))
+        return EXIT_BLOCKED
+
+    stats = result.stats
+    artifacts = [rel_to_repo(result.tokens_path)]
+    print(f"zapisano {rel_to_repo(result.tokens_path)} (from_cache={result.from_cache})")
+    for key in ("n_raw_rows", "n_root_placeholder_rows", "n_tokens", "n_surahs", "n_verses"):
+        print(f"  {key}: {stats[key]}")
+
+    corpus_stats = read_json(corpus_stats_path) if corpus_stats_path.exists() else {}
+    corpus_stats["eqtb"] = {
+        **{
+            k: stats[k]
+            for k in ("n_raw_rows", "n_root_placeholder_rows", "n_tokens", "n_surahs", "n_verses")
+        },
+        "source": "corpus/Quranic.rar -> Quranic.csv",
+        "annotation_source": "silver (warstwa skladniowa BiLSTM, 09_DECISIONS.md §2.1)",
+    }
+    write_json(corpus_stats_path, corpus_stats)
+    artifacts.append(rel_to_repo(corpus_stats_path))
+
+    if stats["n_surahs"] != 114:
+        # 09_DECISIONS.md §2.4: 114 sur jest weryfikowane, nie przepisane.
+        # Rozbieznosc = jeden z czterech przypadkow "zatrzymaj sie i zapytaj".
+        log_blocker(
+            task="T-009",
+            question=(
+                f"Policzono {stats['n_surahs']} sur w EQTB, oczekiwano 114 "
+                "(09_DECISIONS.md §2.4). Zle zmapowana kolumna chapter_id, czy "
+                "naprawde niekompletne dane?"
+            ),
+            context="results/corpus_stats.json:eqtb",
+            artifacts=artifacts,
+        )
+        log_run(
+            task="T-009",
+            status="blocked",
+            config_hash=config.config_hash(),
+            artifacts=artifacts,
+            metrics=stats,
+        )
+        return EXIT_BLOCKED
+
+    log_run(
+        task="T-009",
+        status="done",
+        config_hash=config.config_hash(),
+        artifacts=artifacts,
+        metrics={k: stats[k] for k in ("n_raw_rows", "n_tokens", "n_surahs", "n_verses")},
+        note=f"from_cache={result.from_cache}",
+    )
+    return EXIT_OK
+
+
 def cmd_figs_smoke(args: argparse.Namespace) -> int:
     from src.utils.runs import log_run
     from src.viz.fig00_smoke import run as run_smoke
@@ -276,6 +363,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_smoke = sub.add_parser("figs-smoke", help="generuje figure testowa z pelnym kompletem plikow")
     _add_config_args(p_smoke)
     p_smoke.set_defaults(func=cmd_figs_smoke)
+
+    p_eqtb = sub.add_parser("download-eqtb", help="T-009: pobranie + parsowanie EQTB")
+    _add_config_args(p_eqtb)
+    p_eqtb.add_argument("--force", action="store_true", help="wymusza ponowne pobranie/ekstrakcje")
+    p_eqtb.set_defaults(func=cmd_download_eqtb)
 
     p_freeze = sub.add_parser("freeze", help="T-033 FREEZE (wymaga wczesniejszego `make gates`)")
     _add_config_args(p_freeze)

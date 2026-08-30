@@ -1,0 +1,11 @@
+{
+  "eqtb": {
+    "annotation_source": "silver (warstwa skladniowa BiLSTM, 09_DECISIONS.md §2.1)",
+    "n_raw_rows": 139376,
+    "n_root_placeholder_rows": 11157,
+    "n_surahs": 114,
+    "n_tokens": 128219,
+    "n_verses": 6236,
+    "source": "corpus/Quranic.rar -> Quranic.csv"
+  }
+}

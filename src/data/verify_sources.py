@@ -226,7 +226,11 @@ def check_github_repo(spec: dict[str, Any], fetcher: Fetcher) -> SourceCheck:
 
     if spec.get("contents_url"):
         payload = _check_repo_contents(spec, fetcher, payload)
-    if spec.get("raw_url") and spec.get("expected_columns"):
+    if spec.get("archive_url"):
+        # 09_DECISIONS.md §2.1: archiwum sprawdzamy tylko na osiagalnosc,
+        # nigdy nie rozpakowujemy przy rutynowym `make verify-sources`.
+        payload = _check_archive_reachable(spec, fetcher, payload)
+    elif spec.get("raw_url") and spec.get("expected_columns"):
         payload = _check_remote_header(spec, fetcher, payload)
 
     return SourceCheck(**payload)
@@ -260,6 +264,39 @@ def _check_repo_contents(
             if isinstance(entry, dict) and entry.get("path") == wanted:
                 payload["resolved"]["data_file_size"] = entry.get("size")
                 payload["resolved"]["data_file_sha"] = entry.get("sha")
+    return payload
+
+
+def _check_archive_reachable(
+    spec: dict[str, Any], fetcher: Fetcher, payload: dict[str, Any]
+) -> dict[str, Any]:
+    """Sprawdza WYLACZNIE osiagalnosc archiwum (maly ranged GET), bez ekstrakcji.
+
+    `corpus/Quranic.rar` jest binarny — nie da sie z niego sparsowac naglowka
+    kolumn bez rozpakowania. 09_DECISIONS.md §2.1 wprost zabrania rozpakowywania
+    przy rutynowym `verify-sources`: pelna ekstrakcja i parsowanie to praca
+    T-009 (`src/data/download_eqtb.py`), wykonana raz, z wynikiem cache'owanym.
+    """
+    url = spec["archive_url"]
+    try:
+        resp = fetcher.get(url, headers={"Range": "bytes=0-0"})
+    except FetchError as exc:
+        payload["status"] = "fail"
+        payload["notes"].append(f"Archiwum '{url}' nieosiagalne: {exc}")
+        return payload
+
+    if not resp.ok:
+        payload["status"] = "fail"
+        payload["notes"].append(f"HTTP {resp.status_code} na archiwum '{url}'.")
+        return payload
+
+    payload["resolved"]["archive_url"] = url
+    payload["resolved"]["archive_reachable"] = True
+    payload["resolved"]["archive_range_probe_status"] = resp.status_code
+    payload["notes"].append(
+        "Archiwum sprawdzone tylko na osiagalnosc (bez ekstrakcji). "
+        "Pelne rozpakowanie + parsowanie kolumn: T-009 (src/data/download_eqtb.py)."
+    )
     return payload
 
 

@@ -52,9 +52,32 @@ kol; ciagnie natomiast `torch` i `transformers`. Dlatego ekstra `[nlp]` zostaje
 osobno — ale z powodu **wagi drzewa zaleznosci**, nie z powodu kompilacji.
 Wybor taggera bez zmian.
 
-### D-04 · Format EQTB — otwarty blocker, nie odstepstwo
+### D-04 · Format EQTB — rozstrzygniete 2026-08-30, nie odstepstwo
 
 `corpus/Quran.csv` w repozytorium `NoorBayan/Quranic` jest tabela na poziomie
 ajatu (UTF-16-LE, TAB, 5 kolumn), a nie tabela tokenowa o ~43 kolumnach opisana
-w `09_DECISIONS.md` §2.1. Zgloszone jako blocker w `results/blockers.jsonl`;
-nie zgadywano mapowania. Rozstrzygniecie nalezy do T-009.
+w `09_DECISIONS.md` §2.1. Zgloszone jako blocker w `results/blockers.jsonl`
+(nie zgadywano mapowania) — **rozstrzygniete, patrz D-05.** Oba wpisy blockera
+sa domkniete (`resolved: true`) w `results/blockers.jsonl`, nie usuniete.
+
+### D-05 · Mapowanie kolumn EQTB — jedno potwierdzone, jedno swiadomie otwarte
+
+Tabela tokenowa lezy w `corpus/Quranic.rar` -> `Quranic.csv` (UTF-16-LE, TAB,
+51 kolumn), nie plasko w `corpus/`. 40 z 42 kolumn z `09_DECISIONS.md` §2.1
+wystepuje werbatim. Rozstrzygniecie z `09_DECISIONS.md` §2.1 (2026-08-30):
+
+- `constituent_position` <- `constituents_loc` — **potwierdzone**, mapowane
+  1:1 w `src/data/download_eqtb.py`.
+- `constituent_node` — **swiadomie nierozstrzygniete.** Zostaje
+  nullable/`unmapped` w `Window`, bo `docs/04_FEATURES.md` §F7 nie uzywa pol
+  `constituent_*`. Szczegoly i dowody: `SOURCES.md` §4.
+
+`make verify-sources` sprawdza teraz wylacznie osiagalnosc `corpus/Quranic.rar`
+(maly ranged GET, bez 7-Zip, bez ekstrakcji) — pelne rozpakowanie i parsowanie
+to praca `T-009` (`src/data/download_eqtb.py`), wykonana raz, z wynikiem
+cache'owanym w `data/raw/eqtb/` i `data/interim/eqtb_tokens.parquet`. 7-Zip
+jest udokumentowany jako zaleznosc systemowa w `pyproject.toml`.
+
+T-009 wykonany 2026-08-30: `n_surahs=114` (zweryfikowane programowo, zgodne
+z `09_DECISIONS.md` §2.4), `n_tokens=128219`, `n_verses=6236` — patrz
+`results/corpus_stats.json`.

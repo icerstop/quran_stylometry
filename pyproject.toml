@@ -50,6 +50,16 @@ nlp = [
   "lightgbm==4.7.0",
 ]
 
+# Zaleznosci systemowe (nie instalowalne przez pip):
+#   - GNU Make      — orkiestracja calego pipeline'u (REPRODUCE.md §1).
+#   - 7-Zip (`7z`)  — T-009 (src/data/download_eqtb.py): ekstrakcja
+#                     corpus/Quranic.rar z EQTB (09_DECISIONS.md §2.1).
+#                     Windows: winget install --id 7zip.7zip -e
+#                     Linux:   apt install p7zip-full   (albo: dnf install p7zip)
+#                     macOS:   brew install sevenzip
+#                     `make verify-sources` NIE wymaga 7-Zip — sprawdza tylko
+#                     osiagalnosc archiwum (maly ranged GET), bez ekstrakcji.
+
 [project.scripts]
 quran-stylometry = "src.cli:main"
 

@@ -16,12 +16,19 @@ sources:
     repo: NoorBayan/Quranic
     api_url: https://api.github.com/repos/NoorBayan/Quranic
     contents_url: https://api.github.com/repos/NoorBayan/Quranic/contents/corpus
-    data_file: corpus/Quran.csv
-    raw_url: https://raw.githubusercontent.com/NoorBayan/Quranic/main/corpus/Quran.csv
+    # Rozstrzygniete empirycznie (session 2, 09_DECISIONS.md §2.1): tabela na
+    # poziomie tokenu NIE lezy plasko w corpus/ — jest spakowana w
+    # corpus/Quranic.rar -> Quranic.csv (UTF-16-LE, TAB). corpus/Quran.csv to
+    # osobny, 5-kolumnowy plik na poziomie ajatu, NIEuzywany do budowy Window.
+    data_file: corpus/Quranic.rar
+    # `archive_url`: TYLKO malutki ranged GET sprawdzajacy osiagalnosc (bez
+    # ekstrakcji) — 09_DECISIONS.md §2.1 "Zasada dla verify-sources". Pelna
+    # ekstrakcja 7-Zip + parsowanie kolumn = T-009 (src/data/download_eqtb.py),
+    # wykonane raz, z wynikiem cache'owanym, nie przy kazdym uruchomieniu.
+    archive_url: https://raw.githubusercontent.com/NoorBayan/Quranic/main/corpus/Quranic.rar
     license_expected: MIT
-    # Kolumny wg 09_DECISIONS.md §2.1. README repo jest niekonsekwentne przy
-    # uthmani_unicode / imlaai_unicode — ustalenie empiryczne idzie do
-    # results/eqtb_schema.json w T-009, nie tutaj.
+    # Kolumny wg 09_DECISIONS.md §2.1 — dokumentacyjne dla T-009, NIE sprawdzane
+    # tutaj (archiwum binarne, nie parsowane przy rutynowym verify-sources).
     expected_columns:
       - tid
       - sentence_id
@@ -66,8 +73,18 @@ sources:
       - constituents
       - constituent_label
     pipeline_input_column: imlaai_token   # G2
+    # Mapowanie nazw kolumn zrodlowych na kanoniczne z 09_DECISIONS.md §2.1
+    # (40/42 zgodne werbatim; T-009 stosuje to przy parsowaniu Quranic.csv).
+    column_rename:
+      constituents_loc: constituent_position
+    # constituent_node: NIEROZSTRZYGNIETE. Zostaje nullable/unmapped w Window —
+    # zadna rodzina cech (docs/04_FEATURES.md §F7) nie uzywa pol constituent_*.
+    # Patrz SOURCES.md §4 i docs/09_DECISIONS.md §2.1.
+    unresolved_columns:
+      - constituent_node
     notes:
       - "Warstwa skladniowa jest czesciowo generowana parserem BiLSTM -> SILVER, nie gold."
+      - "corpus/Quran.csv (5 kolumn, poziom ajatu) nieuzywany do budowy Window."
 
   - id: qac
     title: "QAC — Quranic Arabic Corpus, morfologia"
