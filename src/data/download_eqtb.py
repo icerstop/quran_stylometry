@@ -186,17 +186,35 @@ def canonicalize_columns(
 def compute_corpus_stats(df: pd.DataFrame) -> dict[str, Any]:
     """Liczby o korpusie EQTB — WYLICZONE programowo (AGENTS.md zasada 8).
 
-    ``location == '_'`` oznacza wiersz-placeholder korzenia zaleznosci (CoNLL-owa
-    konwencja tokenu 0 per zdanie), nie powierzchniowy token — odfiltrowywany
-    z ``n_tokens``/``n_surahs``/``n_verses``, ale zliczany osobno dla przejrzystosci,
-    nie po cichu odrzucany.
+    Dwie rozne wielkosci, ktore latwo pomylic (i raz pomylono je w tym module —
+    patrz DEVIATIONS.md D-06):
+
+    * ``n_tokens`` — liczba slow ortograficznych, ``token_unit: orthographic_word``
+      z ``docs/09_DECISIONS.md`` §6. To jest ``distinct (chapter_id, verse_id,
+      word_id)``. UWAGA: samego ``verse_id`` NIE wystarczy — resetuje sie co sure
+      (max obserwowana wartosc 286 = liczba wersetow Al-Baqary), wiec bez
+      ``chapter_id`` wersety z roznych sur zderzalyby sie na tym samym ``word_id``.
+    * ``n_segments`` — liczba wierszy tabeli po odfiltrowaniu placeholderow,
+      czyli liczba segmentow morfologicznych (jedno slowo ortograficzne moze
+      miec kilka segmentow: proklityki, temat, sufiksy — kazdy jako osobny
+      wiersz z tym samym ``word_id``).
+
+    Identyfikacja wiersza-placeholdera (wirtualny wezel zaleznosciowy klauzuli,
+    nie powierzchniowy token): ``word_id == '0'`` — zweryfikowane na calym
+    pliku jako IDENTYCZNY zbior co ``location == '_'`` (11157 z 11157 wierszy
+    w obu, XOR = 0). To NIE jest ``rel_label == 'root'``: `rel_label` tych
+    wierszy przyjmuje 75 roznych wartosci (Subj, Pred, Adj, circ, root, ...),
+    bo koduje relacje CALEJ klauzuli do nadrzedniej struktury, nie tylko
+    dosłowny korzen drzewa. Nie zgadywano tego skladniowo — sprawdzono na danych.
     """
-    is_placeholder = df["location"].astype(str).str.strip() == "_"
+    is_placeholder = df["word_id"].astype(str).str.strip() == "0"
     real_tokens = df.loc[~is_placeholder]
+    word_key = real_tokens[["chapter_id", "verse_id", "word_id"]].drop_duplicates()
     return {
         "n_raw_rows": int(len(df)),
         "n_root_placeholder_rows": int(is_placeholder.sum()),
-        "n_tokens": int(len(real_tokens)),
+        "n_segments": int(len(real_tokens)),
+        "n_tokens": int(len(word_key)),
         "n_surahs": int(real_tokens["chapter_id"].nunique()),
         "n_verses": int(real_tokens[["chapter_id", "verse_id"]].drop_duplicates().shape[0]),
     }

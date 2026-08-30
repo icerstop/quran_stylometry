@@ -81,7 +81,22 @@ def _row(**overrides: str) -> dict[str, str]:
 
 def synthetic_rows() -> list[dict[str, str]]:
     return [
-        _row(tid="0", sentence_id="1", location="_", chapter_id="_", verse_id="_"),
+        # Placeholder: wezel zaleznosciowy klauzuli, identyfikowany przez
+        # word_id == '0' (rownowazne location == '_', zweryfikowane na calym
+        # pliku Quranic.csv — patrz compute_corpus_stats docstring). rel_label
+        # NIE jest tu 'root' celowo: koduje relacje klauzuli, nie sam fakt bycia
+        # placeholderem.
+        _row(
+            tid="0",
+            sentence_id="1",
+            location="_",
+            chapter_id="_",
+            verse_id="_",
+            word_id="0",
+            rel_label="Pred",
+        ),
+        # Slowo "1:1:1" ma DWA segmenty morfologiczne (ten sam word_id, dwa tid) —
+        # zeby test odroznial n_segments (wiersze) od n_tokens (distinct slowa).
         _row(
             tid="1",
             sentence_id="1",
@@ -89,11 +104,21 @@ def synthetic_rows() -> list[dict[str, str]]:
             chapter_id="1",
             verse_id="1",
             word_id="1",
-            imlaai_token="بِسْمِ",
-            pos="N",
+            imlaai_token="بِ",
+            pos="P",
         ),
         _row(
             tid="2",
+            sentence_id="1",
+            location="(1:1:1:2)",
+            chapter_id="1",
+            verse_id="1",
+            word_id="1",
+            imlaai_token="سْمِ",
+            pos="N",
+        ),
+        _row(
+            tid="3",
             sentence_id="1",
             location="(1:1:2:1)",
             chapter_id="1",
@@ -102,12 +127,15 @@ def synthetic_rows() -> list[dict[str, str]]:
             imlaai_token="اللَّهِ",
             pos="PN",
         ),
+        # Sura 2, werset 5 — verse_id="5" tutaj ROWNA SIE werset_id="1" z sury 1
+        # w liczeniu naiwnym (bez chapter_id); test pilnuje, ze n_tokens liczy
+        # (chapter_id, verse_id, word_id), nie samo (verse_id, word_id).
         _row(
-            tid="3",
+            tid="4",
             sentence_id="2",
-            location="(2:5:1:1)",
+            location="(2:1:1:1)",
             chapter_id="2",
-            verse_id="5",
+            verse_id="1",
             word_id="1",
             imlaai_token="ذَلِكَ",
             pos="DEM",
@@ -130,8 +158,8 @@ def synthetic_csv_bytes(rows: list[dict[str, str]]) -> bytes:
 def test_parse_eqtb_csv_bytes_reads_utf16_tab_file() -> None:
     df = parse_eqtb_csv_bytes(synthetic_csv_bytes(synthetic_rows()))
     assert list(df.columns) == SOURCE_COLUMNS
-    assert len(df) == 4
-    assert df.iloc[1]["imlaai_token"] == "بِسْمِ"
+    assert len(df) == 5
+    assert df.iloc[1]["imlaai_token"] == "بِ"
 
 
 # --------------------------------------------------------------------------
@@ -175,18 +203,39 @@ def test_canonicalize_columns_fails_loudly_on_unexplained_missing_column() -> No
 # --------------------------------------------------------------------------
 
 
-def test_compute_corpus_stats_excludes_root_placeholder_rows() -> None:
+def test_compute_corpus_stats_distinguishes_segments_from_orthographic_words() -> None:
+    """n_segments = wiersze (morfemy); n_tokens = distinct slowa ortograficzne
+    (chapter_id, verse_id, word_id) — token_unit z docs/09_DECISIONS.md §6.
+    Dwa wiersze w danych syntetycznych dziela jeden word_id (dwa segmenty
+    jednego slowa), wiec n_segments > n_tokens tak jak w prawdziwym korpusie."""
     df = parse_eqtb_csv_bytes(synthetic_csv_bytes(synthetic_rows()))
     canonical = canonicalize_columns(
         df, expected_columns=EXPECTED_COLUMNS, rename=RENAME, unresolved=UNRESOLVED
     )
     stats = compute_corpus_stats(canonical)
 
-    assert stats["n_raw_rows"] == 4
+    assert stats["n_raw_rows"] == 5
     assert stats["n_root_placeholder_rows"] == 1
+    assert stats["n_segments"] == 4
     assert stats["n_tokens"] == 3
     assert stats["n_surahs"] == 2
     assert stats["n_verses"] == 2
+
+
+def test_compute_corpus_stats_requires_chapter_id_not_just_verse_id() -> None:
+    """verse_id resetuje sie co sure (max 286 w realnych danych) — samo
+    (verse_id, word_id) zderzalo by werset 1 sury 1 z wersetem 1 sury 2."""
+    df = parse_eqtb_csv_bytes(synthetic_csv_bytes(synthetic_rows()))
+    canonical = canonicalize_columns(
+        df, expected_columns=EXPECTED_COLUMNS, rename=RENAME, unresolved=UNRESOLVED
+    )
+    real = canonical.loc[canonical["word_id"].astype(str).str.strip() != "0"]
+    naive_pairs = real[["verse_id", "word_id"]].drop_duplicates().shape[0]
+    correct_pairs = real[["chapter_id", "verse_id", "word_id"]].drop_duplicates().shape[0]
+
+    assert naive_pairs == 2  # (verse=1, word=1) z sury 1 i sury 2 zderzaja sie
+    assert correct_pairs == 3
+    assert compute_corpus_stats(canonical)["n_tokens"] == correct_pairs
 
 
 # --------------------------------------------------------------------------
@@ -219,6 +268,7 @@ def test_download_and_parse_eqtb_writes_cache_and_computes_stats(tmp_path: Path)
     assert result.from_cache is False
     assert result.tokens_path.exists()
     assert result.raw_archive_path.read_bytes() == b"fake-rar-bytes"
+    assert result.stats["n_segments"] == 4
     assert result.stats["n_tokens"] == 3
     assert result.stats["n_surahs"] == 2
     assert result.stats["unresolved_columns"] == ["constituent_node"]
@@ -250,6 +300,7 @@ def test_download_and_parse_eqtb_uses_cache_and_skips_fetch(tmp_path: Path) -> N
     )
     assert result.from_cache is True
     assert result.stats["n_tokens"] == 3
+    assert result.stats["n_segments"] == 4
 
 
 def test_download_and_parse_eqtb_force_redownloads_even_with_cache(tmp_path: Path) -> None:
@@ -278,3 +329,4 @@ def test_download_and_parse_eqtb_force_redownloads_even_with_cache(tmp_path: Pat
     assert calls == {"fetch": 1, "extract": 1}
     assert result.from_cache is False
     assert result.stats["n_tokens"] == 3
+    assert result.stats["n_segments"] == 4

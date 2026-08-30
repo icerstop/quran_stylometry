@@ -202,19 +202,25 @@ def cmd_download_eqtb(args: argparse.Namespace) -> int:
         return EXIT_BLOCKED
 
     stats = result.stats
+    stat_keys = (
+        "n_raw_rows",
+        "n_root_placeholder_rows",
+        "n_segments",
+        "n_tokens",
+        "n_surahs",
+        "n_verses",
+    )
     artifacts = [rel_to_repo(result.tokens_path)]
     print(f"zapisano {rel_to_repo(result.tokens_path)} (from_cache={result.from_cache})")
-    for key in ("n_raw_rows", "n_root_placeholder_rows", "n_tokens", "n_surahs", "n_verses"):
+    for key in stat_keys:
         print(f"  {key}: {stats[key]}")
 
     corpus_stats = read_json(corpus_stats_path) if corpus_stats_path.exists() else {}
     corpus_stats["eqtb"] = {
-        **{
-            k: stats[k]
-            for k in ("n_raw_rows", "n_root_placeholder_rows", "n_tokens", "n_surahs", "n_verses")
-        },
+        **{k: stats[k] for k in stat_keys},
         "source": "corpus/Quranic.rar -> Quranic.csv",
         "annotation_source": "silver (warstwa skladniowa BiLSTM, 09_DECISIONS.md §2.1)",
+        "token_unit": "orthographic_word (docs/09_DECISIONS.md §6); n_segments = wiersze/morfemy",
     }
     write_json(corpus_stats_path, corpus_stats)
     artifacts.append(rel_to_repo(corpus_stats_path))
@@ -246,7 +252,7 @@ def cmd_download_eqtb(args: argparse.Namespace) -> int:
         status="done",
         config_hash=config.config_hash(),
         artifacts=artifacts,
-        metrics={k: stats[k] for k in ("n_raw_rows", "n_tokens", "n_surahs", "n_verses")},
+        metrics={k: stats[k] for k in stat_keys},
         note=f"from_cache={result.from_cache}",
     )
     return EXIT_OK
