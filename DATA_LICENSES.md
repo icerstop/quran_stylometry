@@ -50,10 +50,14 @@ poza `data/reference/`.
 - Konsekwencja: uzywane **wylacznie do ewaluacji taggera** (T-014).
   **Nie redystrybuujemy** pliku w repo
 - Krok reczny: pobranie wymaga podania adresu e-mail w formularzu. Nie obchodzimy
-  tego (AGENTS.md zasada 9), wiec zrodlo ma w raporcie status `degraded`
-- Fallback (dozwolony, nie blocker — `09_DECISIONS.md` §2.2): ewaluacja taggera
-  wobec kolumn morfologicznych EQTB, z adnotacja w raporcie, ze referencja jest
-  EQTB, a nie QAC
+  tego (AGENTS.md zasada 9) — formularz **nigdy nie zostanie uzyty** (T-010,
+  2026-08-30; koliduje z "bez rejestracji" i z odtwarzalnoscia T-051)
+- Fallback (dozwolony, formalnie aktywny, nie blocker — `09_DECISIONS.md` §2.2):
+  ewaluacja taggera (T-014) odbywa sie wobec kolumn morfologicznych EQTB
+  (`data/interim/eqtb_tokens.parquet`, T-009), z adnotacja w raporcie, ze
+  referencja jest EQTB, a nie QAC. Zrodlo ma w raporcie status
+  `fallback_active` (sformalizowany stan koncowy), **nie** `degraded`
+  (co oznaczaloby problem czekajacy na naprawe). Szczegoly: `SOURCES.md` §4.
 
 ## 3. OpenITI RELEASE — korpus kontrolny CTRL
 

@@ -23,6 +23,20 @@ Format wpisu:
 **Brak odstepstw — FREEZE (T-033) jeszcze nie nastapil.** Do tego momentu
 parametry zmienia sie normalnie w `configs/`, bez wpisu tutaj.
 
+Ten plik ma dwie kategorie wpisow, rozdzielone naglowkami, zeby po FREEZE
+nie zlaly sie w jeden nieczytelny log:
+
+- **Pre-FREEZE: korekty instrukcji** — poprawki wadliwych/niepelnych polecen
+  uzytkownika albo ustalenia empiryczne z fazy przed T-033 (np. bledna
+  formula na `n_tokens` w instrukcji, pomylka `n_tokens`/`n_segments`).
+  Nie sa odstepstwem od preregistracji — hiperparametry i procedury jeszcze
+  nie sa zamrozone.
+- **Post-FREEZE: odstepstwa od zamrozonego configu** — jedyna kategoria,
+  ktora AGENTS.md zasada 7 faktycznie wymaga: zmiana hiperparametru albo
+  procedury **po** T-033, w formacie z sekcji powyzej.
+
+## Pre-FREEZE: korekty instrukcji
+
 Ponizej rzeczy, ktore **nie sa** odstepstwami od preregistracji, ale zostaly
 ustalone empirycznie w P0 i moga wygladac na rozbieznosc wobec dokumentacji.
 Zapisane, zeby nie trzeba bylo ich odkrywac drugi raz.
@@ -93,10 +107,18 @@ proklityka, temat, sufiks moga byc osobnymi wierszami dla jednego slowa).
 
 Sprawdzone programowo na calym `data/interim/eqtb_tokens.parquet`:
 - `distinct (chapter_id, verse_id, word_id)` po odfiltrowaniu placeholderow
-  = **77429**, w porownaniu z referencyjna liczba QAC **77430** (roznica: 1,
-  nie zbadana dalej — brak dowodu na konkretna przyczyne, nie zgadywano;
-  zadna weryfikacja nie wykazala duplikatow/dziur w `word_id` w zadnym
-  wersecie: `distinct(word_id) == max(word_id)` dla wszystkich 6236 wersetow).
+  = **77429**. Zadna weryfikacja nie wykazala duplikatow/dziur w `word_id`
+  w zadnym wersecie: `distinct(word_id) == max(word_id)` dla wszystkich 6236
+  wersetow.
+- **Aktualizacja 2026-08-30 (pozniej tego samego dnia):** roznica 1 wobec
+  powszechnie cytowanego "77430" **rozstrzygnieta, nie tylko odlozona jako
+  negligible** — zrodlo pierwotne QAC (`corpus.quran.com/java/example/
+  tokencountexample.jsp`, wlasna tabela `Chapter.getTokenCount()` dla 114 sur)
+  sumuje sie do **77429**, identycznie jak EQTB, zgodnie chapter-po-chapter,
+  0/114 roznic (`scripts/probe_word_count_discrepancy.py`,
+  `results/eqtb_vs_qac_per_surah.csv`). "77430" jest niedokladnym cytatem
+  wtornym (Wikipedia/blogi), nie liczba samego QAC. Szczegoly i pelny dowod:
+  `SOURCES.md` §4.
 - Samo `(verse_id, word_id)` **bez** `chapter_id` dawalo tylko 9898 — `verse_id`
   resetuje sie co sure (max obserwowana wartosc: 286, liczba wersetow
   Al-Baqary), wiec wersety z roznych sur zderzaly sie na tym samym numerze.
@@ -111,5 +133,39 @@ do nadrzednej struktury (wirtualny wezel per klauzula), nie fakt bycia korzeniem
 Poprawka: `compute_corpus_stats` teraz zwraca `n_tokens` (distinct slowa) i
 `n_segments` (wiersze) jako dwa osobne pola. Regresja zablokowana testami w
 `tests/test_eqtb_token_count.py` (syntetyczne slowo 3-segmentowe + tolerancja
-±1% wobec referencji QAC na prawdziwym pliku, jesli istnieje lokalnie).
+±1% wobec referencji QAC na prawdziwym pliku, jesli istnieje lokalnie —
+referencja QAC poprawiona na 77429, patrz wyzej).
 `results/corpus_stats.json` przeliczony: `n_tokens=77429`, `n_segments=128219`.
+
+### D-07 · T-010 zawezone do formalizacji fallbacku, bez pobierania QAC
+
+`docs/07_TASKS.md` opisuje T-010 jako pobranie pliku morfologii QAC i budowe
+tabeli mapowania tagsetow. Wykonanie tego wymaga formularza z adresem e-mail
+na `corpus.quran.com/download/` — koliduje z AGENTS.md zasada 9 ("bez
+rejestracji") i z odtwarzalnoscia T-051 (kroku recznego nie da sie
+zautomatyzowac ani odtworzyc).
+
+**Decyzja (2026-08-30, uzytkownik):** T-010 konczy sie bez pobierania.
+Formalizowany jest od razu fallback z `09_DECISIONS.md` §2.2: referencja dla
+ewaluacji taggera w T-014 to kolumny morfologiczne EQTB
+(`data/interim/eqtb_tokens.parquet`, T-009), nie zewnetrzny plik QAC. Zamiast
+tabeli mapowania tagsetow (QAC <-> produkcyjny) T-010 produkuje:
+
+- `src/data/download_qac.py` + `python -m src.cli formalize-qac-fallback`:
+  zero sieci, zero `data/raw/qac/`, artefakt `results/qac_fallback.json`.
+- `results/source_check.json`: `sources[id=qac].status = "fallback_active"`
+  (nowa wartosc w `Status` — `src/data/verify_sources.py`), zamiast `degraded`.
+  Rozroznienie: `degraded` = problem czekajacy na naprawe; `fallback_active` =
+  sformalizowany, opisany stan koncowy. `overall` przeszlo z `degraded` na
+  `pass`, bo `fallback_active` nie ciagnie ogolnego stanu w dol.
+- `SOURCES.md` §4: jawna adnotacja "referencja to EQTB, nie QAC".
+- `configs/sources.yaml`: `qac.fallback` przeformulowany, zeby nazywac
+  konkretne kolumny EQTB uzywane jako referencja.
+
+Ewentualne mapowanie tagsetu (tagger produkcyjny <-> tagset EQTB, nie QAC)
+przesuwa sie do T-014, gdzie bedzie miec konkretny kontekst uzycia.
+
+## Post-FREEZE: odstepstwa od zamrozonego configu
+
+*Brak wpisow — FREEZE (T-033) jeszcze nie nastapil.* Pierwszy wpis tutaj
+uzyje formatu z sekcji "Format wpisu" na poczatku pliku.

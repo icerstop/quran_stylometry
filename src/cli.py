@@ -40,7 +40,7 @@ DEFAULT_SOURCES = CONFIGS_DIR / "sources.yaml"
 # Etapy pipeline'u, ktore nalezą do pozniejszych faz. Mapowanie na zadania
 # z docs/07_TASKS.md, zeby komunikat mowil, co dokladnie trzeba zrobic.
 PENDING_STAGES: dict[str, str] = {
-    "data": "T-010..T-012 (P1) — T-009 zaimplementowane, patrz `make download-eqtb`",
+    "data": "T-011..T-012 (P1) — T-009/T-010 zrobione (download-eqtb, formalize-qac-fallback)",
     "normalize": "T-013 (P2)",
     "tag": "T-014, T-015 (P2)",
     "clean-quotes": "T-016, T-017 (P1)",
@@ -123,7 +123,12 @@ def cmd_verify_sources(args: argparse.Namespace) -> int:
     write_json(out_path, report.model_dump(mode="json"))
 
     for check in report.sources:
-        marker = {"ok": "OK      ", "degraded": "DEGRADED", "fail": "FAIL    "}[check.status]
+        marker = {
+            "ok": "OK      ",
+            "degraded": "DEGRADED",
+            "fallback_active": "FALLBACK",
+            "fail": "FAIL    ",
+        }[check.status]
         print(f"{marker} {check.id:<20} {check.title}")
         for note in check.notes:
             print(f"         - {note}")
@@ -158,6 +163,7 @@ def cmd_verify_sources(args: argparse.Namespace) -> int:
             "n_sources": len(report.sources),
             "n_ok": sum(1 for s in report.sources if s.status == "ok"),
             "n_degraded": sum(1 for s in report.sources if s.status == "degraded"),
+            "n_fallback_active": sum(1 for s in report.sources if s.status == "fallback_active"),
             "n_fail": sum(1 for s in report.sources if s.status == "fail"),
         },
         note=f"overall={report.overall}",
@@ -254,6 +260,48 @@ def cmd_download_eqtb(args: argparse.Namespace) -> int:
         artifacts=artifacts,
         metrics={k: stats[k] for k in stat_keys},
         note=f"from_cache={result.from_cache}",
+    )
+    return EXIT_OK
+
+
+def cmd_formalize_qac_fallback(args: argparse.Namespace) -> int:
+    """T-010: formalizacja fallbacku QAC, bez pobierania (09_DECISIONS.md §2.2)."""
+    from src.data.download_qac import QacDownloadForbiddenError, formalize_qac_fallback
+    from src.utils.runs import log_run
+
+    config = _load(args)
+    try:
+        result = formalize_qac_fallback()
+    except QacDownloadForbiddenError as exc:
+        print(f"BLAD: {exc}", file=sys.stderr)
+        return EXIT_FAIL
+
+    artifact = rel_to_repo(result.artifact_path)
+    print(f"zapisano {artifact}")
+    print(f"  status: {result.payload['status']}")
+    print(f"  reference_corpus: {result.payload['reference_corpus']}")
+    print(f"  qac_downloaded: {result.payload['qac_downloaded']}")
+
+    log_run(
+        task="T-010",
+        status="done",
+        config_hash=config.config_hash(),
+        artifacts=[
+            artifact,
+            "results/source_check.json",
+            "results/eqtb_vs_qac_per_surah.csv",
+            "SOURCES.md",
+        ],
+        metrics={
+            "qac_downloaded": 0,
+            "qac_status_is_fallback_active": 1,
+            "qac_java_api_n_tokens": result.payload["qac_java_api_n_tokens"],
+        },
+        note=(
+            "Nie pobrano QAC. Fallback z 09_DECISIONS.md par.2.2 sformalizowany: "
+            "referencja T-014 = kolumny morfologiczne EQTB. "
+            "qac.status=fallback_active, nie degraded."
+        ),
     )
     return EXIT_OK
 
@@ -374,6 +422,13 @@ def build_parser() -> argparse.ArgumentParser:
     _add_config_args(p_eqtb)
     p_eqtb.add_argument("--force", action="store_true", help="wymusza ponowne pobranie/ekstrakcje")
     p_eqtb.set_defaults(func=cmd_download_eqtb)
+
+    p_qac = sub.add_parser(
+        "formalize-qac-fallback",
+        help="T-010: formalizacja fallbacku QAC (bez pobierania)",
+    )
+    _add_config_args(p_qac)
+    p_qac.set_defaults(func=cmd_formalize_qac_fallback)
 
     p_freeze = sub.add_parser("freeze", help="T-033 FREEZE (wymaga wczesniejszego `make gates`)")
     _add_config_args(p_freeze)

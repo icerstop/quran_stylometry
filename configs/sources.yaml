@@ -94,13 +94,18 @@ sources:
     kind: http_page
     url: https://corpus.quran.com/download/
     license_expected: GPL
-    # Pobranie wymaga podania adresu e-mail w formularzu. Nie obchodzimy tego.
+    # T-010 (2026-08-30): formularz e-mail NIE bedzie uzyty — kolidowaloby to
+    # z "bez rejestracji" (AGENTS.md zasada 9) i z odtwarzalnoscia (T-051).
+    # Ten status jest wiec sformalizowanym stanem koncowym (`fallback_active`),
+    # nie "degraded z nadzieja na reczne uzupelnienie w przyszlosci".
     requires_manual_step: true
-    manual_step: "Formularz na stronie pobierania wymaga adresu e-mail."
+    manual_step: "Formularz na stronie pobierania wymaga adresu e-mail — celowo nieuzywany."
     fallback: >
-      Ewaluacja taggera odbywa sie wobec kolumn morfologicznych EQTB, z adnotacja
-      w raporcie, ze referencja jest EQTB, nie QAC. To jest dozwolony fallback,
-      nie blocker (09_DECISIONS.md §2.2).
+      Referencja dla ewaluacji taggera (T-014) to kolumny morfologiczne EQTB
+      (pos/features/lemma/root/... z data/interim/eqtb_tokens.parquet, T-009),
+      NIE zewnetrzny plik QAC. Adnotacja w raporcie ma to stwierdzac wprost.
+      To jest dozwolony, formalnie aktywny fallback, nie blocker
+      (09_DECISIONS.md §2.2).
 
   - id: openiti_metadata
     title: "OpenITI RELEASE — metadane"

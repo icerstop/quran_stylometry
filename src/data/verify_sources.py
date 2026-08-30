@@ -32,8 +32,14 @@ from src.utils.provenance import utc_now_iso
 
 LOGGER = get_logger(__name__)
 
-Status = Literal["ok", "degraded", "fail"]
+Status = Literal["ok", "degraded", "fallback_active", "fail"]
 Overall = Literal["pass", "degraded", "fail"]
+
+# `degraded`: problem bez sformalizowanego fallbacku — czeka na decyzje/naprawe.
+# `fallback_active`: 09_DECISIONS.md jawnie przewiduje ten stan jako koncowy
+# (np. QAC §2.2) — nie jest to problem oczekujacy naprawy, wiec nie ciagnie
+# `overall` w dol. Rozroznienie na prosbe uzytkownika (T-010, 2026-08-30):
+# "qac.status = fallback_active, nie degraded z nadzieja na reczne uzupelnienie".
 
 HEADER_PROBE_BYTES = 65535
 _TIMEOUT_S = 30
@@ -382,7 +388,10 @@ def check_http_page(spec: dict[str, Any], fetcher: Fetcher) -> SourceCheck:
 
     if payload["requires_manual_step"]:
         # Strona odpowiada, ale pobranie wymaga formularza. Nie obchodzimy tego
-        # (AGENTS.md zasada 9), wiec zrodlo jest `degraded`, a nie `ok`.
+        # (AGENTS.md zasada 9), wiec zrodlo tymczasowo jest `degraded` — jesli
+        # 09_DECISIONS.md przewiduje dla niego jawny fallback, `_apply_fallback`
+        # nizej podniesie to do `fallback_active` (sformalizowany stan koncowy,
+        # nie "degraded z nadzieja na reczne uzupelnienie").
         payload["status"] = "degraded"
         payload["notes"].append(spec.get("manual_step", "Pobranie wymaga kroku recznego."))
     return _apply_fallback(spec, SourceCheck(**payload))
@@ -510,23 +519,20 @@ def _chronology_counts(rows: list[dict[str, Any]]) -> dict[str, int]:
 
 
 def _apply_fallback(spec: dict[str, Any], check: SourceCheck) -> SourceCheck:
-    """Zrodlo z jawnym fallbackiem w 09_DECISIONS nie moze byc `fail`."""
-    if (
-        check.status == "fail"
-        and spec.get("criticality") == "fallback_allowed"
-        and spec.get("fallback")
-    ):
-        return check.model_copy(
-            update={
-                "status": "degraded",
-                "notes": [*check.notes, "FALLBACK: " + " ".join(str(spec["fallback"]).split())],
-            }
-        )
-    if check.status == "degraded" and spec.get("fallback"):
-        return check.model_copy(
-            update={"notes": [*check.notes, "FALLBACK: " + " ".join(str(spec["fallback"]).split())]}
-        )
-    return check
+    """Zrodlo z jawnym, sformalizowanym fallbackiem w 09_DECISIONS nigdy nie
+    zostaje `fail` ani `degraded`. Status `fallback_active` mowi, ze to
+    zaakceptowany, opisany w dokumentacji stan koncowy (T-010/09_DECISIONS §2.2
+    dla QAC) — nie problem czekajacy na reczne uzupelnienie w przyszlosci.
+    """
+    has_formalized_fallback = spec.get("criticality") == "fallback_allowed" and spec.get("fallback")
+    if not has_formalized_fallback or check.status not in ("fail", "degraded"):
+        return check
+    return check.model_copy(
+        update={
+            "status": "fallback_active",
+            "notes": [*check.notes, "FALLBACK: " + " ".join(str(spec["fallback"]).split())],
+        }
+    )
 
 
 _CHECKERS = {

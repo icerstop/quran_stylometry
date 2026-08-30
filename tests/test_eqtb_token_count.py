@@ -3,16 +3,23 @@
 
 Pomylka wykryta 2026-08-30: `compute_corpus_stats` liczyl `n_tokens` jako liczbe
 wierszy po odfiltrowaniu placeholderow (czyli w istocie `n_segments`), przez co
-wynik (128219) nie mial nic wspolnego z referencyjna liczba QAC (77430). Ten
+wynik (128219) nie mial nic wspolnego z referencyjna liczba QAC (77429). Ten
 test pilnuje, zeby to nie wrocilo cicho przy nastepnej zmianie parsera —
 dziala na syntetycznych danych (bez sieci, bez 7-Zip, 08_REPO.md §3).
+
+Referencja QAC = **77429**, nie powszechnie cytowane w zrodlach trzeciorzednych
+"77430" (Wikipedia, blogi) — zweryfikowane wobec zrodla pierwotnego
+(`corpus.quran.com/java/example/tokencountexample.jsp`, wlasna tabela
+`Chapter.getTokenCount()` QAC dla 114 sur, ktora sama sumuje sie do 77429).
+Dowod chapter-po-chapter (0/114 roznic): `scripts/probe_word_count_discrepancy.py`,
+`results/eqtb_vs_qac_per_surah.csv`, `SOURCES.md` §4, `DEVIATIONS.md` D-06.
 """
 
 from __future__ import annotations
 
 from src.data.download_eqtb import canonicalize_columns, compute_corpus_stats, parse_eqtb_csv_bytes
 
-QAC_REFERENCE_N_WORDS = 77_430
+QAC_REFERENCE_N_WORDS = 77_429
 TOLERANCE = 0.01  # +/-1%: edycje/wersje moga sie nieznacznie roznic (AGENTS.md zasada 8)
 
 SOURCE_COLUMNS = [
@@ -142,10 +149,12 @@ def test_n_tokens_never_equals_row_count_when_words_are_multi_segment() -> None:
 def test_real_eqtb_parquet_word_count_is_within_one_percent_of_qac_reference() -> None:
     """Liczba distinct slow ortograficznych w PRAWDZIWYM, juz sparsowanym
     `data/interim/eqtb_tokens.parquet` (T-009) ma byc w rozsądnym zakresie
-    (+/-1%) wokol referencyjnej wartosci QAC 77430 — nie identyczna (edycje/
-    wersje EQTB i QAC moga sie nieznacznie roznic), ale nigdy nie ~128k
-    (czyli liczba segmentow, nie slow — dokladnie ta pomylka, ktora ten plik
-    ma wykrywac). Pominiety, jesli T-009 jeszcze nie bylo uruchomione lokalnie.
+    (+/-1%) wokol referencyjnej wartosci QAC 77429 — tolerancja zostaje jako
+    margines bezpieczenstwa na przyszle edycje/wersje EQTB, mimo ze aktualny
+    plik zgadza sie z referencja DOKLADNIE (diff=0, patrz test nizej). Nigdy
+    nie powinno wypadac blisko ~128k (liczba segmentow, nie slow — dokladnie
+    ta pomylka, ktora ten plik ma wykrywac). Pominiety, jesli T-009 jeszcze
+    nie bylo uruchomione lokalnie.
     """
     import pytest
 
@@ -165,3 +174,35 @@ def test_real_eqtb_parquet_word_count_is_within_one_percent_of_qac_reference() -
         f"n_tokens={stats['n_tokens']} poza +/-1% wokol referencji QAC "
         f"{QAC_REFERENCE_N_WORDS} — patrz DEVIATIONS.md D-06."
     )
+
+
+def test_real_eqtb_parquet_matches_qac_java_api_exactly_per_chapter() -> None:
+    """Dowod z primary source: `Chapter.getTokenCount()` (QAC Java API,
+    corpus.quran.com/java/example/tokencountexample.jsp) zgadza sie z EQTB
+    dla WSZYSTKICH 114 sur, bez wyjatku — nie tylko w tolerancji +/-1%.
+    Pelna tabela referencyjna: `scripts/probe_word_count_discrepancy.py`.
+    Pominiety, jesli T-009 jeszcze nie bylo uruchomione lokalnie.
+    """
+    import pytest
+
+    from src.data.download_eqtb import INTERIM_TOKENS_PATH
+
+    if not INTERIM_TOKENS_PATH.exists():
+        pytest.skip("data/interim/eqtb_tokens.parquet nie istnieje — uruchom `make download-eqtb`")
+
+    import pandas as pd
+
+    from src.data.download_qac import QAC_JAVA_API_TOKEN_COUNTS
+
+    df = pd.read_parquet(INTERIM_TOKENS_PATH)
+    real = df.loc[df["word_id"].astype(str).str.strip() != "0"].copy()
+    real["chapter_id_int"] = real["chapter_id"].astype(int)
+    real["verse_id_int"] = real["verse_id"].astype(int)
+    real["word_id_int"] = real["word_id"].astype(int)
+    per_chapter = real.groupby("chapter_id_int").apply(
+        lambda g: g[["verse_id_int", "word_id_int"]].drop_duplicates().shape[0],
+        include_groups=False,
+    )
+
+    assert dict(per_chapter) == QAC_JAVA_API_TOKEN_COUNTS
+    assert sum(per_chapter) == QAC_REFERENCE_N_WORDS == 77_429

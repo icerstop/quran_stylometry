@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-08-30T19:51:10Z",
+  "checked_at": "2026-08-30T20:18:39Z",
   "decisions_ref": "docs/09_DECISIONS.md §2",
-  "overall": "degraded",
+  "overall": "pass",
   "sources": [
     {
       "columns_extra": [],
@@ -56,13 +56,13 @@
       "license_observed": "GPL",
       "license_ok": true,
       "notes": [
-        "Formularz na stronie pobierania wymaga adresu e-mail.",
-        "FALLBACK: Ewaluacja taggera odbywa sie wobec kolumn morfologicznych EQTB, z adnotacja w raporcie, ze referencja jest EQTB, nie QAC. To jest dozwolony fallback, nie blocker (09_DECISIONS.md §2.2)."
+        "Formularz na stronie pobierania wymaga adresu e-mail — celowo nieuzywany.",
+        "FALLBACK: Referencja dla ewaluacji taggera (T-014) to kolumny morfologiczne EQTB (pos/features/lemma/root/... z data/interim/eqtb_tokens.parquet, T-009), NIE zewnetrzny plik QAC. Adnotacja w raporcie ma to stwierdzac wprost. To jest dozwolony, formalnie aktywny fallback, nie blocker (09_DECISIONS.md §2.2)."
       ],
       "requires_manual_step": true,
       "resolved": {},
       "role": "Wylacznie ewaluacja taggera (T-014). Nigdy jako cechy cross-corpus.",
-      "status": "degraded",
+      "status": "fallback_active",
       "title": "QAC — Quranic Arabic Corpus, morfologia",
       "url": "https://corpus.quran.com/download/"
     },

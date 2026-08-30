@@ -222,25 +222,28 @@ def qac_spec() -> dict[str, Any]:
     }
 
 
-def test_qac_manual_step_yields_degraded_not_fail() -> None:
-    """09_DECISIONS §2.2 przewiduje jawny fallback — to nie moze byc blocker."""
+def test_qac_manual_step_yields_fallback_active_not_fail() -> None:
+    """09_DECISIONS §2.2 przewiduje jawny, sformalizowany fallback — to nie jest
+    blocker, i nie jest to "degraded z nadzieja na reczne uzupelnienie" w
+    przyszlosci: EQTB jest jedyna referencja, formularz e-mail nigdy nie bedzie
+    uzyty (T-010, 2026-08-30)."""
     fetcher = FakeFetcher(
         {"https://corpus/download": Response(200, b"GNU General Public License", "u")}
     )
     report = verify_sources([qac_spec()], fetcher)
     check = report.sources[0]
 
-    assert check.status == "degraded"
+    assert check.status == "fallback_active"
     assert check.requires_manual_step is True
     assert any("FALLBACK" in note for note in check.notes)
-    assert report.overall == "degraded"
+    assert report.overall == "pass"
     assert report.failed_required() == []
 
 
-def test_qac_unreachable_still_degrades_thanks_to_fallback() -> None:
+def test_qac_unreachable_still_reports_fallback_active() -> None:
     fetcher = FakeFetcher({"https://corpus/download": FetchError("connection reset")})
     check = verify_sources([qac_spec()], fetcher).sources[0]
-    assert check.status == "degraded"
+    assert check.status == "fallback_active"
 
 
 def zenodo_spec() -> dict[str, Any]:

@@ -17,7 +17,7 @@ HOST_ROLE ?= laptop
 CLUSTER_TASKS := tag-ctrl variance-array av-train embed
 
 .PHONY: help setup setup-nlp verify-sources test lint format \
-        data download-eqtb normalize tag clean-quotes segment features gates freeze main \
+        data download-eqtb formalize-qac-fallback normalize tag clean-quotes segment features gates freeze main \
         chrono explore figs figs-smoke dashboard audit sample-run \
         handoff handoff-verify $(CLUSTER_TASKS)
 
@@ -61,6 +61,11 @@ data:
 # pyproject.toml (zaleznosci systemowe) i docs/09_DECISIONS.md §2.1.
 download-eqtb:
 	$(PY) -m src.cli download-eqtb --config $(CONFIG)
+
+# T-010: NIE pobiera QAC (formularz e-mail koliduje z AGENTS.md / T-051).
+# Formalizuje fallback z 09_DECISIONS.md §2.2 — referencja to EQTB.
+formalize-qac-fallback:
+	$(PY) -m src.cli formalize-qac-fallback --config $(CONFIG)
 
 normalize:
 	$(PY) -m src.cli normalize --config $(CONFIG)
