@@ -155,3 +155,16 @@ def test_smoke_figure_is_deterministic(tmp_path: Path) -> None:
     data_a = json.loads(first.json.read_text(encoding="utf-8"))["data"]
     data_b = json.loads(second.json.read_text(encoding="utf-8"))["data"]
     assert data_a == data_b
+
+
+def test_rendered_files_are_byte_identical_between_runs(tmp_path: Path) -> None:
+    """Artefakty sa hashowane, wiec zapis musi byc powtarzalny co do bajtu.
+
+    Matplotlib domyslnie wstawia date zapisu i losuje identyfikatory w SVG —
+    obie rzeczy sa wylaczone w `src/viz/style.py` i `save_fig`.
+    """
+    first = run_smoke(Config(), out_dir=tmp_path / "a", index_path=tmp_path / "a" / "INDEX.md")
+    second = run_smoke(Config(), out_dir=tmp_path / "b", index_path=tmp_path / "b" / "INDEX.md")
+
+    assert first.png.read_bytes() == second.png.read_bytes()
+    assert first.svg.read_bytes() == second.svg.read_bytes()

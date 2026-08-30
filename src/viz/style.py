@@ -62,6 +62,10 @@ _RCPARAMS: dict[str, Any] = {
     "legend.frameon": False,
     "image.cmap": SEQUENTIAL_CMAP,
     "svg.fonttype": "none",  # tekst w SVG zostaje tekstem, nie krzywymi
+    # Bez stalej soli matplotlib losuje identyfikatory elementow SVG, wiec dwa
+    # przebiegi tej samej figury daja rozne bajty. Projekt hashuje artefakty,
+    # wiec niedeterministyczny zapis podwazalby sens tych hashy.
+    "svg.hashsalt": "quran-stylometry",
 }
 
 

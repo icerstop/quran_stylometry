@@ -110,8 +110,10 @@ def save_fig(
     svg_path = out_dir / f"{spec.stem}.svg"
     json_path = out_dir / f"{spec.stem}.json"
 
-    fig.savefig(png_path, format="png")
-    fig.savefig(svg_path, format="svg")
+    # Metadane z data zapisu sprawialyby, ze ten sam wykres ma za kazdym razem
+    # inne bajty. Data przebiegu i tak jest w JSON-ie obok, razem z git_sha.
+    fig.savefig(png_path, format="png", metadata={"Software": None})
+    fig.savefig(svg_path, format="svg", metadata={"Date": None})
     if close:
         import matplotlib.pyplot as plt
 
