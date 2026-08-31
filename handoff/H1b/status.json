@@ -7,5 +7,10 @@
   "slurm_time": "03:00:00",
   "submitted": true,
   "jobid": 1066299,
+  "completed": true,
+  "n_pairs": 965,
+  "n_files_this_run": 878,
+  "n_tokens_this_run": 16616432,
+  "tokens_per_sec": 3456.67,
   "task": "T-015"
 }
