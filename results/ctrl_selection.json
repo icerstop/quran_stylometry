@@ -1,0 +1,55 @@
+{
+  "authors_ok": true,
+  "blocked": false,
+  "coverage_counts": {
+    "hadith_collection": 42,
+    "maqamat_saj": 4,
+    "poetry_diwan": 18,
+    "prayer_sermon": 2
+  },
+  "download": null,
+  "exception_counts": {
+    "maqamat_saj": 3,
+    "poetry_diwan": 7
+  },
+  "genre_counts": {
+    "adab_prose": 12,
+    "biography": 12,
+    "fiqh": 12,
+    "hadith_collection": 13,
+    "history": 12,
+    "maqamat_saj": 4,
+    "other": 13,
+    "poetry_diwan": 12,
+    "tafsir": 12,
+    "theology": 4
+  },
+  "genre_source_counts": {
+    "other": 1655,
+    "tag": 1966,
+    "title": 445
+  },
+  "hard_minima": {
+    "hadith_collection": 2,
+    "maqamat_saj": 3,
+    "poetry_diwan": 5,
+    "prayer_sermon": 2
+  },
+  "manifest": "C:/Users/Kubol/Desktop/vibe_coding/quran_stylometry/data/interim/ctrl_manifest.csv",
+  "minima_ok": true,
+  "n_after_exclude": 4066,
+  "n_after_quality": 4094,
+  "n_authors": 106,
+  "n_books_selected": 965,
+  "n_candidate_pool": 5075,
+  "n_metadata": 14107,
+  "n_single_work_exception": 10,
+  "notes": [
+    "prog 30000 wystarczyl (562 eligible, 104 po cap)"
+  ],
+  "other_share": 0.12264150943396226,
+  "other_share_below_soft_target": true,
+  "other_share_soft_target": 0.5,
+  "relaxed_to_20000": false,
+  "token_threshold_used": 30000
+}

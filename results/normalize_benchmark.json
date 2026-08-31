@@ -1,0 +1,27 @@
+{
+  "light": {
+    "elapsed_sec": 1189.43,
+    "n_bytes": 2034897481,
+    "n_empty_after": 13724932,
+    "n_files": 965,
+    "n_tokens_after": 220496488,
+    "n_tokens_before": 220496488,
+    "profile": "light",
+    "token_count_preserved": true,
+    "under_5_min": false
+  },
+  "markdown_probe": "results/t013_markdown_probe.json",
+  "markdown_step0_required": true,
+  "quran_input": "imlaai_token (EQTB) — ten sam normalize(); nie uruchamiane tu przed FREEZE",
+  "strict": {
+    "elapsed_sec": 1322.74,
+    "n_bytes": 2034897481,
+    "n_empty_after": 13724932,
+    "n_files": 965,
+    "n_tokens_after": 220496488,
+    "n_tokens_before": 220496488,
+    "profile": "strict",
+    "token_count_preserved": true,
+    "under_5_min": false
+  }
+}

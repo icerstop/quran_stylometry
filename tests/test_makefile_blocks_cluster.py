@@ -55,6 +55,7 @@ def test_all_documented_targets_exist(makefile: str) -> None:
         "setup",
         "data",
         "normalize",
+        "cap-ctrl",
         "tag",
         "clean-quotes",
         "segment",
@@ -93,11 +94,13 @@ def test_camel_data_is_wired_into_the_makefile(makefile: str) -> None:
 
 
 def test_cli_exposes_every_cluster_task(makefile: str) -> None:
-    """Gdyby ktos wywolal CLI z pominieciem Make, komunikat ma byc taki sam."""
+    """Gdyby ktos wywolal CLI z pominieciem Make, parser musi znac komende."""
     parser = build_parser()
     for task in CLUSTER_TASKS:
-        assert task in PENDING_STAGES
         assert parser.parse_args([task]).command == task
+    assert "tag-ctrl" not in PENDING_STAGES
+    for task in ("variance-array", "av-train", "embed"):
+        assert task in PENDING_STAGES
 
 
 def test_env_local_defaults_to_laptop_when_absent(tmp_path: Path) -> None:

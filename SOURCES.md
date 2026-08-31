@@ -132,3 +132,90 @@ powtarzana w zrodlach trzeciorzednych jest niedokladnym/zaokraglonym cytatem —
 nie zgadza sie z wlasnym, autorytatywnym wyjsciem modelu danych QAC. `n_tokens`
 EQTB = 77429 jest wiec **dokladnym**, a nie tylko "w tolerancji", odpowiednikiem
 referencji QAC. `DEVIATIONS.md` D-06 zaktualizowany o ten wynik.
+
+---
+
+## 5. T-014: kubelek ADV (gold T/LOC) — N i diagnostyka bledu
+
+Ewaluacja: `results/tagger_eval.json` (`per_pos_coarse`), n=77429 slow
+ortograficznych, CAMeL MLE + calima-msa-r13 vs EQTB gold. Mapowanie:
+`data/reference/eqtb_camel_pos_map.csv` (`adv` → EQTB `T`, coarse ADV;
+CAMeL nie rozdziela T vs LOC).
+
+### N per kubelek coarse (nie udział)
+
+| kubelek | N (gold) | correct | accuracy |
+|---------|----------|---------|----------|
+| NOUN    | 29046    | 24630   | 0.848    |
+| VERB    | 19356    | 16256   | 0.840    |
+| PART    | 8439     | 2984    | 0.354    |
+| PREP    | 7678     | 7517    | 0.979    |
+| PRON    | 7675     | 4874    | 0.635    |
+| ADJ     | 1952     | 470     | 0.241    |
+| ADV     | 1843     | 13      | 0.007    |
+| CONJ    | 1440     | 1007    | 0.699    |
+
+ADV = **1843** (T=1171, LOC=672; `results/tagger_adv_diagnosis.json`),
+czyli 2,4% korpusu — **nie** kategoria z 20 wystąpieniami. 13 trafien
+(acc 0.007) przy N tej wielkości wymaga diagnozy, nie odrzucenia jako szum.
+
+Fine POS / partykuły (PART N=8439, acc 0.354) to osobny, juz opisany
+rozjazd ziarnistosci: EQTB ma 20+ tagow partykul (`ACC`…`VOC`), CALIMA
+sklada je do `part_*` / ogolnego `part` (`eqtb_camel_pos_map.csv`,
+`mapped=false` dla gołego `part`). ADV **nie** wpisuje sie w ten sam
+wzorzec: CAMeL **ma** tag `adv` (13 wystapien `adv` na gold ADV; 2
+`adv_interrog` schodza do PART po mapie, nie do ADV).
+
+### Co CAMeL przewiduje na 1843 gold ADV
+
+Z `results/tagger_adv_diagnosis.json` → `pred_coarse_on_gold_adv`
+(ponowne otagowanie 1457 wersetow z co najmniej jednym T/LOC, alignment
+powierzchni jak w T-014):
+
+- NOUN 832 (0.45) — raw: `noun` 734, `noun_prop` 98
+- CONJ 774 (0.42) — raw: `conj` 774
+- PREP 136 (0.07)
+- VERB 43, PRON 27, ADJ 16, ADV 13, PART 2
+
+Dwie rodziny pokrywaja 87% przypadkow. To nie jest rozproszony blad taggera.
+
+### Konkretne lokalizacje (seed `t014_adv_errors`, n=12)
+
+Rodzina CONJ — EQTB T (okolicznik czasu), CAMeL `conj`:
+
+- `26:80:1` surface `واذا`, gold T / lemma `اذا`, pred CONJ/`conj`
+- `29:16:2` surface `اذ`, gold T / lemma `اذ`, pred CONJ/`conj`
+- `46:29:9` surface `فلما`, gold T / lemma `لما`, pred CONJ/`conj`
+- `62:9:4` surface `اذا`, gold T / lemma `اذا`, pred CONJ/`conj`
+
+Rodzina NOUN — EQTB T/LOC, CAMeL `noun` / `noun_prop`:
+
+- `20:64:8` surface `اليوم`, gold T / lemma `يوم`, pred NOUN/`noun`
+- `3:167:20` i `75:13:3` surface `يوميذ`, gold T / lemma `يوميذ`,
+  pred NOUN/`noun_prop` (własna nazwa)
+- `8:55:4` surface `عند`, gold LOC / lemma `عند`, pred NOUN/`noun`
+- `58:13:4` surface `بين`, gold LOC / lemma `بين`, pred NOUN/`noun`
+
+Rodzina PREP — EQTB LOC, CAMeL `prep` (schemat, nie pomyłka powierzchni):
+
+- `25:27:9` i `28:88:3` surface `مع`, gold LOC / lemma `مع`, pred PREP/`prep`
+
+Pozostaly szum taggera (nie schemat): `7:134:20` surface `معك`, gold LOC
+/ lemma `مع`, pred VERB/`verb` (zla analiza morfemowa مع+ك).
+
+### Wniosek
+
+N(ADV) jest duze. Acc 0.007 **nie** oznacza, ze tagger „nie umie przyslowkow"
+w sensie braku kategorii: `adv` istnieje i mapuje sie 1:1 na EQTB `T`
+(`eqtb_camel_pos_map.csv` wiersz `adv,T,ADV,true`). Klasa zamknieta
+koranicznych T/LOC (`إذ`/`إذا`/`لما`, `يوم`/`يومئذ`, `عند`/`بين`/`مع`)
+siedzi w CAMeL MSA w `conj` / `noun` / `prep` — to **ziarnistosc i schemat
+tagsetu** (QAC/EQTB vs CALIMA), analogiczna w duchu do 20+ partykul, tylko
+na innej osi (T vs CONJ, LOC vs N/P), nie do naprawienia zmiana
+disambiguatora MLE→BERT. BERT moze zmienic ogon VERB/noun_prop
+(`معك`, `يوميذ`); nie zmieni konwencji `إذا`=conj.
+
+Accuracy coarse 0.746 z T-014 zostaje; kubelek ADV nie jest uzywany jako
+osobna cecha przed FREEZE. Raportowac jako ograniczenie tagsetu, nie jako
+porazke taggera na rzadkiej klasie.
+

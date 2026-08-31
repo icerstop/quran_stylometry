@@ -27,7 +27,7 @@ corpus:
   min_authors: 60
   min_tokens_per_author: 30000
   min_works_per_author: 2
-  max_tokens_per_author: null
+  max_tokens_per_author: 200000   # 09_DECISIONS.md §3, sesja T-013→T-014
   death_date_max_ah: 900
   near_period_max_ah: 500     # <=500 AH => warstwa `near-period`
 

@@ -76,7 +76,7 @@ class CorpusCfg(_Frozen):
     min_authors: int = 60
     min_tokens_per_author: int = 30000
     min_works_per_author: int = 2
-    max_tokens_per_author: int | None = None
+    max_tokens_per_author: int | None = 200000
     death_date_max_ah: int = 900
     near_period_max_ah: int = 500
 

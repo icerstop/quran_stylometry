@@ -1,0 +1,4367 @@
+{
+  "gal_tags_n_ge_20": {
+    "GAL@0750-1000CE": {
+      "evidence_sample": [
+        "Kitab Sulaym",
+        "Ahadith Yazid",
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Ahadith Min Maghazi"
+      ],
+      "n": 1251
+    },
+    "GAL@1000-1258CE": {
+      "evidence_sample": [
+        "Qasidat Cunwan Hukm",
+        "Qasidat Cunwan Hukm",
+        "Tārīḫ al-ʿulamāʾ wa-al-ruwāŧ li-l-ʿilm bi-al-Andalus",
+        "Tārīḫ al-ʿulamāʾ wa-al-ruwāŧ li-l-ʿilm bi-al-Andalus",
+        "Hujjat Qiraat"
+      ],
+      "n": 1299
+    },
+    "GAL@1258-1517CE": {
+      "evidence_sample": [
+        "Murshid Zuwwar",
+        "Maqamat",
+        "Maqamat",
+        "Arbacuna Hadithan Tusaciyat Isnad",
+        "Ihkam Ahkam Sharh Cumdat Ahkam"
+      ],
+      "n": 1086
+    },
+    "GAL@1518-1798CE": {
+      "evidence_sample": [
+        "Nisab Ihtisab",
+        "Nisab Ihtisab",
+        "Nafahat Nasamat",
+        "Muqaddima Hadramiyya",
+        "Muqaddima Hadramiyya"
+      ],
+      "n": 421
+    },
+    "GAL@1799-1882CE": {
+      "evidence_sample": [
+        "Falaka",
+        "Mashariq Shumus",
+        "Jamic Ruwat",
+        "Kashf Litham",
+        "Kashf Litham"
+      ],
+      "n": 171
+    },
+    "GAL@adab": {
+      "evidence_sample": [
+        "Buġyaŧ al-wuʿāŧ fī ṭabaqāt al-luġawiyyīn wa-l-nuḥāŧ :: Buġyaŧ al-wuʿāŧ fī ṭabaqāt al-luġaw",
+        "Buġyaŧ al-wuʿāŧ fī ṭabaqāt al-luġawiyyīn wa-l-nuḥāŧ :: Buġyaŧ al-wuʿāŧ fī ṭabaqāt al-luġaw",
+        "Buġyaŧ al-wuʿāŧ fī ṭabaqāt al-luġawiyyīn wa-l-nuḥāŧ :: Buġyaŧ al-wuʿāŧ fī ṭabaqāt al-luġaw",
+        "Dhayl Tabaqat Huffaz",
+        "Dhayl Tabaqat Huffaz"
+      ],
+      "n": 21
+    },
+    "GAL@africa-north": {
+      "evidence_sample": [
+        "Sīraŧ ʿUmar b. ʿAbd al-ʿAzīz ʿalá mā rawāhu al-imām Mālik b. Anas wa-aṣḥābuhu :: Sīraŧ ʿUm",
+        "Sīraŧ ʿUmar b. ʿAbd al-ʿAzīz ʿalá mā rawāhu al-imām Mālik b. Anas wa-aṣḥābuhu :: Sīraŧ ʿUm",
+        "Tabaqat Culama",
+        "Tārīḫ Ibn Yūnus al-Ṣadafī",
+        "Tārīḫ Ibn Yūnus al-Ṣadafī"
+      ],
+      "n": 72
+    },
+    "GAL@almohads": {
+      "evidence_sample": [
+        "Akhlaq Wa Siyar",
+        "Akhlaq Wa Siyar",
+        "Akhlaq Wa Siyar",
+        "Faṣl fī maʿrifaŧ al-nafs bi-ġayrihā wa ǧahlihā bi-ḏātihā",
+        "Fisal Fi Milal"
+      ],
+      "n": 37
+    },
+    "GAL@anatolia": {
+      "evidence_sample": [
+        "Risala Fi Tahqiq Macna",
+        "Talwin Khitab",
+        "Rawd Akhyar",
+        "Nicmat Dharica",
+        "Nicmat Dharica"
+      ],
+      "n": 20
+    },
+    "GAL@arabia": {
+      "evidence_sample": [
+        "Mudahat Amthal",
+        "Mudahat Amthal",
+        "Amali",
+        "Amali",
+        "Amali"
+      ],
+      "n": 295
+    },
+    "GAL@arabia-north": {
+      "evidence_sample": [
+        "Lahz Alhaz",
+        "Lahz Alhaz",
+        "Lahz Alhaz",
+        "Bahjat Mahafil",
+        "Bahjat Mahafil"
+      ],
+      "n": 110
+    },
+    "GAL@arabia-south": {
+      "evidence_sample": [
+        "Mudahat Amthal",
+        "Mudahat Amthal",
+        "Hur Cin",
+        "Hur Cin",
+        "Khulasat Siyar"
+      ],
+      "n": 76
+    },
+    "GAL@baghdad": {
+      "evidence_sample": [
+        "Badic",
+        "Badic",
+        "Diwan",
+        "Diwan",
+        "Tabaqat Shucara"
+      ],
+      "n": 122
+    },
+    "GAL@baghdad-school": {
+      "evidence_sample": [
+        "Tashbihat",
+        "Tashbihat",
+        "Muwashsha",
+        "Muwashsha",
+        "Hujja Fi Qiraat Sabca"
+      ],
+      "n": 50
+    },
+    "GAL@bahrayn": {
+      "evidence_sample": [
+        "Majmac Damanat",
+        "Majmac Damanat",
+        "Majmac Damanat",
+        "Majmac Bahrayn",
+        "Tafsir Gharib Quran"
+      ],
+      "n": 22
+    },
+    "GAL@basra": {
+      "evidence_sample": [
+        "Ishtiqaq",
+        "Ishtiqaq",
+        "Ishtiqaq",
+        "Jamharat Lugha",
+        "Jamharat Lugha"
+      ],
+      "n": 35
+    },
+    "GAL@basra-school": {
+      "evidence_sample": [
+        "Ishtiqaq",
+        "Ishtiqaq",
+        "Ishtiqaq",
+        "Jamharat Lugha",
+        "Jamharat Lugha"
+      ],
+      "n": 33
+    },
+    "GAL@biography": {
+      "evidence_sample": [
+        "Barq Shami",
+        "Barq Shami",
+        "Diwan",
+        "Diwan",
+        "Adhkiya"
+      ],
+      "n": 83
+    },
+    "GAL@biography-collective": {
+      "evidence_sample": [
+        "Barq Shami",
+        "Barq Shami",
+        "Diwan",
+        "Diwan",
+        "Adhkiya"
+      ],
+      "n": 83
+    },
+    "GAL@biography-individuals": {
+      "evidence_sample": [
+        "Barq Shami",
+        "Barq Shami",
+        "Diwan",
+        "Diwan",
+        "Wafa Bi Ahwal Mustafa"
+      ],
+      "n": 26
+    },
+    "GAL@cilm-rijal": {
+      "evidence_sample": [
+        "Arbacuna Hadithan Tusaciyat Isnad",
+        "Ihkam Ahkam Sharh Cumdat Ahkam",
+        "Ihkam Ahkam Sharh Cumdat Ahkam",
+        "Ihkam Ahkam Sharh Cumdat Ahkam",
+        "Iqtirah"
+      ],
+      "n": 114
+    },
+    "GAL@dogmatics": {
+      "evidence_sample": [
+        "Nuskhat Wakic",
+        "Nuskhat Wakic",
+        "Nuskhat Wakic",
+        "Hida",
+        "Hida"
+      ],
+      "n": 160
+    },
+    "GAL@edification": {
+      "evidence_sample": [
+        "Hathth Cala Tijara",
+        "Hathth Cala Tijara",
+        "Nuzhat Nazir",
+        "Thawab Qada",
+        "Thawab Qada"
+      ],
+      "n": 24
+    },
+    "GAL@education-general": {
+      "evidence_sample": [
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "al-Adab al-ṣaġīr",
+        "al-Adab al-ṣaġīr",
+        "Amil Wa Mamul"
+      ],
+      "n": 130
+    },
+    "GAL@egypt": {
+      "evidence_sample": [
+        "Sīraŧ ʿUmar b. ʿAbd al-ʿAzīz ʿalá mā rawāhu al-imām Mālik b. Anas wa-aṣḥābuhu :: Sīraŧ ʿUm",
+        "Sīraŧ ʿUmar b. ʿAbd al-ʿAzīz ʿalá mā rawāhu al-imām Mālik b. Anas wa-aṣḥābuhu :: Sīraŧ ʿUm",
+        "Ciyar Shicr",
+        "Ciyar Shicr",
+        "Tabaqat Culama"
+      ],
+      "n": 1083
+    },
+    "GAL@encyclopaedias": {
+      "evidence_sample": [
+        "Birr Wa Sila",
+        "Birr Wa Sila",
+        "Mafatih Culum",
+        "Mafatih Culum",
+        "Aḫlāq al-wazīrayn :: Maṯālib al-wazīrayn :: Aḫlāq al-¶    Ṣāḥib Ibn ʿAbbād wa-Ibn al-ʿAmīd"
+      ],
+      "n": 321
+    },
+    "GAL@ethics": {
+      "evidence_sample": [
+        "Akhlaq Wa Siyar",
+        "Akhlaq Wa Siyar",
+        "Akhlaq Wa Siyar",
+        "Faṣl fī maʿrifaŧ al-nafs bi-ġayrihā wa ǧahlihā bi-ḏātihā",
+        "Risālaŧ fī ʾalam al-mawt wa ʾibṭālihi"
+      ],
+      "n": 23
+    },
+    "GAL@fiqh": {
+      "evidence_sample": [
+        "Kitab Sulaym",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Akbar",
+        "al-Fiqh al-Akbar"
+      ],
+      "n": 1006
+    },
+    "GAL@geographies": {
+      "evidence_sample": [
+        "Kitāb al-Buldān :: Kitāb Asmāʾ al-buldān",
+        "Kitāb al-Buldān :: Kitāb Asmāʾ al-buldān",
+        "Kitāb al-Buldān :: Kitāb Asmāʾ al-buldān",
+        "Kitāb al-Buldān :: Kitāb Asmāʾ al-buldān",
+        "Kitāb al-Taʾrīḫ :: Tārīḫ al-Yaʿqūbī"
+      ],
+      "n": 57
+    },
+    "GAL@hadith": {
+      "evidence_sample": [
+        "Ahadith Yazid",
+        "Juz",
+        "Juz",
+        "Jamic",
+        "Jamic"
+      ],
+      "n": 887
+    },
+    "GAL@hadith-sciences": {
+      "evidence_sample": [
+        "Arbacuna Hadithan Tusaciyat Isnad",
+        "Ihkam Ahkam Sharh Cumdat Ahkam",
+        "Ihkam Ahkam Sharh Cumdat Ahkam",
+        "Ihkam Ahkam Sharh Cumdat Ahkam",
+        "Iqtirah"
+      ],
+      "n": 114
+    },
+    "GAL@hanafis": {
+      "evidence_sample": [
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Akbar",
+        "al-Fiqh al-Akbar",
+        "Musnad"
+      ],
+      "n": 117
+    },
+    "GAL@hanbalis": {
+      "evidence_sample": [
+        "al-Aḥkām al-sulṭāniyyaŧ",
+        "Ibtal Tawilat",
+        "Ikhtilaf Aimma",
+        "Ikhtilaf Aimma",
+        "Cumdat Fiqh"
+      ],
+      "n": 303
+    },
+    "GAL@historiography": {
+      "evidence_sample": [
+        "Ahadith Min Maghazi",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq"
+      ],
+      "n": 617
+    },
+    "GAL@history": {
+      "evidence_sample": [
+        "Ahadith Min Maghazi",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq"
+      ],
+      "n": 646
+    },
+    "GAL@history-caliphs": {
+      "evidence_sample": [
+        "Hawamil Wa Shawamil",
+        "Hawamil Wa Shawamil",
+        "Hawamil Wa Shawamil",
+        "Tahdhib Akhlaq",
+        "Tahdhib Akhlaq"
+      ],
+      "n": 32
+    },
+    "GAL@history-cultural": {
+      "evidence_sample": [
+        "Man Ismuh Camr",
+        "Man Ismuh Camr",
+        "Waraqa",
+        "Waraqa",
+        "Aghani"
+      ],
+      "n": 21
+    },
+    "GAL@history-imperial": {
+      "evidence_sample": [
+        "Akhbar Wafidat",
+        "Akhbar Wafidat",
+        "Akhbar Wafidin",
+        "Akhbar Wafidin",
+        "Musnad"
+      ],
+      "n": 58
+    },
+    "GAL@history-individuals": {
+      "evidence_sample": [
+        "Ictiqad Ibn Hanbal",
+        "Ictiqad Ibn Hanbal",
+        "Rusum Dar Khilafa",
+        "Rusum Dar Khilafa",
+        "Tuhfat Umara"
+      ],
+      "n": 34
+    },
+    "GAL@history-literary": {
+      "evidence_sample": [
+        "Man Ismuh Camr",
+        "Man Ismuh Camr",
+        "Waraqa",
+        "Waraqa",
+        "Aghani"
+      ],
+      "n": 21
+    },
+    "GAL@history-local": {
+      "evidence_sample": [
+        "Tārīḫ al-ʿulamāʾ wa-al-ruwāŧ li-l-ʿilm bi-al-Andalus",
+        "Tārīḫ al-ʿulamāʾ wa-al-ruwāŧ li-l-ʿilm bi-al-Andalus",
+        "Asma Mubhama",
+        "Asma Mubhama",
+        "Bukhala"
+      ],
+      "n": 147
+    },
+    "GAL@history-national": {
+      "evidence_sample": [
+        "Muqtafa Min Sirat Mustafa",
+        "Muqtafa Min Sirat Mustafa",
+        "Nasim Saba",
+        "Nasim Saba",
+        "Bayan"
+      ],
+      "n": 27
+    },
+    "GAL@history-universal": {
+      "evidence_sample": [
+        "al-Muḫtaṣar fī aḫbār al-bašar",
+        "al-Muḫtaṣar fī aḫbār al-bašar",
+        "Carsh",
+        "al-ʿIbar fī ḫabar man ġabar",
+        "al-ʿIbar fī ḫabar man ġabar"
+      ],
+      "n": 139
+    },
+    "GAL@history-world": {
+      "evidence_sample": [
+        "Akhbar Wafidat",
+        "Akhbar Wafidat",
+        "Akhbar Wafidin",
+        "Akhbar Wafidin",
+        "Musnad"
+      ],
+      "n": 90
+    },
+    "GAL@homiletics": {
+      "evidence_sample": [
+        "Birr Wa Sila",
+        "Birr Wa Sila",
+        "Akhbar Nisa",
+        "Akhbar Nisa",
+        "Bahr Dumuc"
+      ],
+      "n": 36
+    },
+    "GAL@imamis": {
+      "evidence_sample": [
+        "Kitab Sulaym",
+        "Istighatha",
+        "Cuyun Akhbar Rida",
+        "Cuyun Akhbar Rida",
+        "Cuyun Akhbar Rida"
+      ],
+      "n": 83
+    },
+    "GAL@india": {
+      "evidence_sample": [
+        "Tadhkirat Mawducat",
+        "Tadhkirat Mawducat",
+        "Fath Mucin",
+        "Fath Mucin",
+        "Fath Mucin"
+      ],
+      "n": 60
+    },
+    "GAL@iran": {
+      "evidence_sample": [
+        "Macani Quran",
+        "Macani Quran",
+        "Macani Quran",
+        "Nasikh Wa Mansukh",
+        "Nasikh Wa Mansukh"
+      ],
+      "n": 113
+    },
+    "GAL@iraq": {
+      "evidence_sample": [
+        "Badic",
+        "Badic",
+        "Diwan",
+        "Diwan",
+        "Tabaqat Shucara"
+      ],
+      "n": 347
+    },
+    "GAL@jazira": {
+      "evidence_sample": [
+        "Amali",
+        "Amali",
+        "Amali",
+        "Adab Khawass",
+        "Adab Khawass"
+      ],
+      "n": 135
+    },
+    "GAL@lesserschools": {
+      "evidence_sample": [
+        "Kharaj",
+        "Kharaj",
+        "al-ʿIlal wa maʿrifaŧ al-riǧāl",
+        "al-ʿIlal wa maʿrifaŧ al-riǧāl",
+        "al-ʿIlal wa maʿrifaŧ al-riǧāl"
+      ],
+      "n": 60
+    },
+    "GAL@literature-arabic": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 2615
+    },
+    "GAL@literature-islamic": {
+      "evidence_sample": [
+        "Kitab Sulaym",
+        "Ahadith Yazid",
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Ahadith Min Maghazi"
+      ],
+      "n": 4228
+    },
+    "GAL@literature-national": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 65
+    },
+    "GAL@literature-popular": {
+      "evidence_sample": [
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "al-Adab al-ṣaġīr",
+        "al-Adab al-ṣaġīr",
+        "Amil Wa Mamul"
+      ],
+      "n": 140
+    },
+    "GAL@maghrib": {
+      "evidence_sample": [
+        "Jamc Fawaid",
+        "Silat Khalaf",
+        "Muhadarat Fi Lugha",
+        "Muhadarat Fi Lugha",
+        "Zahr Akam"
+      ],
+      "n": 22
+    },
+    "GAL@malikis": {
+      "evidence_sample": [
+        "Mudawwana Kubra",
+        "Mudawwana Kubra",
+        "Mudawwana Kubra",
+        "Talqin Fi Fiqh",
+        "Talqin Fi Fiqh"
+      ],
+      "n": 49
+    },
+    "GAL@medicine": {
+      "evidence_sample": [
+        "Firdaws Hikma Fi Tibb",
+        "Hawi Fi Tibb",
+        "Hawi Fi Tibb",
+        "Aghdhiya Wa Adwiya",
+        "Ghayat Maqsud"
+      ],
+      "n": 20
+    },
+    "GAL@mysticism": {
+      "evidence_sample": [
+        "Adab Nufus",
+        "Adab Nufus",
+        "Māʾiyyaŧ al-ʿaql wa-maʿnāhu wa-iḫtilāf al-nās fīhi :: Māhiyyaŧ al-ʿaql wa-maʿnāhu wa-iḫtil",
+        "Māʾiyyaŧ al-ʿaql wa-maʿnāhu wa-iḫtilāf al-nās fīhi :: Māhiyyaŧ al-ʿaql wa-maʿnāhu wa-iḫtil",
+        "Makasib"
+      ],
+      "n": 134
+    },
+    "GAL@nodata": {
+      "evidence_sample": [
+        "Diwan",
+        "Gharib Quran",
+        "Gharib Quran",
+        "Tafsir",
+        "Tafsir"
+      ],
+      "n": 2584
+    },
+    "GAL@paraenetics": {
+      "evidence_sample": [
+        "Akhbar Nisa",
+        "Akhbar Nisa",
+        "Bahr Dumuc",
+        "Birr Wa Sila",
+        "Birr Walidayn"
+      ],
+      "n": 34
+    },
+    "GAL@period-classical": {
+      "evidence_sample": [
+        "Kitab Sulaym",
+        "Ahadith Yazid",
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Ahadith Min Maghazi"
+      ],
+      "n": 1251
+    },
+    "GAL@period-decline": {
+      "evidence_sample": [
+        "Murshid Zuwwar",
+        "Nisab Ihtisab",
+        "Nisab Ihtisab",
+        "Maqamat",
+        "Maqamat"
+      ],
+      "n": 1678
+    },
+    "GAL@period-mamluk": {
+      "evidence_sample": [
+        "Murshid Zuwwar",
+        "Maqamat",
+        "Maqamat",
+        "Arbacuna Hadithan Tusaciyat Isnad",
+        "Ihkam Ahkam Sharh Cumdat Ahkam"
+      ],
+      "n": 1086
+    },
+    "GAL@period-ottoman": {
+      "evidence_sample": [
+        "Nisab Ihtisab",
+        "Nisab Ihtisab",
+        "Nafahat Nasamat",
+        "Falaka",
+        "Muqaddima Hadramiyya"
+      ],
+      "n": 592
+    },
+    "GAL@period-postclassical": {
+      "evidence_sample": [
+        "Qasidat Cunwan Hukm",
+        "Qasidat Cunwan Hukm",
+        "Tārīḫ al-ʿulamāʾ wa-al-ruwāŧ li-l-ʿilm bi-al-Andalus",
+        "Tārīḫ al-ʿulamāʾ wa-al-ruwāŧ li-l-ʿilm bi-al-Andalus",
+        "Hujjat Qiraat"
+      ],
+      "n": 1299
+    },
+    "GAL@period-postmongol": {
+      "evidence_sample": [
+        "Murshid Zuwwar",
+        "Maqamat",
+        "Maqamat",
+        "Arbacuna Hadithan Tusaciyat Isnad",
+        "Ihkam Ahkam Sharh Cumdat Ahkam"
+      ],
+      "n": 1086
+    },
+    "GAL@period-premuhammad": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 24
+    },
+    "GAL@persia": {
+      "evidence_sample": [
+        "Macani Quran",
+        "Macani Quran",
+        "Macani Quran",
+        "Nasikh Wa Mansukh",
+        "Nasikh Wa Mansukh"
+      ],
+      "n": 249
+    },
+    "GAL@persia-neighbors": {
+      "evidence_sample": [
+        "Macani Quran",
+        "Macani Quran",
+        "Macani Quran",
+        "Nasikh Wa Mansukh",
+        "Nasikh Wa Mansukh"
+      ],
+      "n": 107
+    },
+    "GAL@philology": {
+      "evidence_sample": [
+        "Amthal Carab",
+        "Amthal Carab",
+        "Amthal Carab",
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw"
+      ],
+      "n": 502
+    },
+    "GAL@philosophy": {
+      "evidence_sample": [
+        "Alfaz Mustacmala Fi Mantiq",
+        "Alfaz Mustacmala Fi Mantiq",
+        "Siyasa",
+        "Siyasa",
+        "al-Manṭiq"
+      ],
+      "n": 49
+    },
+    "GAL@poetry": {
+      "evidence_sample": [
+        "Mufaddaliyyat",
+        "Mufaddaliyyat",
+        "Jamharat Ashcar Carab",
+        "Jamharat Ashcar Carab",
+        "Diwan"
+      ],
+      "n": 125
+    },
+    "GAL@polemics": {
+      "evidence_sample": [
+        "Fisal Fi Milal",
+        "Fisal Fi Milal",
+        "Fisal Fi Milal",
+        "Hajjat Widac",
+        "Hajjat Widac"
+      ],
+      "n": 30
+    },
+    "GAL@politics": {
+      "evidence_sample": [
+        "Cuthmaniyya",
+        "Cuthmaniyya",
+        "Cuthmaniyya",
+        "al-Manṭiq",
+        "al-Manṭiq"
+      ],
+      "n": 39
+    },
+    "GAL@polyhistors": {
+      "evidence_sample": [
+        "Birr Wa Sila",
+        "Birr Wa Sila",
+        "Adhkiya",
+        "Adhkiya",
+        "Akhbar Nisa"
+      ],
+      "n": 302
+    },
+    "GAL@prose": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr"
+      ],
+      "n": 151
+    },
+    "GAL@prose-rhymed": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Maqamat",
+        "Maqamat",
+        "Maqamat"
+      ],
+      "n": 23
+    },
+    "GAL@quran": {
+      "evidence_sample": [
+        "al-Qurān :: al-Muṣḥaf",
+        "al-Qurān :: al-Muṣḥaf",
+        "al-Qurān :: al-Muṣḥaf",
+        "Tafsir Muqatil",
+        "Tafsir Muqatil"
+      ],
+      "n": 197
+    },
+    "GAL@quran-recitation": {
+      "evidence_sample": [
+        "Sabca Fi Qiraat",
+        "Sabca Fi Qiraat",
+        "Hujja Li Qurra Sabca",
+        "Hujjat Qiraat",
+        "Hujjat Qiraat"
+      ],
+      "n": 29
+    },
+    "GAL@quran-sciences": {
+      "evidence_sample": [
+        "Tafsir Muqatil",
+        "Tafsir Muqatil",
+        "Tafsir Muqatil",
+        "Tafsir Muqatil",
+        "Tafsir Muqatil"
+      ],
+      "n": 204
+    },
+    "GAL@quran-tafsir": {
+      "evidence_sample": [
+        "Tafsir",
+        "Tafsir",
+        "Ahkam Quran",
+        "Ahkam Quran",
+        "Ahkam Quran"
+      ],
+      "n": 70
+    },
+    "GAL@rum": {
+      "evidence_sample": [
+        "Misbah Uns",
+        "Ramuz Cala Sihah",
+        "Ramuz Cala Sihah",
+        "Durar Hukkam",
+        "Durar Hukkam"
+      ],
+      "n": 27
+    },
+    "GAL@sciences-hadith": {
+      "evidence_sample": [
+        "Alfiyyaŧ fī ʿilm al-ḥadīṯ",
+        "Amr Bi Ittibac",
+        "Arbacuna Min Riwayat Malik Can Nafic",
+        "Asma Mudallisin",
+        "Asma Mudallisin"
+      ],
+      "n": 70
+    },
+    "GAL@shafiis": {
+      "evidence_sample": [
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Jimac Cilm"
+      ],
+      "n": 250
+    },
+    "GAL@shia": {
+      "evidence_sample": [
+        "Kitab Sulaym",
+        "Taṯbīt imāmaŧ ʿAlī :: Taṯbīt imāmaŧ amīr al-muʾminīn ʿAlī b. Abī Ṭālib",
+        "Taṯbīt imāmaŧ ʿAlī :: Taṯbīt imāmaŧ amīr al-muʾminīn ʿAlī b. Abī Ṭālib",
+        "Taṯbīt imāmaŧ ʿAlī :: Taṯbīt imāmaŧ amīr al-muʾminīn ʿAlī b. Abī Ṭālib",
+        "Taṯbīt imāmaŧ ʿAlī :: Taṯbīt imāmaŧ amīr al-muʾminīn ʿAlī b. Abī Ṭālib"
+      ],
+      "n": 201
+    },
+    "GAL@spain": {
+      "evidence_sample": [
+        "Mudahat Amthal",
+        "Mudahat Amthal",
+        "Tārīḫ al-ʿulamāʾ wa-al-ruwāŧ li-l-ʿilm bi-al-Andalus",
+        "Tārīḫ al-ʿulamāʾ wa-al-ruwāŧ li-l-ʿilm bi-al-Andalus",
+        "Tawabic Wa Zawabic"
+      ],
+      "n": 164
+    },
+    "GAL@sufism": {
+      "evidence_sample": [
+        "Adab Nufus",
+        "Adab Nufus",
+        "Māʾiyyaŧ al-ʿaql wa-maʿnāhu wa-iḫtilāf al-nās fīhi :: Māhiyyaŧ al-ʿaql wa-maʿnāhu wa-iḫtil",
+        "Māʾiyyaŧ al-ʿaql wa-maʿnāhu wa-iḫtilāf al-nās fīhi :: Māhiyyaŧ al-ʿaql wa-maʿnāhu wa-iḫtil",
+        "Makasib"
+      ],
+      "n": 142
+    },
+    "GAL@syria": {
+      "evidence_sample": [
+        "Amali",
+        "Amali",
+        "Amali",
+        "Adab Khawass",
+        "Adab Khawass"
+      ],
+      "n": 1180
+    },
+    "GAL@theology": {
+      "evidence_sample": [
+        "Cuthmaniyya",
+        "Cuthmaniyya",
+        "Cuthmaniyya",
+        "al-Manṭiq",
+        "al-Manṭiq"
+      ],
+      "n": 97
+    },
+    "GAL@travelogues": {
+      "evidence_sample": [
+        "Jamahir",
+        "Jamahir",
+        "Tahqiq Ma Lil Hind",
+        "Tahqiq Ma Lil Hind",
+        "Tahqiq Ma Lil Hind"
+      ],
+      "n": 52
+    },
+    "GAL@turan": {
+      "evidence_sample": [
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir"
+      ],
+      "n": 67
+    },
+    "GAL@wahhabis": {
+      "evidence_sample": [
+        "Caqidat Firqa Najiya",
+        "Caqidat Firqa Najiya",
+        "Fadl Islam",
+        "Fadl Islam",
+        "Kabair"
+      ],
+      "n": 33
+    },
+    "GAL@zahiris": {
+      "evidence_sample": [
+        "Akhlaq Wa Siyar",
+        "Akhlaq Wa Siyar",
+        "Akhlaq Wa Siyar",
+        "Faṣl fī maʿrifaŧ al-nafs bi-ġayrihā wa ǧahlihā bi-ḏātihā",
+        "Fisal Fi Milal"
+      ],
+      "n": 37
+    }
+  },
+  "n_unique_tags": 1399,
+  "plain_tags_n_ge_30": {
+    "(": {
+      "evidence_sample": [
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "Mafatih Culum"
+      ],
+      "n": 81
+    },
+    ")": {
+      "evidence_sample": [
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "Mafatih Culum"
+      ],
+      "n": 81
+    },
+    "::": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 136801
+    },
+    "BIB": {
+      "evidence_sample": [
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "Marātib al-ʿulūm"
+      ],
+      "n": 37
+    },
+    "BIO": {
+      "evidence_sample": [
+        "kitāb al-ḍuʿafāʾ al-ṣaġīr",
+        "kitāb al-ḍuʿafāʾ al-ṣaġīr",
+        "kitāb al-ḍuʿafāʾ al-ṣaġīr",
+        "Tarikh Wafat Shuyukh",
+        "Tabaqat Culama"
+      ],
+      "n": 140
+    },
+    "CENT0200": {
+      "evidence_sample": [
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir"
+      ],
+      "n": 138
+    },
+    "CENT0300": {
+      "evidence_sample": [
+        "Musnad Rida",
+        "Kharaj",
+        "Kharaj",
+        "Musnad",
+        "Musnad"
+      ],
+      "n": 814
+    },
+    "CENT0400": {
+      "evidence_sample": [
+        "Ballaghat Nisa",
+        "Ballaghat Nisa",
+        "Ballaghat Nisa",
+        "Ahkam Cidayn",
+        "Ahkam Cidayn"
+      ],
+      "n": 1027
+    },
+    "CENT0500": {
+      "evidence_sample": [
+        "Fawaid",
+        "Fawaid",
+        "Tibb Aimma",
+        "Mucjam Shuyukh",
+        "Mucjam Shuyukh"
+      ],
+      "n": 885
+    },
+    "CENT0600": {
+      "evidence_sample": [
+        "Akhbar Wa Hikayat",
+        "Akhbar Wa Hikayat",
+        "Amthal Hadith",
+        "Amthal Hadith",
+        "Amthal Hadith"
+      ],
+      "n": 629
+    },
+    "CENT0700": {
+      "evidence_sample": [
+        "Tadhkira Hamduniyya",
+        "Tadhkira Hamduniyya",
+        "Imla Mukhtasar",
+        "Asas Taqdis",
+        "Cismat Anbiya"
+      ],
+      "n": 576
+    },
+    "CENT0800": {
+      "evidence_sample": [
+        "Fawaid Cawali",
+        "Fawaid Cawali",
+        "Diwan Hamasa",
+        "Diwan Hamasa",
+        "Tacbir Ruya"
+      ],
+      "n": 825
+    },
+    "CENT0900": {
+      "evidence_sample": [
+        "Cawali",
+        "Cawali",
+        "Siraj Qari",
+        "Shadha Fayyah",
+        "Shadha Fayyah"
+      ],
+      "n": 410
+    },
+    "CENT1000": {
+      "evidence_sample": [
+        "Sharh Fusul",
+        "Buldaniyyat",
+        "Buldaniyyat",
+        "Buldaniyyat",
+        "Daw Lamic"
+      ],
+      "n": 391
+    },
+    "CENT1100": {
+      "evidence_sample": [
+        "Ghayat Bayan",
+        "Ghayat Bayan",
+        "Hashiyat Ramli",
+        "Nihayat Muhtaj",
+        "Nihayat Muhtaj"
+      ],
+      "n": 205
+    },
+    "CENT1200": {
+      "evidence_sample": [
+        "Sharh Mukhtasar Sayyidi Khalil",
+        "Sharh Mukhtasar Sayyidi Khalil",
+        "Jamic Ruwat",
+        "Muhadarat Fi Lugha",
+        "Muhadarat Fi Lugha"
+      ],
+      "n": 159
+    },
+    "CENT1300": {
+      "evidence_sample": [
+        "Sharh Kabir",
+        "Sharh Kabir",
+        "Hashiya",
+        "Hashiya",
+        "Amali"
+      ],
+      "n": 296
+    },
+    "CENT1400": {
+      "evidence_sample": [
+        "Icrab Quran",
+        "Icrab Quran",
+        "Sharh Cayniyya",
+        "Sharh Kabir",
+        "Sharh Kabir"
+      ],
+      "n": 231
+    },
+    "CENT1500": {
+      "evidence_sample": [
+        "Sunan :: al-Ǧāmiʿ al-ṣaḥīḥ",
+        "Sunan :: al-Ǧāmiʿ al-ṣaḥīḥ",
+        "Sunan :: al-Ǧāmiʿ al-ṣaḥīḥ",
+        "Sunan :: al-Ǧāmiʿ al-ṣaḥīḥ",
+        "Sunan Nabi"
+      ],
+      "n": 61
+    },
+    "CHR": {
+      "evidence_sample": [
+        "Tārīḫ al-Ṭabarī :: Tārīḫ al-rusul wa-l-mulūk",
+        "Tārīḫ al-Ṭabarī :: Tārīḫ al-rusul wa-l-mulūk",
+        "Tārīḫ al-Ṭabarī :: Tārīḫ al-rusul wa-l-mulūk",
+        "Tārīḫ al-Ṭabarī :: Tārīḫ al-rusul wa-l-mulūk",
+        "Tārīḫ al-Ṭabarī :: Tārīḫ al-rusul wa-l-mulūk"
+      ],
+      "n": 34
+    },
+    "COL": {
+      "evidence_sample": [
+        "Tabaqat Culama",
+        "Wulāt Miṣr",
+        "Wulāt Miṣr",
+        "Tārīḫ mūlid al-ʿulamāʾ wa wafayātihim",
+        "Tārīḫ mūlid al-ʿulamāʾ wa wafayātihim"
+      ],
+      "n": 132
+    },
+    "COMPLETED": {
+      "evidence_sample": [
+        "Diwan",
+        "Jamic",
+        "Mufaddaliyyat",
+        "Sharh Afladhinush Li Fusul Abuqrat",
+        "Muwatta"
+      ],
+      "n": 834
+    },
+    "DHB": {
+      "evidence_sample": [
+        "Dalāʾil al-nubuwwaŧ wa maʿrifaŧ aḥwāl ṣāḥib al-šarīʿaŧ",
+        "Dalāʾil al-nubuwwaŧ wa maʿrifaŧ aḥwāl ṣāḥib al-šarīʿaŧ",
+        "Dalāʾil al-nubuwwaŧ wa maʿrifaŧ aḥwāl ṣāḥib al-šarīʿaŧ",
+        "Dalāʾil al-nubuwwaŧ wa maʿrifaŧ aḥwāl ṣāḥib al-šarīʿaŧ",
+        "Tārīḫ Madīnat al-Salām :: Tārīḫ Baġdād"
+      ],
+      "n": 45
+    },
+    "EDITION_NOT_FOUND": {
+      "evidence_sample": [
+        "Fitna",
+        "Fitna",
+        "Fitna",
+        "Tasmiyat Man Ruwiya",
+        "Tasmiyat Man Ruwiya"
+      ],
+      "n": 39
+    },
+    "EDITORIAL_SECTIONS": {
+      "evidence_sample": [
+        "Muwatta",
+        "Futuh Sham",
+        "Amwal",
+        "Tabaqat",
+        "Bayan Wa Tabyin"
+      ],
+      "n": 181
+    },
+    "FOOTNOTES": {
+      "evidence_sample": [
+        "Nasab",
+        "kitāb al-muḥabbar :: al-muḥabbar",
+        "Farq",
+        "Farq",
+        "Kitāb al-Masālik wa-al-mamālik"
+      ],
+      "n": 34
+    },
+    "GEO": {
+      "evidence_sample": [
+        "Diyarat",
+        "Diyarat",
+        "Kitāb al-Masālik wa-al-Mamālik :: al-Kitāb al-ʿAzīzī",
+        "Kitāb al-Masālik wa-al-Mamālik :: al-Kitāb al-ʿAzīzī",
+        "Azmina Wa Amkina"
+      ],
+      "n": 40
+    },
+    "HTML_TAGS": {
+      "evidence_sample": [
+        "Mufaddaliyyat",
+        "Muwatta",
+        "Muwatta",
+        "Muwatta",
+        "al-Ǧāmiʿ al-ṣaġīr"
+      ],
+      "n": 149
+    },
+    "INCOMPLETE_TEXT": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Muwatta Ibn Wahb",
+        "Ḥadīṯ Ibn Šāḏān :: Aǧzāʾ Ibn Šāḏān",
+        "Balagha Wa Ijaz",
+        "Cuthmaniyya"
+      ],
+      "n": 77
+    },
+    "INCOMPLETE_VERSION": {
+      "evidence_sample": [
+        "Tafsir",
+        "Tafsir Gharib Quran",
+        "Tafsir Muqatil",
+        "Sīraŧ  åbn Isḥāq",
+        "Tafsir"
+      ],
+      "n": 111
+    },
+    "MARKDOWN": {
+      "evidence_sample": [
+        "al-Qurān :: al-Muṣḥaf",
+        "al-Qurān :: al-Muṣḥaf",
+        "al-Qurān :: al-Muṣḥaf",
+        "Faḍāʾil Makkaŧ",
+        "Musnad"
+      ],
+      "n": 564
+    },
+    "MISSING_PARTS": {
+      "evidence_sample": [
+        "Muwatta",
+        "ḥaḏf min nasab qurayš :: nasab qurayš",
+        "kitāb al-baġāl",
+        "al-Maḥāsin wa-l-aḍdād",
+        "al-Radd ʿalá al-naṣārá :: Kitāb ʿalá al-naṣārá wa-al-yahūd"
+      ],
+      "n": 117
+    },
+    "NA": {
+      "evidence_sample": [
+        "al-Ansāb",
+        "al-Ansāb",
+        "al-Ansāb",
+        "al-Ansāb",
+        "al-Ansāb"
+      ],
+      "n": 94
+    },
+    "NO_MAJOR_ISSUES": {
+      "evidence_sample": [
+        "al-Qurān :: al-Muṣḥaf",
+        "al-Qurān :: al-Muṣḥaf",
+        "al-Qurān :: al-Muṣḥaf",
+        "Diwan",
+        "Faḍāʾil Makkaŧ"
+      ],
+      "n": 635
+    },
+    "PAGINATION": {
+      "evidence_sample": [
+        "Diwan",
+        "Tafsir",
+        "Tafsir Gharib Quran",
+        "Kalīlaŧ wa-Dimnaŧ",
+        "Tafsir Muqatil"
+      ],
+      "n": 350
+    },
+    "PARATEXT": {
+      "evidence_sample": [
+        "ḥaḏf min nasab qurayš :: nasab qurayš",
+        "Kitāb Sirr al-Asrār :: Kitāb al-Siyāsaŧ fī tadbīr al-riyāsaŧ",
+        "Musnad Rida",
+        "Ansāb al-ḫayl fī al-jāhiliyyaŧ wa-al-islām wa-aḫbārihā :: Ansāb al-ḫayl",
+        "Nasab Macad"
+      ],
+      "n": 75
+    },
+    "PPE": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "ḥaḏf min nasab qurayš :: nasab qurayš",
+        "ḥaḏf min nasab qurayš :: nasab qurayš"
+      ],
+      "n": 1022
+    },
+    "RANDOM_CHARS": {
+      "evidence_sample": [
+        "al-Fiqh al-Akbar",
+        "Fuhulat Shucara",
+        "Amwal",
+        "Musannaf",
+        "al-Ašribaŧ"
+      ],
+      "n": 116
+    },
+    "UNCORRECTED_OCR": {
+      "evidence_sample": [
+        "Futuh Sham",
+        "Nasab",
+        "al-Ṭibb al-nuǧūmī",
+        "Ricaya",
+        "Wasaya"
+      ],
+      "n": 697
+    },
+    "آليا": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 1149
+    },
+    "أئمة": {
+      "evidence_sample": [
+        "Majmuc Rasail",
+        "al-ʿAdl wa-al-tawḥīd",
+        "al-ʿAdl wa-al-tawḥīd",
+        "al-ʿĀlim wa-al-wāfid",
+        "al-ʿĀlim wa-al-wāfid"
+      ],
+      "n": 153
+    },
+    "أبي": {
+      "evidence_sample": [
+        "Ahwal",
+        "Ahwal",
+        "Ahwal",
+        "Ahwal",
+        "Ahwal"
+      ],
+      "n": 544
+    },
+    "أخرى": {
+      "evidence_sample": [
+        "Muntakhab Kalam Fi Tafsir Ahlam",
+        "Muntakhab Kalam Fi Tafsir Ahlam",
+        "Muntakhab Kalam Fi Tafsir Ahlam",
+        "Muntakhab Kalam Fi Tafsir Ahlam",
+        "Muntakhab Kalam Fi Tafsir Ahlam"
+      ],
+      "n": 244
+    },
+    "أصحاب": {
+      "evidence_sample": [
+        "faḍāʾil al-saḥabŧ",
+        "faḍāʾil al-saḥabŧ",
+        "al-muntaḫab min kitāb azwāǧ al-nabī :: al-muntaḫab",
+        "al-muntaḫab min kitāb azwāǧ al-nabī :: al-muntaḫab",
+        "Kitāb Faḍā'il al-ṣaḥāba"
+      ],
+      "n": 32
+    },
+    "أصول": {
+      "evidence_sample": [
+        "Risala",
+        "Risala",
+        "Risala",
+        "Risala",
+        "Risala"
+      ],
+      "n": 208
+    },
+    "أصولية": {
+      "evidence_sample": [
+        "Maratib Ijmac",
+        "Maratib Ijmac",
+        "Risālaŧ fī al-radd ʿalá al-hātif min buʿd",
+        "Risālatān lahu aǧāb fīhimā ʿan risālatayn suʾila fīhimā suʾāl al-taʿnīf",
+        "Bayan Khata"
+      ],
+      "n": 50
+    },
+    "أهل": {
+      "evidence_sample": [
+        "Majmuc Rasail",
+        "al-ʿAdl wa-al-tawḥīd",
+        "al-ʿAdl wa-al-tawḥīd",
+        "al-ʿĀlim wa-al-wāfid",
+        "al-ʿĀlim wa-al-wāfid"
+      ],
+      "n": 156
+    },
+    "ابن": {
+      "evidence_sample": [
+        "Ahwal",
+        "Ahwal",
+        "Ahwal",
+        "Ahwal",
+        "Ahwal"
+      ],
+      "n": 1115
+    },
+    "الأحاديث": {
+      "evidence_sample": [
+        "Cilal",
+        "Cilal",
+        "Cilal",
+        "al-ʿIlal wa maʿrifaŧ al-riǧāl",
+        "al-ʿIlal wa maʿrifaŧ al-riǧāl"
+      ],
+      "n": 139
+    },
+    "الأخرى": {
+      "evidence_sample": [
+        "Jamic",
+        "Jamic",
+        "Musannaf",
+        "Musannaf",
+        "Musannaf"
+      ],
+      "n": 165
+    },
+    "الأخلاق": {
+      "evidence_sample": [
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Zuhd"
+      ],
+      "n": 831
+    },
+    "الأدب": {
+      "evidence_sample": [
+        "Amthal Carab",
+        "Amthal Carab",
+        "Amthal Carab",
+        "Mufaddaliyyat",
+        "Mufaddaliyyat"
+      ],
+      "n": 415
+    },
+    "الألباني": {
+      "evidence_sample": [
+        "Mukhtasar Shamail Muhammadiyya",
+        "Fadl Salat",
+        "Fadl Salat",
+        "Fadl Salat",
+        "Fadl Salat"
+      ],
+      "n": 39
+    },
+    "الإسلامي": {
+      "evidence_sample": [
+        "Kitāb al-āṯār",
+        "Kitāb al-āṯār",
+        "al-ʾAṣl",
+        "al-ʾAṣl",
+        "al-ʾAṣl"
+      ],
+      "n": 776
+    },
+    "الإمامية": {
+      "evidence_sample": [
+        "Tawhid",
+        "Tawhid",
+        "Tawhid",
+        "Tawhid",
+        "Masail"
+      ],
+      "n": 187
+    },
+    "الببلوجرافيا": {
+      "evidence_sample": [
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "Mafatih Culum"
+      ],
+      "n": 66
+    },
+    "البلدان": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "ḥaḏf min nasab qurayš :: nasab qurayš",
+        "ḥaḏf min nasab qurayš :: nasab qurayš"
+      ],
+      "n": 360
+    },
+    "البيت": {
+      "evidence_sample": [
+        "Majmuc Rasail",
+        "al-ʿAdl wa-al-tawḥīd",
+        "al-ʿAdl wa-al-tawḥīd",
+        "al-ʿĀlim wa-al-wāfid",
+        "al-ʿĀlim wa-al-wāfid"
+      ],
+      "n": 153
+    },
+    "التاريخ": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "ḥaḏf min nasab qurayš :: nasab qurayš",
+        "ḥaḏf min nasab qurayš :: nasab qurayš"
+      ],
+      "n": 748
+    },
+    "التاريخية": {
+      "evidence_sample": [
+        "Akhbar Wafidat",
+        "Akhbar Wafidat",
+        "Akhbar Wafidin",
+        "Akhbar Wafidin",
+        "ṭabaqāt fuḥūl al-šuʿarāʾ"
+      ],
+      "n": 152
+    },
+    "التخريج": {
+      "evidence_sample": [
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Ahadith Muwatta"
+      ],
+      "n": 254
+    },
+    "التراث": {
+      "evidence_sample": [
+        "al-Radd ʿalá siyar al-Awzāʿī",
+        "al-Radd ʿalá siyar al-Awzāʿī",
+        "Siyar",
+        "Siyar",
+        "Wasaya Muluk"
+      ],
+      "n": 97
+    },
+    "التراجم": {
+      "evidence_sample": [
+        "Akhbar Wafidat",
+        "Akhbar Wafidat",
+        "Akhbar Wafidin",
+        "Akhbar Wafidin",
+        "ṭabaqāt fuḥūl al-šuʿarāʾ"
+      ],
+      "n": 261
+    },
+    "التزكية": {
+      "evidence_sample": [
+        "Amrad Qulub",
+        "Amrad Qulub",
+        "Hasana Wa Sayyia",
+        "Hasana Wa Sayyia",
+        "Hasana Wa Sayyia"
+      ],
+      "n": 66
+    },
+    "التعريف": {
+      "evidence_sample": [
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "Mafatih Culum"
+      ],
+      "n": 66
+    },
+    "التفاسير": {
+      "evidence_sample": [
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir"
+      ],
+      "n": 513
+    },
+    "التفسير": {
+      "evidence_sample": [
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir"
+      ],
+      "n": 256
+    },
+    "الثامن": {
+      "evidence_sample": [
+        "Fiqh Rida",
+        "Hidaya",
+        "Hidaya",
+        "al-Muqniʿ :: al-Muqniʿ",
+        "Ahkam Nisa"
+      ],
+      "n": 175
+    },
+    "الثقات": {
+      "evidence_sample": [
+        "Maʿrifaŧ al-ṯiqāt min riǧāl ahl al-ʿilm wa-l-ḥadīṯ wa-¶    min al-ḍuʿafāʾ wa-ḏikr maḏāhibi",
+        "Maʿrifaŧ al-ṯiqāt min riǧāl ahl al-ʿilm wa-l-ḥadīṯ wa-¶    min al-ḍuʿafāʾ wa-ḏikr maḏāhibi",
+        "Maʿrifaŧ al-ṯiqāt min riǧāl ahl al-ʿilm wa-l-ḥadīṯ wa-¶    min al-ḍuʿafāʾ wa-ḏikr maḏāhibi",
+        "Maʿrifaŧ al-ṯiqāt min riǧāl ahl al-ʿilm wa-l-ḥadīṯ wa-¶    min al-ḍuʿafāʾ wa-ḏikr maḏāhibi",
+        "Tasmiyaŧ fuqahāʾ al-amṣār :: Tasmiyaŧ fuqahāʾ al-amṣār min aṣḥāb rasūl Allāh¶    wa-man ba"
+      ],
+      "n": 51
+    },
+    "الجامعة": {
+      "evidence_sample": [
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Akbar"
+      ],
+      "n": 520
+    },
+    "الحديث": {
+      "evidence_sample": [
+        "Kitab Sulaym",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Sahifa"
+      ],
+      "n": 4694
+    },
+    "الحديثية": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Targhib Makka",
+        "Ahadith Yazid"
+      ],
+      "n": 1211
+    },
+    "الحنبلي": {
+      "evidence_sample": [
+        "al-Ašribaŧ",
+        "al-Ašribaŧ",
+        "al-Ašribaŧ",
+        "Masāʾil al-imām Aḥmad b. Ḥanbal riwāyaŧ ibnihi ʿAbd¶    Allāh b. Aḥmad :: Masāʾil al-imām ",
+        "Masāʾil al-imām Aḥmad b. Ḥanbal riwāyaŧ ibnihi ʿAbd¶    Allāh b. Aḥmad :: Masāʾil al-imām "
+      ],
+      "n": 120
+    },
+    "الحنفي": {
+      "evidence_sample": [
+        "Kitāb al-āṯār",
+        "Kitāb al-āṯār",
+        "al-Radd ʿalá siyar al-Awzāʿī",
+        "al-Radd ʿalá siyar al-Awzāʿī",
+        "al-ʾAṣl"
+      ],
+      "n": 124
+    },
+    "الدنيا": {
+      "evidence_sample": [
+        "Ahwal",
+        "Ahwal",
+        "Ahwal",
+        "Ahwal",
+        "Ahwal"
+      ],
+      "n": 544
+    },
+    "الدين": {
+      "evidence_sample": [
+        "Kamil Munir",
+        "Kamil Munir",
+        "Šarḥ al-Bāliġ al-mudrik",
+        "Taṯbīt imāmaŧ ʿAlī :: Taṯbīt imāmaŧ amīr al-muʾminīn ʿAlī b. Abī Ṭālib",
+        "Taṯbīt imāmaŧ ʿAlī :: Taṯbīt imāmaŧ amīr al-muʾminīn ʿAlī b. Abī Ṭālib"
+      ],
+      "n": 42
+    },
+    "الردود": {
+      "evidence_sample": [
+        "Radd Cala Zanadiqa",
+        "Radd Cala Zanadiqa",
+        "Radd Cala Man Yaqul Quran Makhluq",
+        "Radd Cala Man Yaqul Quran Makhluq",
+        "Tanbih Wa Radd"
+      ],
+      "n": 86
+    },
+    "الرواة": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Sahifa",
+        "Sahifa"
+      ],
+      "n": 1288
+    },
+    "السنة": {
+      "evidence_sample": [
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir"
+      ],
+      "n": 506
+    },
+    "السنية": {
+      "evidence_sample": [
+        "Sahifa",
+        "Sahifa",
+        "Sahifa",
+        "Faraid",
+        "Faraid"
+      ],
+      "n": 845
+    },
+    "السياسي": {
+      "evidence_sample": [
+        "al-Radd ʿalá siyar al-Awzāʿī",
+        "al-Radd ʿalá siyar al-Awzāʿī",
+        "Siyar",
+        "Siyar",
+        "Wasaya Muluk"
+      ],
+      "n": 97
+    },
+    "الشافعي": {
+      "evidence_sample": [
+        "Jimac Cilm",
+        "Jimac Cilm",
+        "Jimac Cilm",
+        "Musnad",
+        "Musnad"
+      ],
+      "n": 169
+    },
+    "الشرعية": {
+      "evidence_sample": [
+        "Adab Qadi",
+        "Siyasa",
+        "Siyasa",
+        "Muntakhab Ahkam",
+        "Siyasa"
+      ],
+      "n": 124
+    },
+    "الشروح": {
+      "evidence_sample": [
+        "Fawaid Hadith Abi Cumayr",
+        "Fawaid Hadith Abi Cumayr",
+        "Sharh Sahih Bukhari",
+        "Sharh Sahih Bukhari",
+        "Tamhid Muwatta"
+      ],
+      "n": 72
+    },
+    "الشريف": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Sahifa",
+        "Sahifa"
+      ],
+      "n": 1288
+    },
+    "الشعر": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 374
+    },
+    "الشعرية": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 299
+    },
+    "الشيعة": {
+      "evidence_sample": [
+        "Tafsir",
+        "Tarjamat Hasan",
+        "Tarjamat Husayn",
+        "Taṯbīt al-Imāmaŧ",
+        "Taṯbīt al-Imāmaŧ"
+      ],
+      "n": 391
+    },
+    "الشيعية": {
+      "evidence_sample": [
+        "Kitab Sulaym",
+        "Tawhid",
+        "Tawhid",
+        "Tawhid",
+        "Tawhid"
+      ],
+      "n": 290
+    },
+    "الضعفاء": {
+      "evidence_sample": [
+        "kitāb al-ḍuʿafāʾ al-ṣaġīr",
+        "kitāb al-ḍuʿafāʾ al-ṣaġīr",
+        "kitāb al-ḍuʿafāʾ al-ṣaġīr",
+        "al-munfaridāt wa-l-waḥadān",
+        "al-munfaridāt wa-l-waḥadān"
+      ],
+      "n": 126
+    },
+    "الضعيفة": {
+      "evidence_sample": [
+        "Cilal",
+        "Cilal",
+        "Cilal",
+        "al-ʿIlal wa maʿrifaŧ al-riǧāl",
+        "al-ʿIlal wa maʿrifaŧ al-riǧāl"
+      ],
+      "n": 110
+    },
+    "الطبقات": {
+      "evidence_sample": [
+        "al-Ṭabaqāt al-kubrá",
+        "al-Ṭabaqāt al-kubrá",
+        "al-Ṭabaqāt al-kubrá",
+        "al-Ṭabaqāt al-kubrá",
+        "al-Ṭabaqāt al-kubrá"
+      ],
+      "n": 78
+    },
+    "العام": {
+      "evidence_sample": [
+        "Kitab Sulaym",
+        "Sahifa",
+        "Sahifa",
+        "Sahifa",
+        "Tawhid"
+      ],
+      "n": 1035
+    },
+    "العامة": {
+      "evidence_sample": [
+        "Tarikh",
+        "Tarikh",
+        "Tarikh",
+        "al-Asāmī wa-l-kuná",
+        "al-Asāmī wa-l-kuná"
+      ],
+      "n": 360
+    },
+    "العربي": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 374
+    },
+    "العربية": {
+      "evidence_sample": [
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Gharib Hadith"
+      ],
+      "n": 69
+    },
+    "العقائد": {
+      "evidence_sample": [
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Akbar"
+      ],
+      "n": 937
+    },
+    "العقيدة": {
+      "evidence_sample": [
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Akbar",
+        "al-Fiqh al-Akbar",
+        "Qasida"
+      ],
+      "n": 113
+    },
+    "العلل": {
+      "evidence_sample": [
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith"
+      ],
+      "n": 90
+    },
+    "الغريب": {
+      "evidence_sample": [
+        "Azmina",
+        "Azmina",
+        "Silah",
+        "Silah",
+        "Kanz Lughawi"
+      ],
+      "n": 54
+    },
+    "الفردية": {
+      "evidence_sample": [
+        "Sīraŧ ʿUmar b. ʿAbd al-ʿAzīz ʿalá mā rawāhu al-imām Mālik b. Anas wa-aṣḥābuhu :: Sīraŧ ʿUm",
+        "Sīraŧ ʿUmar b. ʿAbd al-ʿAzīz ʿalá mā rawāhu al-imām Mālik b. Anas wa-aṣḥābuhu :: Sīraŧ ʿUm",
+        "Sirat Imam",
+        "Sirat Imam",
+        "Aḫbār Abī Tamām :: Mā ǧāʾa fī tafḍīl Abī Tamām"
+      ],
+      "n": 59
+    },
+    "الفقه": {
+      "evidence_sample": [
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Cayn"
+      ],
+      "n": 2031
+    },
+    "الفقهاء": {
+      "evidence_sample": [
+        "Intiqa Fi Fadail",
+        "Intiqa Fi Fadail",
+        "Intiqa Fi Fadail",
+        "Ṭabaqāt al-fuqahāʾ",
+        "Ṭabaqāt al-fuqahāʾ"
+      ],
+      "n": 32
+    },
+    "الفقهية": {
+      "evidence_sample": [
+        "Jimac Cilm",
+        "Jimac Cilm",
+        "Jimac Cilm",
+        "Risala",
+        "Risala"
+      ],
+      "n": 446
+    },
+    "القرآن": {
+      "evidence_sample": [
+        "Gharib Quran",
+        "Gharib Quran",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir"
+      ],
+      "n": 1043
+    },
+    "القرن": {
+      "evidence_sample": [
+        "Fiqh Rida",
+        "Hidaya",
+        "Hidaya",
+        "al-Muqniʿ :: al-Muqniʿ",
+        "Ahkam Nisa"
+      ],
+      "n": 175
+    },
+    "القسم": {
+      "evidence_sample": [
+        "Kitab Sulaym",
+        "Sahifa",
+        "Sahifa",
+        "Sahifa",
+        "Tawhid"
+      ],
+      "n": 945
+    },
+    "القيم": {
+      "evidence_sample": [
+        "Aclam Muwaqqicin",
+        "Aclam Muwaqqicin",
+        "Aclam Muwaqqicin",
+        "Aclam Muwaqqicin",
+        "Aclam Muwaqqicin"
+      ],
+      "n": 307
+    },
+    "الكتابة": {
+      "evidence_sample": [
+        "Adab Katib",
+        "Adab Katib",
+        "Adab Katib",
+        "Adab Katib",
+        "Adab Katib"
+      ],
+      "n": 32
+    },
+    "الكتب": {
+      "evidence_sample": [
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist"
+      ],
+      "n": 108
+    },
+    "اللغة": {
+      "evidence_sample": [
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Nawadir Fi Lugha"
+      ],
+      "n": 171
+    },
+    "اللغوي": {
+      "evidence_sample": [
+        "Islah Mantiq",
+        "Islah Mantiq",
+        "Islah Mantiq",
+        "Islah Mantiq",
+        "Islah Mantiq"
+      ],
+      "n": 44
+    },
+    "الله": {
+      "evidence_sample": [
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq"
+      ],
+      "n": 310
+    },
+    "المؤلفات": {
+      "evidence_sample": [
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "Kashf Zunun"
+      ],
+      "n": 39
+    },
+    "المالكي": {
+      "evidence_sample": [
+        "Muwatta",
+        "Muwatta",
+        "Muwatta",
+        "Muwatta",
+        "Muwatta"
+      ],
+      "n": 113
+    },
+    "المذهب": {
+      "evidence_sample": [
+        "Musnad",
+        "Musnad",
+        "Musnad",
+        "Muwatta",
+        "Muwatta"
+      ],
+      "n": 146
+    },
+    "المسلمين": {
+      "evidence_sample": [
+        "Ghayat Maqsud",
+        "Ifḥām al-yahūd :: Baḏl al-maǧhūd fī ifḥām al-yahūd",
+        "Ifḥām al-yahūd :: Baḏl al-maǧhūd fī ifḥām al-yahūd",
+        "Ifḥām al-yahūd :: Baḏl al-maǧhūd fī ifḥām al-yahūd",
+        "Ifḥām al-yahūd :: Baḏl al-maǧhūd fī ifḥām al-yahūd"
+      ],
+      "n": 35
+    },
+    "المسندة": {
+      "evidence_sample": [
+        "Sahifa",
+        "Sahifa",
+        "Sahifa",
+        "Mashyakha",
+        "Mashyakha"
+      ],
+      "n": 381
+    },
+    "المصطلح": {
+      "evidence_sample": [
+        "Risala Ila Ahl Makka",
+        "Risala Ila Ahl Makka",
+        "Risala Ila Ahl Makka",
+        "taʾwīl muḫtalaf al-ḥadī ṯ",
+        "taʾwīl muḫtalaf al-ḥadī ṯ"
+      ],
+      "n": 171
+    },
+    "المصنفات": {
+      "evidence_sample": [
+        "Jamic",
+        "Jamic",
+        "Muwatta",
+        "Muwatta",
+        "Muwatta"
+      ],
+      "n": 63
+    },
+    "المعاجم": {
+      "evidence_sample": [
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Ansāb al-ḫayl fī al-jāhiliyyaŧ wa-al-islām wa-aḫbārihā :: Ansāb al-ḫayl"
+      ],
+      "n": 221
+    },
+    "المفيد": {
+      "evidence_sample": [
+        "Ashraf",
+        "Ashraf",
+        "Ashraf",
+        "Awail Maqalat",
+        "Awail Maqalat"
+      ],
+      "n": 41
+    },
+    "الموضوعية": {
+      "evidence_sample": [
+        "Jihad",
+        "Jihad",
+        "Jihad",
+        "Jihad",
+        "Jihad"
+      ],
+      "n": 243
+    },
+    "النبوي": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Sahifa",
+        "Sahifa"
+      ],
+      "n": 1288
+    },
+    "النبي": {
+      "evidence_sample": [
+        "Rawda",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq"
+      ],
+      "n": 464
+    },
+    "النحو": {
+      "evidence_sample": [
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Kitāb Sībawayhi",
+        "Kitāb Sībawayhi"
+      ],
+      "n": 114
+    },
+    "النحوية": {
+      "evidence_sample": [
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Kitāb Sībawayhi",
+        "Kitāb Sībawayhi"
+      ],
+      "n": 47
+    },
+    "الى": {
+      "evidence_sample": [
+        "Fiqh Rida",
+        "Hidaya",
+        "Hidaya",
+        "al-Muqniʿ :: al-Muqniʿ",
+        "Ahkam Nisa"
+      ],
+      "n": 63
+    },
+    "بالكتب": {
+      "evidence_sample": [
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "Mafatih Culum"
+      ],
+      "n": 66
+    },
+    "بالمأثور": {
+      "evidence_sample": [
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Ahkam Quran"
+      ],
+      "n": 31
+    },
+    "تاريخية": {
+      "evidence_sample": [
+        "Fitna",
+        "Fitna",
+        "Fitna",
+        "Fitna",
+        "Fitna"
+      ],
+      "n": 87
+    },
+    "تيمية": {
+      "evidence_sample": [
+        "Ahadith Qussas",
+        "Ahadith Qussas",
+        "Amr Bi Macruf",
+        "Amr Bi Macruf",
+        "Amrad Qulub"
+      ],
+      "n": 264
+    },
+    "حديثية": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Nuskhat Zubayr",
+        "Sahifa"
+      ],
+      "n": 1090
+    },
+    "حنبلي": {
+      "evidence_sample": [
+        "aḥkam al-nisāʾ",
+        "Masāʾil al-imām Aḥmad b. Ḥanbal riwāyaŧ ibnihi ʿAbd¶    Allāh b. Aḥmad :: Masāʾil al-imām ",
+        "Masāʾil al-imām Aḥmad b. Ḥanbal riwāyaŧ ibnihi ʿAbd¶    Allāh b. Aḥmad :: Masāʾil al-imām ",
+        "Masail Riwayat Ibn Hani",
+        "Masāʾil al-imām Aḥmad b. Ḥanbal riwāyaŧ Ibn Abī al-¶    Faḍl Ṣāliḥ :: Masāʾil riwāyaŧ Ṣāli"
+      ],
+      "n": 210
+    },
+    "حنفي": {
+      "evidence_sample": [
+        "al-ʾAṣl",
+        "al-ʾAṣl",
+        "al-ʾAṣl",
+        "Kasb",
+        "Kasb"
+      ],
+      "n": 144
+    },
+    "رجال": {
+      "evidence_sample": [
+        "al-Ṭabaqāt al-kubrá",
+        "al-Ṭabaqāt al-kubrá",
+        "al-Ṭabaqāt al-kubrá",
+        "al-Ṭabaqāt al-kubrá",
+        "al-Ṭabaqāt al-kubrá"
+      ],
+      "n": 369
+    },
+    "سيرة": {
+      "evidence_sample": [
+        "Rawda",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq"
+      ],
+      "n": 293
+    },
+    "شافعي": {
+      "evidence_sample": [
+        "Umm",
+        "Umm",
+        "Umm",
+        "Umm",
+        "Umm"
+      ],
+      "n": 177
+    },
+    "صلى": {
+      "evidence_sample": [
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq"
+      ],
+      "n": 310
+    },
+    "عام": {
+      "evidence_sample": [
+        "Ikhtilaf Culama",
+        "Ikhtilaf Culama",
+        "Ikhtilaf Fuqaha",
+        "Ikhtilaf Fuqaha",
+        "Tahḏīb al-āṯār :: Tahḏīb al-āṯār wa-tafṣīl al-ṯābit ʿan rasūl Allāh min al-aḫbār"
+      ],
+      "n": 105
+    },
+    "عامة": {
+      "evidence_sample": [
+        "Tacazi",
+        "Fadl Ziyarat Husayn",
+        "Fadl Ziyarat Husayn",
+        "Majdi",
+        "Majdi"
+      ],
+      "n": 72
+    },
+    "عقدية": {
+      "evidence_sample": [
+        "Asnam",
+        "Asnam",
+        "Iman",
+        "Iman",
+        "Iman"
+      ],
+      "n": 316
+    },
+    "علوم": {
+      "evidence_sample": [
+        "Fahm Quran",
+        "Fahm Quran",
+        "Radd Cala Man Yaqul Quran Makhluq",
+        "Radd Cala Man Yaqul Quran Makhluq",
+        "Icjaz Quran"
+      ],
+      "n": 53
+    },
+    "عليه": {
+      "evidence_sample": [
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq"
+      ],
+      "n": 310
+    },
+    "عند": {
+      "evidence_sample": [
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir"
+      ],
+      "n": 761
+    },
+    "عيون": {
+      "evidence_sample": [
+        "Mufaddaliyyat",
+        "Mufaddaliyyat",
+        "Jamharat Ashcar Carab",
+        "Jamharat Ashcar Carab",
+        "al-Aṣmaʿiyyāt"
+      ],
+      "n": 73
+    },
+    "ـ": {
+      "evidence_sample": [
+        "Kitab Sulaym",
+        "Sahifa",
+        "Sahifa",
+        "Sahifa",
+        "Tawhid"
+      ],
+      "n": 1060
+    },
+    "فقهية": {
+      "evidence_sample": [
+        "Jihad",
+        "Jihad",
+        "Jihad",
+        "Jihad",
+        "Jihad"
+      ],
+      "n": 362
+    },
+    "في": {
+      "evidence_sample": [
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Akbar"
+      ],
+      "n": 752
+    },
+    "قسم": {
+      "evidence_sample": [
+        "Masail",
+        "Masail",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith"
+      ],
+      "n": 163
+    },
+    "كتب": {
+      "evidence_sample": [
+        "Majlis Min Fawaid",
+        "Majlis Min Fawaid",
+        "Hadith Yahya",
+        "Hadith Yahya",
+        "Hadith Yahya"
+      ],
+      "n": 168
+    },
+    "لأصول": {
+      "evidence_sample": [
+        "Risala",
+        "Risala",
+        "Risala",
+        "Risala",
+        "Risala"
+      ],
+      "n": 156
+    },
+    "للمسائل": {
+      "evidence_sample": [
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Kitāb Sībawayhi",
+        "Kitāb Sībawayhi"
+      ],
+      "n": 47
+    },
+    "لمسائل": {
+      "evidence_sample": [
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Akbar",
+        "al-Fiqh al-Akbar",
+        "Qasida"
+      ],
+      "n": 96
+    },
+    "لمصطلحات": {
+      "evidence_sample": [
+        "Muhaddith Fasil",
+        "Muhaddith Fasil",
+        "Muhaddith Fasil",
+        "Macrifat Culum Hadith",
+        "Macrifat Culum Hadith"
+      ],
+      "n": 87
+    },
+    "مالكي": {
+      "evidence_sample": [
+        "Majalis Ibn Qasim",
+        "Mudawwana Kubra",
+        "Mudawwana Kubra",
+        "Mudawwana Kubra",
+        "Tafric"
+      ],
+      "n": 157
+    },
+    "متفرقة": {
+      "evidence_sample": [
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Adab Nufus",
+        "Adab Nufus",
+        "Risalat Mustarshidin"
+      ],
+      "n": 135
+    },
+    "متنوعة": {
+      "evidence_sample": [
+        "Macrifa Wa Tarikh",
+        "Macrifa Wa Tarikh",
+        "Macrifa Wa Tarikh",
+        "Waraqa",
+        "Waraqa"
+      ],
+      "n": 164
+    },
+    "محددة": {
+      "evidence_sample": [
+        "Māʾiyyaŧ al-ʿaql wa-maʿnāhu wa-iḫtilāf al-nās fīhi :: Māhiyyaŧ al-ʿaql wa-maʿnāhu wa-iḫtil",
+        "Māʾiyyaŧ al-ʿaql wa-maʿnāhu wa-iḫtilāf al-nās fīhi :: Māhiyyaŧ al-ʿaql wa-maʿnāhu wa-iḫtil",
+        "Risala Fi Quran Ghayr Makhluq",
+        "Risala Fi Quran Ghayr Makhluq",
+        "Tafsir Asma Allah"
+      ],
+      "n": 160
+    },
+    "مختلفة": {
+      "evidence_sample": [
+        "al-Maʿārif",
+        "al-Maʿārif",
+        "al-Maʿārif",
+        "Ansāb al-ašrāf :: Ǧumal min Ansāb al-ašrāf",
+        "Ansāb al-ašrāf :: Ǧumal min Ansāb al-ašrāf"
+      ],
+      "n": 36
+    },
+    "مخصوصة": {
+      "evidence_sample": [
+        "Asami Man Rawa Canhum",
+        "Asami Man Rawa Canhum",
+        "Asami Man Rawa Canhum",
+        "Asami Man Rawa Canhum",
+        "Hidaya Wa Irshad"
+      ],
+      "n": 98
+    },
+    "مرقم": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 1149
+    },
+    "مسندة": {
+      "evidence_sample": [
+        "Zuhd",
+        "Zuhd",
+        "Zuhd",
+        "Duca",
+        "Duca"
+      ],
+      "n": 142
+    },
+    "مصادر": {
+      "evidence_sample": [
+        "al-Ṭabaqāt al-kubrá",
+        "al-Ṭabaqāt al-kubrá",
+        "al-Ṭabaqāt al-kubrá",
+        "al-Ṭabaqāt al-kubrá",
+        "al-Ṭabaqāt al-kubrá"
+      ],
+      "n": 453
+    },
+    "مصطح": {
+      "evidence_sample": [
+        "Risala Ila Ahl Makka",
+        "Risala Ila Ahl Makka",
+        "Risala Ila Ahl Makka",
+        "taʾwīl muḫtalaf al-ḥadī ṯ",
+        "taʾwīl muḫtalaf al-ḥadī ṯ"
+      ],
+      "n": 258
+    },
+    "من": {
+      "evidence_sample": [
+        "Tafsir Gharib Quran",
+        "Tafsir Gharib Quran",
+        "Halifat Quran",
+        "Sharaic Islam",
+        "Sharaic Islam"
+      ],
+      "n": 136
+    },
+    "نحوية": {
+      "evidence_sample": [
+        "Ishtiqaq",
+        "Ishtiqaq",
+        "Ishtiqaq",
+        "Amali",
+        "Amali"
+      ],
+      "n": 67
+    },
+    "وأسماء": {
+      "evidence_sample": [
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "Muʿǧam mā åstaʿǧama min asmāʾ al-amkinaŧ wa-al-biqāʾ"
+      ],
+      "n": 41
+    },
+    "وأصحابه": {
+      "evidence_sample": [
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "al-Maġāzi"
+      ],
+      "n": 171
+    },
+    "وأصول": {
+      "evidence_sample": [
+        "Kamil Munir",
+        "Kamil Munir",
+        "Šarḥ al-Bāliġ al-mudrik",
+        "Taṯbīt imāmaŧ ʿAlī :: Taṯbīt imāmaŧ amīr al-muʾminīn ʿAlī b. Abī Ṭālib",
+        "Taṯbīt imāmaŧ ʿAlī :: Taṯbīt imāmaŧ amīr al-muʾminīn ʿAlī b. Abī Ṭālib"
+      ],
+      "n": 42
+    },
+    "وأصوله": {
+      "evidence_sample": [
+        "al-Radd ʿalá siyar al-Awzāʿī",
+        "al-Radd ʿalá siyar al-Awzāʿī",
+        "Kharaj",
+        "Kharaj",
+        "Jimac Cilm"
+      ],
+      "n": 58
+    },
+    "وأصولية": {
+      "evidence_sample": [
+        "Jihad",
+        "Jihad",
+        "Jihad",
+        "Jihad",
+        "Jihad"
+      ],
+      "n": 181
+    },
+    "والآثار": {
+      "evidence_sample": [
+        "Jamic",
+        "Jamic",
+        "Jamic",
+        "Jamic",
+        "Muwatta"
+      ],
+      "n": 91
+    },
+    "والآداب": {
+      "evidence_sample": [
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Risala Ila Harun",
+        "Zuhd",
+        "Zuhd"
+      ],
+      "n": 422
+    },
+    "والأحكام": {
+      "evidence_sample": [
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Cilal"
+      ],
+      "n": 66
+    },
+    "والأدلة": {
+      "evidence_sample": [
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "Fahrasa"
+      ],
+      "n": 83
+    },
+    "والأذكار": {
+      "evidence_sample": [
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Risala Ila Harun",
+        "Zuhd",
+        "Zuhd"
+      ],
+      "n": 424
+    },
+    "والائمة": {
+      "evidence_sample": [
+        "Rawda",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq"
+      ],
+      "n": 122
+    },
+    "والبلاغة": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 904
+    },
+    "والتاريخ": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Fitna",
+        "Fitna"
+      ],
+      "n": 90
+    },
+    "والتراجم": {
+      "evidence_sample": [
+        "Sīraŧ ʿUmar b. ʿAbd al-ʿAzīz ʿalá mā rawāhu al-imām Mālik b. Anas wa-aṣḥābuhu :: Sīraŧ ʿUm",
+        "Sīraŧ ʿUmar b. ʿAbd al-ʿAzīz ʿalá mā rawāhu al-imām Mālik b. Anas wa-aṣḥābuhu :: Sīraŧ ʿUm",
+        "Akhbar Wafidat",
+        "Akhbar Wafidat",
+        "Akhbar Wafidin"
+      ],
+      "n": 241
+    },
+    "والتزكية": {
+      "evidence_sample": [
+        "Zuhd",
+        "Zuhd",
+        "Zuhd",
+        "Duca",
+        "Duca"
+      ],
+      "n": 175
+    },
+    "والجغرافيا": {
+      "evidence_sample": [
+        "al-tabṣiraŧ bi-l-tiǧāraŧ :: al-tabaṣṣur bi-al-tiǧāraŧ",
+        "al-tabṣiraŧ bi-l-tiǧāraŧ :: al-tabaṣṣur bi-al-tiǧāraŧ",
+        "Kitāb al-Buldān :: Kitāb Asmāʾ al-buldān",
+        "Kitāb al-Buldān :: Kitāb Asmāʾ al-buldān",
+        "Kitāb al-Buldān :: Kitāb Asmāʾ al-buldān"
+      ],
+      "n": 210
+    },
+    "والرحلات": {
+      "evidence_sample": [
+        "al-tabṣiraŧ bi-l-tiǧāraŧ :: al-tabaṣṣur bi-al-tiǧāraŧ",
+        "al-tabṣiraŧ bi-l-tiǧāraŧ :: al-tabaṣṣur bi-al-tiǧāraŧ",
+        "Kitāb al-Buldān :: Kitāb Asmāʾ al-buldān",
+        "Kitāb al-Buldān :: Kitāb Asmāʾ al-buldān",
+        "Kitāb al-Buldān :: Kitāb Asmāʾ al-buldān"
+      ],
+      "n": 210
+    },
+    "والردود": {
+      "evidence_sample": [
+        "Cuthmaniyya",
+        "Cuthmaniyya",
+        "Cuthmaniyya",
+        "al-Radd ʿalá al-naṣārá :: Kitāb ʿalá al-naṣārá wa-al-yahūd",
+        "al-Radd ʿalá al-naṣārá :: Kitāb ʿalá al-naṣārá wa-al-yahūd"
+      ],
+      "n": 51
+    },
+    "والزوائد": {
+      "evidence_sample": [
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Ahadith Muwatta"
+      ],
+      "n": 204
+    },
+    "والسؤالات": {
+      "evidence_sample": [
+        "Min Kalam Fi Rijal",
+        "Min Kalam Fi Rijal",
+        "Sualat Ibn Junayd",
+        "Sualat Ibn Junayd",
+        "Sualat Ibn Junayd"
+      ],
+      "n": 226
+    },
+    "والسلوك": {
+      "evidence_sample": [
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Zuhd"
+      ],
+      "n": 722
+    },
+    "والشمائل": {
+      "evidence_sample": [
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Siyar"
+      ],
+      "n": 202
+    },
+    "والصرف": {
+      "evidence_sample": [
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw"
+      ],
+      "n": 364
+    },
+    "والصرفية": {
+      "evidence_sample": [
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Kitāb Sībawayhi",
+        "Kitāb Sībawayhi"
+      ],
+      "n": 47
+    },
+    "والطبقات": {
+      "evidence_sample": [
+        "Sīraŧ ʿUmar b. ʿAbd al-ʿAzīz ʿalá mā rawāhu al-imām Mālik b. Anas wa-aṣḥābuhu :: Sīraŧ ʿUm",
+        "Sīraŧ ʿUmar b. ʿAbd al-ʿAzīz ʿalá mā rawāhu al-imām Mālik b. Anas wa-aṣḥābuhu :: Sīraŧ ʿUm",
+        "Akhbar Wafidat",
+        "Akhbar Wafidat",
+        "Akhbar Wafidin"
+      ],
+      "n": 1231
+    },
+    "والعوائل": {
+      "evidence_sample": [
+        "ḥaḏf min nasab qurayš :: nasab qurayš",
+        "ḥaḏf min nasab qurayš :: nasab qurayš",
+        "Jamharat Ansab",
+        "Jamharat Ansab",
+        "Nasab Macad"
+      ],
+      "n": 158
+    },
+    "والغريب": {
+      "evidence_sample": [
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Ansāb al-ḫayl fī al-jāhiliyyaŧ wa-al-islām wa-aḫbārihā :: Ansāb al-ḫayl"
+      ],
+      "n": 279
+    },
+    "والفصاحة": {
+      "evidence_sample": [
+        "Qawafi",
+        "Qawafi",
+        "kitāb al-muḥabbar :: al-muḥabbar",
+        "kitāb al-muḥabbar :: al-muḥabbar",
+        "kitāb al-muḥabbar :: al-muḥabbar"
+      ],
+      "n": 109
+    },
+    "والقصص": {
+      "evidence_sample": [
+        "Amil Wa Mamul",
+        "Amil Wa Mamul",
+        "al-buḫlāʾ",
+        "al-buḫlāʾ",
+        "al-buḫlāʾ"
+      ],
+      "n": 121
+    },
+    "والقضاء": {
+      "evidence_sample": [
+        "Adab Qadi",
+        "Siyasa",
+        "Siyasa",
+        "Muntakhab Ahkam",
+        "Siyasa"
+      ],
+      "n": 124
+    },
+    "والقواعد": {
+      "evidence_sample": [
+        "Jimac Cilm",
+        "Jimac Cilm",
+        "Jimac Cilm",
+        "Risala",
+        "Risala"
+      ],
+      "n": 416
+    },
+    "والمجالس": {
+      "evidence_sample": [
+        "Amali Fi Athar",
+        "Amali Fi Athar",
+        "Amali Wa Qiraa",
+        "Amali Wa Qiraa",
+        "Majlisān min imlā' al-Nasā'ī :: Juz' fīhi majlisān min imlā' al-Nasā'ī"
+      ],
+      "n": 36
+    },
+    "والمجلات": {
+      "evidence_sample": [
+        "Gharib Quran",
+        "Gharib Quran",
+        "Ihtisab",
+        "Masail Ibadiyya",
+        "Ithbat Nubuwwa"
+      ],
+      "n": 74
+    },
+    "والمذاهب": {
+      "evidence_sample": [
+        "Jamic",
+        "Jamic",
+        "Musannaf",
+        "Musannaf",
+        "Musannaf"
+      ],
+      "n": 165
+    },
+    "والمذكرات": {
+      "evidence_sample": [
+        "Kitāb al-Masālik wa-al-mamālik",
+        "Kitāb al-Masālik wa-al-mamālik",
+        "Kitāb al-Masālik wa-al-mamālik",
+        "Rihla",
+        "Rihla"
+      ],
+      "n": 36
+    },
+    "والمصطلحات": {
+      "evidence_sample": [
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Ansāb al-ḫayl fī al-jāhiliyyaŧ wa-al-islām wa-aḫbārihā :: Ansāb al-ḫayl"
+      ],
+      "n": 219
+    },
+    "والمعاجم": {
+      "evidence_sample": [
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Cayn"
+      ],
+      "n": 444
+    },
+    "والمعاني": {
+      "evidence_sample": [
+        "Azmina",
+        "Azmina",
+        "Silah",
+        "Silah",
+        "Kanz Lughawi"
+      ],
+      "n": 54
+    },
+    "والملل": {
+      "evidence_sample": [
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Akbar",
+        "al-Fiqh al-Akbar",
+        "Qadar"
+      ],
+      "n": 598
+    },
+    "والموضوعة": {
+      "evidence_sample": [
+        "Cilal",
+        "Cilal",
+        "Cilal",
+        "al-ʿIlal wa maʿrifaŧ al-riǧāl",
+        "al-ʿIlal wa maʿrifaŧ al-riǧāl"
+      ],
+      "n": 110
+    },
+    "والوفيات": {
+      "evidence_sample": [
+        "Dhikr Niswa Mutacabbidat",
+        "Dhikr Niswa Mutacabbidat",
+        "Ṭabaqāt al-ṣūfiyyaŧ",
+        "Ṭabaqāt al-ṣūfiyyaŧ",
+        "Ṭabaqāt al-ṣūfiyyaŧ"
+      ],
+      "n": 110
+    },
+    "وتراجم": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Sahifa",
+        "Sahifa"
+      ],
+      "n": 1288
+    },
+    "وزوائد": {
+      "evidence_sample": [
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Shucab Iman"
+      ],
+      "n": 60
+    },
+    "وسلم": {
+      "evidence_sample": [
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq"
+      ],
+      "n": 310
+    },
+    "وصرفية": {
+      "evidence_sample": [
+        "Ishtiqaq",
+        "Ishtiqaq",
+        "Ishtiqaq",
+        "Amali",
+        "Amali"
+      ],
+      "n": 67
+    },
+    "وعلوم": {
+      "evidence_sample": [
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir"
+      ],
+      "n": 370
+    },
+    "وكتبه": {
+      "evidence_sample": [
+        "Mufaddaliyyat",
+        "Mufaddaliyyat",
+        "Jamharat Ashcar Carab",
+        "Jamharat Ashcar Carab",
+        "al-Aṣmaʿiyyāt"
+      ],
+      "n": 73
+    },
+    "ولغة": {
+      "evidence_sample": [
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Cayn",
+        "Cayn"
+      ],
+      "n": 281
+    },
+    "ومذاهب": {
+      "evidence_sample": [
+        "Ikhtilaf Culama",
+        "Ikhtilaf Culama",
+        "Ikhtilaf Fuqaha",
+        "Ikhtilaf Fuqaha",
+        "Awsat Fi Sunan"
+      ],
+      "n": 55
+    },
+    "ومسائل": {
+      "evidence_sample": [
+        "Manasik",
+        "Manasik",
+        "Kharaj",
+        "Kharaj",
+        "Kharaj"
+      ],
+      "n": 313
+    },
+    "ومعاجم": {
+      "evidence_sample": [
+        "al-Maʿārif",
+        "al-Maʿārif",
+        "al-Maʿārif",
+        "Ansāb al-ašrāf :: Ǧumal min Ansāb al-ašrāf",
+        "Ansāb al-ašrāf :: Ǧumal min Ansāb al-ašrāf"
+      ],
+      "n": 36
+    },
+    "ومنتخبات": {
+      "evidence_sample": [
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Shucab Iman"
+      ],
+      "n": 120
+    },
+    "ونحوها": {
+      "evidence_sample": [
+        "Gharib Quran",
+        "Gharib Quran",
+        "Ihtisab",
+        "Masail Ibadiyya",
+        "Ithbat Nubuwwa"
+      ],
+      "n": 74
+    }
+  },
+  "prefix_counts": {
+    "BibleCorpus@": 1,
+    "DARE@": 13,
+    "EShia@": 2,
+    "Filaha@": 6,
+    "GAL@": 34035,
+    "GVDB@": 8,
+    "HHD@": 1,
+    "JK@": 15377,
+    "KITAB@": 81,
+    "Kraken@": 10,
+    "LMN@": 5,
+    "MAB@": 4,
+    "MSG@": 6,
+    "Masaha@": 1,
+    "Other@": 1,
+    "PLAIN": 226821,
+    "PV@": 23,
+    "Rafed@": 4,
+    "SK@": 3,
+    "Sham@": 1785,
+    "ShamAY@": 3355,
+    "ShamDhahabiyya@": 3,
+    "ShamIbadiyya@": 164,
+    "Shamela@": 7520,
+    "Shia@": 2733,
+    "Zaydiyya@": 774,
+    "_UNDERSCORE": 22079,
+    "aq@": 15,
+    "born@": 13963,
+    "died@": 2792,
+    "resided@": 6923,
+    "src@": 4,
+    "visited@": 8621
+  },
+  "underscore_tags": {
+    "_ADAB": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Amthal Carab"
+      ],
+      "n": 780
+    },
+    "_ADHKAR": {
+      "evidence_sample": [
+        "Zuhd",
+        "Zuhd",
+        "Zuhd",
+        "Zuhd",
+        "Zuhd"
+      ],
+      "n": 230
+    },
+    "_ADILLA": {
+      "evidence_sample": [
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "Fahrasa"
+      ],
+      "n": 55
+    },
+    "_ADMINISTRATION": {
+      "evidence_sample": [
+        "al-Taʿrīf bi-al-muṣṭalaḥ al-šarīf",
+        "al-Taʿrīf bi-al-muṣṭalaḥ al-šarīf"
+      ],
+      "n": 2
+    },
+    "_AFTER800": {
+      "evidence_sample": [
+        "Jamic Khilaf",
+        "Mukhtalaf Shica",
+        "Muntaha Matlab",
+        "Muntaha Matlab",
+        "Nihayat Ahkam"
+      ],
+      "n": 88
+    },
+    "_AHKAM": {
+      "evidence_sample": [
+        "Ahkam Quran",
+        "Ahkam Quran",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith"
+      ],
+      "n": 74
+    },
+    "_AHLAM": {
+      "evidence_sample": [
+        "kitāb al-manāmāt :: al-manāmāt",
+        "kitāb al-manāmāt :: al-manāmāt",
+        "kitāb al-manāmāt :: al-manāmāt",
+        "Tacbir Ruya",
+        "Tacbir Ruya"
+      ],
+      "n": 17
+    },
+    "_AJZA": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Ahadith Yazid",
+        "Ahadith Min Maghazi"
+      ],
+      "n": 1022
+    },
+    "_AKHLAQ": {
+      "evidence_sample": [
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Zuhd",
+        "Zuhd",
+        "Zuhd"
+      ],
+      "n": 426
+    },
+    "_ALBANI": {
+      "evidence_sample": [
+        "Mukhtasar Shamail Muhammadiyya",
+        "Sunan :: al-Ǧāmiʿ al-ṣaḥīḥ",
+        "Sunan :: al-Ǧāmiʿ al-ṣaḥīḥ",
+        "Sunan :: al-Ǧāmiʿ al-ṣaḥīḥ",
+        "Sunan :: al-Ǧāmiʿ al-ṣaḥīḥ"
+      ],
+      "n": 27
+    },
+    "_AMALI": {
+      "evidence_sample": [
+        "Amali Fi Athar",
+        "Amali Fi Athar",
+        "Amali Wa Qiraa",
+        "Amali Wa Qiraa",
+        "Majlisān min imlā' al-Nasā'ī :: Juz' fīhi majlisān min imlā' al-Nasā'ī"
+      ],
+      "n": 26
+    },
+    "_AMTHAL": {
+      "evidence_sample": [
+        "Amthal",
+        "Amthal",
+        "Amthal",
+        "Amthal",
+        "Amthal"
+      ],
+      "n": 37
+    },
+    "_ANSAB": {
+      "evidence_sample": [
+        "ḥaḏf min nasab qurayš :: nasab qurayš",
+        "ḥaḏf min nasab qurayš :: nasab qurayš",
+        "Jamharat Ansab",
+        "Jamharat Ansab",
+        "Nasab Macad"
+      ],
+      "n": 70
+    },
+    "_ASHAB": {
+      "evidence_sample": [
+        "faḍāʾil al-saḥabŧ",
+        "faḍāʾil al-saḥabŧ",
+        "al-muntaḫab min kitāb azwāǧ al-nabī :: al-muntaḫab",
+        "al-muntaḫab min kitāb azwāǧ al-nabī :: al-muntaḫab",
+        "Tarikat Nabi"
+      ],
+      "n": 132
+    },
+    "_BALAGHA": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Amthal Carab"
+      ],
+      "n": 502
+    },
+    "_BEFORE800": {
+      "evidence_sample": [
+        "Fiqh Rida",
+        "al-Muqniʿ :: al-Muqniʿ",
+        "Ahkam Nisa",
+        "Ahkam Nisa",
+        "Dhabaih Ahl Kitab"
+      ],
+      "n": 36
+    },
+    "_BUHUTH": {
+      "evidence_sample": [
+        "Manasik",
+        "Manasik",
+        "al-Radd ʿalá siyar al-Awzāʿī",
+        "al-Radd ʿalá siyar al-Awzāʿī",
+        "Amwal"
+      ],
+      "n": 129
+    },
+    "_BULDAN": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "ḥaḏf min nasab qurayš :: nasab qurayš",
+        "ḥaḏf min nasab qurayš :: nasab qurayš"
+      ],
+      "n": 257
+    },
+    "_CAJAIB": {
+      "evidence_sample": [
+        "Muḫtaṣar ʿaǧāʾib al-dunyā",
+        "Muḫtaṣar ʿaǧāʾib al-dunyā"
+      ],
+      "n": 2
+    },
+    "_CAQAID": {
+      "evidence_sample": [
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Akbar",
+        "al-Fiqh al-Akbar",
+        "Qadar"
+      ],
+      "n": 643
+    },
+    "_CARUD": {
+      "evidence_sample": [
+        "Adab Kuttab",
+        "Adab Kuttab",
+        "Carud",
+        "Carud",
+        "Sinacatayn"
+      ],
+      "n": 14
+    },
+    "_CENT00NO": {
+      "evidence_sample": [
+        "Wafiya",
+        "Wujub Cadl"
+      ],
+      "n": 2
+    },
+    "_CENT1500": {
+      "evidence_sample": [
+        "Mucjam Shucara",
+        "Mawsuca Mujaza Fi Tarikh Islami"
+      ],
+      "n": 2
+    },
+    "_CHRONOMULTIPLE": {
+      "evidence_sample": [
+        "Cawali",
+        "Cawali",
+        "Sunan :: al-Ǧāmiʿ al-ṣaḥīḥ",
+        "Sunan :: al-Ǧāmiʿ al-ṣaḥīḥ",
+        "Sunan :: al-Ǧāmiʿ al-ṣaḥīḥ"
+      ],
+      "n": 82
+    },
+    "_CILAL": {
+      "evidence_sample": [
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Min Kalam Fi Rijal"
+      ],
+      "n": 128
+    },
+    "_CIRFAN": {
+      "evidence_sample": [
+        "Futuhat Makkiyya",
+        "Futuhat Makkiyya",
+        "Miftah Ghayb",
+        "Misbah Uns",
+        "Isharat"
+      ],
+      "n": 10
+    },
+    "_COSMOLOGY": {
+      "evidence_sample": [
+        "Kitāb al-ašbāḥ wa-al-aẓillaŧ"
+      ],
+      "n": 1
+    },
+    "_CULUM": {
+      "evidence_sample": [
+        "Gharib Quran",
+        "Gharib Quran",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir"
+      ],
+      "n": 499
+    },
+    "_DACIF": {
+      "evidence_sample": [
+        "Cilal",
+        "Cilal",
+        "Cilal",
+        "al-ʿIlal wa maʿrifaŧ al-riǧāl",
+        "al-ʿIlal wa maʿrifaŧ al-riǧāl"
+      ],
+      "n": 93
+    },
+    "_DACWA": {
+      "evidence_sample": [
+        "Ghayat Maqsud",
+        "Abu Hurayra"
+      ],
+      "n": 2
+    },
+    "_DJUGHRAFIYA": {
+      "evidence_sample": [
+        "Taʾrīḫ al-ʿālam"
+      ],
+      "n": 1
+    },
+    "_FADAIL": {
+      "evidence_sample": [
+        "Fadail Quran",
+        "Fadail Quran",
+        "Fadail Surat Ikhlas",
+        "Fadail Surat Ikhlas",
+        "Fadail Quran"
+      ],
+      "n": 6
+    },
+    "_FAHARIS": {
+      "evidence_sample": [
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "Mafatih Culum"
+      ],
+      "n": 103
+    },
+    "_FALSAFA": {
+      "evidence_sample": [
+        "Futuhat Makkiyya",
+        "Futuhat Makkiyya",
+        "Miftah Ghayb",
+        "Misbah Uns",
+        "Isharat"
+      ],
+      "n": 10
+    },
+    "_FARQ": {
+      "evidence_sample": [
+        "Cuthmaniyya",
+        "Cuthmaniyya",
+        "Cuthmaniyya",
+        "Maqalat Islamiyyin",
+        "Maqalat Islamiyyin"
+      ],
+      "n": 9
+    },
+    "_FASAHA": {
+      "evidence_sample": [
+        "Qawafi",
+        "Qawafi",
+        "kitāb al-muḥabbar :: al-muḥabbar",
+        "kitāb al-muḥabbar :: al-muḥabbar",
+        "kitāb al-muḥabbar :: al-muḥabbar"
+      ],
+      "n": 74
+    },
+    "_FATAWA": {
+      "evidence_sample": [
+        "Futya",
+        "Futya",
+        "Sarair",
+        "Masail Manthura",
+        "Masala Mardiniyya"
+      ],
+      "n": 72
+    },
+    "_FAWAID": {
+      "evidence_sample": [
+        "Majlis Min Fawaid",
+        "Majlis Min Fawaid",
+        "Hadith Yahya",
+        "Hadith Yahya",
+        "Hadith Yahya"
+      ],
+      "n": 31
+    },
+    "_FIQH": {
+      "evidence_sample": [
+        "Jamic",
+        "Jamic",
+        "Jihad",
+        "Jihad",
+        "Jihad"
+      ],
+      "n": 1257
+    },
+    "_FIRAQ": {
+      "evidence_sample": [
+        "Firaq Shica",
+        "Maqalat Islamiyyin",
+        "Maqalat Islamiyyin",
+        "Maqalat Islamiyyin",
+        "Maqalat Islamiyyin"
+      ],
+      "n": 32
+    },
+    "_FUTUH": {
+      "evidence_sample": [
+        "Futūḥ Miṣr wa-al-Maġrib",
+        "Futūḥ Miṣr wa-al-Maġrib",
+        "Futūḥ Miṣr wa-al-Maġrib",
+        "Futūḥ Miṣr wa-al-Maġrib"
+      ],
+      "n": 4
+    },
+    "_GHARIB": {
+      "evidence_sample": [
+        "Ansāb al-ḫayl fī al-jāhiliyyaŧ wa-al-islām wa-aḫbārihā :: Ansāb al-ḫayl",
+        "Ansāb al-ḫayl fī al-jāhiliyyaŧ wa-al-islām wa-aḫbārihā :: Ansāb al-ḫayl",
+        "Ansāb al-ḫayl fī al-jāhiliyyaŧ wa-al-islām wa-aḫbārihā :: Ansāb al-ḫayl",
+        "Ahkam Quran",
+        "Ahkam Quran"
+      ],
+      "n": 220
+    },
+    "_HADITH": {
+      "evidence_sample": [
+        "Kitab Sulaym",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Ahadith Yazid"
+      ],
+      "n": 2793
+    },
+    "_HANAFI": {
+      "evidence_sample": [
+        "Kitāb al-āṯār",
+        "Kitāb al-āṯār",
+        "Iḫtilāf Abī Ḥanīfaŧ wa ibn Abī laylá",
+        "al-Radd ʿalá siyar al-Awzāʿī",
+        "al-Radd ʿalá siyar al-Awzāʿī"
+      ],
+      "n": 95
+    },
+    "_HANBALI": {
+      "evidence_sample": [
+        "aḥkam al-nisāʾ",
+        "Masāʾil al-imām Aḥmad b. Ḥanbal riwāyaŧ ibnihi ʿAbd¶    Allāh b. Aḥmad :: Masāʾil al-imām ",
+        "Masāʾil al-imām Aḥmad b. Ḥanbal riwāyaŧ ibnihi ʿAbd¶    Allāh b. Aḥmad :: Masāʾil al-imām ",
+        "Masāʾil al-imām Aḥmad b. Ḥanbal riwāyaŧ Ibn Abī al-¶    Faḍl Ṣāliḥ :: Masāʾil riwāyaŧ Ṣāli",
+        "Masāʾil al-imām Aḥmad b. Ḥanbal riwāyaŧ Ibn Abī al-¶    Faḍl Ṣāliḥ :: Masāʾil riwāyaŧ Ṣāli"
+      ],
+      "n": 96
+    },
+    "_IBNABIDUNYA": {
+      "evidence_sample": [
+        "Ahwal",
+        "Ahwal",
+        "Ahwal",
+        "al-Awliyāʾ",
+        "al-Awliyāʾ"
+      ],
+      "n": 128
+    },
+    "_IBNQAYYIM": {
+      "evidence_sample": [
+        "Amthal Fi Quran",
+        "Amthal Fi Quran",
+        "Amthal Fi Quran",
+        "Amthal Fi Quran",
+        "Badaic Fawaid"
+      ],
+      "n": 67
+    },
+    "_IBNTAYMIYYA": {
+      "evidence_sample": [
+        "Ahadith Qussas",
+        "Ahadith Qussas",
+        "Amr Bi Macruf",
+        "Amr Bi Macruf",
+        "Amrad Qulub"
+      ],
+      "n": 113
+    },
+    "_ICRAB": {
+      "evidence_sample": [
+        "Mushkil Icrab Quran",
+        "Mushkil Icrab Quran",
+        "Tibyan Fi Icrab Quran",
+        "Tibyan Fi Icrab Quran"
+      ],
+      "n": 4
+    },
+    "_IMAM": {
+      "evidence_sample": [
+        "Rawda",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq"
+      ],
+      "n": 96
+    },
+    "_JUGHRAFIYA": {
+      "evidence_sample": [
+        "Aḫbār Makkaŧ al-Mušarrafaaŧ",
+        "Aḫbār Makkaŧ al-Mušarrafaaŧ",
+        "Aḫbār Makkaŧ al-Mušarrafaaŧ",
+        "al-tabṣiraŧ bi-l-tiǧāraŧ :: al-tabaṣṣur bi-al-tiǧāraŧ",
+        "al-tabṣiraŧ bi-l-tiǧāraŧ :: al-tabaṣṣur bi-al-tiǧāraŧ"
+      ],
+      "n": 120
+    },
+    "_KITABA": {
+      "evidence_sample": [
+        "Adab Kuttab",
+        "Adab Kuttab",
+        "Carud",
+        "Carud",
+        "Sinacatayn"
+      ],
+      "n": 14
+    },
+    "_KUTUB": {
+      "evidence_sample": [
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "al-Fihrist",
+        "Mafatih Culum"
+      ],
+      "n": 79
+    },
+    "_LUGHA": {
+      "evidence_sample": [
+        "Gharib Hadith",
+        "Gharib Hadith",
+        "Gharib Hadith",
+        "Gharib Hadith",
+        "Islah Mantiq"
+      ],
+      "n": 110
+    },
+    "_MACAJIM": {
+      "evidence_sample": [
+        "Musnad",
+        "Musnad",
+        "Musnad",
+        "Musnad",
+        "Musnad"
+      ],
+      "n": 336
+    },
+    "_MAJALIS": {
+      "evidence_sample": [
+        "Amali Fi Athar",
+        "Amali Fi Athar",
+        "Amali Wa Qiraa",
+        "Amali Wa Qiraa",
+        "Majlisān min imlā' al-Nasā'ī :: Juz' fīhi majlisān min imlā' al-Nasā'ī"
+      ],
+      "n": 26
+    },
+    "_MAJALLAT": {
+      "evidence_sample": [
+        "Hawamil Wa Shawamil",
+        "Hawamil Wa Shawamil",
+        "Hawamil Wa Shawamil",
+        "Majmuc Rasail",
+        "Fath Rabbani Min Fatawa"
+      ],
+      "n": 6
+    },
+    "_MAJMUCAT": {
+      "evidence_sample": [
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Kitāb Sībawayhi",
+        "Kitāb Sībawayhi"
+      ],
+      "n": 85
+    },
+    "_MAJOR_ISSUES": {
+      "evidence_sample": [
+        "Ḫalq al-insān fī al-luġaŧ"
+      ],
+      "n": 1
+    },
+    "_MAKHTUTAT": {
+      "evidence_sample": [
+        "Nuskhat Zubayr",
+        "Ahadith Sari",
+        "Juz",
+        "Hadith",
+        "Hadith"
+      ],
+      "n": 211
+    },
+    "_MALIKI": {
+      "evidence_sample": [
+        "Majalis Ibn Qasim",
+        "Mudawwana Kubra",
+        "Mudawwana Kubra",
+        "Mudawwana Kubra",
+        "Tawassut"
+      ],
+      "n": 75
+    },
+    "_MANSUKH": {
+      "evidence_sample": [
+        "Nasikh Wa Mansukh",
+        "Nasikh Wa Mansukh",
+        "Nasikh Wa Mansukh",
+        "Nasikh Wa Mansukh",
+        "Nasikh Wa Mansukh"
+      ],
+      "n": 22
+    },
+    "_MANTIQ": {
+      "evidence_sample": [
+        "Futuhat Makkiyya",
+        "Futuhat Makkiyya",
+        "Jumal Fi Mantiq",
+        "Jumal Fi Mantiq",
+        "Miftah Ghayb"
+      ],
+      "n": 12
+    },
+    "_MASAIL": {
+      "evidence_sample": [
+        "Manasik",
+        "Manasik",
+        "Jihad",
+        "Jihad",
+        "Jihad"
+      ],
+      "n": 334
+    },
+    "_MASANID": {
+      "evidence_sample": [
+        "Musnad",
+        "Musnad",
+        "Musnad",
+        "Musnad",
+        "Musnad"
+      ],
+      "n": 99
+    },
+    "_MAWDUC": {
+      "evidence_sample": [
+        "Cilal",
+        "Cilal",
+        "Cilal",
+        "al-ʿIlal wa maʿrifaŧ al-riǧāl",
+        "al-ʿIlal wa maʿrifaŧ al-riǧāl"
+      ],
+      "n": 93
+    },
+    "_MILAL": {
+      "evidence_sample": [
+        "al-Fiqh al-Absaṭ",
+        "al-Fiqh al-Absaṭ",
+        "Qadar",
+        "Qadar",
+        "Asnam"
+      ],
+      "n": 425
+    },
+    "_MISC": {
+      "evidence_sample": [
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Majlis Min Fawaid",
+        "Majlis Min Fawaid",
+        "Hadith Yahya"
+      ],
+      "n": 613
+    },
+    "_MUDHAKKARAT": {
+      "evidence_sample": [
+        "Nuzhaŧ al-muštāq fī iḫtirāq al-āfāq",
+        "Nuzhaŧ al-muštāq fī iḫtirāq al-āfāq",
+        "Nuzhaŧ al-muštāq fī iḫtirāq al-āfāq",
+        "Nuzhaŧ al-muštāq fī iḫtirāq al-āfāq",
+        "Rihla"
+      ],
+      "n": 10
+    },
+    "_MUFASSIRUN": {
+      "evidence_sample": [
+        "Tabaqat Mufassirin",
+        "Tabaqat Mufassirin",
+        "Ṭabaqāt al-mufassirīn",
+        "Ṭabaqāt al-mufassirīn"
+      ],
+      "n": 4
+    },
+    "_MUKHADRAM": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 12
+    },
+    "_MUSHKIL": {
+      "evidence_sample": [
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Cilal Saghir"
+      ],
+      "n": 25
+    },
+    "_MUSTALAHAT": {
+      "evidence_sample": [
+        "Ansāb al-ḫayl fī al-jāhiliyyaŧ wa-al-islām wa-aḫbārihā :: Ansāb al-ḫayl",
+        "Ansāb al-ḫayl fī al-jāhiliyyaŧ wa-al-islām wa-aḫbārihā :: Ansāb al-ḫayl",
+        "Ansāb al-ḫayl fī al-jāhiliyyaŧ wa-al-islām wa-aḫbārihā :: Ansāb al-ḫayl",
+        "Jim",
+        "Jim"
+      ],
+      "n": 413
+    },
+    "_MUSTAQILLA": {
+      "evidence_sample": [
+        "Bidayat Mujtahid",
+        "Bidayat Mujtahid",
+        "Bidayat Mujtahid",
+        "Bidayat Mujtahid",
+        "Bidayat Mujtahid"
+      ],
+      "n": 17
+    },
+    "_NABI": {
+      "evidence_sample": [
+        "Rawda",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq"
+      ],
+      "n": 96
+    },
+    "_NAHW": {
+      "evidence_sample": [
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Kitāb Sībawayhi",
+        "Kitāb Sībawayhi"
+      ],
+      "n": 211
+    },
+    "_NASIKH": {
+      "evidence_sample": [
+        "Nasikh Wa Mansukh",
+        "Nasikh Wa Mansukh",
+        "Nasikh Wa Mansukh",
+        "Nasikh Wa Mansukh",
+        "Nasikh Wa Mansukh"
+      ],
+      "n": 22
+    },
+    "_NUJUM": {
+      "evidence_sample": [
+        "Muntahā al-idrāk fī taqāsīm al-aflāk"
+      ],
+      "n": 1
+    },
+    "_QADA": {
+      "evidence_sample": [
+        "Siyasa",
+        "Siyasa",
+        "Siyasa",
+        "Siyasa",
+        "Siyasa"
+      ],
+      "n": 76
+    },
+    "_QAWACID": {
+      "evidence_sample": [
+        "Jimac Cilm",
+        "Jimac Cilm",
+        "Jimac Cilm",
+        "Usul",
+        "Usul"
+      ],
+      "n": 173
+    },
+    "_QIRAAT": {
+      "evidence_sample": [
+        "Mushtabihat Quran",
+        "Juz Fihi Qiraat",
+        "Juz Fihi Qiraat",
+        "Tafsir Asma Allah",
+        "Tafsir Asma Allah"
+      ],
+      "n": 38
+    },
+    "_QISAS": {
+      "evidence_sample": [
+        "Amil Wa Mamul",
+        "Amil Wa Mamul",
+        "al-Maḥāsin wa-l-aḍdād",
+        "al-Maḥāsin wa-l-aḍdād",
+        "al-Maḥāsin wa-l-aḍdād"
+      ],
+      "n": 96
+    },
+    "_QURAN": {
+      "evidence_sample": [
+        "al-Qurān :: al-Muṣḥaf",
+        "al-Qurān :: al-Muṣḥaf",
+        "al-Qurān :: al-Muṣḥaf",
+        "Gharib Quran",
+        "Gharib Quran"
+      ],
+      "n": 381
+    },
+    "_RAQAIQ": {
+      "evidence_sample": [
+        "Zuhd",
+        "Zuhd",
+        "Zuhd",
+        "Zuhd",
+        "Zuhd"
+      ],
+      "n": 203
+    },
+    "_RIHLAT": {
+      "evidence_sample": [
+        "al-tabṣiraŧ bi-l-tiǧāraŧ :: al-tabaṣṣur bi-al-tiǧāraŧ",
+        "al-tabṣiraŧ bi-l-tiǧāraŧ :: al-tabaṣṣur bi-al-tiǧāraŧ",
+        "Kitāb al-Buldān :: Kitāb Asmāʾ al-buldān",
+        "Kitāb al-Buldān :: Kitāb Asmāʾ al-buldān",
+        "Kitāb al-Buldān :: Kitāb Asmāʾ al-buldān"
+      ],
+      "n": 83
+    },
+    "_RUDUD": {
+      "evidence_sample": [
+        "Radd Cala Zanadiqa",
+        "Radd Cala Zanadiqa",
+        "Cuthmaniyya",
+        "Cuthmaniyya",
+        "Cuthmaniyya"
+      ],
+      "n": 87
+    },
+    "_SAHIH": {
+      "evidence_sample": [
+        "Sahih",
+        "Sahih",
+        "Sahih",
+        "Ṣaḥīḥ",
+        "Ṣaḥīḥ"
+      ],
+      "n": 29
+    },
+    "_SARF": {
+      "evidence_sample": [
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Jumal Fi Nahw",
+        "Kitāb Sībawayhi",
+        "Kitāb Sībawayhi"
+      ],
+      "n": 211
+    },
+    "_SECTIONS": {
+      "evidence_sample": [
+        "Akhbar Nahwiyyin",
+        "Tawbikh"
+      ],
+      "n": 2
+    },
+    "_SHAFICI": {
+      "evidence_sample": [
+        "Jimac Cilm",
+        "Jimac Cilm",
+        "Jimac Cilm",
+        "Musnad",
+        "Musnad"
+      ],
+      "n": 108
+    },
+    "_SHAMAIL": {
+      "evidence_sample": [
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Siyar"
+      ],
+      "n": 123
+    },
+    "_SHARH": {
+      "evidence_sample": [
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Ikhtilaf Hadith",
+        "Nasikh Hadith"
+      ],
+      "n": 129
+    },
+    "_SHICI": {
+      "evidence_sample": [
+        "Kitab Sulaym",
+        "Tafsir",
+        "Misbah Sharica",
+        "Masail",
+        "Masail"
+      ],
+      "n": 447
+    },
+    "_SHICR": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 213
+    },
+    "_SHICR_ANDALUSI": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Tawabic Wa Zawabic"
+      ],
+      "n": 15
+    },
+    "_SHICR_CABBASI": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 50
+    },
+    "_SHICR_CUTHMANI": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 17
+    },
+    "_SHICR_JAHILI": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 27
+    },
+    "_SHICR_UMAWI": {
+      "evidence_sample": [
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan",
+        "Diwan"
+      ],
+      "n": 19
+    },
+    "_SIRA": {
+      "evidence_sample": [
+        "Rawda",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq",
+        "Sīraŧ  åbn Isḥāq"
+      ],
+      "n": 226
+    },
+    "_SIYASA": {
+      "evidence_sample": [
+        "al-Radd ʿalá siyar al-Awzāʿī",
+        "al-Radd ʿalá siyar al-Awzāʿī",
+        "Siyar",
+        "Siyar",
+        "Wasaya Muluk"
+      ],
+      "n": 105
+    },
+    "_SUALAT": {
+      "evidence_sample": [
+        "Min Kalam Fi Rijal",
+        "Min Kalam Fi Rijal",
+        "Sualat Ibn Junayd",
+        "Sualat Ibn Junayd",
+        "Cilal"
+      ],
+      "n": 109
+    },
+    "_SULUK": {
+      "evidence_sample": [
+        "Kitāb al-Adab al-kabīr",
+        "Kitāb al-Adab al-kabīr",
+        "Adab Nufus",
+        "Adab Nufus",
+        "Risalat Mustarshidin"
+      ],
+      "n": 178
+    },
+    "_SUNAN": {
+      "evidence_sample": [
+        "Jamic Fi Hadith",
+        "Jamic Fi Hadith",
+        "Musnad",
+        "Musnad",
+        "Musnad"
+      ],
+      "n": 36
+    },
+    "_SUNNI": {
+      "evidence_sample": [
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir"
+      ],
+      "n": 920
+    },
+    "_TABAQAT": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Sīraŧ ʿUmar b. ʿAbd al-ʿAzīz ʿalá mā rawāhu al-imām Mālik b. Anas wa-aṣḥābuhu :: Sīraŧ ʿUm",
+        "Sīraŧ ʿUmar b. ʿAbd al-ʿAzīz ʿalá mā rawāhu al-imām Mālik b. Anas wa-aṣḥābuhu :: Sīraŧ ʿUm"
+      ],
+      "n": 642
+    },
+    "_TAFSIR": {
+      "evidence_sample": [
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir",
+        "Tafsir"
+      ],
+      "n": 324
+    },
+    "_TAJWID": {
+      "evidence_sample": [
+        "Mushtabihat Quran",
+        "Mukhtasar Tabyin",
+        "Kanz Fi Qiraat Cashr",
+        "Tabaqat Qurra",
+        "Siraj Qari"
+      ],
+      "n": 11
+    },
+    "_TAKHRIJ": {
+      "evidence_sample": [
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Nawadir Usul",
+        "Ahadith Muwatta"
+      ],
+      "n": 123
+    },
+    "_TARAIF": {
+      "evidence_sample": [
+        "Amil Wa Mamul",
+        "Amil Wa Mamul",
+        "al-Maḥāsin wa-l-aḍdād",
+        "al-Maḥāsin wa-l-aḍdād",
+        "al-Maḥāsin wa-l-aḍdād"
+      ],
+      "n": 96
+    },
+    "_TARAJIM": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Juz",
+        "Juz"
+      ],
+      "n": 1448
+    },
+    "_TARIKH": {
+      "evidence_sample": [
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "Faḍāʾil Makkaŧ",
+        "ḥaḏf min nasab qurayš :: nasab qurayš",
+        "ḥaḏf min nasab qurayš :: nasab qurayš"
+      ],
+      "n": 557
+    },
+    "_TASAWWUF": {
+      "evidence_sample": [
+        "Mawaqif",
+        "Mukhatabat",
+        "Qut Qulub",
+        "Qut Qulub",
+        "Risala Qushayriyya"
+      ],
+      "n": 16
+    },
+    "_TAZKIYA": {
+      "evidence_sample": [
+        "Riyāḍ al-ṣāliḥīn",
+        "Riyāḍ al-ṣāliḥīn",
+        "Riyāḍ al-ṣāliḥīn",
+        "Riyāḍ al-ṣāliḥīn",
+        "Riyāḍ al-ṣāliḥīn"
+      ],
+      "n": 61
+    },
+    "_THIQAT": {
+      "evidence_sample": [
+        "Maʿrifaŧ al-ṯiqāt min riǧāl ahl al-ʿilm wa-l-ḥadīṯ wa-¶    min al-ḍuʿafāʾ wa-ḏikr maḏāhibi",
+        "Maʿrifaŧ al-ṯiqāt min riǧāl ahl al-ʿilm wa-l-ḥadīṯ wa-¶    min al-ḍuʿafāʾ wa-ḏikr maḏāhibi",
+        "Maʿrifaŧ al-ṯiqāt min riǧāl ahl al-ʿilm wa-l-ḥadīṯ wa-¶    min al-ḍuʿafāʾ wa-ḏikr maḏāhibi",
+        "Maʿrifaŧ al-ṯiqāt min riǧāl ahl al-ʿilm wa-l-ḥadīṯ wa-¶    min al-ḍuʿafāʾ wa-ḏikr maḏāhibi",
+        "Tasmiyaŧ fuqahāʾ al-amṣār :: Tasmiyaŧ fuqahāʾ al-amṣār min aṣḥāb rasūl Allāh¶    wa-man ba"
+      ],
+      "n": 51
+    },
+    "_TIBB": {
+      "evidence_sample": [
+        "Sharh Afladhinush Li Fusul Abuqrat",
+        "Mukhtasar Fi Tibb",
+        "Mukhtasar Fi Tibb",
+        "Tafsir Jalinus Li Fusul Abuqrat",
+        "Firdaws Hikma Fi Tibb"
+      ],
+      "n": 33
+    },
+    "_TWELVERS": {
+      "evidence_sample": [
+        "Tarjamat Hasan",
+        "Tarjamat Husayn",
+        "Tuhfa Casjadiya",
+        "Wilaya",
+        "Shuhub Thawaqib"
+      ],
+      "n": 53
+    },
+    "_USUL": {
+      "evidence_sample": [
+        "Jihad",
+        "Jihad",
+        "Jihad",
+        "Jihad",
+        "Jihad"
+      ],
+      "n": 364
+    },
+    "_USULIYYA": {
+      "evidence_sample": [
+        "Maratib Ijmac",
+        "Maratib Ijmac",
+        "Risālaŧ fī al-radd ʿalá al-hātif min buʿd",
+        "Risālatān lahu aǧāb fīhimā ʿan risālatayn suʾila fīhimā suʾāl al-taʿnīf",
+        "Bayan Khata"
+      ],
+      "n": 41
+    },
+    "_WAFAYAT": {
+      "evidence_sample": [
+        "Ṭabaqāt al-ṣūfiyyaŧ",
+        "Ṭabaqāt al-ṣūfiyyaŧ",
+        "Ṭabaqāt al-ṣūfiyyaŧ",
+        "Ṣifaŧ al-ṣafwaŧ",
+        "Ṣifaŧ al-ṣafwaŧ"
+      ],
+      "n": 74
+    },
+    "_ZAHIRI": {
+      "evidence_sample": [
+        "Muhalla Bi Athar",
+        "Muhalla Bi Athar",
+        "Muhalla Bi Athar",
+        "Muhalla Bi Athar",
+        "Muhalla Bi Athar"
+      ],
+      "n": 5
+    },
+    "_ZAYDIYYA": {
+      "evidence_sample": [
+        "Taṯbīt al-Imāmaŧ",
+        "Taṯbīt al-Imāmaŧ",
+        "Taṯbīt al-Imāmaŧ",
+        "Ciqd Thamin",
+        "Ciqd Thamin"
+      ],
+      "n": 8
+    }
+  }
+}

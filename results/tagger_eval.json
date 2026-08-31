@@ -1,0 +1,256 @@
+{
+  "alignment": "needleman_wunsch_surface_edit_distance",
+  "config_hash": "38ec324929d5dbd45667268e58b99ad5841d6679f98b1887fc2603f3fa3b721e",
+  "ctrl_tagged": false,
+  "expected_n_words": 77429,
+  "figure": {
+    "fig_id": "FIG-39",
+    "json": "figures/FIG-39_tagger_eval.json",
+    "png": "figures/FIG-39_tagger_eval.png",
+    "svg": "figures/FIG-39_tagger_eval.svg"
+  },
+  "generated_at": "2026-08-30T22:32:56Z",
+  "git_dirty": true,
+  "git_sha": "c89d01642d6d994ef6855976ab4dcaa88b6cabdc",
+  "git_state": null,
+  "handoff_h1_prepared": false,
+  "lemma_n": 74122,
+  "metrics": {
+    "alignment_coverage": 1.0,
+    "lemma_accuracy": 0.7840182401985916,
+    "majority_baseline_coarse": 0.37513076495886555,
+    "majority_baseline_tag": "NOUN",
+    "pos_accuracy": 0.6768652572033734,
+    "pos_accuracy_coarse": 0.7458574952537164,
+    "segmentation_f1": 0.7734856941136242,
+    "token_level_accuracy": 0.7458574952537164
+  },
+  "n_aligned": 77429,
+  "n_pred": 77429,
+  "n_verses": 6236,
+  "n_words": 77429,
+  "normalizer_profile": "strict",
+  "per_pos": {
+    "ACC": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 2283
+    },
+    "ADJ": {
+      "accuracy": 0.24077868852459017,
+      "correct": 470,
+      "n": 1952
+    },
+    "AMD": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 65
+    },
+    "ANS": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 40
+    },
+    "AVR": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 33
+    },
+    "CERT": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 414
+    },
+    "COND": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 1048
+    },
+    "CONJ": {
+      "accuracy": 0.533068783068783,
+      "correct": 403,
+      "n": 756
+    },
+    "DEM": {
+      "accuracy": 0.7818696883852692,
+      "correct": 828,
+      "n": 1059
+    },
+    "EXH": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 40
+    },
+    "EXL": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 66
+    },
+    "EXP": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 109
+    },
+    "FUT": {
+      "accuracy": 0.9047619047619048,
+      "correct": 38,
+      "n": 42
+    },
+    "IMPN": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 2
+    },
+    "INC": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 91
+    },
+    "INL": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 30
+    },
+    "INT": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 47
+    },
+    "INTG": {
+      "accuracy": 0.3778801843317972,
+      "correct": 164,
+      "n": 434
+    },
+    "LOC": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 672
+    },
+    "N": {
+      "accuracy": 0.6722498508056495,
+      "correct": 16897,
+      "n": 25135
+    },
+    "NEG": {
+      "accuracy": 0.6382898221717745,
+      "correct": 1687,
+      "n": 2643
+    },
+    "P": {
+      "accuracy": 0.9790309976556395,
+      "correct": 7517,
+      "n": 7678
+    },
+    "PN": {
+      "accuracy": 0.9133214011761698,
+      "correct": 3572,
+      "n": 3911
+    },
+    "PRO": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 328
+    },
+    "PRON": {
+      "accuracy": 0.3977582550742199,
+      "correct": 1313,
+      "n": 3301
+    },
+    "REL": {
+      "accuracy": 0.8235294117647058,
+      "correct": 2730,
+      "n": 3315
+    },
+    "RES": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 553
+    },
+    "RET": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 122
+    },
+    "SUB": {
+      "accuracy": 0.7690058479532164,
+      "correct": 526,
+      "n": 684
+    },
+    "SUP": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 13
+    },
+    "SUR": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "n": 36
+    },
+    "T": {
+      "accuracy": 0.006831767719897523,
+      "correct": 8,
+      "n": 1171
+    },
+    "V": {
+      "accuracy": 0.839842942756768,
+      "correct": 16256,
+      "n": 19356
+    }
+  },
+  "per_pos_coarse": {
+    "ADJ": {
+      "accuracy": 0.24077868852459017,
+      "correct": 470,
+      "n": 1952
+    },
+    "ADV": {
+      "accuracy": 0.00705371676614216,
+      "correct": 13,
+      "n": 1843
+    },
+    "CONJ": {
+      "accuracy": 0.6993055555555555,
+      "correct": 1007,
+      "n": 1440
+    },
+    "NOUN": {
+      "accuracy": 0.8479652964263582,
+      "correct": 24630,
+      "n": 29046
+    },
+    "PART": {
+      "accuracy": 0.35359639767744994,
+      "correct": 2984,
+      "n": 8439
+    },
+    "PREP": {
+      "accuracy": 0.9790309976556395,
+      "correct": 7517,
+      "n": 7678
+    },
+    "PRON": {
+      "accuracy": 0.6350488599348534,
+      "correct": 4874,
+      "n": 7675
+    },
+    "VERB": {
+      "accuracy": 0.839842942756768,
+      "correct": 16256,
+      "n": 19356
+    }
+  },
+  "qac_status": "fallback_active",
+  "reference_corpus": "eqtb",
+  "reference_note": "Gold = kolumny morfologiczne EQTB (T-010 / 09_DECISIONS.md §2.2). Plik QAC nie byl pobierany.",
+  "scope": "quran_only",
+  "segmentation_n": 77429,
+  "tagger": {
+    "backend": "camel",
+    "database": "calima-msa-r13",
+    "disambiguator": "mle",
+    "version": "camel-tools-1.6.0"
+  },
+  "task": "T-014",
+  "token_unit": "orthographic_word",
+  "truncated": false
+}

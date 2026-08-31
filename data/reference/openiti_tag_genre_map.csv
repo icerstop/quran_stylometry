@@ -1,0 +1,43 @@
+tag,genre,n_in_tsv,mapped,evidence_sample,note
+_SHICR,poetry_diwan,213,true,Diwan [0001AbuTalibCabdManaf.Diwan] | Diwan [0001AwsIbnHajar.Diwan] | Diwan [0001CamrIbnMalik.Diwan] | Diwan [0001CamrIbnQumaya.Diwan] | Diwan [0001HajibIbnMudallil.Diwan],
+_SHICR_CABBASI,poetry_diwan,50,true,Diwan [0192IbnAhnaf.Diwan] | Diwan [0198AbuNuwasShacir.Diwan] | Diwan [0210CulayyaBintMahdi.Diwan] | Diwan [0211AbuCatahiya.Diwan] | Diwan [0213IbnJabalaShacir.Diwan],
+_SHICR_JAHILI,poetry_diwan,27,true,Diwan [0001AbuTalibCabdManaf.Diwan] | Diwan [0001AwsIbnHajar.Diwan] | Diwan [0001CamrIbnMalik.Diwan] | Diwan [0001CamrIbnQumaya.Diwan] | Diwan [0001HajibIbnMudallil.Diwan],
+_SHICR_UMAWI,poetry_diwan,19,true,Diwan [0068QaysIbnDharihLubna.Diwan] | Diwan [0068QaysMajnunLayla.Diwan] | Diwan [0090AkhtalShacir.Diwan] | Diwan [0090WaddahYaman.Diwan] | Diwan [0105KuthayyirCazza.Diwan],
+_SHICR_CUTHMANI,poetry_diwan,17,true,Diwan [0768IbnNubataShacir.Diwan] | Diwan [1079HabalShacir.Diwan] | Diwan [1087IbnMactuqShacir.Diwan] | Diwan Islam | Diwan [1285IbnMushrifShacir.Diwan],
+_SHICR_ANDALUSI,poetry_diwan,15,true,Diwan [0362IbnHaniAndalusi.Diwan] | Diwan [0426IbnShuhaydAshjaci.Diwan] | Tawabic Wa Zawabic | Diwan [0460AbuIshaqIlbiri.Diwan] | Diwan [0480IbnHaddadQaysi.Diwan],
+_HADITH,hadith_collection,2793,true,Kitab Sulaym | Faḍāʾil Makkaŧ | Ahadith Yazid | Nuskhat Zubayr | Sahifa,
+_MASANID,hadith_collection,99,true,Musnad | Musnad Sacd Ibn Abi Waqqas | Muntakhab Min Musnad | Musnad Cumar Ibn Khattab | Musnad Cabd Allah Ibn Cumar,
+_SUNAN,hadith_collection,36,true,Jamic Fi Hadith | Musnad | Sunan Mathura | Sunan | Tafsir Min Sunan Sacid,
+_SAHIH,hadith_collection,29,true,Sahih | Ṣaḥīḥ | Muntaqa | Musnad Mustakhraj Cala Sahih Muslim | Jamc Bayna Sahihayn,
+_TAFSIR,tafsir,324,true,Tafsir [0104MujahidIbnJabr.Tafsir] | Nasikh Wa Mansukh | Tafsir [0148AbuHamzaThumali.Tafsir] | Tafsir Muqatil | Tafsir Quran,
+_TARIKH,history,557,true,Faḍāʾil Makkaŧ | ḥaḏf min nasab qurayš :: nasab qurayš | Jamharat Ansab | Nasab Macad | Futuh Sham,
+_FUTUH,,4,false,Futūḥ Miṣr wa-al-Maġrib,za malo unikalnych tytulow (1) — nie mapowane
+_JUGHRAFIYA,history,120,true,Aḫbār Makkaŧ al-Mušarrafaaŧ | al-tabṣiraŧ bi-l-tiǧāraŧ :: al-tabaṣṣur bi-al-tiǧāraŧ | Futūḥ Miṣr wa-al-Maġrib | Taʾrīḫ al-Madīnaŧ :: Aḫbār al-Madīnaŧ | Aḫbār Makkaŧ fī qadīm al-dahr wa-ḥadīṯihi,
+_DJUGHRAFIYA,,1,false,Taʾrīḫ al-ʿālam,wariant pisowni _JUGHRAFIYA; za malo unikalnych tytulow (1) — nie mapowane
+_RIHLAT,history,83,true,al-tabṣiraŧ bi-l-tiǧāraŧ :: al-tabaṣṣur bi-al-tiǧāraŧ | Kitāb al-Buldān :: Kitāb Asmāʾ al-buldān | Diyarat | Kitāb al-Masālik wa-al-Mamālik :: al-Kitāb al-ʿAzīzī | Tahqiq Ma Lil Hind,
+_BULDAN,,257,false,Faḍāʾil Makkaŧ | ḥaḏf min nasab qurayš :: nasab qurayš | Jamharat Ansab | Nasab Macad | Futuh Sham,"geografia z nazwy, ale 5 unikalnych tytulow to fada'il/ansab/futuh — nie mapowane"
+_TABAQAT,biography,642,true,Faḍāʾil Makkaŧ | Sīraŧ ʿUmar b. ʿAbd al-ʿAzīz ʿalá mā rawāhu al-imām Mālik b. Anas wa-aṣḥābuhu :: Sīraŧ ʿUmar b. ʿAbd al-ʿAzīz | Akhbar Wafidat | Akhbar Wafidin | ṭabaqāt fuḥūl al-šuʿarāʾ,
+_WAFAYAT,biography,74,true,Ṭabaqāt al-ṣūfiyyaŧ | Ṣifaŧ al-ṣafwaŧ | Cuyun Anba | Wafayāt al-aʿyān wa anbāʾ abnāʾ al-zamān | al-Sulūk fī ṭabaqāt al-ʿulamāʾ wa-l-mulūk,
+_SIRA,biography,226,true,Rawda | Sīraŧ  åbn Isḥāq | Maqtal Husayn | Siyar | Waqcat Siffin,
+_SHAMAIL,biography,123,true,Sīraŧ  åbn Isḥāq | Siyar | Shamail Muhammadiyya | Sira | Akhlaq Nabi,
+_MUFASSIRUN,,4,false,Tabaqat Mufassirin | Ṭabaqāt al-mufassirīn,za malo unikalnych tytulow (2) — nie mapowane
+_FIQH,fiqh,1257,true,Jamic | Jihad | Kitāb al-āṯār | Iḫtilāf Abī Ḥanīfaŧ wa ibn Abī laylá | al-Radd ʿalá siyar al-Awzāʿī,
+_FATAWA,fiqh,72,true,Futya | Sarair | Masail Manthura | Masala Mardiniyya | Fatawa,
+_QADA,fiqh,76,true,Siyasa | Rusum Dar Khilafa | al-Aḥkām al-sulṭāniyyaŧ | Durar Suluk | Tashil Nazar,
+_MASAIL,fiqh,334,true,Manasik | Jihad | al-Radd ʿalá siyar al-Awzāʿī | Kharaj | Ikhtilaf Hadith,
+_CAQAID,theology,643,true,al-Fiqh al-Absaṭ | al-Fiqh al-Akbar | Qadar | Asnam | Iman,
+_MILAL,theology,425,true,al-Fiqh al-Absaṭ | Qadar | Asnam | Fitan | Hida,
+_FIRAQ,theology,32,true,Firaq Shica | Maqalat Islamiyyin | Tacarruf Li Madhhab Ahl Tasawwuf | Farq Bayna Firaq | Tahqiq Ma Lil Hind,
+_AMALI,adab_prose,26,true,Amali Fi Athar | Amali Wa Qiraa | Majlisān min imlā' al-Nasā'ī :: Juz' fīhi majlisān min imlā' al-Nasā'ī | Amali | Majalis,
+_AKHLAQ,adab_prose,426,true,Kitāb al-Adab al-kabīr | Zuhd [0181IbnMubarak.Zuhd] | Duca | Zuhd [0197WakicIbnJarrah.Zuhd] | Cilm,etyka / adab; nie poezja
+_ADAB,,780,false,Diwan [0001TarafaIbnCabd.Diwan] | Diwan [0041LabidIbnRabica.Diwan] | Amthal Carab | Mufaddaliyyat | Jamharat Ashcar Carab,tytuly w TSV to glownie Diwan — koliduje z poetry_diwan; fallback tytulowy
+_BALAGHA,,502,false,Diwan [0001TarafaIbnCabd.Diwan] | Diwan [0041LabidIbnRabica.Diwan] | Amthal Carab | Mufaddaliyyat | Jamharat Ashcar Carab,retoryka + diwany; nie jednoznaczny gatunek z listy §4
+_ADHKAR,,230,false,Zuhd [0185IbnCimranMawsili.Zuhd] | Zuhd [0197WakicIbnJarrah.Zuhd] | Zuhd [0212IbnMusaQurashi.Zuhd] | Zuhd [0243HannadIbnSari.Zuhd] | Adab Nufus,"empirycznie zuhd/adab, nie du'a/khutab; fallback tytulowy na prayer_sermon"
+_TARAJIM,,1448,false,Faḍāʾil Makkaŧ | Juz | Jamic | Manasik | Mashyakha,"probka mieszana (juz/jami/manasik/mashyakha), nie czysta biografistyka"
+_QURAN,,381,false,al-Qurān :: al-Muṣḥaf | Gharib Quran | Tafsir [0104MujahidIbnJabr.Tafsir] | Nasikh Wa Mansukh | Tafsir [0148AbuHamzaThumali.Tafsir],"mushaf / tekst Koranu, nie tafsir"
+_AHKAM,,74,false,Ahkam Quran | Ikhtilaf Hadith | Cilal | al-ʿIlal wa maʿrifaŧ al-riǧāl | Min kalām al-imām ʿAbd Allāh Aḥmad b. Ḥanbal fī ʿilal al-ḥadīṯ wa-maʿrifaŧ al-riǧāl,mieszane Ahkam Quran (tafsir) i ahkam fiqh
+_USUL,,364,false,Jihad | al-Radd ʿalá siyar al-Awzāʿī | Kharaj | Ikhtilaf Hadith | Jimac Cilm,usul fiqh / usul din — nie rozroznione
+_CILAL,,128,false,Ikhtilaf Hadith | Min Kalam Fi Rijal | Sualat Ibn Junayd | Cilal | Sualat Ibn Abi Shayba,"critica hadith, nie zbior kanoniczny"
+_TAKHRIJ,,123,false,Nawadir Usul | Ahadith Muwatta | Jamc Bayna Sahihayn | Targhib Wa Tarhib | Cilal Mutanahiyya,"takhrij, nie zbior kanoniczny"
+_FAWAID,,31,false,Majlis Min Fawaid | Hadith Yahya | Fawaid Hadith Abi Cumayr | Fawaid | Fawaid Ciraqiyyin,"fawa'id / majalis, nie zbior kanoniczny"
+_ANSAB,,70,false,ḥaḏf min nasab qurayš :: nasab qurayš | Jamharat Ansab | Nasab Macad | Nasab Quraysh | Mukhtalaf Qabail,"tablice genealogiczne — EXCLUDE_TITLE_PATTERNS, nie gatunek"

@@ -1,0 +1,69 @@
+# config_hash: fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db
+# NIE edytuj recznie — wygenerowane przez src.handoff.pack_h1
+av:
+  hard_negative_ratio: 0.7
+  pairs_max_per_split: 400000
+corpus:
+  death_date_max_ah: 900
+  max_tokens_per_author: 200000
+  min_authors: 60
+  min_tokens_per_author: 30000
+  min_works_per_author: 2
+  near_period_max_ah: 500
+experiments_skip: []
+features:
+  char_max_features: 50000
+  char_min_df: 5
+  char_ngram_range:
+  - 3
+  - 5
+  mfw_grid:
+  - 100
+  - 300
+  - 1000
+  - 3000
+gates:
+  av_ood_eer_max: 0.35
+  domain_probe_auc_max: 0.98
+normalizer:
+  profile: strict
+  version: 1.0.0
+quotes:
+  match_margin_tokens: 3
+  minhash_num_perm: 128
+  minhash_threshold: 0.8
+  quote_ngram_n: 7
+seed: 20260830
+segmentation:
+  max_window_ratio: 1.6
+  min_tail_ratio: 0.6
+  overlap: 0.0
+  overlap_local: 0.5
+  respect_boundaries:
+  - surah_id
+  - book_id
+  window_size: 400
+  window_size_sensitivity:
+  - 250
+  - 800
+significance:
+  block_unit_ctrl: author_id
+  block_unit_quran: surah_id
+  permutations: 10000
+splits:
+  ctrl_calib: 0.15
+  ctrl_test: 0.25
+  ctrl_train: 0.6
+tagger:
+  backend: camel
+  database: calima-msa-r13
+  disambiguator: mle
+  version: camel-tools-1.6.0
+token_unit: orthographic_word
+variance:
+  block_unit: author
+  bootstrap_B: 200
+  estimators:
+  - med
+  - disp
+  n_windows_match: auto

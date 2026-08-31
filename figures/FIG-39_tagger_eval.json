@@ -1,0 +1,86 @@
+{
+  "config_hash": "38ec324929d5dbd45667268e58b99ad5841d6679f98b1887fc2603f3fa3b721e",
+  "control_anchor": "majority-class baseline na warstwie coarse POS (najczestszy tag gold EQTB, ta sama liczba tokenow)",
+  "data": {
+    "majority_baseline_coarse": 0.37513076495886555,
+    "metrics": {
+      "alignment_coverage": 1.0,
+      "lemma_accuracy": 0.7840182401985916,
+      "majority_baseline_coarse": 0.37513076495886555,
+      "majority_baseline_tag": "NOUN",
+      "pos_accuracy": 0.6768652572033734,
+      "pos_accuracy_coarse": 0.7458574952537164,
+      "segmentation_f1": 0.7734856941136242,
+      "token_level_accuracy": 0.7458574952537164
+    },
+    "n_per_coarse": {
+      "ADJ": 1952,
+      "ADV": 1843,
+      "CONJ": 1440,
+      "NOUN": 29046,
+      "PART": 8439,
+      "PREP": 7678,
+      "PRON": 7675,
+      "VERB": 19356
+    },
+    "n_words": 77429,
+    "per_pos_coarse": {
+      "ADJ": {
+        "accuracy": 0.24077868852459017,
+        "correct": 470,
+        "n": 1952
+      },
+      "ADV": {
+        "accuracy": 0.00705371676614216,
+        "correct": 13,
+        "n": 1843
+      },
+      "CONJ": {
+        "accuracy": 0.6993055555555555,
+        "correct": 1007,
+        "n": 1440
+      },
+      "NOUN": {
+        "accuracy": 0.8479652964263582,
+        "correct": 24630,
+        "n": 29046
+      },
+      "PART": {
+        "accuracy": 0.35359639767744994,
+        "correct": 2984,
+        "n": 8439
+      },
+      "PREP": {
+        "accuracy": 0.9790309976556395,
+        "correct": 7517,
+        "n": 7678
+      },
+      "PRON": {
+        "accuracy": 0.6350488599348534,
+        "correct": 4874,
+        "n": 7675
+      },
+      "VERB": {
+        "accuracy": 0.839842942756768,
+        "correct": 16256,
+        "n": 19356
+      }
+    },
+    "reference_corpus": "eqtb"
+  },
+  "do_not_conclude": "Nie wnioskuj z tej figury o autorstwie Koranu ani o jakosci tagowania CTRL. Referencja to EQTB (fallback T-010), nie QAC. CAMeL jest MSA, nie Quranic-specific.",
+  "experiment": "T-014",
+  "families": [
+    "pos",
+    "morph"
+  ],
+  "fig_id": "FIG-39",
+  "generated_at": "2026-08-30T22:32:57Z",
+  "git_dirty": true,
+  "git_sha": "c89d01642d6d994ef6855976ab4dcaa88b6cabdc",
+  "git_state": null,
+  "kind": "diagnostic",
+  "reads_as": "Slupek = udzial poprawnych tagow coarse w danym kubełku. Pionowa linia = accuracy, gdyby tagger zawsze zwracal najczestszy tag gold. Fine POS i lemat sa w JSON-ie figury / results/tagger_eval.json, nie na osi.",
+  "shows": "Accuracy POS CAMeL Tools (calima-msa-r13, MLE) wobec gold EQTB per kubelek coarse, obok linii majority baseline.",
+  "slug": "tagger_eval"
+}

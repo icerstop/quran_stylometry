@@ -1,0 +1,23 @@
+{
+  "config_hash": null,
+  "disambiguator": "mle",
+  "elapsed_sec": 0.0053702001459896564,
+  "generated_at": "2026-08-30T23:07:50Z",
+  "gold_columns_present": false,
+  "limit_tokens": 6,
+  "n_files": 1,
+  "n_skipped_checkpoint": 0,
+  "n_tokens": 6,
+  "pilot": {
+    "corpus_tokens": 10,
+    "margin": 1.5,
+    "seconds_raw": 0.008950333576649427,
+    "seconds_with_margin": 0.013425500364974141,
+    "slurm_time": "00:01:00",
+    "tokens_per_sec": 1117.2767935810855
+  },
+  "scope": "ctrl_capped",
+  "task": "T-015",
+  "tokens_per_sec": 1117.2767935810855,
+  "truncated": true
+}

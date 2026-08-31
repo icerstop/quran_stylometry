@@ -1,0 +1,56 @@
+{
+  "by_role": {
+    "classic": {
+      "long_line_ratio_median": 0.0,
+      "mean_word_length_median": 3.9441243001425956,
+      "n": 10,
+      "n_passed": 7,
+      "non_arabic_ratio_median": 0.03977483345416166,
+      "pass_rate": 0.7
+    },
+    "ocr_flagged": {
+      "long_line_ratio_median": 0.0,
+      "mean_word_length_median": 4.913010277132584,
+      "n": 3,
+      "n_passed": 0,
+      "non_arabic_ratio_median": 0.13199290423928955,
+      "pass_rate": 0.0
+    },
+    "random": {
+      "long_line_ratio_median": 0.0,
+      "mean_word_length_median": 4.059184753768353,
+      "n": 50,
+      "n_passed": 37,
+      "non_arabic_ratio_median": 0.034078049678468225,
+      "pass_rate": 0.74
+    }
+  },
+  "csv": "results/openiti_quality_sample.csv",
+  "metric_quantiles": {
+    "long_line_ratio": {
+      "p0": 0.0,
+      "p100": 0.0,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 0.0
+    },
+    "mean_word_length": {
+      "p0": 2.865546218487395,
+      "p100": 5.191894085421528,
+      "p25": 3.8705538759665314,
+      "p50": 4.063005390835579,
+      "p75": 4.274297101101469
+    },
+    "non_arabic_ratio": {
+      "p0": 0.023826511859203037,
+      "p100": 0.17025456264621253,
+      "p25": 0.030426509303397964,
+      "p50": 0.035679966576143696,
+      "p75": 0.0543380568596859
+    }
+  },
+  "n_attempted": 63,
+  "n_downloaded": 63,
+  "n_passed_section3": 44,
+  "pass_rate": 0.6984126984126984
+}

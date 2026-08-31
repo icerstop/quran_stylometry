@@ -139,6 +139,7 @@ def test_frozen_parameters_match_decisions(base_config_path: Path) -> None:
     assert cfg.corpus.min_authors == 60
     assert cfg.corpus.min_tokens_per_author == 30000
     assert cfg.corpus.min_works_per_author == 2
+    assert cfg.corpus.max_tokens_per_author == 200000
     assert cfg.variance.bootstrap_B == 200
     assert cfg.significance.permutations == 10000
     assert cfg.features.mfw_grid == [100, 300, 1000, 3000]

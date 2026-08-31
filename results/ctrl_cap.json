@@ -1,0 +1,18 @@
+{
+  "config_seed": 20260830,
+  "limit": 200000,
+  "manifest": "C:/Users/Kubol/Desktop/vibe_coding/quran_stylometry/data/interim/ctrl_capped/manifest.csv",
+  "min_book_after_among_positive": 9,
+  "n_authors": 106,
+  "n_authors_clipped": 89,
+  "n_authors_uncapped": 17,
+  "n_books": 965,
+  "n_books_empty": 0,
+  "n_books_zeroed": 0,
+  "normalizer_profile": "strict",
+  "out_dir": "C:/Users/Kubol/Desktop/vibe_coding/quran_stylometry/data/interim/ctrl_capped",
+  "sanity_author_total_ge_max_book_after": true,
+  "sanity_no_book_zeroed": true,
+  "tokens_after": 19680224,
+  "tokens_before": 206771556
+}

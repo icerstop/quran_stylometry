@@ -1,0 +1,65 @@
+{
+  "all_metadata": {
+    "counts": {
+      "adab_prose": 544,
+      "biography": 250,
+      "fiqh": 402,
+      "hadith_collection": 499,
+      "history": 815,
+      "maqamat_saj": 23,
+      "other": 10461,
+      "poetry_diwan": 564,
+      "prayer_sermon": 54,
+      "tafsir": 326,
+      "theology": 169
+    },
+    "n": 14107,
+    "n_excluded_titles": 90,
+    "other_is_majority": true,
+    "pct": {
+      "adab_prose": 3.9,
+      "biography": 1.8,
+      "fiqh": 2.8,
+      "hadith_collection": 3.5,
+      "history": 5.8,
+      "maqamat_saj": 0.2,
+      "other": 74.2,
+      "poetry_diwan": 4.0,
+      "prayer_sermon": 0.4,
+      "tafsir": 2.3,
+      "theology": 1.2
+    }
+  },
+  "candidate_pri_ara_cleaned_death_le_900": {
+    "counts": {
+      "adab_prose": 207,
+      "biography": 82,
+      "fiqh": 171,
+      "hadith_collection": 207,
+      "history": 234,
+      "maqamat_saj": 7,
+      "other": 3765,
+      "poetry_diwan": 215,
+      "prayer_sermon": 19,
+      "tafsir": 101,
+      "theology": 67
+    },
+    "n": 5075,
+    "n_excluded_titles": 28,
+    "other_is_majority": true,
+    "pct": {
+      "adab_prose": 4.1,
+      "biography": 1.6,
+      "fiqh": 3.4,
+      "hadith_collection": 4.1,
+      "history": 4.6,
+      "maqamat_saj": 0.1,
+      "other": 74.2,
+      "poetry_diwan": 4.2,
+      "prayer_sermon": 0.4,
+      "tafsir": 2.0,
+      "theology": 1.3
+    }
+  },
+  "note": "language in TSV is ISO 639-3 ara, not ar from 09_DECISIONS.md par.3"
+}

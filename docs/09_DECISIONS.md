@@ -118,30 +118,123 @@ cache'owanym — nie powtarzana przy każdym `make verify-sources`.
 Wejście: metadane OpenITI. Wyjście: `data/interim/ctrl_manifest.csv`.
 
 ```
-1. filtr: status == "pri" AND "CLEANED_VERSION" in tags AND language == "ar"
+1. filtr: status == "pri" AND "CLEANED_VERSION" in tags AND language == "ara"
 2. filtr: 0 < death_date_ah <= 900
-3. filtr jakości: udział znaków spoza [arabski + spacja + interpunkcja] < 5%
-                  AND średnia długość "słowa" w zakresie 3.0–8.0 znaków
-                  AND udział linii dłuższych niż 2000 znaków < 2%
-4. agregacja po author_id: keep jeśli n_books >= 2 AND total_tokens >= 30000
-                           AND max(book_tokens) >= 10000
-5. wyklucz book_id, którego tytuł pasuje do EXCLUDE_TITLE_PATTERNS (§4)
-6. przypisz genre wg reguł z §4
+3. przypisz genre wg reguł z §4 (tagi OpenITI jako sygnał główny, tytuł jako
+   fallback) — MUSI poprzedzać filtr jakości, bo krok 4 jest gatunkowo-zależny
+4. filtr jakości: udział znaków spoza [arabski + spacja + interpunkcja] < 5%
+                  AND średnia długość "słowa" w zakresie:
+                     - 2.5–8.0 znaków dla genre ∈ {poetry_diwan, maqamat_saj}
+                     - 3.0–8.0 znaków dla wszystkich pozostałych gatunków
+   (dolny próg 3.0 myli krótkie tokeny wiersza z artefaktem OCR — rozstrzygnięte
+   empirycznie w sesji T-011, dowód: poezja mean_word_length ≈ 2.87 na próbce
+   czystych, znanych tekstów jak Mutanabbī)
+5. agregacja po author_id: keep jeśli
+      (n_books >= 2 AND total_tokens >= 30000 AND max(book_tokens) >= 10000)
+      OR
+      (genre ∈ {maqamat_saj, poetry_diwan, prayer_sermon, hadith_collection}
+       AND n_books == 1 AND book_tokens >= 15000)   # wyjątek, patrz niżej
+6. wyklucz book_id, którego tytuł pasuje do EXCLUDE_TITLE_PATTERNS (§4)
 7. sortuj autorów malejąco po total_tokens, w obrębie każdego gatunku
 8. weź do 12 autorów na gatunek (limit anty-dominacyjny), aż zbierzesz >= 60
-9. jeśli po kroku 8 masz < 60 autorów: poluzuj krok 4 do total_tokens >= 20000
+9. jeśli po kroku 8 masz < 60 autorów: poluzuj krok 5 do total_tokens >= 20000
    i powtórz. Jeśli nadal < 60 → BLOCKER, zatrzymaj się i zapytaj.
 ```
+
+**Usunięty check (sesja T-011):** `udział linii dłuższych niż 2000 znaków < 2%`
+wypadł z filtra jakości. Zmierzone: 0/63 plików w próbce miało cokolwiek powyżej
+progu — OpenITI łamie linie w sposób, który strukturalnie nigdy go nie
+przekracza. Check nie niósł żadnej informacji; dwa pozostałe (znaki spoza
+arabskiego, długość słowa) już poprawnie odróżniają OCR od czystego tekstu
+(7/10 vs 0/3 na próbce kontrolnej z T-011).
+
+**Wyjątek jednodziełowy dla czterech gatunków-kotwic (sesja T-011, krok 5.)**
+Standardowy próg `n_books ≥ 2` zderzył się z rzeczywistością gatunku
+`maqamat_saj`: twórca gatunku (al-Hamadhānī) i inni znani przedstawiciele są
+znani z jednego wielkiego dzieła, nie z kariery wielotomowej. Zamiast obniżać
+docelowe minimum pokrycia (§4, ryzyko dopasowania celu do wyniku po fakcie),
+dopuszczam substantywny wyjątek: **autor z jedną książką ≥15 000 tokenów
+(1,5× istniejący próg `max(book_tokens) ≥ 10000`) wchodzi do CTRL**, jeśli
+jego gatunek ma twarde minimum pokrycia. Zasada jest ogólna — stosowana
+identycznie do wszystkich czterech kategorii, nie tylko tam, gdzie akurat
+brakuje autorów.
+
+**Ograniczenie, obowiązkowe do wyegzekwowania w kodzie:** autorzy przyjęci
+tą ścieżką **nie kwalifikują się do PSEUDO-BOOK** (`docs/03_DATA.md §11`
+i tak niezależnie wymaga `n_books ≥ 2`) — kontrybuują tylko do ogólnej puli
+CTRL i analiz gatunkowych (E-05b). `ctrl_manifest.csv` musi nieść kolumnę
+`admission_path: "standard" | "single_work_exception"`, żeby to było zawsze
+widoczne w dalszych analizach, nie ukryte w agregacie.
+
+**ROZSTRZYGNIĘTE — limit tokenów per autor (sesja T-013→T-014).**
+Zmierzone: CTRL po normalizacji ma 206,8 mln tokenów dla 106 autorów —
+o rząd wielkości więcej niż zakładał szacunek rozmiaru dysku w §2.3
+(1,5–2 GB miało być sanity checkiem przeciw pobraniu całego release'u, nie
+celem tokenowym). Przyczyna strukturalna: krok 7 algorytmu w §3 sortuje
+autorów malejąco po `total_tokens`, więc celowo preferuje najbardziej
+płodnych — mediana per autor to 1,52 mln tokenów, więc to nie jest problem
+kilku odstających gigantów, tylko cecha całej selekcji.
+
+**Limit: 200 000 tokenów na autora.** Uzasadnienie metodologiczne, nie
+budżetowe (żadna wartość z symulowanej siatki {50k…300k} i tak nie schodzi
+do pierwotnego, jak się okazało błędnego, szacunku GPU z §10_COMPUTE.md —
+poprawka budżetu jest osobną decyzją poniżej, nie powodem tego limitu):
+~6,7× próg wejścia do korpusu (30 000, `§3` krok 5) i ~2,6× rozmiar Koranu
+(~77 429 tokenów — wielkość pojedynczego losowania PSEUDO-BOOK), co daje
+zapas na sensowne resamplowanie bootstrapowe (`bootstrap_B: 200`) bez
+pozwalania jednemu autorowi zdominować trening AA/AV. Efekt: 19,68 mln
+tokenów łącznie, 89/106 autorów przyciętych.
+
+**Sposób realizacji limitu (obowiązkowy, nie do pominięcia):** proporcjonalna
+alokacja limitu między dziełami danego autora, z losowym ciągłym fragmentem
+w obrębie każdego dzieła — **nigdy obcinanie po kolejności dokumentów**.
+Truncation od początku największego dzieła zniszczyłby różnorodność
+międzydzieł, dla której PSEUDO-BOOK (`docs/03_DATA.md §11`) w ogóle istnieje.
+Realizowane jako nowy krok między T-013 (gotowe) a T-015 (tagowanie) —
+operuje na już znormalizowanym tekście, nie wymaga ponownego uruchamiania
+T-013. Artefakt: `data/interim/ctrl_capped/` + manifest z kolumnami
+`author_id, book_id, tokens_before_cap, tokens_after_cap, span_seed`.
+
+**Poprawka budżetu obliczeniowego:** patrz `docs/10_COMPUTE.md` — szacunek
+„2–4 mln tokenów, 3–8 h" był zgadywany przed poznaniem realnej skali CTRL
+i jest nieaktualny. Nowy budżet ustalany empirycznie przez pilotaż
+przepustowości w ramach `dryrun.sbatch` dla H1, nie przez kolejne zgadywanie.
 
 Podział na warstwy: `near-period` = `death_date_ah <= 500`,
 `broad` = `501–900`. Obie warstwy analizowane osobno w E-05.
 
 ---
 
-## 4. Gatunek — klasyfikacja regułowa po tytule, bez ręcznego etykietowania
+## 4. Gatunek — klasyfikacja dwustopniowa: tagi OpenITI, potem tytuł
 
-Dopasowanie po znormalizowanym tytule (bez diakrytyki, lowercase, translit lub arabski).
-Pierwsze trafienie wygrywa; kolejność reguł jest częścią decyzji.
+**Rozstrzygnięte empirycznie (sesja T-011):** czysta klasyfikacja po tytule
+pokrywa tylko ~26% metadanych (74,2% ląduje w `other`, identycznie na pełnej
+tabeli 14 107 wierszy i na puli kandydatów n=5075 — więc to nie jest efekt
+selekcji, tytuły po prostu w większości nie pasują do prostych wzorców).
+
+**Krok 1 — sygnał główny: tagi OpenITI.** Metadane niosą ustrukturyzowane
+tagi (`_HADITH`, `_FIQH`, `_TARAJIM`, `GAL@literature-*` i pokrewne — oparte
+na klasyfikacji bibliograficznej Brockelmanna). Zanim zbudujesz mapowanie:
+**empirycznie wylistuj wszystkie unikalne wartości/wzorce tagów obecne w TSV**
+(ten sam standard dowodowy co przy `constituent_node` w T-009 — żadnego tagu
+nie mapuj na gatunek bez pokazania próbki tytułów, które za nim stoją).
+Zapisz mapowanie tag → genre w `data/reference/openiti_tag_genre_map.csv`
+z kolumną `evidence_sample` (3–5 tytułów na tag). To zastępuje tytuł jako
+główne źródło sygnału tam, gdzie tag jest obecny.
+
+**Krok 2 — sygnał zapasowy: wzorce tytułowe.** Tabela poniżej stosowana tylko
+tam, gdzie krok 1 nie dał wyniku.
+
+**Krok 3 — residual.** Co nie trafi w kroku 1 ani 2, zostaje `other`.
+To jest zaakceptowany stan końcowy (nie forsuj klasyfikacji na siłę) —
+wymagane jest wyłącznie twarde pokrycie minimalne z reguły pokrycia poniżej,
+nie zniknięcie kategorii `other`. Miękki cel (nie blokujący): udział `other`
+w finalnie wybranych 60+ autorach poniżej 50% — pomaga to E-05b
+(dekompozycja wariancji po gatunku), ale nie jest warunkiem T-011.
+
+Dopasowanie w kroku 2 po znormalizowanym tytule (bez diakrytyki, lowercase,
+translit lub arabski). Pierwsze trafienie wygrywa; kolejność reguł jest
+częścią decyzji.
 
 | Kolejność | Wzorce w tytule | `genre` |
 |---|---|---|

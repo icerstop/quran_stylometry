@@ -1,0 +1,188 @@
+{
+  "manifest": {
+    "cap_simulations": {
+      "100000": {
+        "corpus_tokens": 10465195,
+        "limit": 100000,
+        "n_authors_clipped": 101,
+        "n_authors_uncapped": 5
+      },
+      "150000": {
+        "corpus_tokens": 15188114,
+        "limit": 150000,
+        "n_authors_clipped": 91,
+        "n_authors_uncapped": 15
+      },
+      "200000": {
+        "corpus_tokens": 19719392,
+        "limit": 200000,
+        "n_authors_clipped": 90,
+        "n_authors_uncapped": 16
+      },
+      "300000": {
+        "corpus_tokens": 28182344,
+        "limit": 300000,
+        "n_authors_clipped": 82,
+        "n_authors_uncapped": 24
+      },
+      "50000": {
+        "corpus_tokens": 5270751,
+        "limit": 50000,
+        "n_authors_clipped": 105,
+        "n_authors_uncapped": 1
+      }
+    },
+    "max": 12798254,
+    "mean": 1972608.7452830188,
+    "median": 1535158.5,
+    "min": 20751,
+    "n_authors": 106,
+    "source": "openiti_tok_length_manifest",
+    "sum": 209096527,
+    "top10": [
+      {
+        "author_genre": "hadith_collection",
+        "author_id": "0852IbnHajarCasqalani",
+        "tokens": 12798254
+      },
+      {
+        "author_genre": "other",
+        "author_id": "0728IbnTaymiyya",
+        "tokens": 11169117
+      },
+      {
+        "author_genre": "hadith_collection",
+        "author_id": "0855BadrDinCayni",
+        "tokens": 10612508
+      },
+      {
+        "author_genre": "history",
+        "author_id": "0571IbnCasakir",
+        "tokens": 8541356
+      },
+      {
+        "author_genre": "history",
+        "author_id": "0774IbnKathir",
+        "tokens": 5906778
+      },
+      {
+        "author_genre": "hadith_collection",
+        "author_id": "0748Dhahabi",
+        "tokens": 5381629
+      },
+      {
+        "author_genre": "fiqh",
+        "author_id": "0726CallamaHilli",
+        "tokens": 5292817
+      },
+      {
+        "author_genre": "history",
+        "author_id": "0597IbnJawzi",
+        "tokens": 4768417
+      },
+      {
+        "author_genre": "other",
+        "author_id": "0751IbnQayyimJawziyya",
+        "tokens": 4602306
+      },
+      {
+        "author_genre": "hadith_collection",
+        "author_id": "0804IbnMulaqqin",
+        "tokens": 4515891
+      }
+    ]
+  },
+  "normalized": {
+    "cap_simulations": {
+      "100000": {
+        "corpus_tokens": 10471782,
+        "limit": 100000,
+        "n_authors_clipped": 101,
+        "n_authors_uncapped": 5
+      },
+      "150000": {
+        "corpus_tokens": 15188200,
+        "limit": 150000,
+        "n_authors_clipped": 91,
+        "n_authors_uncapped": 15
+      },
+      "200000": {
+        "corpus_tokens": 19680224,
+        "limit": 200000,
+        "n_authors_clipped": 89,
+        "n_authors_uncapped": 17
+      },
+      "300000": {
+        "corpus_tokens": 28113974,
+        "limit": 300000,
+        "n_authors_clipped": 82,
+        "n_authors_uncapped": 24
+      },
+      "50000": {
+        "corpus_tokens": 5274114,
+        "limit": 50000,
+        "n_authors_clipped": 105,
+        "n_authors_uncapped": 1
+      }
+    },
+    "max": 12225004,
+    "mean": 1950675.0566037735,
+    "median": 1524124.0,
+    "min": 24114,
+    "n_authors": 106,
+    "source": "normalize_strict_whitespace",
+    "sum": 206771556,
+    "top10": [
+      {
+        "author_genre": "hadith_collection",
+        "author_id": "0852IbnHajarCasqalani",
+        "tokens": 12225004
+      },
+      {
+        "author_genre": "other",
+        "author_id": "0728IbnTaymiyya",
+        "tokens": 11168699
+      },
+      {
+        "author_genre": "hadith_collection",
+        "author_id": "0855BadrDinCayni",
+        "tokens": 10591332
+      },
+      {
+        "author_genre": "history",
+        "author_id": "0571IbnCasakir",
+        "tokens": 8441653
+      },
+      {
+        "author_genre": "history",
+        "author_id": "0774IbnKathir",
+        "tokens": 5709405
+      },
+      {
+        "author_genre": "fiqh",
+        "author_id": "0726CallamaHilli",
+        "tokens": 5296445
+      },
+      {
+        "author_genre": "hadith_collection",
+        "author_id": "0748Dhahabi",
+        "tokens": 4875191
+      },
+      {
+        "author_genre": "history",
+        "author_id": "0597IbnJawzi",
+        "tokens": 4685841
+      },
+      {
+        "author_genre": "other",
+        "author_id": "0751IbnQayyimJawziyya",
+        "tokens": 4590217
+      },
+      {
+        "author_genre": "hadith_collection",
+        "author_id": "0804IbnMulaqqin",
+        "tokens": 4463967
+      }
+    ]
+  }
+}

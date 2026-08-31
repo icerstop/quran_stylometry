@@ -57,8 +57,17 @@ Sześć punktów, minuta roboty:
    Brak któregokolwiek → odsyłasz paczkę.
 2. Nie ma `--exclusive`, nie ma `--array` szerszego niż zapowiedziany w README,
    nie ma pętli `for ... sbatch`.
-3. Wszystkie ścieżki wyjściowe wskazują na `$SCRATCH`, żadna na `$HOME`.
-4. `CAMELTOOLS_DATA`, `HF_HOME`, `TRANSFORMERS_CACHE` ustawione na `$SCRATCH`.
+3. Wszystkie ścieżki wyjściowe są jawnie podane (`$HOME/quran-stylometry/...`)
+   — ten klaster nie ma `$SCRATCH`; `$HOME` jest jedynym trwałym katalogiem
+   (Lustre, współdzielony między węzłami partycji). `/raid` istnieje na
+   `hgx1`/`hgx2`, ale jest lokalny per węzeł — nie używaj go bez wyraźnego
+   powodu (patrz `docs/10_COMPUTE.md §4`).
+4. `CAMELTOOLS_DATA`, `HF_HOME`, `TRANSFORMERS_CACHE` ustawione jawnie na
+   ścieżki pod `$HOME`.
+4b. `#SBATCH --account=<KONTO>` jest obecne i podmienione na realną nazwę
+   konta rozliczeniowego (sprawdź: `sacctmgr list associations tree
+   format=account,user,grptres%30 users=<login>`) — bez tego `sbatch`
+   odrzuci zadanie.
 5. Job ma checkpointing (`--checkpoint-every`) — inaczej padnięcie w 7. godzinie
    kosztuje cały dzień.
 6. **Najpierw `dryrun.sbatch`.** Dopiero gdy przejdzie, pełny job.

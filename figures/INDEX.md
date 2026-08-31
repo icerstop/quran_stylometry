@@ -18,3 +18,16 @@ czytac, czego **nie** wolno wnioskowac, i jaka kotwice kontrolna niesie (G9).
 - Czego NIE wolno wnioskowac: Nie wolno wyciagac z niej ZADNEGO wniosku merytorycznego. Dane sa losowe, wygenerowane z seeda configu, i nie pochodza z zadnego korpusu.
 - Pliki: `FIG-00_smoke_test.png`, `FIG-00_smoke_test.svg`, `FIG-00_smoke_test.json`
 <!-- /fig:FIG-00 -->
+
+<!-- fig:FIG-39 -->
+## FIG-39 — tagger_eval
+
+- Eksperyment: T-014
+- Typ: diagnostic
+- Rodziny cech: pos, morph
+- Kotwica kontrolna (G9): majority-class baseline na warstwie coarse POS (najczestszy tag gold EQTB, ta sama liczba tokenow)
+- Pokazuje: Accuracy POS CAMeL Tools (calima-msa-r13, MLE) wobec gold EQTB per kubelek coarse, obok linii majority baseline.
+- Jak czytac: Slupek = udzial poprawnych tagow coarse w danym kubełku. Pionowa linia = accuracy, gdyby tagger zawsze zwracal najczestszy tag gold. Fine POS i lemat sa w JSON-ie figury / results/tagger_eval.json, nie na osi.
+- Czego NIE wolno wnioskowac: Nie wnioskuj z tej figury o autorstwie Koranu ani o jakosci tagowania CTRL. Referencja to EQTB (fallback T-010), nie QAC. CAMeL jest MSA, nie Quranic-specific.
+- Pliki: `FIG-39_tagger_eval.png`, `FIG-39_tagger_eval.svg`, `FIG-39_tagger_eval.json`
+<!-- /fig:FIG-39 -->

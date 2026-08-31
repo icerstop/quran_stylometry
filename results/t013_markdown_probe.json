@@ -1,0 +1,108 @@
+{
+  "conclusion": "markup_present",
+  "n_files_available": 965,
+  "n_sampled": 10,
+  "n_with_any_markup": 10,
+  "sample": [
+    {
+      "bytes": 659594,
+      "file": "0157AbuMikhnafAzdi.MaqtalHusayn.Shia003665-ara1",
+      "hash_meta": true,
+      "milestone_ms": true,
+      "pagev": true,
+      "percent_line": false,
+      "tilde_tilde": true,
+      "triple_hash_page": false
+    },
+    {
+      "bytes": 258256,
+      "file": "0157AbuMikhnafAzdi.WaqcatTaff.Masaha003027-ara1",
+      "hash_meta": true,
+      "milestone_ms": true,
+      "pagev": true,
+      "percent_line": false,
+      "tilde_tilde": true,
+      "triple_hash_page": true
+    },
+    {
+      "bytes": 373513,
+      "file": "0213IbnHisham.AkhbarIbnSharya.Shamela0037473BK2-ara1",
+      "hash_meta": true,
+      "milestone_ms": true,
+      "pagev": true,
+      "percent_line": false,
+      "tilde_tilde": true,
+      "triple_hash_page": true
+    },
+    {
+      "bytes": 2654027,
+      "file": "0213IbnHisham.SiraNabawiyya.Shamela0023833-ara1",
+      "hash_meta": true,
+      "milestone_ms": true,
+      "pagev": true,
+      "percent_line": false,
+      "tilde_tilde": true,
+      "triple_hash_page": true
+    },
+    {
+      "bytes": 50954,
+      "file": "0428IbnSina.MaHiyaCishq.Hindawi053714184-ara1",
+      "hash_meta": true,
+      "milestone_ms": true,
+      "pagev": false,
+      "percent_line": false,
+      "tilde_tilde": true,
+      "triple_hash_page": false
+    },
+    {
+      "bytes": 810778,
+      "file": "0428IbnSina.Najat.MP002-ara1",
+      "hash_meta": true,
+      "milestone_ms": true,
+      "pagev": true,
+      "percent_line": false,
+      "tilde_tilde": true,
+      "triple_hash_page": true
+    },
+    {
+      "bytes": 6923842,
+      "file": "0597IbnJawzi.JamicMasanid.Sham19Y0148271-ara1",
+      "hash_meta": true,
+      "milestone_ms": true,
+      "pagev": true,
+      "percent_line": false,
+      "tilde_tilde": true,
+      "triple_hash_page": true
+    },
+    {
+      "bytes": 80505,
+      "file": "0597IbnJawzi.Laali.JK010659-ara1",
+      "hash_meta": true,
+      "milestone_ms": true,
+      "pagev": true,
+      "percent_line": false,
+      "tilde_tilde": true,
+      "triple_hash_page": false
+    },
+    {
+      "bytes": 1819910,
+      "file": "0774IbnKathir.TabaqatFuqahaShaficiyyin.Shamela0012860-ara1",
+      "hash_meta": true,
+      "milestone_ms": true,
+      "pagev": true,
+      "percent_line": false,
+      "tilde_tilde": true,
+      "triple_hash_page": true
+    },
+    {
+      "bytes": 15422327,
+      "file": "0774IbnKathir.TafsirQuran.Shamela0008473-ara1",
+      "hash_meta": true,
+      "milestone_ms": true,
+      "pagev": true,
+      "percent_line": false,
+      "tilde_tilde": true,
+      "triple_hash_page": true
+    }
+  ]
+}

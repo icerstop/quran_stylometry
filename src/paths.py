@@ -33,6 +33,12 @@ SOURCE_CHECK_PATH: Path = RESULTS_DIR / "source_check.json"
 FIGURES_INDEX_PATH: Path = FIGURES_DIR / "INDEX.md"
 
 CHRONOLOGIES_PATH: Path = DATA_REFERENCE_DIR / "chronologies.csv"
+TAG_GENRE_MAP_PATH: Path = DATA_REFERENCE_DIR / "openiti_tag_genre_map.csv"
+TAGSET_MAP_PATH: Path = DATA_REFERENCE_DIR / "eqtb_camel_pos_map.csv"
+GENRES_PATH: Path = DATA_REFERENCE_DIR / "genres.csv"
+CTRL_MANIFEST_PATH: Path = DATA_INTERIM_DIR / "ctrl_manifest.csv"
+CTRL_CAPPED_DIR: Path = DATA_INTERIM_DIR / "ctrl_capped"
+CTRL_CAPPED_MANIFEST_PATH: Path = CTRL_CAPPED_DIR / "manifest.csv"
 
 
 def rel_to_repo(path: Path | str) -> str:

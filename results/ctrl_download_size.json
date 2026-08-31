@@ -1,0 +1,12 @@
+{
+  "dest": "C:/Users/Kubol/Desktop/vibe_coding/quran_stylometry/data/raw/openiti/selected",
+  "n_authors": 106,
+  "n_bytes": 2034897481,
+  "n_bytes_on_disk": 2034897481,
+  "n_downloaded": 965,
+  "n_expected": 965,
+  "n_failed": 0,
+  "n_files_on_disk": 965,
+  "n_gib": 1.895,
+  "n_gib_on_disk": 1.895
+}

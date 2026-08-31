@@ -1,0 +1,160 @@
+{
+  "accuracy_coarse": 0.00705371676614216,
+  "bucket": "ADV",
+  "diagnosis": "Dwie systematyczne rodziny, nie szum malej kategorii: NOUN 0.45 (يوم/عند/بين/يومئذ — EQTB T/LOC vs CAMeL noun) i CONJ 0.42 (إذ/إذا/لما — EQTB T vs CAMeL conj). Kubelek ADV istnieje po obu stronach (CAMeL `adv` → EQTB T), wiec to ziarnistosc/schemat tagsetu na klasie zamknietej, nie brak kategorii. PREP 0.07 (مع: EQTB LOC vs CAMeL prep) jest trzecim rozjazdem schematu.",
+  "error_sample": [
+    {
+      "gold_lemma": "يوميذ",
+      "gold_pos": "T",
+      "location": "3:167:20",
+      "pred_lemma": "يوميذ",
+      "pred_pos_coarse": "NOUN",
+      "pred_pos_eqtb": "PN",
+      "pred_pos_raw": "noun_prop",
+      "surface_norm": "يوميذ"
+    },
+    {
+      "gold_lemma": "مع",
+      "gold_pos": "LOC",
+      "location": "7:134:20",
+      "pred_lemma": "معك",
+      "pred_pos_coarse": "VERB",
+      "pred_pos_eqtb": "V",
+      "pred_pos_raw": "verb",
+      "surface_norm": "معك"
+    },
+    {
+      "gold_lemma": "عند",
+      "gold_pos": "LOC",
+      "location": "8:55:4",
+      "pred_lemma": "عند",
+      "pred_pos_coarse": "NOUN",
+      "pred_pos_eqtb": "N",
+      "pred_pos_raw": "noun",
+      "surface_norm": "عند"
+    },
+    {
+      "gold_lemma": "يوم",
+      "gold_pos": "T",
+      "location": "20:64:8",
+      "pred_lemma": "يوم",
+      "pred_pos_coarse": "NOUN",
+      "pred_pos_eqtb": "N",
+      "pred_pos_raw": "noun",
+      "surface_norm": "اليوم"
+    },
+    {
+      "gold_lemma": "مع",
+      "gold_pos": "LOC",
+      "location": "25:27:9",
+      "pred_lemma": "مع",
+      "pred_pos_coarse": "PREP",
+      "pred_pos_eqtb": "P",
+      "pred_pos_raw": "prep",
+      "surface_norm": "مع"
+    },
+    {
+      "gold_lemma": "اذا",
+      "gold_pos": "T",
+      "location": "26:80:1",
+      "pred_lemma": "اذا",
+      "pred_pos_coarse": "CONJ",
+      "pred_pos_eqtb": "CONJ",
+      "pred_pos_raw": "conj",
+      "surface_norm": "واذا"
+    },
+    {
+      "gold_lemma": "مع",
+      "gold_pos": "LOC",
+      "location": "28:88:3",
+      "pred_lemma": "مع",
+      "pred_pos_coarse": "PREP",
+      "pred_pos_eqtb": "P",
+      "pred_pos_raw": "prep",
+      "surface_norm": "مع"
+    },
+    {
+      "gold_lemma": "اذ",
+      "gold_pos": "T",
+      "location": "29:16:2",
+      "pred_lemma": "اذ",
+      "pred_pos_coarse": "CONJ",
+      "pred_pos_eqtb": "CONJ",
+      "pred_pos_raw": "conj",
+      "surface_norm": "اذ"
+    },
+    {
+      "gold_lemma": "لما",
+      "gold_pos": "T",
+      "location": "46:29:9",
+      "pred_lemma": "لما",
+      "pred_pos_coarse": "CONJ",
+      "pred_pos_eqtb": "CONJ",
+      "pred_pos_raw": "conj",
+      "surface_norm": "فلما"
+    },
+    {
+      "gold_lemma": "بين",
+      "gold_pos": "LOC",
+      "location": "58:13:4",
+      "pred_lemma": "بين",
+      "pred_pos_coarse": "NOUN",
+      "pred_pos_eqtb": "N",
+      "pred_pos_raw": "noun",
+      "surface_norm": "بين"
+    },
+    {
+      "gold_lemma": "اذا",
+      "gold_pos": "T",
+      "location": "62:9:4",
+      "pred_lemma": "اذا",
+      "pred_pos_coarse": "CONJ",
+      "pred_pos_eqtb": "CONJ",
+      "pred_pos_raw": "conj",
+      "surface_norm": "اذا"
+    },
+    {
+      "gold_lemma": "يوميذ",
+      "gold_pos": "T",
+      "location": "75:13:3",
+      "pred_lemma": "يوميذ",
+      "pred_pos_coarse": "NOUN",
+      "pred_pos_eqtb": "PN",
+      "pred_pos_raw": "noun_prop",
+      "surface_norm": "يوميذ"
+    }
+  ],
+  "gold_eqtb_tags": [
+    "T",
+    "LOC"
+  ],
+  "n_correct_coarse": 13,
+  "n_errors": 1830,
+  "n_gold_LOC": 672,
+  "n_gold_T": 1171,
+  "n_gold_adv": 1843,
+  "n_scored": 1843,
+  "n_verses_with_adv": 1457,
+  "pred_coarse_on_gold_adv": {
+    "ADJ": 16,
+    "ADV": 13,
+    "CONJ": 774,
+    "NOUN": 832,
+    "PART": 2,
+    "PREP": 136,
+    "PRON": 27,
+    "VERB": 43
+  },
+  "pred_raw_on_gold_adv": {
+    "adj": 16,
+    "adv": 13,
+    "adv_interrog": 2,
+    "conj": 774,
+    "noun": 734,
+    "noun_prop": 98,
+    "prep": 136,
+    "pron_rel": 27,
+    "verb": 43
+  },
+  "task": "T-014"
+}

@@ -1,0 +1,32 @@
+{
+  "config_hash": "fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db",
+  "job": "H1",
+  "outputs": [
+    {
+      "forbidden_columns": [
+        "pos_gold",
+        "lemma_gold",
+        "morph_gold",
+        "deprel_gold"
+      ],
+      "path": "data/interim/ctrl_tagged/",
+      "pattern": "*.parquet",
+      "schema": [
+        "token",
+        "pos_pred",
+        "pos_raw_pred",
+        "lemma_pred",
+        "morph_pred"
+      ],
+      "validation": "n_tokens == inputs.manifest n_tokens; brak kolumn *_gold"
+    },
+    {
+      "path": "results/tagger_pilot.json",
+      "required_for": "dryrun",
+      "schema_keys": [
+        "tokens_per_sec",
+        "pilot"
+      ]
+    }
+  ]
+}

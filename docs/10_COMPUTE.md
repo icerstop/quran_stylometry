@@ -21,7 +21,7 @@ w praktyce niż kolejka.
 | T-012 gatunek (regułowo) | **laptop** | — | sekundy |
 | T-013 normalizacja 2–4 mln tokenów | **laptop** | CPU | 5–15 min |
 | **T-014 ewaluacja taggera na Koranie** | **laptop** (MLE) | CPU, 77k słów | 10–30 min |
-| **T-015 tagowanie CTRL (2–4 mln tokenów)** | **KLASTER** | GPU (BERT disambiguator) | 3–8 h na A100 |
+| **T-015 tagowanie CTRL (po limicie 200k/autora: ~19,7 mln tokenów)** | **KLASTER** | GPU (BERT disambiguator) | **nieznany — ustalany pilotażem w dryrun.sbatch, patrz §4.** Pierwotny szacunek 3-8h zakładał 2-4 mln tokenów; realna skala jest ~5-10× większa nawet po limicie z `docs/09_DECISIONS.md §3`. |
 | T-016 detekcja cytatów (7-gram + MinHash) | **laptop** | RAM ~4–6 GB | 1–2 h |
 | T-017 redundancja wewnętrzna | **laptop** | — | 20 min |
 | T-018 chronologia | **laptop** | plik gotowy | sekundy |
@@ -107,27 +107,57 @@ z dwóch środowisk jest wykrywalne, a nie ciche.
 
 ## 4. Skrypty SLURM
 
-`slurm/tag_ctrl.sbatch` — T-015, największy job:
+**Realia klastra (z oficjalnej instrukcji `slurm.cs.put.poznan.pl/howto/`,
+zweryfikowane, nie zakładane):**
+- Węzeł dostępowy: `slurm.cs.put.poznan.pl` (alias `svradmin.cs.put.poznan.pl`).
+  Logowanie: `ssh <login>@slurm.cs.put.poznan.pl`.
+- **Nie istnieje `$SCRATCH`.** Realne ścieżki: `/home/<login>` (współdzielone
+  przez Lustre między wszystkimi węzłami partycji `hgx`, 236 TB, wolniejsze
+  przy intensywnym I/O) i `/raid` na węzłach `hgx1`/`hgx2` (lokalny NVMe,
+  szybki, ale **nie współdzielony między węzłami** — plik zapisany na
+  `hgx1:/raid` jest niewidoczny z `hgx2`). Przy skali tego joba (~19,7 mln
+  tokenów, rząd pojedynczych GB) `/home` wystarcza — `/raid` zostaw jako
+  optymalizację na później, tylko jeśli pilotaż pokaże, że I/O jest wąskim
+  gardłem. Nie komplikuj bez dowodu.
+- **Wymagane konto rozliczeniowe (`-A`).** Bez niego `sbatch` odrzuci zadanie.
+  Sprawdź swoje: `sacctmgr list associations tree format=account,user,grptres%30 users=<login>`.
+- Partycja `hgx` obejmuje **oba typy węzłów**: `hgx1`/`hgx2` (8×A100-80GB
+  każdy) ORAZ `obl1`/`obl2` (bez GPU!) — nazwa partycji nie gwarantuje GPU.
+  `--gres=gpu:1` naturalnie wyklucza węzły `obl*` (mają zero zadeklarowanych
+  GPU), więc nie trzeba pinować węzła przez `-w`. `hgx1` i `hgx2` mają
+  identyczny sprzęt — pomiar przepustowości z pilotażu przenosi się 1:1
+  niezależnie na który trafi pełne zadanie.
+- Domyślny maksymalny czas zadania: 24h (`-t`/`--time` zmienia).
+- System: Ubuntu 22.04 LTS na `hgx`. Instalacja oprogramowania: sesja
+  interaktywna (`srun -p hgx -w hgx1 --gres=gpu:1 --pty /bin/bash -l`),
+  środowisko przez conda (rekomendowane w instrukcji klastra), a wewnątrz
+  `pip install -e ".[nlp]"` z `pyproject.toml` projektu — nie koliduje
+  z conda, po prostu instalujesz pakiety projektu w aktywnym env.
+
+`slurm/tag_ctrl.sbatch` — T-015, największy job (`--time` poniżej to
+placeholder do podmiany wynikiem pilotażu, `<KONTO>` do podmiany realną
+nazwą z `sacctmgr`):
 
 ```bash
 #!/bin/bash
 #SBATCH --job-name=qs-tag-ctrl
 #SBATCH --partition=hgx
+#SBATCH --account=<KONTO>
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=48G
-#SBATCH --time=10:00:00
-#SBATCH --output=logs/tag_ctrl_%j.out
+#SBATCH --time=<Z_PILOTAZU>
+#SBATCH --output=/home/%u/quran-stylometry/logs/tag_ctrl_%j.out
 
 set -euo pipefail
-source "$PROJECT/.venv/bin/activate"
-export CAMELTOOLS_DATA="$SCRATCH/camel_data"
+source "$HOME/quran-stylometry/.venv/bin/activate"
+export CAMELTOOLS_DATA="$HOME/camel_data"
 export PYTHONHASHSEED=0
 
 python -m src.cli tag \
   --corpus ctrl \
-  --input  "$SCRATCH/qs/data/interim/openiti_clean" \
-  --output "$SCRATCH/qs/data/interim/ctrl_tagged" \
+  --input  "$HOME/quran-stylometry/data/interim/ctrl_capped" \
+  --output "$HOME/quran-stylometry/data/interim/ctrl_tagged" \
   --disambiguator bert \
   --batch-size 64 \
   --checkpoint-every 200 \
@@ -212,8 +242,8 @@ z overlapem 64, uśrednij embeddingi fragmentów wagą liczby tokenów. Zapisz
 ## 5. Pułapki zasobowe, które wyjdą w pierwszej godzinie
 
 1. `camel_data -i light` to 19 MB, `camel_data -i full` to **1,8 GB**. Na
-   laptopie instaluj `light`, na klastrze `full` do `$SCRATCH`, nie do `$HOME`
-   (limity quota).
+   laptopie instaluj `light`, na klastrze `full` do `$HOME/camel_data`
+   (jedyny trwały katalog na tym klastrze — nie ma `$SCRATCH`).
 2. Pełny release OpenITI to 2,27 mld słów. **Nigdy nie klonuj całości.**
    Najpierw metadane, potem selektywne pobranie ~80 plików.
 3. `TfidfVectorizer(analyzer="char_wb", ngram_range=(3,5))` na 4 mln tokenów
@@ -224,5 +254,6 @@ z overlapem 64, uśrednij embeddingi fragmentów wagą liczby tokenów. Zapisz
    nie licz jej nigdy w całości. `V` liczy się na podpróbkach ~200 okien.
 5. Liczba par AV rośnie kwadratowo. Twardy limit `av_pairs_max_per_split: 400000`
    z `09_DECISIONS.md §6` jest limitem, nie sugestią.
-6. Na klastrze ustaw `HF_HOME` i `TRANSFORMERS_CACHE` na `$SCRATCH` — inaczej
-   CAMeLBERT ląduje w `$HOME` i zapycha quotę.
+6. Na klastrze ustaw `HF_HOME` i `TRANSFORMERS_CACHE` na `$HOME/.cache/huggingface`
+   jawnie — domyślna lokalizacja też ląduje w `$HOME`, ale lepiej nie polegać
+   na domyślnej ścieżce między sesjami interaktywnymi a zadaniami `sbatch`.

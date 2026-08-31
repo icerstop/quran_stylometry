@@ -1,0 +1,37 @@
+camel_pos,eqtb_pos,coarse,mapped,note
+noun,N,NOUN,true,CALIMA noun → QAC/EQTB N (STEM)
+noun_prop,PN,NOUN,true,proper noun
+noun_num,N,NOUN,true,numeric noun
+noun_quant,N,NOUN,true,quantifier noun
+adj,ADJ,ADJ,true,
+adj_comp,ADJ,ADJ,true,comparative
+adj_num,ADJ,ADJ,true,
+verb,V,VERB,true,
+verb_pseudo,V,VERB,true,kana and sisters
+pron,PRON,PRON,true,
+pron_dem,DEM,PRON,true,
+pron_rel,REL,PRON,true,
+pron_interrog,INTG,PRON,true,
+pron_exclam,EXL,PRON,true,
+prep,P,PREP,true,
+conj,CONJ,CONJ,true,
+conj_sub,SUB,CONJ,true,
+part_det,DET,DET,true,
+part_neg,NEG,PART,true,
+part_fut,FUT,PART,true,
+part_voc,VOC,PART,true,
+part_interrog,INTG,PART,true,
+part_dem,DEM,PART,true,
+part_focus,EMPH,PART,true,focus ≈ QAC EMPH
+part_restrict,RES,PART,true,restriction ≈ QAC RES
+part_verb,V,VERB,true,verbal particle; QAC IMPV/IMPN sa rzadsze
+part_noun,N,NOUN,true,
+adv,T,ADV,true,CAMeL nie rozdziela T vs LOC; LOC schodzi do ADV po stronie gold
+adv_rel,REL,PRON,true,
+adv_interrog,INTG,PART,true,
+interj,EXL,PART,true,
+part,,PART,false,ogolny particle bez podtypu — brak 1:1 do 20+ tagow QAC (ACC/COND/CERT/...)
+abbrev,N,NOUN,true,nie wystepuje w Koranie
+digit,N,NOUN,true,nie wystepuje w Koranie
+latin,PN,NOUN,true,nie wystepuje w Koranie
+punc,,PART,false,interpunkcja — poza korpusem EQTB

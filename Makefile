@@ -17,7 +17,7 @@ HOST_ROLE ?= laptop
 CLUSTER_TASKS := tag-ctrl variance-array av-train embed
 
 .PHONY: help setup setup-nlp verify-sources test lint format \
-        data download-eqtb formalize-qac-fallback normalize tag clean-quotes segment features gates freeze main \
+        data download-eqtb formalize-qac-fallback select-ctrl normalize cap-ctrl tag clean-quotes segment features gates freeze main \
         chrono explore figs figs-smoke dashboard audit sample-run \
         handoff handoff-verify $(CLUSTER_TASKS)
 
@@ -67,8 +67,15 @@ download-eqtb:
 formalize-qac-fallback:
 	$(PY) -m src.cli formalize-qac-fallback --config $(CONFIG)
 
+# T-011: metadane juz w data/raw/openiti/; pelny algorytm §3 (siec: jakosc + teksty).
+select-ctrl:
+	$(PY) -m src.cli select-ctrl --config $(CONFIG)
+
 normalize:
 	$(PY) -m src.cli normalize --config $(CONFIG)
+
+cap-ctrl:
+	$(PY) -m src.cli cap-ctrl --config $(CONFIG)
 
 tag:
 	$(PY) -m src.cli tag --config $(CONFIG)
