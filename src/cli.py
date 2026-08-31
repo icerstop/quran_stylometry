@@ -43,7 +43,7 @@ PENDING_STAGES: dict[str, str] = {
     "data": "T-012 (P1) — T-009/T-010/T-011: download-eqtb, formalize-qac-fallback, select-ctrl",
     # T-014 (ewaluacja na Koranie) jest zaimplementowane jako komenda `tag`.
     # T-015 (tagowanie CTRL) zostaje klastrowe: `tag-ctrl` / H1.
-    "clean-quotes": "T-016, T-017 (P1)",
+    # T-016: `clean-quotes`.
     "segment": "T-019, T-020 (P2)",
     "features": "T-021..T-028 (P2)",
     "gates": "T-029..T-032 (P3)",
@@ -652,6 +652,89 @@ def cmd_tag_ctrl(args: argparse.Namespace) -> int:
     return EXIT_OK
 
 
+def cmd_clean_quotes(args: argparse.Namespace) -> int:
+    """T-016: cytaty Koranu w CTRL. T-017 (redundancja wewnetrzna) osobno."""
+    import pandas as pd
+
+    from src.data.detect_quran_quotes import (
+        EQTB_TOKENS_PATH,
+        OPENITI_CLEAN_DIR,
+        QUOTE_AUDIT_PATH,
+        QUOTE_REPORT_PATH,
+        clean_ctrl_quotes,
+        make_fuzzy_index,
+        quran_word_tokens,
+        write_quote_artifacts,
+    )
+    from src.paths import CTRL_CAPPED_DIR, rel_to_repo
+    from src.utils.runs import log_run
+    from src.viz.fig05_quotes import save_fig_05
+
+    config = _load(args)
+    eqtb_path = Path(args.eqtb) if getattr(args, "eqtb", None) else EQTB_TOKENS_PATH
+    if not eqtb_path.exists():
+        print(f"BLAD: brak {eqtb_path} (T-009).", file=sys.stderr)
+        return EXIT_FAIL
+    input_dir = Path(args.input) if getattr(args, "input", None) else CTRL_CAPPED_DIR
+    output_dir = Path(args.output) if getattr(args, "output", None) else OPENITI_CLEAN_DIR
+    if not input_dir.is_dir():
+        print(f"BLAD: brak {input_dir} (T-013b).", file=sys.stderr)
+        return EXIT_FAIL
+
+    eqtb = pd.read_parquet(eqtb_path)
+    quran_tokens = quran_word_tokens(eqtb, profile=config.normalizer.profile)
+    skip_fuzzy = bool(getattr(args, "skip_fuzzy", False))
+    fuzzy = None if skip_fuzzy else make_fuzzy_index(config.quotes)
+    limit = getattr(args, "limit_books", None)
+    payload = clean_ctrl_quotes(
+        quran_tokens=quran_tokens,
+        input_dir=input_dir,
+        output_dir=output_dir,
+        cfg=config.quotes,
+        seed=config.seed,
+        fuzzy=fuzzy,
+        limit_books=int(limit) if limit else None,
+    )
+    paths = write_quote_artifacts(payload, config_hash=config.config_hash())
+    report = payload["report"]
+    totals = report["totals"]
+    print(
+        f"clean-quotes books={totals['n_books']} "
+        f"raw={totals['tokens_raw']} removed={totals['tokens_removed']} "
+        f"shuffle={totals['tokens_shuffle_removed']}"
+    )
+    print(f"  zapisano {rel_to_repo(paths['report'])}")
+    print(f"  audyt (reczny, 2x100): {rel_to_repo(paths['audit'])}")
+    if not getattr(args, "skip_fig", False):
+        saved = save_fig_05(report, config_hash=config.config_hash())
+        print(f"  figura {rel_to_repo(saved.png)}")
+
+    log_run(
+        task="T-016",
+        status="done",
+        config_hash=config.config_hash(),
+        artifacts=[
+            rel_to_repo(output_dir),
+            rel_to_repo(QUOTE_REPORT_PATH),
+            rel_to_repo(QUOTE_AUDIT_PATH),
+            "figures/FIG-05_quote_removal.png",
+        ],
+        metrics={
+            "n_books": totals["n_books"],
+            "tokens_raw": totals["tokens_raw"],
+            "tokens_removed": totals["tokens_removed"],
+            "tokens_shuffle_removed": totals["tokens_shuffle_removed"],
+            "audit_pending": 1,
+        },
+        note=(
+            "T-016: exact 7-gram + MinHash/LSH + margines ±3. "
+            "Precyzja/recall czekaja na reczny audyt 2×100 w quote_audit_sample.json. "
+            "T-017 nie wchodzi w ten przebieg."
+        ),
+    )
+    return EXIT_OK
+
+
 def cmd_diagnose_adv(args: argparse.Namespace) -> int:
     from src.annotate.diagnose_adv import ADV_DIAGNOSIS_PATH, diagnose_adv
     from src.annotate.tagger import TaggerNotAvailableError
@@ -971,6 +1054,16 @@ def build_parser() -> argparse.ArgumentParser:
     p_adv = sub.add_parser("diagnose-adv", help="T-014: diagnostyka kubełka ADV")
     _add_config_args(p_adv)
     p_adv.set_defaults(func=cmd_diagnose_adv)
+
+    p_quotes = sub.add_parser("clean-quotes", help="T-016: cytaty Koranu w CTRL (nie T-017)")
+    _add_config_args(p_quotes)
+    p_quotes.add_argument("--eqtb", default=None)
+    p_quotes.add_argument("--input", default=None, help="katalog ctrl_capped")
+    p_quotes.add_argument("--output", default=None, help="katalog openiti_clean")
+    p_quotes.add_argument("--limit-books", type=int, default=None)
+    p_quotes.add_argument("--skip-fuzzy", action="store_true")
+    p_quotes.add_argument("--skip-fig", action="store_true")
+    p_quotes.set_defaults(func=cmd_clean_quotes)
 
     p_h1 = sub.add_parser("build-handoff", help="przygotuj paczke handoff/H1 (bez sbatch)")
     _add_config_args(p_h1)

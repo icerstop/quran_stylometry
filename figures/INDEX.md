@@ -31,3 +31,16 @@ czytac, czego **nie** wolno wnioskowac, i jaka kotwice kontrolna niesie (G9).
 - Czego NIE wolno wnioskowac: Nie wnioskuj z tej figury o autorstwie Koranu ani o jakosci tagowania CTRL. Referencja to EQTB (fallback T-010), nie QAC. CAMeL jest MSA, nie Quranic-specific.
 - Pliki: `FIG-39_tagger_eval.png`, `FIG-39_tagger_eval.svg`, `FIG-39_tagger_eval.json`
 <!-- /fig:FIG-39 -->
+
+<!-- fig:FIG-05 -->
+## FIG-05 — quote_removal
+
+- Eksperyment: T-016
+- Typ: result
+- Rodziny cech: quotes
+- Kotwica kontrolna (G9): shuffle: 7-gramy z permutacji tokenow Koranu (ten sam slownik i n, bez ciaglosci cytatu); usuniecie z CTRL przy identycznym marginesie ±3
+- Pokazuje: Per gatunek CTRL: tokeny RAW, tokeny wykryte jako cytat (7-gramy), tokeny usuniete po marginesie ±3, oraz usuniecie na indeksie shuffle.
+- Jak czytac: Wysoki slupek usunietych przy niskim shuffle znaczy, ze wycinamy ciagi z Koranu, nie losowe zbitki. Tafsir moze tracic 30–50% objetosci — to oczekiwane (03_DATA.md §7a), nie blad.
+- Czego NIE wolno wnioskowac: Nie wnioskuj o autorstwie Koranu. Precyzja/recall sa z recznego audytu 2×100, nie z tej figury. Shuffle to kontrola struktury, nie p-wartosc.
+- Pliki: `FIG-05_quote_removal.png`, `FIG-05_quote_removal.svg`, `FIG-05_quote_removal.json`
+<!-- /fig:FIG-05 -->

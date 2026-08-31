@@ -1,0 +1,3609 @@
+{
+  "config_hash": "fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db",
+  "label_instructions": "Wpisz label: true_quote | false_positive dla matches; missed_quote | true_negative dla nonmatches.",
+  "matches": [
+    {
+      "book_id": "0230IbnSacd.TabaqatKubra.ShamAY0035884-ara1",
+      "genre": "biography",
+      "kind": "exact",
+      "start": 12720,
+      "window": [
+        "اتوك",
+        "لتحملهم",
+        "قلت",
+        "لا",
+        "اجد",
+        "ما",
+        "احملكم",
+        "عليه",
+        "تولوا",
+        "واعينهم",
+        "تفيض",
+        "من",
+        "الدمع"
+      ]
+    },
+    {
+      "book_id": "0465IbnHawazinQushayri.LataifIsharat.JK009257-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 41302,
+      "window": [
+        "بشري",
+        "ولتعطين",
+        "به",
+        "قلوبكم",
+        "وما",
+        "النصر",
+        "الا",
+        "من",
+        "عند",
+        "الله",
+        "ا",
+        "،",
+        "الله"
+      ]
+    },
+    {
+      "book_id": "0465IbnHawazinQushayri.LataifIsharat.JK009257-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 59568,
+      "window": [
+        "تبوك",
+        "،",
+        "كما",
+        "قال",
+        "من",
+        "بعد",
+        "ما",
+        "كاد",
+        "يزيغ",
+        "قلوب",
+        "فريق",
+        "منهم",
+        "وتوبته"
+      ]
+    },
+    {
+      "book_id": "0584IbnMunqidhShayzari.LubabAdab.JK010729-ara1",
+      "genre": "adab_prose",
+      "kind": "exact",
+      "start": 49149,
+      "window": [
+        "ال",
+        "عمران",
+        "فان",
+        "حاجوك",
+        "فقل",
+        "اسلمت",
+        "وجهي",
+        "لله",
+        "ومن",
+        "اتبعن",
+        "وقل",
+        "للذين",
+        "اوتو"
+      ]
+    },
+    {
+      "book_id": "0584IbnMunqidhShayzari.ManazilWaDiyar.Shamela0005416-ara1",
+      "genre": "other",
+      "kind": "fuzzy",
+      "start": 33418,
+      "window": [
+        "نعم",
+        "يا",
+        "رسول",
+        "الله",
+        "ومن",
+        "يوق",
+        "شح",
+        "نفسه",
+        "فاوليك",
+        "هم",
+        "المفلحون",
+        "قيل",
+        "الشح"
+      ]
+    },
+    {
+      "book_id": "0771TajDinSubki.AshbahWaNazair.Shamela0008634-ara1",
+      "genre": "fiqh",
+      "kind": "exact",
+      "start": 511,
+      "window": [
+        "قل",
+        "اانكم",
+        "لتكفرون",
+        "بالذي",
+        "خلق",
+        "الارض",
+        "في",
+        "يومين",
+        "وتجعلون",
+        "له",
+        "اندادا",
+        "ذلك",
+        "رب"
+      ]
+    },
+    {
+      "book_id": "0510IbnMascudBaghawi.Tafsir.Shamela0000041-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 79114,
+      "window": [
+        "ابتدعوها",
+        "ما",
+        "كتبناها",
+        "عليهم",
+        "الا",
+        "ابتغاء",
+        "رضوان",
+        "الله",
+        "فما",
+        "رعوها",
+        "حق",
+        "رعايتها",
+        "فاتينا"
+      ]
+    },
+    {
+      "book_id": "0458IbnSidaMursi.IcrabQuran.ShamAY0036821-ara1",
+      "genre": "other",
+      "kind": "fuzzy",
+      "start": 16596,
+      "window": [
+        "مما",
+        "تعملون",
+        "وتوكل",
+        "علي",
+        "العزيز",
+        "الرحيم",
+        "الذي",
+        "يراك",
+        "حين",
+        "تقوم",
+        "وتقلبك",
+        "في",
+        "السجدين"
+      ]
+    },
+    {
+      "book_id": "0427AbuIshaqThaclabi.KashfWaBayan.Shamela0023578-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 107747,
+      "window": [
+        "بينهما",
+        "شقاق",
+        "قال",
+        "علي",
+        "فابعثوا",
+        "حكما",
+        "من",
+        "اهله",
+        "وحكما",
+        "من",
+        "اهلها",
+        "قال",
+        "فبعثوا"
+      ]
+    },
+    {
+      "book_id": "0213IbnHisham.AkhbarIbnSharya.Shamela0037473BK2-ara1",
+      "genre": "history",
+      "kind": "exact",
+      "start": 13894,
+      "window": [
+        "بالله",
+        "لنبيتنه",
+        "واهله",
+        "ثم",
+        "لنقولن",
+        "لوليه",
+        "ما",
+        "شهدنا",
+        "مهلك",
+        "اهله",
+        "وانا",
+        "لصادقون",
+        "سمعت"
+      ]
+    },
+    {
+      "book_id": "0807NurDinHaythami.MawaridZaman.JK000707-ara1",
+      "genre": "hadith_collection",
+      "kind": "fuzzy",
+      "start": 8326,
+      "window": [
+        "اذ",
+        "هديتني",
+        "وهب",
+        "لي",
+        "من",
+        "لدنك",
+        "رحمه",
+        "انك",
+        "انت",
+        "الوهاب",
+        "اخبرنا",
+        "احمد",
+        "بن"
+      ]
+    },
+    {
+      "book_id": "0456IbnHazm.IhkamFiUsulAhkam.JK000122-ara1",
+      "genre": "fiqh",
+      "kind": "exact",
+      "start": 5310,
+      "window": [
+        "اليها",
+        "وتركوك",
+        "قايما",
+        "قل",
+        "ما",
+        "عند",
+        "الله",
+        "خير",
+        "من",
+        "اللهو",
+        "ومن",
+        "التجاره",
+        "والله"
+      ]
+    },
+    {
+      "book_id": "0324Ashcari.RisalaIlaAhlThughr.JK001256-ara1",
+      "genre": "theology",
+      "kind": "exact",
+      "start": 1817,
+      "window": [
+        "تعالي",
+        "فمن",
+        "حاجك",
+        "فيه",
+        "من",
+        "بعد",
+        "ما",
+        "جاءك",
+        "من",
+        "العلم",
+        "فقل",
+        "تعالوا",
+        "ندع"
+      ]
+    },
+    {
+      "book_id": "0743SharafDinTibi.FutuhGhayb.Sham19Y0020891-ara1",
+      "genre": "history",
+      "kind": "fuzzy",
+      "start": 94361,
+      "window": [
+        "منيرا",
+        "فعلم",
+        "ان",
+        "قوله",
+        "وتوكل",
+        "علي",
+        "الله",
+        "وكفي",
+        "بالله",
+        "وكيلا",
+        "مناسب",
+        "لقوله",
+        "وسراجا"
+      ]
+    },
+    {
+      "book_id": "0375IkhwanSafa.Rasail.Hindawi095926405Vols-ara1",
+      "genre": "adab_prose",
+      "kind": "fuzzy",
+      "start": 129017,
+      "window": [
+        "بالرويه",
+        "لما",
+        "قال",
+        "كلا",
+        "انهم",
+        "عن",
+        "ربهم",
+        "يوميذ",
+        "لمحجوبون",
+        "وانه",
+        "تجلي",
+        "للجبل،",
+        "فان"
+      ]
+    },
+    {
+      "book_id": "0743SharafDinTibi.SharhMishkat.Sham19Y0122257-ara1",
+      "genre": "hadith_collection",
+      "kind": "exact",
+      "start": 36897,
+      "window": [
+        "مثقال",
+        "ذره",
+        "خيرا",
+        "يره",
+        "ومن",
+        "يعمل",
+        "مثقال",
+        "ذره",
+        "شرا",
+        "يره",
+        "رواه",
+        "مسلم",
+        "وتقسيم"
+      ]
+    },
+    {
+      "book_id": "0581AbuQasimSuhayli.RawdUnuf.Masaha002028Vols-ara1",
+      "genre": "biography",
+      "kind": "exact",
+      "start": 145337,
+      "window": [
+        "هم",
+        "الذين",
+        "كفروا",
+        "وصدوكم",
+        "عن",
+        "المسجد",
+        "الحرام",
+        "والهدي",
+        "معكوفا",
+        "ان",
+        "يبلغ",
+        "محله",
+        "تفسير"
+      ]
+    },
+    {
+      "book_id": "0742Mizzi.TahdhibKamal.Shamela0003722-ara1",
+      "genre": "hadith_collection",
+      "kind": "fuzzy",
+      "start": 89608,
+      "window": [
+        "قوله",
+        "تعالي",
+        "واذ",
+        "اخذ",
+        "ربك",
+        "من",
+        "بني",
+        "ادم",
+        "من",
+        "ظهورهم",
+        "ذرياتهم",
+        "وعنه",
+        "مسلم"
+      ]
+    },
+    {
+      "book_id": "0620IbnQudamaMaqdisi.Mughni.JK000154-ara1",
+      "genre": "fiqh",
+      "kind": "fuzzy",
+      "start": 7622,
+      "window": [
+        "مومنا",
+        "خطا",
+        "فتحرير",
+        "رقبه",
+        "مومنه",
+        "وديه",
+        "مسلمه",
+        "الي",
+        "اهله",
+        "النساء",
+        "يقتضي",
+        "ان",
+        "الديه"
+      ]
+    },
+    {
+      "book_id": "0360Tabarani.TafsirKabir.Tafsir02091-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 61395,
+      "window": [
+        "اصله",
+        "قوله",
+        "تعالي",
+        "الم",
+        "ياتهم",
+        "نبا",
+        "الذين",
+        "من",
+        "قبلهم",
+        "قوم",
+        "نوح",
+        "وعاد",
+        "وثمود"
+      ]
+    },
+    {
+      "book_id": "0638IbnCarabi.FutuhatMakkiyya.JK009237-ara1",
+      "genre": "adab_prose",
+      "kind": "fuzzy",
+      "start": 162668,
+      "window": [
+        "بقي",
+        "من",
+        "الربا",
+        "واتقوا",
+        "يوما",
+        "ترجعون",
+        "فيه",
+        "الي",
+        "الله",
+        "اذا",
+        "تداينتم",
+        "بدين",
+        "الي"
+      ]
+    },
+    {
+      "book_id": "0728IbnTaymiyya.RaddCalaMantiqiyyin.JK000371-ara1",
+      "genre": "theology",
+      "kind": "exact",
+      "start": 212,
+      "window": [
+        "كم",
+        "لبثت",
+        "قال",
+        "لبثت",
+        "يوما",
+        "او",
+        "بعض",
+        "يوم",
+        "قال",
+        "بل",
+        "لبثت",
+        "مايه",
+        "عام"
+      ]
+    },
+    {
+      "book_id": "0494HakimJushami.TahdhibFiTafsir.Meshkat0014420-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 195597,
+      "window": [
+        "من",
+        "دون",
+        "الله",
+        "وليا",
+        "ولا",
+        "نصيرا",
+        "قد",
+        "يعلم",
+        "الله",
+        "المعوقين",
+        "منكم",
+        "والقايلين",
+        "لاخوانهم"
+      ]
+    },
+    {
+      "book_id": "0879IbnQutlubugha.GharibQuran.ShamAY0036822-ara1",
+      "genre": "other",
+      "kind": "fuzzy",
+      "start": 2177,
+      "window": [
+        "في",
+        "قوله",
+        "عزوجل",
+        "من",
+        "الضان",
+        "اثنين",
+        "ومن",
+        "المعز",
+        "اثنين",
+        "ومن",
+        "ا",
+        "الابل",
+        "اثنين"
+      ]
+    },
+    {
+      "book_id": "0375IkhwanSafa.Rasail.Hindawi095926405Vols-ara1",
+      "genre": "adab_prose",
+      "kind": "exact",
+      "start": 128369,
+      "window": [
+        "عليه",
+        "وسلم",
+        "لن",
+        "نومن",
+        "لك",
+        "حتي",
+        "تفجر",
+        "لنا",
+        "من",
+        "الارض",
+        "ينبوعا",
+        "او",
+        "تكون"
+      ]
+    },
+    {
+      "book_id": "0370IbnCaliJassas.SharhMukhtasarTahawi.Sham19Y0016546-ara1",
+      "genre": "other",
+      "kind": "exact",
+      "start": 39585,
+      "window": [
+        "ان",
+        "ياتين",
+        "بفحشه",
+        "مبينه",
+        "وتلك",
+        "حدود",
+        "الله",
+        "ومن",
+        "يتعد",
+        "حدود",
+        "الله",
+        "فقد",
+        "ظلم"
+      ]
+    },
+    {
+      "book_id": "0333AbuMansurMaturidi.Tafsir.Tafsir02094-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 66412,
+      "window": [
+        "عز",
+        "وجل",
+        "الذين",
+        "قال",
+        "لهم",
+        "الناس",
+        "ان",
+        "الناس",
+        "قد",
+        "جمعوا",
+        "لكم",
+        "فاخشوهم",
+        "فزادهم"
+      ]
+    },
+    {
+      "book_id": "0465IbnHawazinQushayri.LataifIsharat.JK009257-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 31387,
+      "window": [
+        "صراط",
+        "توعدون",
+        "وتصدون",
+        "عن",
+        "سبيل",
+        "الله",
+        "من",
+        "ءامن",
+        "به",
+        "وتبغونها",
+        "عوجا",
+        "من",
+        "المعاصي"
+      ]
+    },
+    {
+      "book_id": "0333AbuMansurMaturidi.Tafsir.Tafsir02094-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 84290,
+      "window": [
+        "ذلك",
+        "قوله",
+        "فمن",
+        "خاف",
+        "من",
+        "موص",
+        "جنفا",
+        "او",
+        "اثما",
+        "فاصلح",
+        "بينهم",
+        "البقره",
+        "الايه،"
+      ]
+    },
+    {
+      "book_id": "0745AbuHayyanGharnati.TafsirBahrMuhit.Shamela0023591-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 99536,
+      "window": [
+        "دونه",
+        "اولياء",
+        "لا",
+        "يملكون",
+        "لانفسهم",
+        "نفعا",
+        "ولا",
+        "ضرا",
+        "قل",
+        "هل",
+        "يستوي",
+        "الاعمي",
+        "والبصير"
+      ]
+    },
+    {
+      "book_id": "0437MakkiIbnHammushQaysi.Hidaya.Shamela0022593-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 24603,
+      "window": [
+        "ثم",
+        "قال",
+        "تعالي",
+        "وما",
+        "كان",
+        "ربك",
+        "مهلك",
+        "القري",
+        "حتي",
+        "يبعث",
+        "في",
+        "امها",
+        "رسولا،"
+      ]
+    },
+    {
+      "book_id": "0494HakimJushami.TahdhibFiTafsir.Meshkat0014420-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 192369,
+      "window": [
+        "كتاب",
+        "الله",
+        "من",
+        "المومنين",
+        "والمهاجرين",
+        "الا",
+        "ان",
+        "تفعلوا",
+        "الي",
+        "اوليايكم",
+        "معروفا",
+        "كان",
+        "ذلك"
+      ]
+    },
+    {
+      "book_id": "0381IbnBabawayhSaduq.Amali.Shia001134-ara1",
+      "genre": "adab_prose",
+      "kind": "exact",
+      "start": 1991,
+      "window": [
+        "انا",
+        "يوسف",
+        "وهذا",
+        "اخي",
+        "قد",
+        "من",
+        "الله",
+        "علينا",
+        "انه",
+        "من",
+        "يتق",
+        "ويصبر",
+        "فان"
+      ]
+    },
+    {
+      "book_id": "0465IbnHawazinQushayri.LataifIsharat.JK009257-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 127427,
+      "window": [
+        "يخرجاكم",
+        "من",
+        "ارضكم",
+        "بسحرهما",
+        "ويذهبا",
+        "بطريقتكم",
+        "المثلي",
+        "فاجمعوا",
+        "كيدكم",
+        "ثم",
+        "ايتوا",
+        "صفا",
+        "وقد"
+      ]
+    },
+    {
+      "book_id": "0542IbnCaliDiyaDinIbnShajari.Amali.Sham19Y0120922-ara1",
+      "genre": "adab_prose",
+      "kind": "exact",
+      "start": 47277,
+      "window": [
+        "قوله",
+        "اني",
+        "رايت",
+        "احد",
+        "عشر",
+        "كوكبا",
+        "والشمس",
+        "والقمر",
+        "رايتهم",
+        "لي",
+        "ساجدين",
+        "والنمله",
+        "التي"
+      ]
+    },
+    {
+      "book_id": "0458IbnSidaMursi.IcrabQuran.ShamAY0036821-ara1",
+      "genre": "other",
+      "kind": "exact",
+      "start": 2237,
+      "window": [
+        "الله",
+        "عليها",
+        "ان",
+        "كان",
+        "من",
+        "الصدقين",
+        "ولولا",
+        "فضل",
+        "الله",
+        "عليكم",
+        "ورحمته",
+        "وان",
+        "الله"
+      ]
+    },
+    {
+      "book_id": "0427AbuIshaqThaclabi.KashfWaBayan.Shamela0023578-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 197607,
+      "window": [
+        "يروا",
+        "سبيل",
+        "الرشد",
+        "لا",
+        "يتخذوه",
+        "سبيلا",
+        "وان",
+        "يروا",
+        "سبيل",
+        "الغي",
+        "يتخذوه",
+        "سبيلا",
+        "ودليل"
+      ]
+    },
+    {
+      "book_id": "0427AbuIshaqThaclabi.KashfWaBayan.Shamela0023578-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 69604,
+      "window": [
+        "سنلقي",
+        "في",
+        "قلوب",
+        "الذين",
+        "كفروا",
+        "الرعب",
+        "بما",
+        "اشركوا",
+        "بالله",
+        "ما",
+        "لم",
+        "ينزل",
+        "به"
+      ]
+    },
+    {
+      "book_id": "0537NajmDinAbuHafsNasafi.TaysirFiTafsir.Meshkat00057178-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 158575,
+      "window": [
+        "تقدم",
+        "تفسيره",
+        "والملك",
+        "علي",
+        "ارجايها",
+        "ويحمل",
+        "عرش",
+        "ربك",
+        "فوقهم",
+        "يوميذ",
+        "ثمانيه",
+        "فيوميذ",
+        "وقعت"
+      ]
+    },
+    {
+      "book_id": "0885BurhanDinBiqaci.NazmDurar.JK009270-ara1",
+      "genre": "other",
+      "kind": "exact",
+      "start": 73974,
+      "window": [
+        "من",
+        "القول",
+        "ويعلم",
+        "ما",
+        "تكتمون",
+        "وان",
+        "ادري",
+        "لعله",
+        "فتنه",
+        "لكم",
+        "ومتاع",
+        "الي",
+        "حين"
+      ]
+    },
+    {
+      "book_id": "0743SharafDinTibi.FutuhGhayb.Sham19Y0020891-ara1",
+      "genre": "history",
+      "kind": "exact",
+      "start": 127913,
+      "window": [
+        "فعليها",
+        "فصلت",
+        "،",
+        "فمن",
+        "اهتدي",
+        "فلنفسه",
+        "ومن",
+        "ضل",
+        "فانما",
+        "يضل",
+        "عليها",
+        "الزمر",
+        "،"
+      ]
+    },
+    {
+      "book_id": "0458IbnSidaMursi.IcrabQuran.ShamAY0036821-ara1",
+      "genre": "other",
+      "kind": "exact",
+      "start": 1704,
+      "window": [
+        "ربنا",
+        "غلبت",
+        "علينا",
+        "شقوتنا",
+        "وكنا",
+        "قوما",
+        "ضالين",
+        "ربنا",
+        "اخرجنا",
+        "منها",
+        "فان",
+        "عدنا",
+        "فانا"
+      ]
+    },
+    {
+      "book_id": "0699IbnMaythamBahrani.QawacidMaram.Shia004010-ara1",
+      "genre": "theology",
+      "kind": "fuzzy",
+      "start": 24412,
+      "window": [
+        "تسعي",
+        "وقوله",
+        "تعالي",
+        "وما",
+        "خلقنا",
+        "السماء",
+        "والارض",
+        "وما",
+        "بينهما",
+        "باطلا",
+        "ذلك",
+        "ظن",
+        "الذين"
+      ]
+    },
+    {
+      "book_id": "0743SharafDinTibi.FutuhGhayb.Sham19Y0020891-ara1",
+      "genre": "history",
+      "kind": "exact",
+      "start": 117287,
+      "window": [
+        "المعاصي",
+        "شكور",
+        "للنعم",
+        "ولقد",
+        "صدق",
+        "عليهم",
+        "ابليس",
+        "ظنه",
+        "فاتبعوه",
+        "الا",
+        "فريقا",
+        "من",
+        "المومنين"
+      ]
+    },
+    {
+      "book_id": "0542IbnCaliDiyaDinIbnShajari.Amali.Sham19Y0120922-ara1",
+      "genre": "adab_prose",
+      "kind": "fuzzy",
+      "start": 135062,
+      "window": [
+        "احسن",
+        "وفي",
+        "قوله",
+        "تعالي",
+        "الذين",
+        "يدعون",
+        "يبتغون",
+        "الي",
+        "ربهم",
+        "الوسيله",
+        "ايهم",
+        "اقرب",
+        "قولان"
+      ]
+    },
+    {
+      "book_id": "0427AbuIshaqThaclabi.KashfWaBayan.Shamela0023578-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 110394,
+      "window": [
+        "بوجوهكم",
+        "وايديكم",
+        "ان",
+        "الله",
+        "كان",
+        "عفوا",
+        "غفورا",
+        "الم",
+        "تر",
+        "الي",
+        "الذين",
+        "اوتوا",
+        "نصيبا"
+      ]
+    },
+    {
+      "book_id": "0745AbuHayyanGharnati.TafsirBahrMuhit.Shamela0023591-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 14791,
+      "window": [
+        "يومنوا",
+        "حتي",
+        "يروا",
+        "العذاب",
+        "الاليم",
+        "قال",
+        "قد",
+        "اجيبت",
+        "دعوتكما",
+        "فاستقيما",
+        "ولا",
+        "تتبعان",
+        "سبيل"
+      ]
+    },
+    {
+      "book_id": "0743SharafDinTibi.FutuhGhayb.Sham19Y0020891-ara1",
+      "genre": "history",
+      "kind": "exact",
+      "start": 80079,
+      "window": [
+        "مرض",
+        "ما",
+        "وعدنا",
+        "الله",
+        "ورسوله",
+        "الا",
+        "غرورا",
+        "واذ",
+        "قالت",
+        "طايفه",
+        "منهم",
+        "يا",
+        "اهل"
+      ]
+    },
+    {
+      "book_id": "0494HakimJushami.TahdhibFiTafsir.Meshkat0014420-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 167503,
+      "window": [
+        "كذبا",
+        "او",
+        "كذب",
+        "بالحق",
+        "لما",
+        "جاءه",
+        "اليس",
+        "في",
+        "جهنم",
+        "مثوي",
+        "للكافرين",
+        "والذين",
+        "جاهدوا"
+      ]
+    },
+    {
+      "book_id": "0548Shahrastani.NihayatAqdam.JK009331-ara1",
+      "genre": "theology",
+      "kind": "fuzzy",
+      "start": 78879,
+      "window": [
+        "لين",
+        "اجتمعت",
+        "الانس",
+        "والجن",
+        "علي",
+        "ان",
+        "ياتوا",
+        "بمثل",
+        "هذا",
+        "القران",
+        "الايه",
+        "افلم",
+        "يكن"
+      ]
+    },
+    {
+      "book_id": "0548IbnHasanTabarsi.TafsirJawamicJamic.Shia002356Vols-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 29767,
+      "window": [
+        "الشيطن",
+        "فانسهم",
+        "ذكر",
+        "الله",
+        "اوليك",
+        "حزب",
+        "الشيطن",
+        "الا",
+        "ان",
+        "حزب",
+        "الشيطن",
+        "هم",
+        "الخسرون"
+      ]
+    },
+    {
+      "book_id": "0458IbnSidaMursi.IcrabQuran.ShamAY0036821-ara1",
+      "genre": "other",
+      "kind": "exact",
+      "start": 20421,
+      "window": [
+        "الا",
+        "يسجدوا",
+        "لله",
+        "الذي",
+        "يخرج",
+        "الخبء",
+        "في",
+        "السموت",
+        "والارض",
+        "ويعلم",
+        "ما",
+        "تخفون",
+        "وما"
+      ]
+    },
+    {
+      "book_id": "0637IbnAthirDiyaDin.MathalSair.Shamela0010551-ara1",
+      "genre": "adab_prose",
+      "kind": "exact",
+      "start": 2612,
+      "window": [
+        "والمجاز",
+        "قوله",
+        "تعالي",
+        "ويوم",
+        "يحشر",
+        "اعداء",
+        "الله",
+        "الي",
+        "النار",
+        "فهم",
+        "يوزعون،",
+        "حتي",
+        "اذا"
+      ]
+    },
+    {
+      "book_id": "0699IbnMaythamBahrani.SharhMiatKalima.Shia001379-ara1",
+      "genre": "hadith_collection",
+      "kind": "exact",
+      "start": 16984,
+      "window": [
+        "هاويه",
+        "،",
+        "الذي",
+        "جمع",
+        "مالا",
+        "وعدده",
+        "يحسب",
+        "ان",
+        "ماله",
+        "اخلده",
+        "كلا",
+        "لينبذن",
+        "في"
+      ]
+    },
+    {
+      "book_id": "0500Anonymous.MajmucatRasailJahiz.Shamela0010428BK1-ara1",
+      "genre": "adab_prose",
+      "kind": "exact",
+      "start": 14452,
+      "window": [
+        "تبارك",
+        "وتعالي",
+        "ادفع",
+        "بالتي",
+        "هي",
+        "احسن",
+        "فاذا",
+        "الذي",
+        "بينك",
+        "وبينه",
+        "عداوه",
+        "كانه",
+        "ولي"
+      ]
+    },
+    {
+      "book_id": "0745AbuHayyanGharnati.TafsirBahrMuhit.Shamela0023591-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 21615,
+      "window": [
+        "وفار",
+        "التنور",
+        "قلنا",
+        "احمل",
+        "فيها",
+        "من",
+        "كل",
+        "زوجين",
+        "اثنين",
+        "واهلك",
+        "الا",
+        "من",
+        "سبق"
+      ]
+    },
+    {
+      "book_id": "0437MakkiIbnHammushQaysi.Hidaya.Shamela0022593-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 182842,
+      "window": [
+        "رجال",
+        "مومنون",
+        "ونساء",
+        "مومنات",
+        "لم",
+        "تعلموهم",
+        "ان",
+        "تطيوهم",
+        "فتصيبكم",
+        "منهم",
+        "معره",
+        "بغير",
+        "علم"
+      ]
+    },
+    {
+      "book_id": "0370IbnCaliJassas.SharhMukhtasarTahawi.Sham19Y0016546-ara1",
+      "genre": "other",
+      "kind": "exact",
+      "start": 37378,
+      "window": [
+        "وقال",
+        "تعالي",
+        "واذا",
+        "طلقتم",
+        "النساء",
+        "فبلغن",
+        "اجلهن",
+        "فامسكوهن",
+        "بمعروف",
+        "او",
+        "سرحوهن",
+        "بمعروف،",
+        "ثم"
+      ]
+    },
+    {
+      "book_id": "0360Tabarani.TafsirKabir.Tafsir02091-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 79183,
+      "window": [
+        "قالوا",
+        "له",
+        "لين",
+        "لم",
+        "تنته",
+        "ينوح",
+        "لتكونن",
+        "من",
+        "المرجومين",
+        "الشعراء",
+        "قوله",
+        "تعالي",
+        "فاجمعوا"
+      ]
+    },
+    {
+      "book_id": "0548IbnHasanTabarsi.TafsirMajmacBayan.Tafsir04003-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 20110,
+      "window": [
+        "جبير",
+        "ولا",
+        "يجد",
+        "له",
+        "من",
+        "دون",
+        "الله",
+        "وليا",
+        "ولا",
+        "نصيرا",
+        "معناه",
+        "ولا",
+        "يجد"
+      ]
+    },
+    {
+      "book_id": "0743SharafDinTibi.FutuhGhayb.Sham19Y0020891-ara1",
+      "genre": "history",
+      "kind": "fuzzy",
+      "start": 4079,
+      "window": [
+        "اهلكنا",
+        "القرون",
+        "الاولي",
+        "بصاير",
+        "للناس",
+        "وهدي",
+        "ورحمه",
+        "لعلهم",
+        "يتذكرون",
+        "بصاير",
+        "نصب",
+        "علي",
+        "الحال"
+      ]
+    },
+    {
+      "book_id": "0671AbuCabdAllahQurtubi.JamicLiAhkamQuran.Tafsir01005-ara1",
+      "genre": "fiqh",
+      "kind": "exact",
+      "start": 16295,
+      "window": [
+        "يعملون",
+        "الانبياء",
+        "لا",
+        "يعصون",
+        "الله",
+        "ما",
+        "امرهم",
+        "ويفعلون",
+        "ما",
+        "يومرون",
+        "التحريم",
+        "وقوله",
+        "لن"
+      ]
+    },
+    {
+      "book_id": "0427AbuIshaqThaclabi.KashfWaBayan.Shamela0023578-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 16975,
+      "window": [
+        "هو",
+        "الحي",
+        "القيوم",
+        "نزل",
+        "عليك",
+        "الكتاب",
+        "بالحق",
+        "مصدقا",
+        "لما",
+        "بين",
+        "يديه",
+        "وانزل",
+        "التوراه"
+      ]
+    },
+    {
+      "book_id": "0333AbuMansurMaturidi.Tafsir.Tafsir02094-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 128217,
+      "window": [
+        "فكيف",
+        "اذا",
+        "اصبتهم",
+        "مصيبه",
+        "بما",
+        "قدمت",
+        "ايديهم",
+        "ثم",
+        "جاءوك",
+        "يحلفون",
+        "بالله",
+        "اي",
+        "جاء"
+      ]
+    },
+    {
+      "book_id": "0510IbnMascudBaghawi.Tafsir.Shamela0000041-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 64189,
+      "window": [
+        "اذا",
+        "لفي",
+        "ضلال",
+        "وسعر",
+        "اولقي",
+        "الذكر",
+        "عليه",
+        "من",
+        "بيننا",
+        "بل",
+        "هو",
+        "كذاب",
+        "اشر"
+      ]
+    },
+    {
+      "book_id": "0427AbuIshaqThaclabi.KashfWaBayan.Shamela0023578-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 187675,
+      "window": [
+        "ايدتك",
+        "بروح",
+        "القدس",
+        "تكلم",
+        "الناس",
+        "في",
+        "المهد",
+        "وكهلا",
+        "واذ",
+        "علمتك",
+        "الكتاب",
+        "والحكمه",
+        "والتوراه"
+      ]
+    },
+    {
+      "book_id": "0637IbnAthirDiyaDin.MathalSair.Shamela0010551-ara1",
+      "genre": "adab_prose",
+      "kind": "exact",
+      "start": 67763,
+      "window": [
+        "تعالي",
+        "وامراه",
+        "مومنه",
+        "ان",
+        "وهبت",
+        "نفسها",
+        "للنبي",
+        "ان",
+        "اراد",
+        "النبي",
+        "ان",
+        "يستنكحها",
+        "،"
+      ]
+    },
+    {
+      "book_id": "0745AbuHayyanGharnati.TafsirBahrMuhit.Shamela0023591-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 68587,
+      "window": [
+        "غالب",
+        "علي",
+        "امره",
+        "ولكن",
+        "اكثر",
+        "الناس",
+        "لا",
+        "يعلمون",
+        "ولما",
+        "بلغ",
+        "اشده",
+        "اتيناه",
+        "حكما"
+      ]
+    },
+    {
+      "book_id": "0427AbuIshaqThaclabi.KashfWaBayan.Shamela0023578-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 39638,
+      "window": [
+        "من",
+        "يشاء",
+        "والله",
+        "واسع",
+        "عليم",
+        "يختص",
+        "برحمته",
+        "من",
+        "يشاء",
+        "والله",
+        "ذو",
+        "الفضل",
+        "العظيم"
+      ]
+    },
+    {
+      "book_id": "0537NajmDinAbuHafsNasafi.TaysirFiTafsir.Meshkat00057178-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 12209,
+      "window": [
+        "ذلك",
+        "هو",
+        "الخسران",
+        "المبين",
+        "قل",
+        "اني",
+        "اخاف",
+        "ان",
+        "عصيت",
+        "ربي",
+        "عذاب",
+        "يوم",
+        "عظيم"
+      ]
+    },
+    {
+      "book_id": "0494HakimJushami.TahdhibFiTafsir.Meshkat0014420-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 24219,
+      "window": [
+        "عنده",
+        "لا",
+        "يستكبرون",
+        "عن",
+        "عبادته",
+        "ولا",
+        "يستحسرون",
+        "يسبحون",
+        "الليل",
+        "والنهار",
+        "لا",
+        "يفترون",
+        "اللغه"
+      ]
+    },
+    {
+      "book_id": "0494HakimJushami.TahdhibFiTafsir.Meshkat0014420-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 100190,
+      "window": [
+        "الي",
+        "طلب",
+        "المعاش،",
+        "او",
+        "تكون",
+        "له",
+        "جنه",
+        "بستان",
+        "ياكل",
+        "منها",
+        "وقال",
+        "الظالمون",
+        "لانفسهم"
+      ]
+    },
+    {
+      "book_id": "0542IbnCaliDiyaDinIbnShajari.Amali.Sham19Y0120922-ara1",
+      "genre": "adab_prose",
+      "kind": "exact",
+      "start": 61286,
+      "window": [
+        "قال",
+        "ان",
+        "رسولكم",
+        "الذي",
+        "ارسل",
+        "اليكم",
+        "لمجنون",
+        "قال",
+        "رب",
+        "المشرق",
+        "والمغرب",
+        "وما",
+        "بينهما"
+      ]
+    },
+    {
+      "book_id": "0494HakimJushami.TahdhibFiTafsir.Meshkat0014420-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 180415,
+      "window": [
+        "ليس",
+        "لك",
+        "به",
+        "علم",
+        "فلا",
+        "تطعهما",
+        "وصاحبهما",
+        "في",
+        "الدنيا",
+        "معروفا",
+        "واتبع",
+        "سبيل",
+        "من"
+      ]
+    },
+    {
+      "book_id": "0751IbnQayyimJawziyya.KalamCalaMasalatSamac.Sham19Y0018318-ara1",
+      "genre": "theology",
+      "kind": "exact",
+      "start": 1067,
+      "window": [
+        "له،",
+        "ثم",
+        "قال",
+        "فبشر",
+        "عباد",
+        "الذين",
+        "يستمعون",
+        "القول",
+        "فيتبعون",
+        "احسنه",
+        "الزمر",
+        "،",
+        "فهذا"
+      ]
+    },
+    {
+      "book_id": "0660IbnCadim.BughyatTalab.Shamela0010798-ara1",
+      "genre": "history",
+      "kind": "fuzzy",
+      "start": 142104,
+      "window": [
+        "الا",
+        "تكلم",
+        "الناس",
+        "ثلاثه",
+        "ايام",
+        "الا",
+        "رمزا",
+        "واذكر",
+        "ربك",
+        "كثيرا",
+        "وسبح",
+        "بالعشي",
+        "والابكار"
+      ]
+    },
+    {
+      "book_id": "0584IbnMunqidhShayzari.LubabAdab.JK010729-ara1",
+      "genre": "adab_prose",
+      "kind": "exact",
+      "start": 23452,
+      "window": [
+        "يغلبوا",
+        "مايتين،",
+        "وان",
+        "يكن",
+        "منكم",
+        "الف",
+        "يغلبوا",
+        "الفين",
+        "باذن",
+        "الله",
+        "والله",
+        "مع",
+        "الصابرين"
+      ]
+    },
+    {
+      "book_id": "0494HakimJushami.TahdhibFiTafsir.Meshkat0014420-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 144271,
+      "window": [
+        "فلا",
+        "عدوان",
+        "علي",
+        "والله",
+        "علي",
+        "ما",
+        "نقول",
+        "وكيل",
+        "فلما",
+        "قضي",
+        "موسي",
+        "الاجل",
+        "وسار"
+      ]
+    },
+    {
+      "book_id": "0619AbuCabbasSharishi.SharhMaqamatHariri.Sham19Y0000760-ara1",
+      "genre": "maqamat_saj",
+      "kind": "fuzzy",
+      "start": 142743,
+      "window": [
+        "واراد",
+        "قوله",
+        "تعالي",
+        "قل",
+        "يحييها",
+        "الذي",
+        "انشاها",
+        "اول",
+        "مره",
+        "الانعام",
+        "،",
+        "عاد",
+        "وارم"
+      ]
+    },
+    {
+      "book_id": "0494HakimJushami.TahdhibFiTafsir.Meshkat0014420-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 3402,
+      "window": [
+        "عليك",
+        "محبه",
+        "مني",
+        "ولتصنع",
+        "علي",
+        "عيني",
+        "اذ",
+        "تمشي",
+        "اختك",
+        "فتقول",
+        "هل",
+        "ادلكم",
+        "علي"
+      ]
+    },
+    {
+      "book_id": "0427AbuIshaqThaclabi.KashfWaBayan.Shamela0023578-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 13818,
+      "window": [
+        "ليس",
+        "لك",
+        "به",
+        "علم",
+        "ان",
+        "السمع",
+        "والبصر",
+        "والفواد",
+        "كل",
+        "اوليك",
+        "كان",
+        "عنه",
+        "مسولا"
+      ]
+    },
+    {
+      "book_id": "0743SharafDinTibi.FutuhGhayb.Sham19Y0020891-ara1",
+      "genre": "history",
+      "kind": "exact",
+      "start": 35932,
+      "window": [
+        "الله",
+        "يبسط",
+        "الرزق",
+        "لمن",
+        "يشاء",
+        "من",
+        "عباده",
+        "ويقدر",
+        "له",
+        "ان",
+        "الله",
+        "بكل",
+        "شيء"
+      ]
+    },
+    {
+      "book_id": "0548IbnHasanTabarsi.TafsirJawamicJamic.Shia002356Vols-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 31401,
+      "window": [
+        "الكتب",
+        "لين",
+        "اخرجتم",
+        "لنخرجن",
+        "معكم",
+        "ولا",
+        "نطيع",
+        "فيكم",
+        "احدا",
+        "ابدا",
+        "وان",
+        "قوتلتم",
+        "لننصرنكم"
+      ]
+    },
+    {
+      "book_id": "0213IbnHisham.SiraNabawiyya.Shamela0023833-ara1",
+      "genre": "biography",
+      "kind": "exact",
+      "start": 8701,
+      "window": [
+        "الله",
+        "به",
+        "اليهم",
+        "لو",
+        "انفقت",
+        "ما",
+        "في",
+        "الارض",
+        "جميعا",
+        "ما",
+        "الفت",
+        "بين",
+        "قلوبهم،"
+      ]
+    },
+    {
+      "book_id": "0745AbuHayyanGharnati.TafsirBahrMuhit.Shamela0023591-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 19618,
+      "window": [
+        "من",
+        "الظالمين",
+        "وان",
+        "يمسسك",
+        "الله",
+        "بضر",
+        "فلا",
+        "كاشف",
+        "له",
+        "الا",
+        "هو",
+        "وان",
+        "يردك"
+      ]
+    },
+    {
+      "book_id": "0456IbnHazm.IhkamFiUsulAhkam.JK000122-ara1",
+      "genre": "fiqh",
+      "kind": "exact",
+      "start": 20390,
+      "window": [
+        "تعقل",
+        "قوله",
+        "تعالي",
+        "ثم",
+        "قست",
+        "قلوبكم",
+        "من",
+        "بعد",
+        "ذلك",
+        "فهي",
+        "كالحجاره",
+        "او",
+        "اشد"
+      ]
+    },
+    {
+      "book_id": "0494HakimJushami.TahdhibFiTafsir.Meshkat0014420-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 159413,
+      "window": [
+        "رزقا",
+        "فابتغوا",
+        "عند",
+        "الله",
+        "الرزق",
+        "واعبدوه",
+        "واشكروا",
+        "له",
+        "اليه",
+        "ترجعون",
+        "وان",
+        "تكذبوا",
+        "فقد"
+      ]
+    },
+    {
+      "book_id": "0333AbuMansurMaturidi.Tafsir.Tafsir02094-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 40135,
+      "window": [
+        "فقال",
+        "من",
+        "اوفي",
+        "بعهده",
+        "واتقي",
+        "فان",
+        "الله",
+        "يحب",
+        "المتقين",
+        "،",
+        "اي",
+        "هولاء",
+        "الذين"
+      ]
+    },
+    {
+      "book_id": "0537NajmDinAbuHafsNasafi.TaysirFiTafsir.Meshkat00057178-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 71579,
+      "window": [
+        "ذكر",
+        "في",
+        "قوله",
+        "ان",
+        "الله",
+        "اشتري",
+        "من",
+        "المومنين",
+        "انفسهم",
+        "واموالهم",
+        "الايه",
+        "التوبه",
+        "لنا"
+      ]
+    },
+    {
+      "book_id": "0458IbnSidaMursi.IcrabQuran.ShamAY0036821-ara1",
+      "genre": "other",
+      "kind": "fuzzy",
+      "start": 39364,
+      "window": [
+        "كما",
+        "مر",
+        "في",
+        "قول",
+        "الا",
+        "ان",
+        "يوذن",
+        "لكم",
+        "الي",
+        "طعام",
+        "غير",
+        "ناظرين",
+        "اناه،"
+      ]
+    },
+    {
+      "book_id": "0437MakkiIbnHammushQaysi.Hidaya.Shamela0022593-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 32413,
+      "window": [
+        "ثم",
+        "قال",
+        "تعالي",
+        "انا",
+        "منزلون",
+        "علي",
+        "اهل",
+        "هذه",
+        "القريه",
+        "رجزا",
+        "من",
+        "السماء",
+        "اي"
+      ]
+    },
+    {
+      "book_id": "0494HakimJushami.TahdhibFiTafsir.Meshkat0014420-ara1",
+      "genre": "tafsir",
+      "kind": "fuzzy",
+      "start": 9850,
+      "window": [
+        "للعاصين",
+        "منك؛",
+        "لانك",
+        "فان",
+        "هالك",
+        "انه",
+        "من",
+        "يات",
+        "ربه",
+        "مجرما",
+        "قيل",
+        "انه",
+        "خبر"
+      ]
+    },
+    {
+      "book_id": "0494HakimJushami.TahdhibFiTafsir.Meshkat0014420-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 19568,
+      "window": [
+        "اشد",
+        "وابقي",
+        "افلم",
+        "يهد",
+        "لهم",
+        "كم",
+        "اهلكنا",
+        "قبلهم",
+        "من",
+        "القرون",
+        "يمشون",
+        "في",
+        "مساكنهم"
+      ]
+    },
+    {
+      "book_id": "0456IbnHazm.IhkamFiUsulAhkam.JK000122-ara1",
+      "genre": "fiqh",
+      "kind": "exact",
+      "start": 11273,
+      "window": [
+        "يحكمان",
+        "في",
+        "الحرث",
+        "اذ",
+        "نفشت",
+        "فيه",
+        "غنم",
+        "القوم",
+        "وكنا",
+        "لحكمهم",
+        "شاهدين",
+        "قال",
+        "علي"
+      ]
+    },
+    {
+      "book_id": "0634AbuRabicHimyari.Iktifa.Shamela0009770-ara1",
+      "genre": "biography",
+      "kind": "fuzzy",
+      "start": 31785,
+      "window": [
+        "كل",
+        "من",
+        "عليها",
+        "فان",
+        "ويبقي",
+        "وجه",
+        "ربك",
+        "ذو",
+        "الجلال",
+        "والاكرام",
+        "الرحمن",
+        "ثم",
+        "قال"
+      ]
+    },
+    {
+      "book_id": "0427AbuIshaqThaclabi.KashfWaBayan.Shamela0023578-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 170569,
+      "window": [
+        "بعض",
+        "ما",
+        "انزل",
+        "الله",
+        "اليك",
+        "فان",
+        "تولوا",
+        "فاعلم",
+        "انما",
+        "يريد",
+        "الله",
+        "ان",
+        "يصيبهم"
+      ]
+    },
+    {
+      "book_id": "0494HakimJushami.TahdhibFiTafsir.Meshkat0014420-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 85824,
+      "window": [
+        "عليم",
+        "وليستعفف",
+        "الذين",
+        "لا",
+        "يجدون",
+        "نكاحا",
+        "حتي",
+        "يغنيهم",
+        "الله",
+        "من",
+        "فضله",
+        "اللغه",
+        "النكاح"
+      ]
+    },
+    {
+      "book_id": "0548IbnHasanTabarsi.TafsirJawamicJamic.Shia002356Vols-ara1",
+      "genre": "tafsir",
+      "kind": "exact",
+      "start": 37652,
+      "window": [
+        "له",
+        "الملك",
+        "وله",
+        "الحمد",
+        "وهو",
+        "علي",
+        "كل",
+        "شيء",
+        "قدير",
+        "هو",
+        "الذي",
+        "خلقكم",
+        "فمنكم"
+      ]
+    },
+    {
+      "book_id": "0542IbnCaliDiyaDinIbnShajari.Amali.Sham19Y0120922-ara1",
+      "genre": "adab_prose",
+      "kind": "exact",
+      "start": 34611,
+      "window": [
+        "اذا",
+        "دعوا",
+        "الي",
+        "الله",
+        "ورسوله",
+        "ليحكم",
+        "بينهم",
+        "ان",
+        "يقولوا",
+        "سمعنا",
+        "واطعنا",
+        "معناه",
+        "قولوا"
+      ]
+    },
+    {
+      "book_id": "0542IbnCaliDiyaDinIbnShajari.Amali.Sham19Y0120922-ara1",
+      "genre": "adab_prose",
+      "kind": "exact",
+      "start": 34635,
+      "window": [
+        "امنوا",
+        "بالله",
+        "ورسوله",
+        "واذا",
+        "كانوا",
+        "معه",
+        "علي",
+        "امر",
+        "جامع",
+        "لم",
+        "يذهبوا",
+        "حتي",
+        "يستاذنوه"
+      ]
+    }
+  ],
+  "nonmatches": [
+    {
+      "book_id": "0562Samcani.Muntakhab.Shamela0021556-ara1",
+      "genre": "biography",
+      "kind": "nonmatch",
+      "start": 38833,
+      "window": [
+        "وكان",
+        "ابو",
+        "سعيد",
+        "صاحب",
+        "مروءه،",
+        "وبيته",
+        "ماوي"
+      ]
+    },
+    {
+      "book_id": "0771TajDinSubki.RafcHajib.JK009151-ara1",
+      "genre": "fiqh",
+      "kind": "nonmatch",
+      "start": 14497,
+      "window": [
+        "ولا",
+        "اقدر",
+        "علي",
+        "رجل",
+        "تزوج",
+        "امراه",
+        "الي"
+      ]
+    },
+    {
+      "book_id": "0486AbuAsbaghGharnati.DiwanAhkamKubra.Sham19Y0014593-ara1",
+      "genre": "poetry_diwan",
+      "kind": "nonmatch",
+      "start": 31994,
+      "window": [
+        "ما",
+        "بقي",
+        "من",
+        "النظر",
+        "في",
+        "ذلك؛",
+        "بان"
+      ]
+    },
+    {
+      "book_id": "0808MuhammadDamiri.NajmWahhaj.Sham19Y0013783-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 12138,
+      "window": [
+        "تقدم",
+        "اذا",
+        "لم",
+        "يتعلق",
+        "به",
+        "حق",
+        "الله"
+      ]
+    },
+    {
+      "book_id": "0562Samcani.AdabImla.JK000448-ara1",
+      "genre": "hadith_collection",
+      "kind": "nonmatch",
+      "start": 11418,
+      "window": [
+        "انا",
+        "احمد",
+        "بن",
+        "اسحاق",
+        "القاضي",
+        "انا",
+        "الحسن"
+      ]
+    },
+    {
+      "book_id": "0356AbuCaliQali.AmaliFiLugha.JK000919BK1-ara1",
+      "genre": "adab_prose",
+      "kind": "nonmatch",
+      "start": 19893,
+      "window": [
+        "الدهر",
+        "وهو",
+        "جديد",
+        "فليت",
+        "وشاه",
+        "الناس",
+        "بيني"
+      ]
+    },
+    {
+      "book_id": "0500Anonymous.MajmucatRasailJahiz.Shamela0010428BK1-ara1",
+      "genre": "adab_prose",
+      "kind": "nonmatch",
+      "start": 7973,
+      "window": [
+        "يدعوهم",
+        "الي",
+        "الرجوع",
+        "قبل",
+        "العزم",
+        "الثابت،",
+        "والعاده"
+      ]
+    },
+    {
+      "book_id": "0701IbnNasrAllahJazari.Maqamat.JK010644-ara1",
+      "genre": "maqamat_saj",
+      "kind": "nonmatch",
+      "start": 31953,
+      "window": [
+        "بعد",
+        "حين،",
+        "اشرفت",
+        "منه",
+        "علي",
+        "سحايب",
+        "الاستحاء،"
+      ]
+    },
+    {
+      "book_id": "0370AbuQasimAmidi.Muwazana.Sham19Y0026183-ara1",
+      "genre": "poetry_diwan",
+      "kind": "nonmatch",
+      "start": 31017,
+      "window": [
+        "ضربه",
+        "غادرته",
+        "عودا",
+        "كوبا",
+        "وذلك",
+        "ان",
+        "العود"
+      ]
+    },
+    {
+      "book_id": "0606FakhrDinRazi.Mahsul.JK000153-ara1",
+      "genre": "fiqh",
+      "kind": "nonmatch",
+      "start": 11082,
+      "window": [
+        "راجحا",
+        "علي",
+        "الاخر",
+        "او",
+        "لا",
+        "يكون",
+        "فان"
+      ]
+    },
+    {
+      "book_id": "0637IbnAthirDiyaDin.JamicKabir.Shamela0037475-ara1",
+      "genre": "theology",
+      "kind": "nonmatch",
+      "start": 35429,
+      "window": [
+        "من",
+        "المقتصدين،",
+        "والمقتصدين",
+        "افضل",
+        "من",
+        "الظالمين؛",
+        "ولنوضح"
+      ]
+    },
+    {
+      "book_id": "0213IbnHisham.Tijan.Shamela0037473BK1-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 21081,
+      "window": [
+        "نحن",
+        "اهل",
+        "كتاب",
+        "اعلم",
+        "بالله",
+        "منك،",
+        "فارسل"
+      ]
+    },
+    {
+      "book_id": "0500Anonymous.MajmucatRasailJahiz.Shamela0010428BK1-ara1",
+      "genre": "adab_prose",
+      "kind": "nonmatch",
+      "start": 16940,
+      "window": [
+        "ويدافع",
+        "به",
+        "نظيره",
+        "انك",
+        "ستمني",
+        "بصحبه",
+        "السلطان"
+      ]
+    },
+    {
+      "book_id": "0430AbuNucaymIsbahani.MusnadMustakhrajCalaSahihMuslim.JK000977-ara1",
+      "genre": "hadith_collection",
+      "kind": "nonmatch",
+      "start": 3426,
+      "window": [
+        "بن",
+        "سعد",
+        "عن",
+        "ابيه",
+        "عن",
+        "عبد",
+        "الرحمن"
+      ]
+    },
+    {
+      "book_id": "0616MuhibbDinCukbari.SharhDiwanMutanabbi.JK006914-ara1",
+      "genre": "poetry_diwan",
+      "kind": "nonmatch",
+      "start": 22572,
+      "window": [
+        "تملكه",
+        "والمعني",
+        "افنيت",
+        "اعداءك",
+        "واموالك",
+        "وقال",
+        "الواحدي"
+      ]
+    },
+    {
+      "book_id": "0879IbnQutlubugha.Thiqat.Shamela0096165-ara1",
+      "genre": "biography",
+      "kind": "nonmatch",
+      "start": 33710,
+      "window": [
+        "الرزاق",
+        "بن",
+        "شمه",
+        "التاجر،",
+        "وابا",
+        "بكر",
+        "الباطرقاني،"
+      ]
+    },
+    {
+      "book_id": "0310Tabari.Tarikh.Shamela0009783BK1-ara1",
+      "genre": "history",
+      "kind": "nonmatch",
+      "start": 56853,
+      "window": [
+        "ولم",
+        "تقم",
+        "عليه،",
+        "لكان",
+        "علينا",
+        "ان",
+        "نقبل"
+      ]
+    },
+    {
+      "book_id": "0516IbnCaliHariri.DurratGhawwas.JK001016-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 43359,
+      "window": [
+        "كادت",
+        "الشمس",
+        "تغرب",
+        "والشاهد",
+        "في",
+        "لفظه",
+        "امس"
+      ]
+    },
+    {
+      "book_id": "0458IbnSidaMursi.IcrabQuran.ShamAY0036821-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 29722,
+      "window": [
+        "بالمضارع،",
+        "وهو",
+        "يحكمون،",
+        "قيل",
+        "اشعارا",
+        "بان",
+        "حكمهم"
+      ]
+    },
+    {
+      "book_id": "0362AbuFarajIsbahani.Aghani.JK000927-ara1",
+      "genre": "history",
+      "kind": "nonmatch",
+      "start": 22905,
+      "window": [
+        "بيت",
+        "من",
+        "بني",
+        "زهير",
+        "بن",
+        "جناب",
+        "اخبر"
+      ]
+    },
+    {
+      "book_id": "0644IbnCaliCizzDinMuhallabi.MaakhidhCalaShurrah.Shamela0037057-ara1",
+      "genre": "poetry_diwan",
+      "kind": "nonmatch",
+      "start": 85101,
+      "window": [
+        "فلما",
+        "تبين",
+        "له",
+        "خلف",
+        "موعدهم",
+        "قال",
+        "هيهات"
+      ]
+    },
+    {
+      "book_id": "0646IbnQifti.InbahRuwat.Shamela0010525-ara1",
+      "genre": "biography",
+      "kind": "nonmatch",
+      "start": 14214,
+      "window": [
+        "ومره",
+        "في",
+        "معانيها",
+        "الوارده",
+        "في",
+        "اشعارها",
+        "وامثالها"
+      ]
+    },
+    {
+      "book_id": "0808IbnKhaldun.Tarikh.Shamela0012320-ara1",
+      "genre": "history",
+      "kind": "nonmatch",
+      "start": 1259,
+      "window": [
+        "وهلك",
+        "السلطان",
+        "ابو",
+        "سعيد",
+        "سنه",
+        "ست",
+        "وثلاثين"
+      ]
+    },
+    {
+      "book_id": "0701IbnNasrAllahJazari.Maqamat.JK010644-ara1",
+      "genre": "maqamat_saj",
+      "kind": "nonmatch",
+      "start": 29989,
+      "window": [
+        "متي",
+        "غفا،",
+        "عاد",
+        "من",
+        "ربع",
+        "عافيته",
+        "ما"
+      ]
+    },
+    {
+      "book_id": "0437MakkiIbnHammushQaysi.Hidaya.Shamela0022593-ara1",
+      "genre": "tafsir",
+      "kind": "nonmatch",
+      "start": 153512,
+      "window": [
+        "اي",
+        "خارجين",
+        "عن",
+        "طاعه",
+        "الله",
+        "سبحانه",
+        "بكفرهم"
+      ]
+    },
+    {
+      "book_id": "0213IbnHisham.SiraNabawiyya.Shamela0023833-ara1",
+      "genre": "biography",
+      "kind": "nonmatch",
+      "start": 82924,
+      "window": [
+        "بين",
+        "ابياتكم",
+        "فدوه،",
+        "فكتبوا",
+        "اليه",
+        "يحلفون",
+        "بالله"
+      ]
+    },
+    {
+      "book_id": "0855BadrDinCayni.CumdatQari.Shamela0005756-ara1",
+      "genre": "hadith_collection",
+      "kind": "nonmatch",
+      "start": 25515,
+      "window": [
+        "وجود",
+        "هذه",
+        "اللفظه",
+        "فهو",
+        "ان",
+        "يحمل",
+        "علي"
+      ]
+    },
+    {
+      "book_id": "0684ShihabDinQarafi.Dhakhira.Shamela0001717-ara1",
+      "genre": "fiqh",
+      "kind": "nonmatch",
+      "start": 91392,
+      "window": [
+        "جهولا",
+        "اي",
+        "بالعواقب",
+        "فلذلك",
+        "لا",
+        "ينبغي",
+        "ان"
+      ]
+    },
+    {
+      "book_id": "0516IbnCaliHariri.DurratGhawwas.JK001016-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 41446,
+      "window": [
+        "ثلث",
+        "نوق",
+        "،",
+        "وما",
+        "فعلت",
+        "النوق",
+        "الثلث"
+      ]
+    },
+    {
+      "book_id": "0421IbnMuhammadMarzuqi.AzminaWaAmkina.Shamela0011469-ara1",
+      "genre": "fiqh",
+      "kind": "nonmatch",
+      "start": 6199,
+      "window": [
+        "ايضا",
+        "نصفين،",
+        "ومنتصف",
+        "كل",
+        "واحد",
+        "منهما",
+        "استواء"
+      ]
+    },
+    {
+      "book_id": "0879IbnQutlubugha.Thiqat.Shamela0096165-ara1",
+      "genre": "biography",
+      "kind": "nonmatch",
+      "start": 53265,
+      "window": [
+        "سعيد",
+        "بن",
+        "احمد",
+        "بن",
+        "البناء،",
+        "وخلقا",
+        "سواه"
+      ]
+    },
+    {
+      "book_id": "0845Maqrizi.Mawaciz.Shamela0011566-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 25362,
+      "window": [
+        "الكافه",
+        "ما",
+        "تراه",
+        "من",
+        "افاضه",
+        "سحب",
+        "العدل"
+      ]
+    },
+    {
+      "book_id": "0748Dhahabi.MizanIctidal.JK001293BK1-ara1",
+      "genre": "hadith_collection",
+      "kind": "nonmatch",
+      "start": 3617,
+      "window": [
+        "شييا",
+        "من",
+        "العلم",
+        "ولو",
+        "روي",
+        "لما",
+        "حلت"
+      ]
+    },
+    {
+      "book_id": "0852IbnHajarCasqalani.IthafMahara.Shamela0026324-ara1",
+      "genre": "hadith_collection",
+      "kind": "nonmatch",
+      "start": 24051,
+      "window": [
+        "ثنا",
+        "ابن",
+        "لهيعه،",
+        "عن",
+        "عبد",
+        "الله",
+        "بن"
+      ]
+    },
+    {
+      "book_id": "0842IbnNasirDinDimashqi.TawdihMushtabih.JK007097-ara1",
+      "genre": "hadith_collection",
+      "kind": "nonmatch",
+      "start": 52441,
+      "window": [
+        "غالي",
+        "قال",
+        "منهم",
+        "عبد",
+        "الرحمن",
+        "بن",
+        "محمد"
+      ]
+    },
+    {
+      "book_id": "0616MuhibbDinCukbari.SharhDiwanMutanabbi.JK006914-ara1",
+      "genre": "poetry_diwan",
+      "kind": "nonmatch",
+      "start": 121177,
+      "window": [
+        "قلت",
+        "فاعجب",
+        "المتنبي",
+        "واهتز",
+        "فاردت",
+        "ان",
+        "احركه"
+      ]
+    },
+    {
+      "book_id": "0711IbnManzurIfriqi.MukhtasarTarikhDimashq.Shamela0003118-ara1",
+      "genre": "history",
+      "kind": "nonmatch",
+      "start": 2701,
+      "window": [
+        "منها",
+        "الي",
+        "من",
+        "العوارف",
+        "والايادي",
+        "وهاانا",
+        "قد"
+      ]
+    },
+    {
+      "book_id": "0775IbnAbiWafa.JawahirMudiya.JK000806BK1-ara1",
+      "genre": "biography",
+      "kind": "nonmatch",
+      "start": 149031,
+      "window": [
+        "علي",
+        "حب",
+        "الطراز",
+        "الاول",
+        "المهمله",
+        "عبد",
+        "الوهاب"
+      ]
+    },
+    {
+      "book_id": "0711IbnManzurIfriqi.MukhtasarTarikhDimashq.Shamela0003118-ara1",
+      "genre": "history",
+      "kind": "nonmatch",
+      "start": 160946,
+      "window": [
+        "قلت",
+        "فاني",
+        "لم",
+        "ار",
+        "اكثر",
+        "من",
+        "هذا"
+      ]
+    },
+    {
+      "book_id": "0500Anonymous.MajmucatRasailJahiz.Shamela0010428BK1-ara1",
+      "genre": "adab_prose",
+      "kind": "nonmatch",
+      "start": 56233,
+      "window": [
+        "داويتم",
+        "الكلم",
+        "ظاهرا",
+        "فمن",
+        "لكلوم",
+        "في",
+        "الصدور"
+      ]
+    },
+    {
+      "book_id": "0483IbnAhmadSarakhsi.Mabsut.JK000266-ara1",
+      "genre": "fiqh",
+      "kind": "nonmatch",
+      "start": 27928,
+      "window": [
+        "الاصل",
+        "الا",
+        "ان",
+        "يملك",
+        "غيره",
+        "بسبب",
+        "ينشيه"
+      ]
+    },
+    {
+      "book_id": "0437MakkiIbnHammushQaysi.Hidaya.Shamela0022593-ara1",
+      "genre": "tafsir",
+      "kind": "nonmatch",
+      "start": 177201,
+      "window": [
+        "فما",
+        "راي",
+        "النبي",
+        "صلي",
+        "الله",
+        "عليه",
+        "وسلم"
+      ]
+    },
+    {
+      "book_id": "0804IbnMulaqqin.IclamBiFawaid.Sham19Y0013769-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 8638,
+      "window": [
+        "مع",
+        "الزياده",
+        "المنقوله",
+        "عن",
+        "جماعه",
+        "من",
+        "الثقات"
+      ]
+    },
+    {
+      "book_id": "0845Maqrizi.ImtacAsmac.Shamela0001524-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 58792,
+      "window": [
+        "يمنعك",
+        "مني؟",
+        "فقال",
+        "الله",
+        "ولم",
+        "يعاقبه،",
+        "ولما"
+      ]
+    },
+    {
+      "book_id": "0774IbnKathir.JamicMasanid.Shamela0021809-ara1",
+      "genre": "hadith_collection",
+      "kind": "nonmatch",
+      "start": 9254,
+      "window": [
+        "حدثنا",
+        "ابراهيم",
+        "بن",
+        "عبد",
+        "الله،",
+        "حدثنا",
+        "سعيد"
+      ]
+    },
+    {
+      "book_id": "0460ShaykhTusi.Tibyan.Tafsir04039-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 36412,
+      "window": [
+        "يكفروا",
+        "في",
+        "النار",
+        "فضلا",
+        "عن",
+        "وقوعه",
+        "قبل"
+      ]
+    },
+    {
+      "book_id": "0597IbnMubarakBaghdadi.MuntahaTalab.JK010732-ara1",
+      "genre": "poetry_diwan",
+      "kind": "nonmatch",
+      "start": 95463,
+      "window": [
+        "ارتمت",
+        "باوصاله",
+        "عرج",
+        "الضباع",
+        "القشاعم",
+        "بكل",
+        "النصاري"
+      ]
+    },
+    {
+      "book_id": "0324Ashcari.MaqalatIslamiyyin.Shamela0037614-ara1",
+      "genre": "theology",
+      "kind": "nonmatch",
+      "start": 32280,
+      "window": [
+        "مكان",
+        "دون",
+        "مكان",
+        "وقال",
+        "قايلون",
+        "هو",
+        "جسم"
+      ]
+    },
+    {
+      "book_id": "0310Tabari.Tarikh.Shamela0009783BK1-ara1",
+      "genre": "history",
+      "kind": "nonmatch",
+      "start": 44593,
+      "window": [
+        "ثقتي،",
+        "وقد",
+        "صنع",
+        "الناس",
+        "ما",
+        "قد",
+        "رايتم،"
+      ]
+    },
+    {
+      "book_id": "0381IbnBabawayhSaduq.Khisal.Shia001137-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 982,
+      "window": [
+        "بن",
+        "علي",
+        "ماجيلويه",
+        "رضي",
+        "الله",
+        "عنه",
+        "قال"
+      ]
+    },
+    {
+      "book_id": "0324Ashcari.MaqalatIslamiyyin.Shamela0037614-ara1",
+      "genre": "theology",
+      "kind": "nonmatch",
+      "start": 88114,
+      "window": [
+        "انه",
+        "لم",
+        "يزل",
+        "محسنا",
+        "بالاحسان",
+        "ولا",
+        "علي"
+      ]
+    },
+    {
+      "book_id": "0360Tabarani.TafsirKabir.Tafsir02091-ara1",
+      "genre": "tafsir",
+      "kind": "nonmatch",
+      "start": 61389,
+      "window": [
+        "المال",
+        "من",
+        "دون",
+        "اصله",
+        "قوله",
+        "تعالي",
+        "الم"
+      ]
+    },
+    {
+      "book_id": "0333AbuMansurMaturidi.Tafsir.Tafsir02094-ara1",
+      "genre": "tafsir",
+      "kind": "nonmatch",
+      "start": 31382,
+      "window": [
+        "الاحتمال؛",
+        "ليكون",
+        "ايه",
+        "للاول",
+        "وقيل",
+        "في",
+        "قوله"
+      ]
+    },
+    {
+      "book_id": "0637IbnAthirDiyaDin.MathalSair.Shamela0010551-ara1",
+      "genre": "adab_prose",
+      "kind": "nonmatch",
+      "start": 66897,
+      "window": [
+        "رجلا",
+        "بليدا،",
+        "وداخل",
+        "في",
+        "التشبيه",
+        "المضمر",
+        "الاداه،"
+      ]
+    },
+    {
+      "book_id": "0324Ashcari.LamcFiRadd.Rafed0003452-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 2825,
+      "window": [
+        "الباري",
+        "،",
+        "لان",
+        "القديم",
+        "لا",
+        "يجوز",
+        "عدمه"
+      ]
+    },
+    {
+      "book_id": "0726CallamaHilli.MuntahaMatlab.Shia000107Vols-ara1",
+      "genre": "fiqh",
+      "kind": "nonmatch",
+      "start": 26492,
+      "window": [
+        "في",
+        "بير",
+        "فمات",
+        "فيها",
+        "فان",
+        "امكن",
+        "اخراجه"
+      ]
+    },
+    {
+      "book_id": "0505Ghazali.AsnafMaghrurin.JK010255-ara1",
+      "genre": "adab_prose",
+      "kind": "nonmatch",
+      "start": 85,
+      "window": [
+        "واحاديثهم",
+        "في",
+        "ذم",
+        "الدنيا",
+        "فيعيدونها",
+        "علي",
+        "نحو"
+      ]
+    },
+    {
+      "book_id": "0421IbnMuhammadMarzuqi.SharhDiwanHamasa.Shamela0026536-ara1",
+      "genre": "poetry_diwan",
+      "kind": "nonmatch",
+      "start": 84197,
+      "window": [
+        "منهم",
+        "وقال",
+        "مهزول",
+        "الفصيلي",
+        "لانه",
+        "يوثر",
+        "بلبن"
+      ]
+    },
+    {
+      "book_id": "0544QadiCiyad.TartibMadarik.Shamela0031215-ara1",
+      "genre": "history",
+      "kind": "nonmatch",
+      "start": 18388,
+      "window": [
+        "الرحمان",
+        "بن",
+        "ابي",
+        "ذيب",
+        "القرشي",
+        "توفي",
+        "قبله"
+      ]
+    },
+    {
+      "book_id": "0370AbuQasimAmidi.Muwazana.Sham19Y0026183-ara1",
+      "genre": "poetry_diwan",
+      "kind": "nonmatch",
+      "start": 141043,
+      "window": [
+        "انه",
+        "اذا",
+        "كان",
+        "غازيا،",
+        "فانه",
+        "لا",
+        "يغفل"
+      ]
+    },
+    {
+      "book_id": "0430AbuNucaymIsbahani.HilyatAwliya.JK000022-ara1",
+      "genre": "hadith_collection",
+      "kind": "nonmatch",
+      "start": 68405,
+      "window": [
+        "فلا",
+        "يغرنكم",
+        "اقبالها",
+        "مع",
+        "معرفتكم",
+        "بسرعه",
+        "ادبارها"
+      ]
+    },
+    {
+      "book_id": "0388AbuSulaymanKhattabi.AclamHadith.Sham19Y0016946-ara1",
+      "genre": "hadith_collection",
+      "kind": "nonmatch",
+      "start": 15902,
+      "window": [
+        "وفي",
+        "تشبيكه",
+        "صلي",
+        "الله",
+        "عليه",
+        "وسلم",
+        "بين"
+      ]
+    },
+    {
+      "book_id": "0516IbnCaliHariri.Maqamat.JK009202-ara1",
+      "genre": "maqamat_saj",
+      "kind": "nonmatch",
+      "start": 22631,
+      "window": [
+        "خل",
+        "فليس",
+        "بحقه",
+        "يرتاب",
+        "لا",
+        "باخل",
+        "بل"
+      ]
+    },
+    {
+      "book_id": "0726CallamaHilli.MukhtalafShica.Shia000094Vols-ara1",
+      "genre": "fiqh",
+      "kind": "nonmatch",
+      "start": 25707,
+      "window": [
+        "حتي",
+        "يحرم",
+        "علي",
+        "المسلمين",
+        "ما",
+        "وراء",
+        "ذلك"
+      ]
+    },
+    {
+      "book_id": "0771TajDinSubki.AshbahWaNazair.Shamela0008634-ara1",
+      "genre": "fiqh",
+      "kind": "nonmatch",
+      "start": 30100,
+      "window": [
+        "يتحد",
+        "القابض",
+        "والمقبض",
+        "ومن",
+        "ثم",
+        "لا",
+        "يبيع"
+      ]
+    },
+    {
+      "book_id": "0427AbuIshaqThaclabi.KashfWaBayan.Shamela0023578-ara1",
+      "genre": "tafsir",
+      "kind": "nonmatch",
+      "start": 24371,
+      "window": [
+        "يصلون",
+        "علي",
+        "النبي",
+        "يا",
+        "ايها",
+        "الذين",
+        "امنوا"
+      ]
+    },
+    {
+      "book_id": "0413AbuIshaqHusri.ZahrAdab.JK009230-ara1",
+      "genre": "adab_prose",
+      "kind": "nonmatch",
+      "start": 16506,
+      "window": [
+        "كوكبا",
+        "ببصاقه",
+        "فرد",
+        "عليهم",
+        "وبله",
+        "ومواطره",
+        "وهذا"
+      ]
+    },
+    {
+      "book_id": "0893IbnIsmacilShihabDinKurani.KawtharJari.Sham19Y0016584-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 65439,
+      "window": [
+        "الكتابه،",
+        "من",
+        "ساله",
+        "الشيء",
+        "لا",
+        "من",
+        "ساله"
+      ]
+    },
+    {
+      "book_id": "0428IbnSina.ShifaMantiq.JK010704-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 12208,
+      "window": [
+        "موضوعهما",
+        "الامور",
+        "الجزييه",
+        "وان",
+        "نقلت",
+        "الي",
+        "الامور"
+      ]
+    },
+    {
+      "book_id": "0427AbuIshaqThaclabi.KashfWaBayan.Shamela0023578-ara1",
+      "genre": "tafsir",
+      "kind": "nonmatch",
+      "start": 169863,
+      "window": [
+        "او",
+        "هيضه",
+        "عظم",
+        "ويعده",
+        "ركن",
+        "لا",
+        "يحيط"
+      ]
+    },
+    {
+      "book_id": "0804IbnMulaqqin.Tawdih.Sham19Y0013252-ara1",
+      "genre": "hadith_collection",
+      "kind": "nonmatch",
+      "start": 106679,
+      "window": [
+        "وعن",
+        "ابن",
+        "عباس",
+        "قال",
+        "قصر",
+        "الرجال",
+        "علي"
+      ]
+    },
+    {
+      "book_id": "0745AbuHayyanGharnati.TafsirBahrMuhit.Shamela0023591-ara1",
+      "genre": "tafsir",
+      "kind": "nonmatch",
+      "start": 84211,
+      "window": [
+        "الاخ",
+        "مبالغه",
+        "في",
+        "الحض",
+        "علي",
+        "ارساله،",
+        "ونزداد"
+      ]
+    },
+    {
+      "book_id": "0324Ashcari.MaqalatIslamiyyin.Shamela0037614-ara1",
+      "genre": "theology",
+      "kind": "nonmatch",
+      "start": 39209,
+      "window": [
+        "سبحانه",
+        "انما",
+        "رزق",
+        "الذي",
+        "ملكه",
+        "اياهم",
+        "دون"
+      ]
+    },
+    {
+      "book_id": "0616MuhibbDinCukbari.SharhDiwanMutanabbi.JK006914-ara1",
+      "genre": "poetry_diwan",
+      "kind": "nonmatch",
+      "start": 61306,
+      "window": [
+        "وهو",
+        "في",
+        "الاصل",
+        "مشدد",
+        "الا",
+        "انه",
+        "خففه"
+      ]
+    },
+    {
+      "book_id": "0726CallamaHilli.TadhkiratFuqaha.Shia000075Vols-ara1",
+      "genre": "fiqh",
+      "kind": "nonmatch",
+      "start": 19010,
+      "window": [
+        "من",
+        "الاخماس،",
+        "لان",
+        "لها",
+        "اقواما",
+        "مخصوصين",
+        "وقال"
+      ]
+    },
+    {
+      "book_id": "0855BadrDinCayni.CumdatQari.Shamela0005756-ara1",
+      "genre": "hadith_collection",
+      "kind": "nonmatch",
+      "start": 10784,
+      "window": [
+        "هشام",
+        "فقالت",
+        "ملايكه",
+        "الرحمه",
+        "جاءنا",
+        "تايبا",
+        "مقبلا"
+      ]
+    },
+    {
+      "book_id": "0500Anonymous.MajmucatRasailJahiz.Shamela0010428BK1-ara1",
+      "genre": "adab_prose",
+      "kind": "nonmatch",
+      "start": 71082,
+      "window": [
+        "الحروب",
+        "في",
+        "ايام",
+        "الاجناد",
+        "وهم",
+        "قوم",
+        "من"
+      ]
+    },
+    {
+      "book_id": "0356AbuCaliQali.AmaliFiLugha.JK000919BK1-ara1",
+      "genre": "adab_prose",
+      "kind": "nonmatch",
+      "start": 42386,
+      "window": [
+        "ابو",
+        "علي",
+        "وقرات",
+        "علي",
+        "ابي",
+        "بكر",
+        "بن"
+      ]
+    },
+    {
+      "book_id": "0468IbnAhmadWahidiNaysaburi.SharhDiwanMutanabbi.JK010754-ara1",
+      "genre": "poetry_diwan",
+      "kind": "nonmatch",
+      "start": 95103,
+      "window": [
+        "وينال",
+        "من",
+        "حوبايه",
+        "يعني",
+        "ان",
+        "العشق",
+        "مستعذب"
+      ]
+    },
+    {
+      "book_id": "0437MakkiIbnHammushQaysi.Hidaya.Shamela0022593-ara1",
+      "genre": "tafsir",
+      "kind": "nonmatch",
+      "start": 188481,
+      "window": [
+        "وهذه",
+        "لغه",
+        "هذيل",
+        "وبذلك",
+        "قرا",
+        "ابن",
+        "مسعود"
+      ]
+    },
+    {
+      "book_id": "0548Shahrastani.NihayatAqdam.JK009331-ara1",
+      "genre": "theology",
+      "kind": "nonmatch",
+      "start": 23579,
+      "window": [
+        "هذا",
+        "فلم",
+        "يكن",
+        "هذا",
+        "شييا",
+        "والمطلق",
+        "من"
+      ]
+    },
+    {
+      "book_id": "0852IbnHajarCasqalani.InbaGhumr.JK009239-ara1",
+      "genre": "history",
+      "kind": "nonmatch",
+      "start": 1229,
+      "window": [
+        "وان",
+        "نعيرا",
+        "التزم",
+        "انه",
+        "لا",
+        "ينصر",
+        "واحدا"
+      ]
+    },
+    {
+      "book_id": "0774IbnKathir.Bidaya.Shamela0004445-ara1",
+      "genre": "history",
+      "kind": "nonmatch",
+      "start": 13671,
+      "window": [
+        "الي",
+        "بني",
+        "فزاره",
+        "قال",
+        "الامام",
+        "احمد",
+        "حدثنا"
+      ]
+    },
+    {
+      "book_id": "0520IbnRushdJadd.BayanWaTahsil.Shamela0021751-ara1",
+      "genre": "fiqh",
+      "kind": "nonmatch",
+      "start": 2684,
+      "window": [
+        "والنصف",
+        "الثاني",
+        "هو",
+        "فيه",
+        "مخير،",
+        "بين",
+        "ان"
+      ]
+    },
+    {
+      "book_id": "0885BurhanDinBiqaci.NazmDurar.JK009270-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 104224,
+      "window": [
+        "غيري",
+        "فاتقون",
+        "ولا",
+        "يخالف",
+        "احد",
+        "منكم",
+        "امري"
+      ]
+    },
+    {
+      "book_id": "0874IbnTaghribirdi.NujumZahira.JK001330-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 2661,
+      "window": [
+        "وزيره",
+        "والحجار",
+        "وتوفي",
+        "الخطيب",
+        "البليغ",
+        "ناصر",
+        "الدين"
+      ]
+    },
+    {
+      "book_id": "0310Tabari.Tarikh.Shamela0009783BK1-ara1",
+      "genre": "history",
+      "kind": "nonmatch",
+      "start": 120361,
+      "window": [
+        "الذي",
+        "هو",
+        "به",
+        "يفرج",
+        "عنه",
+        "او",
+        "يسلم؟"
+      ]
+    },
+    {
+      "book_id": "0654SibtIbnJawzi.MiratZaman.Sham19Y0023644-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 58677,
+      "window": [
+        "وبناته",
+        "وزهره",
+        "وزوجته",
+        "واختان",
+        "لابن",
+        "مزيد",
+        "وابنتان"
+      ]
+    },
+    {
+      "book_id": "0742Mizzi.TahdhibKamal.Shamela0003722-ara1",
+      "genre": "hadith_collection",
+      "kind": "nonmatch",
+      "start": 122289,
+      "window": [
+        "وكذا؟",
+        "فقال",
+        "حصلنا",
+        "علي",
+        "الصبيان،",
+        "يا",
+        "غلام"
+      ]
+    },
+    {
+      "book_id": "0310Tabari.Tarikh.Shamela0009783BK1-ara1",
+      "genre": "history",
+      "kind": "nonmatch",
+      "start": 29513,
+      "window": [
+        "فنزل",
+        "دار",
+        "الضيفان،",
+        "واخر",
+        "قدمه",
+        "قدمها",
+        "ابو"
+      ]
+    },
+    {
+      "book_id": "0458Bayhaqi.ShucabIman.JK000021-ara1",
+      "genre": "other",
+      "kind": "nonmatch",
+      "start": 6268,
+      "window": [
+        "عبد",
+        "الله",
+        "بن",
+        "مسعود",
+        "قال",
+        "من",
+        "كان"
+      ]
+    },
+    {
+      "book_id": "0562Samcani.FadailSham.Masaha004845BK3-ara1",
+      "genre": "hadith_collection",
+      "kind": "nonmatch",
+      "start": 611,
+      "window": [
+        "عبقريه",
+        "قال",
+        "رضي",
+        "الله",
+        "عنه",
+        "انبا",
+        "ابو"
+      ]
+    },
+    {
+      "book_id": "0676Nawawi.RawdatTalibin.JK000192-ara1",
+      "genre": "fiqh",
+      "kind": "nonmatch",
+      "start": 46207,
+      "window": [
+        "لان",
+        "التعبيه",
+        "انما",
+        "تثبت",
+        "في",
+        "ابتداء",
+        "السبي"
+      ]
+    },
+    {
+      "book_id": "0510IbnMascudBaghawi.TahdhibFiqhShafici.Sham19Y0017885-ara1",
+      "genre": "fiqh",
+      "kind": "nonmatch",
+      "start": 2595,
+      "window": [
+        "الوطء",
+        "في",
+        "ملك",
+        "اليمين",
+        "بعقد",
+        "النكاح",
+        "والثاني"
+      ]
+    },
+    {
+      "book_id": "0597IbnJawzi.Muntazam.Shamela0012406-ara1",
+      "genre": "history",
+      "kind": "nonmatch",
+      "start": 32203,
+      "window": [
+        "بها",
+        "حتي",
+        "ورد",
+        "دمشق،",
+        "فتلقاه",
+        "الناس",
+        "بجنازه"
+      ]
+    },
+    {
+      "book_id": "0468IbnAhmadWahidiNaysaburi.SharhDiwanMutanabbi.JK010754-ara1",
+      "genre": "poetry_diwan",
+      "kind": "nonmatch",
+      "start": 73217,
+      "window": [
+        "للسماء",
+        "اي",
+        "لا",
+        "اسلم",
+        "للثريا",
+        "انها",
+        "فوقك"
+      ]
+    },
+    {
+      "book_id": "0494HakimJushami.TahdhibFiTafsir.Meshkat0014420-ara1",
+      "genre": "tafsir",
+      "kind": "nonmatch",
+      "start": 136911,
+      "window": [
+        "لا",
+        "تقدر",
+        "ان",
+        "تبصر",
+        "الاعمي",
+        "الطريق",
+        "اذا"
+      ]
+    },
+    {
+      "book_id": "0562Samcani.Tahbir.Shamela0001694-ara1",
+      "genre": "history",
+      "kind": "nonmatch",
+      "start": 43224,
+      "window": [
+        "علي",
+        "بن",
+        "عثمان",
+        "بن",
+        "محمد",
+        "بن",
+        "الهيصم"
+      ]
+    },
+    {
+      "book_id": "0463KhatibBaghdadi.TarikhBaghdad.Shamela0000736-ara2",
+      "genre": "hadith_collection",
+      "kind": "nonmatch",
+      "start": 53361,
+      "window": [
+        "بن",
+        "مهدي،",
+        "قال",
+        "اخبرنا",
+        "ابو",
+        "بكر",
+        "محمد"
+      ]
+    },
+    {
+      "book_id": "0542IbnCaliDiyaDinIbnShajari.Amali.Sham19Y0120922-ara1",
+      "genre": "adab_prose",
+      "kind": "nonmatch",
+      "start": 135924,
+      "window": [
+        "قال",
+        "ابن",
+        "احمر",
+        "وربت",
+        "سايل",
+        "عني",
+        "حفي"
+      ]
+    }
+  ],
+  "task": "T-016"
+}

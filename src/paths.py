@@ -39,6 +39,9 @@ GENRES_PATH: Path = DATA_REFERENCE_DIR / "genres.csv"
 CTRL_MANIFEST_PATH: Path = DATA_INTERIM_DIR / "ctrl_manifest.csv"
 CTRL_CAPPED_DIR: Path = DATA_INTERIM_DIR / "ctrl_capped"
 CTRL_CAPPED_MANIFEST_PATH: Path = CTRL_CAPPED_DIR / "manifest.csv"
+OPENITI_CLEAN_DIR: Path = DATA_INTERIM_DIR / "openiti_clean"
+QUOTE_REPORT_PATH: Path = RESULTS_DIR / "quote_removal_report.json"
+QUOTE_AUDIT_PATH: Path = RESULTS_DIR / "quote_audit_sample.json"
 
 
 def rel_to_repo(path: Path | str) -> str:
