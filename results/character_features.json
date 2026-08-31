@@ -1,0 +1,48 @@
+{
+  "config_hash": "fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db",
+  "family": "character",
+  "figure": "figures/FIG-40_character_topk.png",
+  "n_ctrl_test": 11954,
+  "n_ctrl_train": 29208,
+  "n_quran": 197,
+  "n_windows": 48464,
+  "note": "Fit TfidfVectorizer(char_wb, 3-5) wylacznie na CTRL-TRAIN. E-01 domain probe to T-029, nie T-021.",
+  "task": "T-021",
+  "variants": {
+    "main": {
+      "dir": "data/features/character/fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db/main",
+      "n_cols": 50000,
+      "n_features_named": 50000,
+      "n_nan_inf": 0,
+      "n_rows": 48464,
+      "n_train": 29208,
+      "n_zero_rows": 0,
+      "nnz": 89017303,
+      "norm_token": {
+        "n": 48464,
+        "note": "normy stale (L2 TF-IDF) — brak korelacji z n_tokens",
+        "r": 0.0
+      },
+      "variant": "main",
+      "vectorizer": "models/vectorizers/character_main_fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db.joblib"
+    },
+    "no_diacritics_no_ligatures": {
+      "dir": "data/features/character/fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db/no_diacritics_no_ligatures",
+      "n_cols": 50000,
+      "n_features_named": 50000,
+      "n_nan_inf": 0,
+      "n_rows": 48464,
+      "n_train": 29208,
+      "n_zero_rows": 0,
+      "nnz": 89017303,
+      "norm_token": {
+        "n": 48464,
+        "note": "normy stale (L2 TF-IDF) — brak korelacji z n_tokens",
+        "r": 0.0
+      },
+      "variant": "no_diacritics_no_ligatures",
+      "vectorizer": "models/vectorizers/character_no_diacritics_no_ligatures_fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db.joblib"
+    }
+  },
+  "window_size": 400
+}

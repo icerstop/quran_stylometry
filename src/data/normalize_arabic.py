@@ -103,6 +103,14 @@ def _strip_openiti_markdown(text: str) -> str:
     return cleaned.replace("~~", "")
 
 
+def strip_diacritics_and_ligatures(text: str) -> str:
+    """Wariant kontrolny F1: ligatury NFKC + harakat na juz znormalizowanym tekscie."""
+    out = unicodedata.normalize("NFKC", text)
+    out = _decompose_presentation_forms(out)
+    out = _DIACRITICS.sub("", out)
+    return _WHITESPACE.sub(" ", out).strip()
+
+
 def normalize(text: str, profile: NormalizerProfile = "strict") -> str:
     """Normalizuje lancuch (token albo pasaz). Wejscie: imlaai / OpenITI."""
     if profile not in {"strict", "light"}:

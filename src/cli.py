@@ -17,7 +17,10 @@ from pathlib import Path
 
 from src.config import Config, load_config
 from src.paths import (
+    CHARACTER_REPORT_PATH,
     CHRONOLOGY_AGREEMENT_PATH,
+    FUNCTION_REPORT_PATH,
+    LEXICAL_REPORT_PATH,
     CONFIGS_DIR,
     ENV_LOCAL_PATH,
     FROZEN_CONFIG_DIR,
@@ -48,8 +51,7 @@ PENDING_STAGES: dict[str, str] = {
     # T-014 (ewaluacja na Koranie) jest zaimplementowane jako komenda `tag`.
     # T-015 (tagowanie CTRL) zostaje klastrowe: `tag-ctrl` / H1.
     # T-016: `clean-quotes`. T-017: `dedup`. T-018: `chronology`.
-    # T-019: `segment`. T-020: `splits`.
-    "features": "T-021..T-028 (P2)",
+    # T-019: `segment`. T-020: `splits`. T-021/T-022: `features --family character|function`.
     "gates": "T-029..T-032 (P3)",
     "chrono": "T-043..T-047 (P6)",
     "explore": "T-048 (P6)",
@@ -894,6 +896,187 @@ def cmd_splits(args: argparse.Namespace) -> int:
     return EXIT_OK
 
 
+def cmd_features(args: argparse.Namespace) -> int:
+    """T-021..T-028 dispatcher. T-021 = character, T-022 = function_words."""
+    family = str(getattr(args, "family", "character") or "character")
+    if family in {"function", "function_words", "functional"}:
+        return _cmd_features_function(args)
+    if family in {"lexical", "lex", "word"}:
+        return _cmd_features_lexical(args)
+    if family != "character":
+        print(
+            f"NIEZAIMPLEMENTOWANE: rodzina '{family}' nalezy do T-024..T-028.",
+            file=sys.stderr,
+        )
+        return EXIT_NOT_IMPLEMENTED
+    from src.features.character import run_character_features, write_character_report
+    from src.utils.runs import log_run
+
+    config = _load(args)
+    try:
+        payload = run_character_features(
+            config,
+            skip_fig=bool(getattr(args, "skip_fig", False)),
+            limit=int(args.limit) if getattr(args, "limit", None) else None,
+        )
+    except FileNotFoundError as exc:
+        print(f"BLAD: {exc}", file=sys.stderr)
+        return EXIT_FAIL
+    write_character_report(payload, config_hash=config.config_hash())
+    main = (payload.get("variants") or {}).get("main") or {}
+    print(
+        f"features character n_windows={payload.get('n_windows')} "
+        f"n_train={payload.get('n_ctrl_train')} "
+        f"n_cols={main.get('n_cols')} "
+        f"norm_r={((main.get('norm_token') or {}).get('r'))}"
+    )
+    print(f"  zapisano {rel_to_repo(CHARACTER_REPORT_PATH)}")
+    if payload.get("figure"):
+        print(f"  figura {payload['figure']}")
+    log_run(
+        task="T-021",
+        status="done",
+        config_hash=config.config_hash(),
+        artifacts=[
+            rel_to_repo(CHARACTER_REPORT_PATH),
+            str(main.get("dir") or "data/features/character/"),
+            str(payload.get("figure") or ""),
+        ],
+        metrics={
+            "n_windows": payload.get("n_windows") or 0,
+            "n_ctrl_train": payload.get("n_ctrl_train") or 0,
+            "n_cols": main.get("n_cols") or 0,
+            "norm_token_r": (main.get("norm_token") or {}).get("r") or 0.0,
+            "n_zero_rows": main.get("n_zero_rows") or 0,
+        },
+        note="T-021: F1 char_wb 3-5, fit CTRL-TRAIN. Wariant no_diacritics_no_ligatures. E-01=T-029.",
+    )
+    return EXIT_OK
+
+
+def _cmd_features_function(args: argparse.Namespace) -> int:
+    from src.annotate.tagger import TaggerNotAvailableError
+    from src.features.function_words import run_function_word_features, write_function_report
+    from src.schemas import GuardrailViolationError
+    from src.utils.runs import log_run
+
+    config = _load(args)
+    try:
+        payload = run_function_word_features(
+            config,
+            skip_fig=bool(getattr(args, "skip_fig", False)),
+            limit=int(args.limit) if getattr(args, "limit", None) else None,
+        )
+    except FileNotFoundError as exc:
+        print(f"BLAD: {exc}", file=sys.stderr)
+        return EXIT_FAIL
+    except (GuardrailViolationError, TaggerNotAvailableError) as exc:
+        print(f"BLAD: {exc}", file=sys.stderr)
+        return EXIT_FAIL
+    write_function_report(payload, config_hash=config.config_hash())
+    main = (payload.get("variants") or {}).get("k1000") or next(
+        iter((payload.get("variants") or {}).values()), {}
+    )
+    print(
+        f"features function_words n_windows={payload.get('n_windows')} "
+        f"n_train={payload.get('n_ctrl_train')} "
+        f"n_cols={main.get('n_cols')} "
+        f"norm_r={((main.get('norm_token') or {}).get('r'))}"
+    )
+    print(f"  zapisano {rel_to_repo(FUNCTION_REPORT_PATH)}")
+    if payload.get("figure"):
+        print(f"  figura {payload['figure']}")
+    log_run(
+        task="T-022",
+        status="done",
+        config_hash=config.config_hash(),
+        artifacts=[
+            rel_to_repo(FUNCTION_REPORT_PATH),
+            str(main.get("dir") or "data/features/function_words/"),
+            str(payload.get("figure") or ""),
+        ],
+        metrics={
+            "n_windows": payload.get("n_windows") or 0,
+            "n_ctrl_train": payload.get("n_ctrl_train") or 0,
+            "n_cols": main.get("n_cols") or 0,
+            "norm_token_r": (main.get("norm_token") or {}).get("r") or 0.0,
+            "n_zero_rows": main.get("n_zero_rows") or 0,
+            "n_multi_segment_ctrl": payload.get("n_multi_segment_ctrl") or 0,
+        },
+        note="T-022: F2 function words, vocab CTRL-TRAIN, K=100/300/1000. E-01=T-029.",
+    )
+    return EXIT_OK
+
+
+def _cmd_features_lexical(args: argparse.Namespace) -> int:
+    from src.annotate.tagger import TaggerNotAvailableError
+    from src.features.lexical import run_lexical_features, write_lexical_report
+    from src.schemas import GuardrailViolationError
+    from src.utils.runs import log_blocker, log_run
+
+    config = _load(args)
+    try:
+        payload = run_lexical_features(
+            config,
+            skip_fig=bool(getattr(args, "skip_fig", False)),
+            limit=int(args.limit) if getattr(args, "limit", None) else None,
+        )
+    except FileNotFoundError as exc:
+        print(f"BLAD: {exc}", file=sys.stderr)
+        return EXIT_FAIL
+    except (GuardrailViolationError, TaggerNotAvailableError) as exc:
+        print(f"BLAD: {exc}", file=sys.stderr)
+        return EXIT_FAIL
+    write_lexical_report(payload, config_hash=config.config_hash())
+    main = (payload.get("variants") or {}).get("word") or next(
+        iter((payload.get("variants") or {}).values()), {}
+    )
+    print(
+        f"features lexical n_windows={payload.get('n_windows')} "
+        f"n_train={payload.get('n_ctrl_train')} "
+        f"n_cols={main.get('n_cols')} "
+        f"units={sorted((payload.get('variants') or {}).keys())} "
+        f"norm_r={((main.get('norm_token') or {}).get('r'))}"
+    )
+    print(f"  zapisano {rel_to_repo(LEXICAL_REPORT_PATH)}")
+    if payload.get("figure"):
+        print(f"  figura {payload['figure']}")
+    if payload.get("root_skipped"):
+        log_blocker(
+            task="T-023",
+            question=(
+                "Wariant F3 root pominiety: ctrl_tagged nie ma root_pred, a lookup "
+                "CALIMA nie zwrocil rdzeni. Czy odtwarzamy root_pred na klastrze "
+                "(dopisac kolumne do T-015), czy zostawiamy word+lemma?"
+            ),
+            context="configs/features/lexical.yaml units includes root; T-015 schema nie zapisuje root.",
+            source="data/interim/ctrl_tagged/",
+            artifacts=[rel_to_repo(LEXICAL_REPORT_PATH)],
+        )
+    log_run(
+        task="T-023",
+        status="done",
+        config_hash=config.config_hash(),
+        artifacts=[
+            rel_to_repo(LEXICAL_REPORT_PATH),
+            str(main.get("dir") or "data/features/lexical/"),
+            str(payload.get("figure") or ""),
+        ],
+        metrics={
+            "n_windows": payload.get("n_windows") or 0,
+            "n_ctrl_train": payload.get("n_ctrl_train") or 0,
+            "n_cols": main.get("n_cols") or 0,
+            "norm_token_r": (main.get("norm_token") or {}).get("r") or 0.0,
+            "n_zero_rows": main.get("n_zero_rows") or 0,
+            "root_skipped": int(bool(payload.get("root_skipped"))),
+            "n_lemma_cols": ((payload.get("variants") or {}).get("lemma") or {}).get("n_cols") or 0,
+            "n_root_cols": ((payload.get("variants") or {}).get("root") or {}).get("n_cols") or 0,
+        },
+        note="T-023: F3 lexical word/lemma/root TF-IDF 1-2, fit CTRL-TRAIN, status=support. E-01=T-029.",
+    )
+    return EXIT_OK
+
+
 def cmd_chronology(args: argparse.Namespace) -> int:
     """T-018: tabela chronologii + FIG-06b. Nie T-043 (chrono)."""
     from src.data.chronology import run_chronology_agreement, write_chronology_report
@@ -1297,6 +1480,13 @@ def build_parser() -> argparse.ArgumentParser:
     _add_config_args(p_splits)
     p_splits.add_argument("--skip-windows", action="store_true")
     p_splits.set_defaults(func=cmd_splits)
+
+    p_feat = sub.add_parser("features", help="T-021 F1 / T-022 F2 / T-023 F3 (inne: T-024+)")
+    _add_config_args(p_feat)
+    p_feat.add_argument("--family", default="character")
+    p_feat.add_argument("--skip-fig", action="store_true")
+    p_feat.add_argument("--limit", type=int, default=None, help="obciecie okien do testow")
+    p_feat.set_defaults(func=cmd_features)
 
     p_chrono_table = sub.add_parser(
         "chronology", help="T-018: zgodnosc chronologii + FIG-06b (nie T-043 chrono)"

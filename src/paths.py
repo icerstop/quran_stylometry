@@ -46,6 +46,12 @@ INTERNAL_DUP_PATH: Path = RESULTS_DIR / "internal_duplication.json"
 OPENITI_DEDUP_DIR: Path = DATA_INTERIM_DIR / "openiti_dedup"
 SEGMENTATION_REPORT_PATH: Path = RESULTS_DIR / "segmentation_report.json"
 CHRONOLOGY_AGREEMENT_PATH: Path = RESULTS_DIR / "chronology_agreement.json"
+VECTORIZERS_DIR: Path = MODELS_DIR / "vectorizers"
+CHARACTER_REPORT_PATH: Path = RESULTS_DIR / "character_features.json"
+FUNCTION_REPORT_PATH: Path = RESULTS_DIR / "function_word_features.json"
+LEXICAL_REPORT_PATH: Path = RESULTS_DIR / "lexical_features.json"
+CTRL_TAGGED_DIR: Path = DATA_INTERIM_DIR / "ctrl_tagged"
+QURAN_TAGGED_PATH: Path = DATA_INTERIM_DIR / "quran_tagged.parquet"
 SPLITS_PATH: Path = RESULTS_DIR / "splits.json"
 
 

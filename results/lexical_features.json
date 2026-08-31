@@ -1,0 +1,70 @@
+{
+  "config_hash": "fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db",
+  "family": "lexical",
+  "figure": "figures/FIG-42_lexical_topk.png",
+  "n_ctrl_test": 11954,
+  "n_ctrl_train": 29208,
+  "n_quran": 197,
+  "n_windows": 48464,
+  "note": "F3 TF-IDF word/lemma/root 1-2 gram, fit CTRL-TRAIN, annotation predicted. Status support (topic leakage). E-01=T-029. root z CALIMA lookup (token, lemma_pred).",
+  "root_cache_size": 707482,
+  "root_skipped": false,
+  "task": "T-023",
+  "variants": {
+    "lemma": {
+      "dir": "data/features/lexical/fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db/lemma",
+      "n_cols": 295136,
+      "n_empty_docs": 0,
+      "n_features_named": 295136,
+      "n_nan_inf": 0,
+      "n_rows": 48464,
+      "n_train": 29208,
+      "n_zero_rows": 0,
+      "nnz": 20000932,
+      "norm_token": {
+        "n": 48464,
+        "note": "normy stale (L2 TF-IDF) — brak korelacji z n_tokens",
+        "r": 0.0
+      },
+      "variant": "lemma",
+      "vectorizer": "models/vectorizers/lexical_lemma_fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db.joblib"
+    },
+    "root": {
+      "dir": "data/features/lexical/fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db/root",
+      "n_cols": 195695,
+      "n_empty_docs": 0,
+      "n_features_named": 195695,
+      "n_nan_inf": 0,
+      "n_rows": 48464,
+      "n_train": 29208,
+      "n_zero_rows": 0,
+      "nnz": 19629327,
+      "norm_token": {
+        "n": 48464,
+        "note": "normy stale (L2 TF-IDF) — brak korelacji z n_tokens",
+        "r": 0.0
+      },
+      "variant": "root",
+      "vectorizer": "models/vectorizers/lexical_root_fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db.joblib"
+    },
+    "word": {
+      "dir": "data/features/lexical/fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db/word",
+      "n_cols": 350103,
+      "n_empty_docs": 0,
+      "n_features_named": 350103,
+      "n_nan_inf": 0,
+      "n_rows": 48464,
+      "n_train": 29208,
+      "n_zero_rows": 0,
+      "nnz": 18823320,
+      "norm_token": {
+        "n": 48464,
+        "note": "normy stale (L2 TF-IDF) — brak korelacji z n_tokens",
+        "r": 0.0
+      },
+      "variant": "word",
+      "vectorizer": "models/vectorizers/lexical_word_fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db.joblib"
+    }
+  },
+  "window_size": 400
+}

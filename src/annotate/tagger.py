@@ -49,17 +49,30 @@ def analysis_mapping(item: Any) -> dict[str, Any]:
 
 def parse_bw_segments(bw: str, *, profile: str = "strict") -> tuple[str, ...]:
     """Pole ``bw`` CALIMA: ``bi/PREP+som/NOUN+hu/PRON``. Zwraca formy AR znorm."""
+    return tuple(form for form, _pos in parse_bw_with_pos(bw, profile=profile))
+
+
+def parse_bw_with_pos(bw: str, *, profile: str = "strict") -> list[tuple[str, str]]:
+    """Jak ``parse_bw_segments``, ale z POS segmentu (PREP/NOUN/PRON/...)."""
     if not bw or bw in {"_", "NOAN"}:
-        return ()
-    parts: list[str] = []
+        return []
+    out: list[tuple[str, str]] = []
     for chunk in bw.split("+"):
-        form = chunk.split("/", 1)[0].strip()
+        piece = chunk.strip()
+        if not piece or piece == "0":
+            continue
+        if "/" in piece:
+            form, pos = piece.split("/", 1)
+        else:
+            form, pos = piece, ""
+        form = form.strip()
         if not form or form == "0":
             continue
         norm = normalize_lemma(form, profile=profile)
-        if norm:
-            parts.append(norm)
-    return tuple(parts)
+        if not norm:
+            continue
+        out.append((norm, pos.strip().upper()))
+    return out
 
 
 def predicted_from_analysis(

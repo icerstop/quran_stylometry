@@ -97,7 +97,7 @@ splits:
 	$(PY) -m src.cli splits --config $(CONFIG)
 
 features:
-	$(PY) -m src.cli features --config $(CONFIG)
+	$(PY) -m src.cli features --config $(CONFIG) --family character
 
 gates:
 	$(PY) -m src.cli gates --config $(CONFIG)

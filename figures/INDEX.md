@@ -70,3 +70,42 @@ czytac, czego **nie** wolno wnioskowac, i jaka kotwice kontrolna niesie (G9).
 - Czego NIE wolno wnioskowac: Nie wnioskuj o datowaniu sur ze stylu (F-08). Nie traktuj Nöldekego jako trzeciej niezależnej osi — Sadeghi/Blachère odpadły (paywall). FIG-06b nie jest wynikiem V.
 - Pliki: `FIG-06b_chronology_agreement.png`, `FIG-06b_chronology_agreement.svg`, `FIG-06b_chronology_agreement.json`
 <!-- /fig:FIG-06b -->
+
+<!-- fig:FIG-40 -->
+## FIG-40 — character_topk
+
+- Eksperyment: T-021
+- Typ: result
+- Rodziny cech: character
+- Kotwica kontrolna (G9): CTRL-TEST: te same cechy TF-IDF, autorzy niewidziani przy fitowaniu (G4). Quran i TRAIN w tym samym panelu.
+- Pokazuje: Top-20 n-gramow znakowych (char_wb 3–5) wg sredniego TF-IDF na CTRL-TRAIN, obok srednich na CTRL-TEST i Koranie.
+- Jak czytac: Jesli slupki TRAIN i TEST sa bliskie, cecha generalizuje poza autorow treningowych. Duza luka Koran vs TEST to sygnal domeny (E-01), nie V.
+- Czego NIE wolno wnioskowac: Nie wnioskuj o autorstwie Koranu. To diagnostyka F1 przed E-01. Wariant bez ligatur jest w JSON-ie, nie na tej osi.
+- Pliki: `FIG-40_character_topk.png`, `FIG-40_character_topk.svg`, `FIG-40_character_topk.json`
+<!-- /fig:FIG-40 -->
+
+<!-- fig:FIG-41 -->
+## FIG-41 — function_topk
+
+- Eksperyment: T-022
+- Typ: result
+- Rodziny cech: function_words
+- Kotwica kontrolna (G9): CTRL-TEST: te same K function words, autorzy niewidziani przy fitowaniu (G4). Quran i TRAIN w tym samym panelu.
+- Pokazuje: Top-20 form funkcyjnych (POS whitelist, segmenty morfologiczne) wg sredniej czestosci wzglednej na CTRL-TRAIN, obok CTRL-TEST i Koranu.
+- Jak czytac: Jesli slupki TRAIN i TEST sa bliskie, cecha generalizuje poza autorow treningowych. Duza luka Koran vs TEST to sygnal domeny (E-01), nie V.
+- Czego NIE wolno wnioskowac: Nie wnioskuj o autorstwie Koranu. To diagnostyka F2 przed E-01. Siatka K jest w JSON-ie (100/300/1000), nie na tej osi.
+- Pliki: `FIG-41_function_topk.png`, `FIG-41_function_topk.svg`, `FIG-41_function_topk.json`
+<!-- /fig:FIG-41 -->
+
+<!-- fig:FIG-42 -->
+## FIG-42 — lexical_topk
+
+- Eksperyment: T-023
+- Typ: result
+- Rodziny cech: lexical
+- Kotwica kontrolna (G9): CTRL-TEST: te same cechy TF-IDF (word 1–2 gram), autorzy niewidziani przy fitowaniu (G4). Quran i TRAIN w tym samym panelu.
+- Pokazuje: Top-20 cech leksykalnych (word 1–2 gram, TF-IDF) wg sredniego TF-IDF na CTRL-TRAIN, obok srednich na CTRL-TEST i Koranie.
+- Jak czytac: Duza luka Koran vs TEST to gorna granica wycieku tematu (F3=support), nie V. TRAIN≈TEST znaczy, ze slownik generalizuje poza autorow treningu.
+- Czego NIE wolno wnioskowac: Nie uzasadniaj wnioskiem o autorstwie ani chronologii. F3 jest support: merzy wyciek tematu. Lemma/root sa w JSON-ie, nie na tej osi.
+- Pliki: `FIG-42_lexical_topk.png`, `FIG-42_lexical_topk.svg`, `FIG-42_lexical_topk.json`
+<!-- /fig:FIG-42 -->

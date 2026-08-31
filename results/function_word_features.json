@@ -1,0 +1,69 @@
+{
+  "config_hash": "fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db",
+  "family": "function_words",
+  "figure": "figures/FIG-41_function_topk.png",
+  "n_ctrl_test": 11954,
+  "n_ctrl_train": 29208,
+  "n_multi_segment_ctrl": 10589938,
+  "n_quran": 197,
+  "n_windows": 48464,
+  "note": "F2: czestosc wzgledna segmentow POS whitelist, vocab z CTRL-TRAIN. Proklityki z morph_pred. Koran: CAMeL MLE *_pred (nie gold). E-01=T-029.",
+  "task": "T-022",
+  "variants": {
+    "k100": {
+      "dir": "data/features/function_words/fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db/k100",
+      "k": 100,
+      "n_cols": 100,
+      "n_features_named": 100,
+      "n_nan_inf": 0,
+      "n_rows": 48464,
+      "n_train": 29208,
+      "n_zero_rows": 0,
+      "nnz": 1533580,
+      "norm_token": {
+        "n": 48464,
+        "note": "",
+        "r": -0.023036033446475677
+      },
+      "variant": "k100",
+      "vectorizer": "models/vectorizers/function_words_k100_fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db.joblib"
+    },
+    "k1000": {
+      "dir": "data/features/function_words/fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db/k1000",
+      "k": 1000,
+      "n_cols": 150,
+      "n_features_named": 150,
+      "n_nan_inf": 0,
+      "n_rows": 48464,
+      "n_train": 29208,
+      "n_zero_rows": 0,
+      "nnz": 1535226,
+      "norm_token": {
+        "n": 48464,
+        "note": "",
+        "r": -0.023044218184775353
+      },
+      "variant": "k1000",
+      "vectorizer": "models/vectorizers/function_words_k1000_fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db.joblib"
+    },
+    "k300": {
+      "dir": "data/features/function_words/fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db/k300",
+      "k": 300,
+      "n_cols": 150,
+      "n_features_named": 150,
+      "n_nan_inf": 0,
+      "n_rows": 48464,
+      "n_train": 29208,
+      "n_zero_rows": 0,
+      "nnz": 1535226,
+      "norm_token": {
+        "n": 48464,
+        "note": "",
+        "r": -0.023044218184775353
+      },
+      "variant": "k300",
+      "vectorizer": "models/vectorizers/function_words_k300_fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db.joblib"
+    }
+  },
+  "window_size": 400
+}
