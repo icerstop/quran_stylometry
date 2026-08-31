@@ -1,0 +1,57 @@
+{
+  "config_hash": "fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db",
+  "labels": [
+    "canonical",
+    "traditional",
+    "noldeke"
+  ],
+  "n_exception_verse_rows": 35,
+  "n_meccan": 86,
+  "n_medinan": 28,
+  "n_rank_disagree_traditional_noldeke": 13,
+  "n_surahs": 114,
+  "note": "Sadeghi (Arabica 58) i Blachere za paywallem — nie ma trzeciej niezaleznej chronologii. rho(traditional, noldeke) ~ 1 to dwa edits Tanzila, nie wrazliwosc. Kontrast: canonical vs traditional. Kontrola G9: shuffle rang traditional.",
+  "order_sadeghi": null,
+  "rho_canonical_traditional": -0.40619266519511554,
+  "rho_traditional_noldeke": 0.9993438771997328,
+  "shuffle": {
+    "n_perm": 200,
+    "rho_max": 0.20856199752941415,
+    "rho_mean": 0.0059592150827241265,
+    "rho_min": -0.2549766104372127,
+    "rho_std": 0.09361506812766056
+  },
+  "spearman_rho": [
+    [
+      1.0,
+      -0.40619266519511554,
+      -0.4125756870051235
+    ],
+    [
+      -0.40619266519511554,
+      1.0,
+      0.9993438771997328
+    ],
+    [
+      -0.4125756870051235,
+      0.9993438771997328,
+      1.0
+    ]
+  ],
+  "surah_ids_disagree_traditional_noldeke": [
+    5,
+    9,
+    22,
+    24,
+    48,
+    49,
+    58,
+    61,
+    62,
+    63,
+    64,
+    66,
+    110
+  ],
+  "task": "T-018"
+}

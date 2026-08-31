@@ -44,3 +44,29 @@ czytac, czego **nie** wolno wnioskowac, i jaka kotwice kontrolna niesie (G9).
 - Czego NIE wolno wnioskowac: Nie wnioskuj o autorstwie Koranu. Precyzja/recall sa z recznego audytu 2×100, nie z tej figury. Shuffle to kontrola struktury, nie p-wartosc.
 - Pliki: `FIG-05_quote_removal.png`, `FIG-05_quote_removal.svg`, `FIG-05_quote_removal.json`
 <!-- /fig:FIG-05 -->
+
+<!-- fig:FIG-06 -->
+## FIG-06 — internal_duplication
+
+- Eksperyment: T-017
+- Typ: result
+- Rodziny cech: duplication
+- Kotwica kontrolna (G9): shuffle: permutacja tokenów w obrębie sury (Koran) / dzieła (CTRL), ten sam n=7; wąsy = SD po jednostkach
+- Pokazuje: Odsetek typów 7-gramów występujących ≥ 2 razy: Koran, CTRL łącznie i per gatunek, obok shuffle.
+- Jak czytac: Wysoki raw przy niskim shuffle = powtórzenia sekwencji (formuła, refren), nie sam rozkład częstości słów. Wariant dedup jest w JSON.
+- Czego NIE wolno wnioskowac: Nie wnioskuj o autorstwie Koranu. To diagnostyka korpusu (F-11), nie V. T-041 (kotwice RQ6) jeszcze nie istnieje — nie ma ich na figurze.
+- Pliki: `FIG-06_internal_duplication.png`, `FIG-06_internal_duplication.svg`, `FIG-06_internal_duplication.json`
+<!-- /fig:FIG-06 -->
+
+<!-- fig:FIG-06b -->
+## FIG-06b — chronology_agreement
+
+- Eksperyment: T-018
+- Typ: result
+- Rodziny cech: chronology
+- Kotwica kontrolna (G9): shuffle: Spearman ρ(order_canonical, permutacja order_traditional); n_perm i momenty w JSON. Oczekiwane ~0.
+- Pokazuje: Macierz Spearman ρ: order_canonical, order_traditional, order_noldeke (114 sur). Sadeghi nieobecny.
+- Jak czytac: ρ(traditional, noldeke) bliskie 1: dwie edycje Tanzila, nie niezależna chronologia. Kontrast to canonical vs traditional. Shuffle ~0 pokazuje, że wysokie ρ nie wynika z samego faktu, że obie listy mają 114 rang.
+- Czego NIE wolno wnioskowac: Nie wnioskuj o datowaniu sur ze stylu (F-08). Nie traktuj Nöldekego jako trzeciej niezależnej osi — Sadeghi/Blachère odpadły (paywall). FIG-06b nie jest wynikiem V.
+- Pliki: `FIG-06b_chronology_agreement.png`, `FIG-06b_chronology_agreement.svg`, `FIG-06b_chronology_agreement.json`
+<!-- /fig:FIG-06b -->

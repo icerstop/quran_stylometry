@@ -14,7 +14,8 @@ Kolejnosc jest czescia decyzji, nie szczegolem implementacji:
   3. Znaki pauzy koranicznej, koniec ajatu, sajda, ozdobniki.
   4. Diakrytyki (harakat, shadda, sukun, alif khanjariyya) — OBA profile
      (03_DATA §4: light = bez pkt. 5–6, nie bez pkt. 4; configs/normalizer.yaml).
-  5–6. Tylko strict: alify, ى→ي, ة→ه, ؤ→و, ئ→ي.
+  5–6. Tylko strict: alify, ى→ي, ة→ه, ؤ→و, ئ→ي, ءا→ا
+     (ءا = EQTB imlaai dla maddy/hamzy początkowej, ten sam fonem co آ).
   7. Znaki spoza blokow arabskich + biale znaki.
 
 Dlaczego 4 PRZED 5: znaki laczace (U+064B–U+065F, U+0670) musza zejsc zanim
@@ -74,6 +75,10 @@ _ALIF_VARIANTS = str.maketrans(
         "ئ": "ي",
     }
 )
+# EQTB imlaai zapisuje maddę/hamzę początkową jako ء+ا (U+0621, U+0627),
+# nie jako prekomponowane آ (U+0622). OpenITI/Shamela ma آ lub ا.
+# Bez tego kroku ءامنوا (Q33:56) != امنوا (CTRL) przy identycznym normalize().
+_HAMZA_ALEF = "ءا"
 
 # Krok 7: pozostaw bloki arabskie + biale znaki (jeden sub, nie per-znak).
 _NON_ARABIC = re.compile(
@@ -117,6 +122,7 @@ def normalize(text: str, profile: NormalizerProfile = "strict") -> str:
     # 5–6 — tylko strict
     if profile == "strict":
         out = out.translate(_ALIF_VARIANTS)
+        out = out.replace(_HAMZA_ALEF, "ا")
     # 7
     out = _NON_ARABIC.sub("", out)
     out = _WHITESPACE.sub(" ", out).strip()

@@ -1,0 +1,401 @@
+{
+  "by_genre": {
+    "adab_prose": {
+      "dedup": {
+        "internal_duplication_rate": 1.1056314107426833e-05,
+        "n_tokens": 1628407,
+        "n_types": 1628029,
+        "n_types_ge2": 18,
+        "token_kept_frac": 0.9608719562782717
+      },
+      "n_tokens": 1694718,
+      "n_tokens_dedup": 1628407,
+      "n_units": 60,
+      "raw": {
+        "instance_mass_ge2": 0.040832574933986794,
+        "internal_duplication_rate": 0.018371709403722784,
+        "n_instances": 1694358,
+        "n_types": 1655589,
+        "n_types_ge2": 30416
+      },
+      "shuffle": {
+        "instance_mass_ge2": 0.0,
+        "internal_duplication_rate": 0.0,
+        "n_instances": 1694358,
+        "n_types": 1694358,
+        "n_types_ge2": 0
+      },
+      "shuffle_unit_rate_mean": 0.0,
+      "shuffle_unit_rate_std": 0.0,
+      "unit_rate_mean": 0.007133912811050326,
+      "unit_rate_std": 0.012556973095341756
+    },
+    "biography": {
+      "dedup": {
+        "internal_duplication_rate": 7.339840101583387e-05,
+        "n_tokens": 1635324,
+        "n_types": 1634913,
+        "n_types_ge2": 120,
+        "token_kept_frac": 0.8857183865245826
+      },
+      "n_tokens": 1846325,
+      "n_tokens_dedup": 1635324,
+      "n_units": 39,
+      "raw": {
+        "instance_mass_ge2": 0.11968478260280777,
+        "internal_duplication_rate": 0.05458109967334995,
+        "n_instances": 1846091,
+        "n_types": 1718965,
+        "n_types_ge2": 93823
+      },
+      "shuffle": {
+        "instance_mass_ge2": 0.0,
+        "internal_duplication_rate": 0.0,
+        "n_instances": 1846091,
+        "n_types": 1846091,
+        "n_types_ge2": 0
+      },
+      "shuffle_unit_rate_mean": 0.0,
+      "shuffle_unit_rate_std": 0.0,
+      "unit_rate_mean": 0.011761787008007452,
+      "unit_rate_std": 0.016137642963180383
+    },
+    "fiqh": {
+      "dedup": {
+        "internal_duplication_rate": 7.0155456237439075e-06,
+        "n_tokens": 2423843,
+        "n_types": 2423190,
+        "n_types_ge2": 17,
+        "token_kept_frac": 0.9706040880135445
+      },
+      "n_tokens": 2497252,
+      "n_tokens_dedup": 2423843,
+      "n_units": 106,
+      "raw": {
+        "instance_mass_ge2": 0.022112331251582143,
+        "internal_duplication_rate": 0.009192950502057172,
+        "n_instances": 2496616,
+        "n_types": 2464062,
+        "n_types_ge2": 22652
+      },
+      "shuffle": {
+        "instance_mass_ge2": 0.0,
+        "internal_duplication_rate": 0.0,
+        "n_instances": 2496616,
+        "n_types": 2496616,
+        "n_types_ge2": 0
+      },
+      "shuffle_unit_rate_mean": 0.0,
+      "shuffle_unit_rate_std": 0.0,
+      "unit_rate_mean": 0.0047804716963958625,
+      "unit_rate_std": 0.007060458450187017
+    },
+    "hadith_collection": {
+      "dedup": {
+        "internal_duplication_rate": 0.0001309198800517341,
+        "n_tokens": 2652350,
+        "n_types": 2650476,
+        "n_types_ge2": 347,
+        "token_kept_frac": 0.8585532438315814
+      },
+      "n_tokens": 3089325,
+      "n_tokens_dedup": 2652350,
+      "n_units": 251,
+      "raw": {
+        "instance_mass_ge2": 0.10612830609566169,
+        "internal_duplication_rate": 0.03504663748619055,
+        "n_instances": 3087819,
+        "n_types": 2860360,
+        "n_types_ge2": 100246
+      },
+      "shuffle": {
+        "instance_mass_ge2": 0.0,
+        "internal_duplication_rate": 0.0,
+        "n_instances": 3087819,
+        "n_types": 3087819,
+        "n_types_ge2": 0
+      },
+      "shuffle_unit_rate_mean": 0.0,
+      "shuffle_unit_rate_std": 0.0,
+      "unit_rate_mean": 0.01615703940029251,
+      "unit_rate_std": 0.03208169293703198
+    },
+    "history": {
+      "dedup": {
+        "internal_duplication_rate": 3.818779804383005e-05,
+        "n_tokens": 2095341,
+        "n_types": 2094910,
+        "n_types_ge2": 80,
+        "token_kept_frac": 0.9241328788251001
+      },
+      "n_tokens": 2267359,
+      "n_tokens_dedup": 2095341,
+      "n_units": 58,
+      "raw": {
+        "instance_mass_ge2": 0.06241522427548874,
+        "internal_duplication_rate": 0.022899075449771253,
+        "n_instances": 2267011,
+        "n_types": 2175328,
+        "n_types_ge2": 49813
+      },
+      "shuffle": {
+        "instance_mass_ge2": 0.0,
+        "internal_duplication_rate": 0.0,
+        "n_instances": 2267011,
+        "n_types": 2267011,
+        "n_types_ge2": 0
+      },
+      "shuffle_unit_rate_mean": 0.0,
+      "shuffle_unit_rate_std": 0.0,
+      "unit_rate_mean": 0.015564137095407275,
+      "unit_rate_std": 0.0421618452271408
+    },
+    "maqamat_saj": {
+      "dedup": {
+        "internal_duplication_rate": 3.168497530156175e-06,
+        "n_tokens": 315632,
+        "n_types": 315607,
+        "n_types_ge2": 1,
+        "token_kept_frac": 0.9574470666747558
+      },
+      "n_tokens": 329660,
+      "n_tokens_dedup": 315632,
+      "n_units": 4,
+      "raw": {
+        "instance_mass_ge2": 0.06294518802557973,
+        "internal_duplication_rate": 0.031960136013914786,
+        "n_instances": 329636,
+        "n_types": 319085,
+        "n_types_ge2": 10198
+      },
+      "shuffle": {
+        "instance_mass_ge2": 0.0,
+        "internal_duplication_rate": 0.0,
+        "n_instances": 329636,
+        "n_types": 329636,
+        "n_types_ge2": 0
+      },
+      "shuffle_unit_rate_mean": 0.0,
+      "shuffle_unit_rate_std": 0.0,
+      "unit_rate_mean": 0.031920619172951956,
+      "unit_rate_std": 0.024849211824983133
+    },
+    "other": {
+      "dedup": {
+        "internal_duplication_rate": 2.2408278840473426e-05,
+        "n_tokens": 2947389,
+        "n_types": 2945340,
+        "n_types_ge2": 66,
+        "token_kept_frac": 0.9552693474851405
+      },
+      "n_tokens": 3085401,
+      "n_tokens_dedup": 2947389,
+      "n_units": 330,
+      "raw": {
+        "instance_mass_ge2": 0.03169142326007379,
+        "internal_duplication_rate": 0.011072387692886565,
+        "n_instances": 3083421,
+        "n_types": 3019132,
+        "n_types_ge2": 33429
+      },
+      "shuffle": {
+        "instance_mass_ge2": 0.0,
+        "internal_duplication_rate": 0.0,
+        "n_instances": 3083421,
+        "n_types": 3083421,
+        "n_types_ge2": 0
+      },
+      "shuffle_unit_rate_mean": 0.0,
+      "shuffle_unit_rate_std": 0.0,
+      "unit_rate_mean": 0.005315779039944751,
+      "unit_rate_std": 0.012966294940483574
+    },
+    "poetry_diwan": {
+      "dedup": {
+        "internal_duplication_rate": 7.4066097725088295e-06,
+        "n_tokens": 1755310,
+        "n_types": 1755189,
+        "n_types_ge2": 13,
+        "token_kept_frac": 0.969094385269275
+      },
+      "n_tokens": 1811289,
+      "n_tokens_dedup": 1755310,
+      "n_units": 18,
+      "raw": {
+        "instance_mass_ge2": 0.029575177743141078,
+        "internal_duplication_rate": 0.013785894161321165,
+        "n_instances": 1811181,
+        "n_types": 1782184,
+        "n_types_ge2": 24569
+      },
+      "shuffle": {
+        "instance_mass_ge2": 0.0,
+        "internal_duplication_rate": 0.0,
+        "n_instances": 1811181,
+        "n_types": 1811181,
+        "n_types_ge2": 0
+      },
+      "shuffle_unit_rate_mean": 0.0,
+      "shuffle_unit_rate_std": 0.0,
+      "unit_rate_mean": 0.004884966358424603,
+      "unit_rate_std": 0.006790299599028738
+    },
+    "prayer_sermon": {
+      "dedup": {
+        "internal_duplication_rate": 0.0,
+        "n_tokens": 4805,
+        "n_types": 4793,
+        "n_types_ge2": 0,
+        "token_kept_frac": 0.9884797366796956
+      },
+      "n_tokens": 4861,
+      "n_tokens_dedup": 4805,
+      "n_units": 2,
+      "raw": {
+        "instance_mass_ge2": 0.0028871932357187047,
+        "internal_duplication_rate": 0.0010330578512396695,
+        "n_instances": 4849,
+        "n_types": 4840,
+        "n_types_ge2": 5
+      },
+      "shuffle": {
+        "instance_mass_ge2": 0.0,
+        "internal_duplication_rate": 0.0,
+        "n_instances": 4849,
+        "n_types": 4849,
+        "n_types_ge2": 0
+      },
+      "shuffle_unit_rate_mean": 0.0,
+      "shuffle_unit_rate_std": 0.0,
+      "unit_rate_mean": 0.00042283298097251583,
+      "unit_rate_std": 0.0005979761363099767
+    },
+    "tafsir": {
+      "dedup": {
+        "internal_duplication_rate": 1.9794811154897002e-05,
+        "n_tokens": 1919902,
+        "n_types": 1919695,
+        "n_types_ge2": 38,
+        "token_kept_frac": 0.9610730527891314
+      },
+      "n_tokens": 1997665,
+      "n_tokens_dedup": 1919902,
+      "n_units": 28,
+      "raw": {
+        "instance_mass_ge2": 0.023578508503391996,
+        "internal_duplication_rate": 0.008355564503951276,
+        "n_instances": 1997497,
+        "n_types": 1966833,
+        "n_types_ge2": 16434
+      },
+      "shuffle": {
+        "instance_mass_ge2": 0.0,
+        "internal_duplication_rate": 0.0,
+        "n_instances": 1997497,
+        "n_types": 1997497,
+        "n_types_ge2": 0
+      },
+      "shuffle_unit_rate_mean": 0.0,
+      "shuffle_unit_rate_std": 0.0,
+      "unit_rate_mean": 0.004167319920902716,
+      "unit_rate_std": 0.00549634058089415
+    },
+    "theology": {
+      "dedup": {
+        "internal_duplication_rate": 3.1034456004779308e-06,
+        "n_tokens": 644861,
+        "n_types": 644445,
+        "n_types_ge2": 2,
+        "token_kept_frac": 0.9806787455555792
+      },
+      "n_tokens": 657566,
+      "n_tokens_dedup": 644861,
+      "n_units": 69,
+      "raw": {
+        "instance_mass_ge2": 0.01479566371250487,
+        "internal_duplication_rate": 0.006521615703436815,
+        "n_instances": 657152,
+        "n_types": 651679,
+        "n_types_ge2": 4250
+      },
+      "shuffle": {
+        "instance_mass_ge2": 0.0,
+        "internal_duplication_rate": 0.0,
+        "n_instances": 657152,
+        "n_types": 657152,
+        "n_types_ge2": 0
+      },
+      "shuffle_unit_rate_mean": 0.0,
+      "shuffle_unit_rate_std": 0.0,
+      "unit_rate_mean": 0.004851576576335443,
+      "unit_rate_std": 0.008652650698781843
+    }
+  },
+  "config_hash": "fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db",
+  "ctrl": {
+    "dedup": {
+      "internal_duplication_rate": 6.0718180091941424e-05,
+      "n_tokens": 17596493,
+      "n_types": 17589460,
+      "n_types_ge2": 1068,
+      "token_kept_frac": 0.9126139095246144
+    },
+    "n_tokens": 19281421,
+    "n_tokens_dedup": 17596493,
+    "n_units": 965,
+    "raw": {
+      "instance_mass_ge2": 0.07504651858089627,
+      "internal_duplication_rate": 0.028657632834515796,
+      "n_instances": 19275631,
+      "n_types": 18355075,
+      "n_types_ge2": 526013
+    },
+    "shuffle": {
+      "instance_mass_ge2": 0.0,
+      "internal_duplication_rate": 0.0,
+      "n_instances": 19275631,
+      "n_types": 19275631,
+      "n_types_ge2": 0
+    },
+    "shuffle_unit_rate_mean": 0.0,
+    "shuffle_unit_rate_std": 0.0,
+    "unit_rate_mean": 0.009091937476310775,
+    "unit_rate_std": 0.022163541213471853
+  },
+  "dedup_dir": "data/interim/openiti_dedup",
+  "n_ctrl_books": 965,
+  "quote_ngram_n": 7,
+  "quran": {
+    "dedup": {
+      "instance_mass_ge2": 0.0,
+      "internal_duplication_rate": 0.0,
+      "n_instances": 73979,
+      "n_tokens": 73985,
+      "n_types": 73979,
+      "n_types_ge2": 0,
+      "token_kept_frac": 0.9555205413992174
+    },
+    "n_tokens": 77429,
+    "n_tokens_dedup": 73985,
+    "n_units": 114,
+    "raw": {
+      "instance_mass_ge2": 0.034021760375268745,
+      "internal_duplication_rate": 0.015406274072303237,
+      "n_instances": 76745,
+      "n_types": 75294,
+      "n_types_ge2": 1160
+    },
+    "shuffle": {
+      "instance_mass_ge2": 0.0,
+      "internal_duplication_rate": 0.0,
+      "n_instances": 76745,
+      "n_types": 76745,
+      "n_types_ge2": 0
+    },
+    "shuffle_unit_rate_mean": 0.0,
+    "shuffle_unit_rate_std": 0.0,
+    "unit_rate_mean": 0.0012712822255400282,
+    "unit_rate_std": 0.0033244690855999135
+  },
+  "task": "T-017"
+}

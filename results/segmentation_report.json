@@ -1,0 +1,110 @@
+{
+  "config_hash": "fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db",
+  "ctrl_split_placeholder": "ctrl_test",
+  "note": "split CTRL = ctrl_test do T-020 (author-level). T-020 nadpisze splits.json.",
+  "sizes": {
+    "250": {
+      "ctrl": {
+        "length_max": 399,
+        "length_mean": 249.90177043911038,
+        "length_min": 9,
+        "length_std": 10.753476480096293,
+        "n_composite": 0,
+        "n_overlapping": 0,
+        "n_tokens": 19281421,
+        "n_windows": 77156,
+        "tokens_in_composite": 0
+      },
+      "dir": "C:/Users/Kubol/Desktop/vibe_coding/quran_stylometry/data/processed/windows_250",
+      "quran": {
+        "length_max": 393,
+        "length_mean": 254.70065789473685,
+        "length_min": 19,
+        "length_std": 43.38247124642549,
+        "n_composite": 8,
+        "n_overlapping": 0,
+        "n_tokens": 77429,
+        "n_windows": 304,
+        "tokens_in_composite": 1768
+      }
+    },
+    "400": {
+      "ctrl": {
+        "length_max": 639,
+        "length_mean": 399.474195620196,
+        "length_min": 9,
+        "length_std": 24.01353944921625,
+        "n_composite": 0,
+        "n_overlapping": 0,
+        "n_tokens": 19281421,
+        "n_windows": 48267,
+        "tokens_in_composite": 0
+      },
+      "dir": "C:/Users/Kubol/Desktop/vibe_coding/quran_stylometry/data/processed/windows_400",
+      "quran": {
+        "length_max": 633,
+        "length_mean": 393.0406091370558,
+        "length_min": 19,
+        "length_std": 84.13278120385921,
+        "n_composite": 10,
+        "n_overlapping": 0,
+        "n_tokens": 77429,
+        "n_windows": 197,
+        "tokens_in_composite": 3489
+      }
+    },
+    "400_olap": {
+      "ctrl": {
+        "length_max": 439,
+        "length_mean": 398.93511406626163,
+        "length_min": 9,
+        "length_std": 15.25734173379808,
+        "n_composite": 0,
+        "n_overlapping": 95953,
+        "n_tokens": 38279021,
+        "n_windows": 95953,
+        "tokens_in_composite": 0
+      },
+      "dir": "C:/Users/Kubol/Desktop/vibe_coding/quran_stylometry/data/processed/windows_400_olap",
+      "overlap": 0.5,
+      "quran": {
+        "length_max": 433,
+        "length_mean": 379.73546511627904,
+        "length_min": 19,
+        "length_std": 54.62912131814815,
+        "n_composite": 16,
+        "n_overlapping": 344,
+        "n_tokens": 130629,
+        "n_windows": 344,
+        "tokens_in_composite": 5489
+      }
+    },
+    "800": {
+      "ctrl": {
+        "length_max": 1279,
+        "length_mean": 795.3725352693672,
+        "length_min": 9,
+        "length_std": 78.22302300524952,
+        "n_composite": 0,
+        "n_overlapping": 0,
+        "n_tokens": 19281421,
+        "n_windows": 24242,
+        "tokens_in_composite": 0
+      },
+      "dir": "C:/Users/Kubol/Desktop/vibe_coding/quran_stylometry/data/processed/windows_800",
+      "quran": {
+        "length_max": 1274,
+        "length_mean": 759.1078431372549,
+        "length_min": 19,
+        "length_std": 251.9470283341143,
+        "n_composite": 13,
+        "n_overlapping": 0,
+        "n_tokens": 77429,
+        "n_windows": 102,
+        "tokens_in_composite": 9072
+      }
+    }
+  },
+  "task": "T-019",
+  "window_size_main": 400
+}

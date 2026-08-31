@@ -1,0 +1,795 @@
+{
+  "authors": {
+    "0157AbuMikhnafAzdi": {
+      "death_date_ah": 157,
+      "genre": "biography",
+      "period_bucket": "near",
+      "split": "ctrl_test"
+    },
+    "0213IbnHisham": {
+      "death_date_ah": 213,
+      "genre": "biography",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0230IbnSacd": {
+      "death_date_ah": 230,
+      "genre": "biography",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0231AbuNasrBahili": {
+      "death_date_ah": 231,
+      "genre": "poetry_diwan",
+      "period_bucket": "near",
+      "split": "ctrl_calib"
+    },
+    "0285IbnYazidMubarrad": {
+      "death_date_ah": 285,
+      "genre": "adab_prose",
+      "period_bucket": "near",
+      "split": "ctrl_test"
+    },
+    "0309KuracNaml": {
+      "death_date_ah": 309,
+      "genre": "theology",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0310Tabari": {
+      "death_date_ah": 310,
+      "genre": "history",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0324Ashcari": {
+      "death_date_ah": 324,
+      "genre": "theology",
+      "period_bucket": "near",
+      "split": "ctrl_test"
+    },
+    "0333AbuMansurMaturidi": {
+      "death_date_ah": 333,
+      "genre": "tafsir",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0356AbuCaliQali": {
+      "death_date_ah": 356,
+      "genre": "adab_prose",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0360Tabarani": {
+      "death_date_ah": 360,
+      "genre": "tafsir",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0362AbuFarajIsbahani": {
+      "death_date_ah": 362,
+      "genre": "history",
+      "period_bucket": "near",
+      "split": "ctrl_test"
+    },
+    "0370AbuQasimAmidi": {
+      "death_date_ah": 370,
+      "genre": "poetry_diwan",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0370IbnCaliJassas": {
+      "death_date_ah": 370,
+      "genre": "other",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0375IkhwanSafa": {
+      "death_date_ah": 375,
+      "genre": "adab_prose",
+      "period_bucket": "near",
+      "split": "ctrl_calib"
+    },
+    "0380Khalidiyyan": {
+      "death_date_ah": 380,
+      "genre": "poetry_diwan",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0381IbnBabawayhSaduq": {
+      "death_date_ah": 381,
+      "genre": "other",
+      "period_bucket": "near",
+      "split": "ctrl_calib"
+    },
+    "0388AbuSulaymanKhattabi": {
+      "death_date_ah": 388,
+      "genre": "hadith_collection",
+      "period_bucket": "near",
+      "split": "ctrl_test"
+    },
+    "0398BadicZamanHamadhani": {
+      "death_date_ah": 398,
+      "genre": "maqamat_saj",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0413AbuIshaqHusri": {
+      "death_date_ah": 413,
+      "genre": "adab_prose",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0421IbnMuhammadMarzuqi": {
+      "death_date_ah": 421,
+      "genre": "poetry_diwan",
+      "period_bucket": "near",
+      "split": "ctrl_test"
+    },
+    "0427AbuIshaqThaclabi": {
+      "death_date_ah": 427,
+      "genre": "tafsir",
+      "period_bucket": "near",
+      "split": "ctrl_calib"
+    },
+    "0428IbnSina": {
+      "death_date_ah": 428,
+      "genre": "other",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0430AbuNucaymIsbahani": {
+      "death_date_ah": 430,
+      "genre": "hadith_collection",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0437MakkiIbnHammushQaysi": {
+      "death_date_ah": 437,
+      "genre": "tafsir",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0450AbuHasanMawardi": {
+      "death_date_ah": 450,
+      "genre": "fiqh",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0456IbnHazm": {
+      "death_date_ah": 456,
+      "genre": "hadith_collection",
+      "period_bucket": "near",
+      "split": "ctrl_calib"
+    },
+    "0458Bayhaqi": {
+      "death_date_ah": 458,
+      "genre": "other",
+      "period_bucket": "near",
+      "split": "ctrl_test"
+    },
+    "0458IbnSidaMursi": {
+      "death_date_ah": 458,
+      "genre": "fiqh",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0460ShaykhTusi": {
+      "death_date_ah": 460,
+      "genre": "fiqh",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0463IbnCabdBarr": {
+      "death_date_ah": 463,
+      "genre": "hadith_collection",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0463IbnRashiqQayrawani": {
+      "death_date_ah": 463,
+      "genre": "poetry_diwan",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0463KhatibBaghdadi": {
+      "death_date_ah": 463,
+      "genre": "hadith_collection",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0465IbnHawazinQushayri": {
+      "death_date_ah": 465,
+      "genre": "tafsir",
+      "period_bucket": "near",
+      "split": "ctrl_test"
+    },
+    "0467IbnHasanBakharzi": {
+      "death_date_ah": 467,
+      "genre": "poetry_diwan",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0468IbnAhmadWahidiNaysaburi": {
+      "death_date_ah": 468,
+      "genre": "poetry_diwan",
+      "period_bucket": "near",
+      "split": "ctrl_test"
+    },
+    "0478ImamHaramaynJuwayni": {
+      "death_date_ah": 478,
+      "genre": "fiqh",
+      "period_bucket": "near",
+      "split": "ctrl_test"
+    },
+    "0483IbnAhmadSarakhsi": {
+      "death_date_ah": 483,
+      "genre": "fiqh",
+      "period_bucket": "near",
+      "split": "ctrl_calib"
+    },
+    "0486AbuAsbaghGharnati": {
+      "death_date_ah": 486,
+      "genre": "poetry_diwan",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0494HakimJushami": {
+      "death_date_ah": 494,
+      "genre": "tafsir",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0500Anonymous": {
+      "death_date_ah": 500,
+      "genre": "adab_prose",
+      "period_bucket": "near",
+      "split": "ctrl_train"
+    },
+    "0505Ghazali": {
+      "death_date_ah": 505,
+      "genre": "adab_prose",
+      "period_bucket": "broad",
+      "split": "ctrl_calib"
+    },
+    "0510IbnMascudBaghawi": {
+      "death_date_ah": 510,
+      "genre": "tafsir",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0516IbnCaliHariri": {
+      "death_date_ah": 516,
+      "genre": "maqamat_saj",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0520IbnRushdJadd": {
+      "death_date_ah": 520,
+      "genre": "fiqh",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0521IbnMuhammadBatalyawsi": {
+      "death_date_ah": 521,
+      "genre": "adab_prose",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0537NajmDinAbuHafsNasafi": {
+      "death_date_ah": 537,
+      "genre": "tafsir",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0540AbuMansurJawaliqi": {
+      "death_date_ah": 540,
+      "genre": "adab_prose",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0542IbnCaliDiyaDinIbnShajari": {
+      "death_date_ah": 542,
+      "genre": "adab_prose",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0544QadiCiyad": {
+      "death_date_ah": 544,
+      "genre": "hadith_collection",
+      "period_bucket": "broad",
+      "split": "ctrl_calib"
+    },
+    "0548IbnHasanTabarsi": {
+      "death_date_ah": 548,
+      "genre": "tafsir",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0548Shahrastani": {
+      "death_date_ah": 548,
+      "genre": "theology",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0562Samcani": {
+      "death_date_ah": 562,
+      "genre": "biography",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0571IbnCasakir": {
+      "death_date_ah": 571,
+      "genre": "history",
+      "period_bucket": "broad",
+      "split": "ctrl_calib"
+    },
+    "0581AbuQasimSuhayli": {
+      "death_date_ah": 581,
+      "genre": "biography",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0584IbnMunqidhShayzari": {
+      "death_date_ah": 584,
+      "genre": "adab_prose",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0597IbnJawzi": {
+      "death_date_ah": 597,
+      "genre": "history",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0597IbnMubarakBaghdadi": {
+      "death_date_ah": 597,
+      "genre": "poetry_diwan",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0606FakhrDinRazi": {
+      "death_date_ah": 606,
+      "genre": "tafsir",
+      "period_bucket": "broad",
+      "split": "ctrl_calib"
+    },
+    "0606IbnAthirMajdDin": {
+      "death_date_ah": 606,
+      "genre": "hadith_collection",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0616MuhibbDinCukbari": {
+      "death_date_ah": 616,
+      "genre": "poetry_diwan",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0619AbuCabbasSharishi": {
+      "death_date_ah": 619,
+      "genre": "maqamat_saj",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0620IbnQudamaMaqdisi": {
+      "death_date_ah": 620,
+      "genre": "fiqh",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0626YaqutHamawi": {
+      "death_date_ah": 626,
+      "genre": "history",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0630IbnAthirCizzDin": {
+      "death_date_ah": 630,
+      "genre": "history",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0634AbuRabicHimyari": {
+      "death_date_ah": 634,
+      "genre": "biography",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0637IbnAthirDiyaDin": {
+      "death_date_ah": 637,
+      "genre": "adab_prose",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0638IbnCarabi": {
+      "death_date_ah": 638,
+      "genre": "adab_prose",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0644IbnCaliCizzDinMuhallabi": {
+      "death_date_ah": 644,
+      "genre": "poetry_diwan",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0646IbnQifti": {
+      "death_date_ah": 646,
+      "genre": "biography",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0654IbnShaccarMawsili": {
+      "death_date_ah": 654,
+      "genre": "poetry_diwan",
+      "period_bucket": "broad",
+      "split": "ctrl_calib"
+    },
+    "0654SibtIbnJawzi": {
+      "death_date_ah": 654,
+      "genre": "other",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0660IbnCadim": {
+      "death_date_ah": 660,
+      "genre": "history",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0671AbuCabdAllahQurtubi": {
+      "death_date_ah": 671,
+      "genre": "fiqh",
+      "period_bucket": "broad",
+      "split": "ctrl_calib"
+    },
+    "0676Nawawi": {
+      "death_date_ah": 676,
+      "genre": "fiqh",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0684ShihabDinQarafi": {
+      "death_date_ah": 684,
+      "genre": "fiqh",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0692IbnCabdZahir": {
+      "death_date_ah": 692,
+      "genre": "biography",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0694MuhibbDinTabari": {
+      "death_date_ah": 694,
+      "genre": "biography",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0699IbnMaythamBahrani": {
+      "death_date_ah": 699,
+      "genre": "theology",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0701IbnNasrAllahJazari": {
+      "death_date_ah": 701,
+      "genre": "maqamat_saj",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0710IbnRifca": {
+      "death_date_ah": 710,
+      "genre": "fiqh",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0711IbnManzurIfriqi": {
+      "death_date_ah": 711,
+      "genre": "history",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0726CallamaHilli": {
+      "death_date_ah": 726,
+      "genre": "fiqh",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0728IbnTaymiyya": {
+      "death_date_ah": 728,
+      "genre": "other",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0742Mizzi": {
+      "death_date_ah": 742,
+      "genre": "hadith_collection",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0743SharafDinTibi": {
+      "death_date_ah": 743,
+      "genre": "history",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0745AbuHayyanGharnati": {
+      "death_date_ah": 745,
+      "genre": "tafsir",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0748Dhahabi": {
+      "death_date_ah": 748,
+      "genre": "hadith_collection",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0751IbnQayyimJawziyya": {
+      "death_date_ah": 751,
+      "genre": "other",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0756IbnYusufSaminHalabi": {
+      "death_date_ah": 756,
+      "genre": "tafsir",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0764Safadi": {
+      "death_date_ah": 764,
+      "genre": "biography",
+      "period_bucket": "broad",
+      "split": "ctrl_calib"
+    },
+    "0771TajDinSubki": {
+      "death_date_ah": 771,
+      "genre": "history",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0774IbnKathir": {
+      "death_date_ah": 774,
+      "genre": "history",
+      "period_bucket": "broad",
+      "split": "ctrl_calib"
+    },
+    "0775IbnAbiWafa": {
+      "death_date_ah": 775,
+      "genre": "biography",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0804IbnMulaqqin": {
+      "death_date_ah": 804,
+      "genre": "hadith_collection",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0807NurDinHaythami": {
+      "death_date_ah": 807,
+      "genre": "hadith_collection",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0808IbnKhaldun": {
+      "death_date_ah": 808,
+      "genre": "history",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0808MuhammadDamiri": {
+      "death_date_ah": 808,
+      "genre": "other",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0842IbnNasirDinDimashqi": {
+      "death_date_ah": 842,
+      "genre": "other",
+      "period_bucket": "broad",
+      "split": "ctrl_calib"
+    },
+    "0845Maqrizi": {
+      "death_date_ah": 845,
+      "genre": "other",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0852IbnHajarCasqalani": {
+      "death_date_ah": 852,
+      "genre": "hadith_collection",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0855BadrDinCayni": {
+      "death_date_ah": 855,
+      "genre": "hadith_collection",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0874IbnTaghribirdi": {
+      "death_date_ah": 874,
+      "genre": "other",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0879IbnQutlubugha": {
+      "death_date_ah": 879,
+      "genre": "biography",
+      "period_bucket": "broad",
+      "split": "ctrl_test"
+    },
+    "0885BurhanDinBiqaci": {
+      "death_date_ah": 885,
+      "genre": "other",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    },
+    "0893IbnIsmacilShihabDinKurani": {
+      "death_date_ah": 893,
+      "genre": "other",
+      "period_bucket": "broad",
+      "split": "ctrl_train"
+    }
+  },
+  "config_hash": "fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db",
+  "n_authors": 106,
+  "n_by_split": {
+    "ctrl_calib": 15,
+    "ctrl_test": 26,
+    "ctrl_train": 65
+  },
+  "note": "Split po author_id. Quran = target. G4: fit tylko ctrl_train. Wewnatrz AA dodatkowo GroupKFold(book_id) — nie w T-020.",
+  "ratios": {
+    "ctrl_calib": 0.15,
+    "ctrl_test": 0.25,
+    "ctrl_train": 0.6
+  },
+  "seed": 20260830,
+  "strata": {
+    "adab_prose|broad": {
+      "ctrl_calib": 1,
+      "ctrl_test": 2,
+      "ctrl_train": 4
+    },
+    "adab_prose|near": {
+      "ctrl_calib": 1,
+      "ctrl_test": 1,
+      "ctrl_train": 3
+    },
+    "biography|broad": {
+      "ctrl_calib": 1,
+      "ctrl_test": 2,
+      "ctrl_train": 6
+    },
+    "biography|near": {
+      "ctrl_calib": 0,
+      "ctrl_test": 1,
+      "ctrl_train": 2
+    },
+    "fiqh|broad": {
+      "ctrl_calib": 1,
+      "ctrl_test": 2,
+      "ctrl_train": 4
+    },
+    "fiqh|near": {
+      "ctrl_calib": 1,
+      "ctrl_test": 1,
+      "ctrl_train": 3
+    },
+    "hadith_collection|broad": {
+      "ctrl_calib": 1,
+      "ctrl_test": 2,
+      "ctrl_train": 5
+    },
+    "hadith_collection|near": {
+      "ctrl_calib": 1,
+      "ctrl_test": 1,
+      "ctrl_train": 3
+    },
+    "history|broad": {
+      "ctrl_calib": 2,
+      "ctrl_test": 2,
+      "ctrl_train": 6
+    },
+    "history|near": {
+      "ctrl_calib": 0,
+      "ctrl_test": 1,
+      "ctrl_train": 1
+    },
+    "maqamat_saj|broad": {
+      "ctrl_calib": 0,
+      "ctrl_test": 1,
+      "ctrl_train": 2
+    },
+    "maqamat_saj|near": {
+      "ctrl_calib": 0,
+      "ctrl_test": 0,
+      "ctrl_train": 1
+    },
+    "other|broad": {
+      "ctrl_calib": 1,
+      "ctrl_test": 2,
+      "ctrl_train": 6
+    },
+    "other|near": {
+      "ctrl_calib": 1,
+      "ctrl_test": 1,
+      "ctrl_train": 2
+    },
+    "poetry_diwan|broad": {
+      "ctrl_calib": 1,
+      "ctrl_test": 1,
+      "ctrl_train": 2
+    },
+    "poetry_diwan|near": {
+      "ctrl_calib": 1,
+      "ctrl_test": 2,
+      "ctrl_train": 5
+    },
+    "tafsir|broad": {
+      "ctrl_calib": 1,
+      "ctrl_test": 1,
+      "ctrl_train": 4
+    },
+    "tafsir|near": {
+      "ctrl_calib": 1,
+      "ctrl_test": 1,
+      "ctrl_train": 4
+    },
+    "theology|broad": {
+      "ctrl_calib": 0,
+      "ctrl_test": 1,
+      "ctrl_train": 1
+    },
+    "theology|near": {
+      "ctrl_calib": 0,
+      "ctrl_test": 1,
+      "ctrl_train": 1
+    }
+  },
+  "task": "T-020",
+  "windows_updated": [
+    {
+      "n_windows_by_split": {
+        "ctrl_calib": 11352,
+        "ctrl_test": 19144,
+        "ctrl_train": 46660
+      },
+      "path": "data/processed/windows_250/ctrl.parquet",
+      "quran_stays_target": true
+    },
+    {
+      "n_windows_by_split": {
+        "ctrl_calib": 7105,
+        "ctrl_test": 11954,
+        "ctrl_train": 29208
+      },
+      "path": "data/processed/windows_400/ctrl.parquet",
+      "quran_stays_target": true
+    },
+    {
+      "n_windows_by_split": {
+        "ctrl_calib": 14101,
+        "ctrl_test": 23807,
+        "ctrl_train": 58045
+      },
+      "path": "data/processed/windows_400_olap/ctrl.parquet",
+      "quran_stays_target": true
+    },
+    {
+      "n_windows_by_split": {
+        "ctrl_calib": 3573,
+        "ctrl_test": 5989,
+        "ctrl_train": 14680
+      },
+      "path": "data/processed/windows_800/ctrl.parquet",
+      "quran_stays_target": true
+    }
+  ]
+}

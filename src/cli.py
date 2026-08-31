@@ -17,10 +17,14 @@ from pathlib import Path
 
 from src.config import Config, load_config
 from src.paths import (
+    CHRONOLOGY_AGREEMENT_PATH,
     CONFIGS_DIR,
     ENV_LOCAL_PATH,
     FROZEN_CONFIG_DIR,
+    INTERNAL_DUP_PATH,
     RESULTS_DIR,
+    SEGMENTATION_REPORT_PATH,
+    SPLITS_PATH,
     SOURCE_CHECK_PATH,
     rel_to_repo,
 )
@@ -43,8 +47,8 @@ PENDING_STAGES: dict[str, str] = {
     "data": "T-012 (P1) — T-009/T-010/T-011: download-eqtb, formalize-qac-fallback, select-ctrl",
     # T-014 (ewaluacja na Koranie) jest zaimplementowane jako komenda `tag`.
     # T-015 (tagowanie CTRL) zostaje klastrowe: `tag-ctrl` / H1.
-    # T-016: `clean-quotes`.
-    "segment": "T-019, T-020 (P2)",
+    # T-016: `clean-quotes`. T-017: `dedup`. T-018: `chronology`.
+    # T-019: `segment`. T-020: `splits`.
     "features": "T-021..T-028 (P2)",
     "gates": "T-029..T-032 (P3)",
     "chrono": "T-043..T-047 (P6)",
@@ -705,6 +709,13 @@ def cmd_clean_quotes(args: argparse.Namespace) -> int:
     )
     print(f"  zapisano {rel_to_repo(paths['report'])}")
     print(f"  audyt (reczny, 2x100): {rel_to_repo(paths['audit'])}")
+    audit = report.get("audit") or {}
+    if audit.get("precision") is not None:
+        print(
+            f"  precision={audit['precision']} "
+            f"recall_sample={audit.get('recall_sample')} "
+            f"pending_human={audit.get('pending_human')}"
+        )
     if not getattr(args, "skip_fig", False):
         saved = save_fig_05(report, config_hash=config.config_hash())
         print(f"  figura {rel_to_repo(saved.png)}")
@@ -724,12 +735,213 @@ def cmd_clean_quotes(args: argparse.Namespace) -> int:
             "tokens_raw": totals["tokens_raw"],
             "tokens_removed": totals["tokens_removed"],
             "tokens_shuffle_removed": totals["tokens_shuffle_removed"],
-            "audit_pending": 1,
+            "audit_pending": int(bool((report.get("audit") or {}).get("pending_human"))),
+            "precision": (report.get("audit") or {}).get("precision"),
+            "recall_sample": (report.get("audit") or {}).get("recall_sample"),
         },
         note=(
-            "T-016: exact 7-gram + MinHash/LSH + margines ±3. "
-            "Precyzja/recall czekaja na reczny audyt 2×100 w quote_audit_sample.json. "
-            "T-017 nie wchodzi w ten przebieg."
+            "T-016: exact 7-gram + concat-fold (اا→ا, ءا→ا) + MinHash/LSH + margines ±3. "
+            "Audyt 2×100 w quote_audit_sample.json."
+        ),
+    )
+    return EXIT_OK
+
+
+def cmd_dedup(args: argparse.Namespace) -> int:
+    """T-017: redundancja wewnetrzna (nie cytaty T-016)."""
+    from src.data.dedup import run_internal_duplication, write_duplication_report
+    from src.paths import OPENITI_CLEAN_DIR, OPENITI_DEDUP_DIR
+    from src.utils.runs import log_run
+    from src.viz.fig06_duplication import save_fig_06
+
+    config = _load(args)
+    ctrl_dir = Path(args.input) if getattr(args, "input", None) else OPENITI_CLEAN_DIR
+    if not ctrl_dir.is_dir():
+        print(f"BLAD: brak {ctrl_dir} (T-016).", file=sys.stderr)
+        return EXIT_FAIL
+    try:
+        payload = run_internal_duplication(
+            n=config.quotes.quote_ngram_n,
+            seed=config.seed,
+            ctrl_dir=ctrl_dir,
+            limit_books=int(args.limit_books) if getattr(args, "limit_books", None) else None,
+            write_dedup=not bool(getattr(args, "skip_write_dedup", False)),
+            profile=config.normalizer.profile,
+        )
+    except FileNotFoundError as exc:
+        print(f"BLAD: {exc}", file=sys.stderr)
+        return EXIT_FAIL
+    write_duplication_report(payload, config_hash=config.config_hash())
+    q_rate = payload["quran"]["raw"]["internal_duplication_rate"]
+    c_rate = payload["ctrl"]["raw"]["internal_duplication_rate"]
+    print(
+        f"dedup quran_rate={q_rate:.4f} ctrl_rate={c_rate:.4f} "
+        f"ctrl_books={payload['n_ctrl_books']}"
+    )
+    print(f"  zapisano {rel_to_repo(INTERNAL_DUP_PATH)}")
+    if payload.get("dedup_dir"):
+        print(f"  dedup CTRL: {payload['dedup_dir']}")
+    if not getattr(args, "skip_fig", False):
+        saved = save_fig_06(payload, config_hash=config.config_hash())
+        print(f"  figura {rel_to_repo(saved.png)}")
+    log_run(
+        task="T-017",
+        status="done",
+        config_hash=config.config_hash(),
+        artifacts=[
+            rel_to_repo(INTERNAL_DUP_PATH),
+            rel_to_repo(OPENITI_DEDUP_DIR),
+            "figures/FIG-06_internal_duplication.png",
+        ],
+        metrics={
+            "quran_duplication_rate": q_rate,
+            "ctrl_duplication_rate": c_rate,
+            "quran_shuffle_rate": payload["quran"]["shuffle"]["internal_duplication_rate"],
+            "ctrl_shuffle_rate": payload["ctrl"]["shuffle"]["internal_duplication_rate"],
+            "n_ctrl_books": payload["n_ctrl_books"],
+        },
+        note="T-017: internal_duplication_rate typy 7-gramow; wariant dedup + shuffle G9.",
+    )
+    return EXIT_OK
+
+
+def cmd_segment(args: argparse.Namespace) -> int:
+    """T-019: okna. T-020 (splity autorow) osobno."""
+    from src.data.segment import run_segmentation, write_segmentation_report
+    from src.paths import OPENITI_CLEAN_DIR
+    from src.utils.runs import log_run
+
+    config = _load(args)
+    ctrl_dir = Path(args.input) if getattr(args, "input", None) else OPENITI_CLEAN_DIR
+    sizes = None
+    if getattr(args, "sizes", None):
+        sizes = [int(x) for x in str(args.sizes).split(",") if x.strip()]
+    try:
+        payload = run_segmentation(
+            cfg=config.segmentation,
+            normalizer_version=f"{config.normalizer.profile}-{config.normalizer.version}",
+            tagger_version=config.tagger.version,
+            profile=config.normalizer.profile,
+            ctrl_dir=ctrl_dir,
+            limit_books=int(args.limit_books) if getattr(args, "limit_books", None) else None,
+            sizes=sizes,
+            write_olap=not bool(getattr(args, "skip_olap", False)),
+        )
+    except FileNotFoundError as exc:
+        print(f"BLAD: {exc}", file=sys.stderr)
+        return EXIT_FAIL
+    write_segmentation_report(payload, config_hash=config.config_hash())
+    main = (payload.get("sizes") or {}).get(str(config.segmentation.window_size), {})
+    qn = (main.get("quran") or {}).get("n_windows")
+    cn = (main.get("ctrl") or {}).get("n_windows")
+    print(f"segment window_size={config.segmentation.window_size} quran_n={qn} ctrl_n={cn}")
+    print(f"  zapisano {rel_to_repo(SEGMENTATION_REPORT_PATH)}")
+    log_run(
+        task="T-019",
+        status="done",
+        config_hash=config.config_hash(),
+        artifacts=[rel_to_repo(SEGMENTATION_REPORT_PATH), "data/processed/windows_400/"],
+        metrics={
+            "n_windows_quran": qn or 0,
+            "n_windows_ctrl": cn or 0,
+            "n_composite_quran": (main.get("quran") or {}).get("n_composite") or 0,
+            "tokens_in_composite": (main.get("quran") or {}).get("tokens_in_composite") or 0,
+        },
+        note="T-019: okna G3. split CTRL=ctrl_test do T-020. T-020 nie wchodzi w ten przebieg.",
+    )
+    return EXIT_OK
+
+
+def cmd_splits(args: argparse.Namespace) -> int:
+    """T-020: splity autorow. Nie T-021."""
+    from src.data.splits import run_splits, write_splits_report
+    from src.utils.runs import log_run
+
+    config = _load(args)
+    try:
+        payload = run_splits(
+            ratios=config.splits.model_dump(),
+            seed=config.seed,
+            apply_windows=not bool(getattr(args, "skip_windows", False)),
+        )
+    except FileNotFoundError as exc:
+        print(f"BLAD: {exc}", file=sys.stderr)
+        return EXIT_FAIL
+    write_splits_report(payload, config_hash=config.config_hash())
+    by_split = payload.get("n_by_split") or {}
+    print(
+        f"splits n_authors={payload['n_authors']} "
+        f"train={by_split.get('ctrl_train')} "
+        f"calib={by_split.get('ctrl_calib')} "
+        f"test={by_split.get('ctrl_test')} "
+        f"windows={len(payload.get('windows_updated') or [])}"
+    )
+    print(f"  zapisano {rel_to_repo(SPLITS_PATH)}")
+    log_run(
+        task="T-020",
+        status="done",
+        config_hash=config.config_hash(),
+        artifacts=[rel_to_repo(SPLITS_PATH), "data/processed/windows_400/ctrl.parquet"],
+        metrics={
+            "n_authors": payload["n_authors"],
+            "n_train": by_split.get("ctrl_train") or 0,
+            "n_calib": by_split.get("ctrl_calib") or 0,
+            "n_test": by_split.get("ctrl_test") or 0,
+            "n_window_files": len(payload.get("windows_updated") or []),
+        },
+        note="T-020: split po author_id, stratyfikacja genre x epoka. Quran=target.",
+    )
+    return EXIT_OK
+
+
+def cmd_chronology(args: argparse.Namespace) -> int:
+    """T-018: tabela chronologii + FIG-06b. Nie T-043 (chrono)."""
+    from src.data.chronology import run_chronology_agreement, write_chronology_report
+    from src.utils.runs import log_run
+    from src.viz.fig06b_chronology import save_fig_06b
+
+    config = _load(args)
+    try:
+        payload = run_chronology_agreement(seed=config.seed)
+    except FileNotFoundError as exc:
+        print(f"BLAD: {exc}", file=sys.stderr)
+        return EXIT_FAIL
+    write_chronology_report(payload, config_hash=config.config_hash())
+    rho_tn = float(payload["rho_traditional_noldeke"])
+    rho_ct = float(payload["rho_canonical_traditional"])
+    shuf = float((payload.get("shuffle") or {}).get("rho_mean") or 0.0)
+    print(
+        f"chronology n={payload['n_surahs']} "
+        f"rho_trad_noldeke={rho_tn:.4f} rho_canon_trad={rho_ct:.4f} "
+        f"n_disagree={payload['n_rank_disagree_traditional_noldeke']} "
+        f"shuffle_mean={shuf:.4f}"
+    )
+    print(f"  zapisano {rel_to_repo(CHRONOLOGY_AGREEMENT_PATH)}")
+    if not getattr(args, "skip_fig", False):
+        saved = save_fig_06b(payload, config_hash=config.config_hash())
+        print(f"  figura {rel_to_repo(saved.png)}")
+    log_run(
+        task="T-018",
+        status="done",
+        config_hash=config.config_hash(),
+        artifacts=[
+            rel_to_repo(CHRONOLOGY_AGREEMENT_PATH),
+            "data/reference/chronologies.csv",
+            "figures/FIG-06b_chronology_agreement.png",
+            "SOURCES.md",
+        ],
+        metrics={
+            "n_surahs": payload["n_surahs"],
+            "rho_traditional_noldeke": rho_tn,
+            "rho_canonical_traditional": rho_ct,
+            "n_rank_disagree_traditional_noldeke": payload[
+                "n_rank_disagree_traditional_noldeke"
+            ],
+            "shuffle_rho_mean": shuf,
+        },
+        note=(
+            "T-018: FIG-06b Spearman na 3 kolumnach CSV. Sadeghi nieobecny. "
+            "rho policzone, nie przepisane. GdQ 1860 strony w SOURCES.md."
         ),
     )
     return EXIT_OK
@@ -1064,6 +1276,34 @@ def build_parser() -> argparse.ArgumentParser:
     p_quotes.add_argument("--skip-fuzzy", action="store_true")
     p_quotes.add_argument("--skip-fig", action="store_true")
     p_quotes.set_defaults(func=cmd_clean_quotes)
+
+    p_dedup = sub.add_parser("dedup", help="T-017: redundancja wewnetrzna 7-gramow")
+    _add_config_args(p_dedup)
+    p_dedup.add_argument("--input", default=None, help="katalog openiti_clean")
+    p_dedup.add_argument("--limit-books", type=int, default=None)
+    p_dedup.add_argument("--skip-fig", action="store_true")
+    p_dedup.add_argument("--skip-write-dedup", action="store_true")
+    p_dedup.set_defaults(func=cmd_dedup)
+
+    p_seg = sub.add_parser("segment", help="T-019: okna (nie T-020)")
+    _add_config_args(p_seg)
+    p_seg.add_argument("--input", default=None, help="katalog openiti_clean")
+    p_seg.add_argument("--limit-books", type=int, default=None)
+    p_seg.add_argument("--sizes", default=None, help="np. 400 albo 250,400,800")
+    p_seg.add_argument("--skip-olap", action="store_true")
+    p_seg.set_defaults(func=cmd_segment)
+
+    p_splits = sub.add_parser("splits", help="T-020: splity CTRL po author_id")
+    _add_config_args(p_splits)
+    p_splits.add_argument("--skip-windows", action="store_true")
+    p_splits.set_defaults(func=cmd_splits)
+
+    p_chrono_table = sub.add_parser(
+        "chronology", help="T-018: zgodnosc chronologii + FIG-06b (nie T-043 chrono)"
+    )
+    _add_config_args(p_chrono_table)
+    p_chrono_table.add_argument("--skip-fig", action="store_true")
+    p_chrono_table.set_defaults(func=cmd_chronology)
 
     p_h1 = sub.add_parser("build-handoff", help="przygotuj paczke handoff/H1 (bez sbatch)")
     _add_config_args(p_h1)

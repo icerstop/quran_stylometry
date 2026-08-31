@@ -17,7 +17,7 @@ HOST_ROLE ?= laptop
 CLUSTER_TASKS := tag-ctrl variance-array av-train embed
 
 .PHONY: help setup setup-nlp verify-sources test lint format \
-        data download-eqtb formalize-qac-fallback select-ctrl normalize cap-ctrl tag clean-quotes segment features gates freeze main \
+        data download-eqtb formalize-qac-fallback select-ctrl normalize cap-ctrl tag clean-quotes dedup chronology segment splits features gates freeze main \
         chrono explore figs figs-smoke dashboard audit sample-run \
         handoff handoff-verify $(CLUSTER_TASKS)
 
@@ -83,8 +83,18 @@ tag:
 clean-quotes:
 	$(PY) -m src.cli clean-quotes --config $(CONFIG)
 
+dedup:
+	$(PY) -m src.cli dedup --config $(CONFIG)
+
+chronology:
+	$(PY) -m src.cli chronology --config $(CONFIG)
+
 segment:
 	$(PY) -m src.cli segment --config $(CONFIG)
+	$(PY) -m src.cli splits --config $(CONFIG)
+
+splits:
+	$(PY) -m src.cli splits --config $(CONFIG)
 
 features:
 	$(PY) -m src.cli features --config $(CONFIG)

@@ -11,23 +11,38 @@ bez wskazania miejsca nie jest odniesieniem.
 ## 1. Chronologia sur (T-018)
 
 - **Tanzil, Revelation Order** — <https://tanzil.net/docs/revelation_order>.
-  Zrodlo kolumn `order_traditional` i `period_traditional`
-  w `data/reference/chronologies.csv`. Oparta na al-Zanjanim / Ibn 'Abbasie.
-  *Status: uzyte, zweryfikowane programowo 2026-08-30.*
-- **Noldeke** — `order_noldeke` wyliczony deterministycznie z porzadku
-  tradycyjnego przez dwie udokumentowane zmiany: sura 110 przenoszona miedzy
-  59 a 24; sura 62 przed 64 i 61.
-  *Do uzupelnienia w T-018: odniesienie stronicowe do* Geschichte des Qorāns.
-- **Sadeghi, Arabica 58 (2011)** — **NIEDOSTEPNE ZA DARMO (paywall)**.
-  `order_sadeghi` zostalo **usuniete z designu** (`09_DECISIONS.md` §2.4).
-  Nie zastepujemy go zgadywanym uporzadkowaniem.
-- **Blachere** — **NIEDOSTEPNE ZA DARMO (paywall)**. Nie uzywane.
+  Źródło kolumn `order_traditional` i `period_traditional`
+  w `data/reference/chronologies.csv` (al-Zanjānī / Ibn ʿAbbās).
+  Ta sama strona podaje dwie różnice Nöldekego wobec porządku tradycyjnego:
+  (1) sura 110 (an-Naṣr) w tradycji ostatnia, u Nöldekego między 59 a 24;
+  (2) sura 62 (al-Jumuʿa) w tradycji po 64 i 61, u Nöldekego przed 64 i 61.
+  `order_noldeke` w CSV **jest tą dwuedycyjną transformacją**, nie transkrypcją
+  114-wierszowej listy z Getyngi 1860. Status: użyte, zweryfikowane
+  programowo 2026-08-31 (13 sur z inną rangą; ρ w
+  `results/chronology_agreement.json`).
+- **Nöldeke, *Geschichte des Qorâns*** — Göttingen: Dieterich, **1860**.
+  Skan darmowy: <https://archive.org/details/geschichtedesqor00nlde>
+  (Internet Archive, domena publiczna). Strony z *Inhaltsverzeichnis* skanu:
+  - chronologiczne listy sur: **S. 45–52**;
+  - mekkańskie, okres I: **S. 59–89**; II: **S. 89–106**; III: **S. 107–121**;
+  - medyńskie: **S. 121–174**, z sekwencją w spisie treści:
+    2, 98, 64, 62, 8, 47, 3, 61, 57, 4, 65, 59, 33, 63, 24, 58, 22, 48,
+    66, 60, 110, 49, 9, 5;
+  - omówienie Sur. 62: **S. 137**;
+  - omówienie Sur. 110: **S. 163**.
+  Wydanie 2 (Schwally), Leipzig 1909, t. 1 *Über den Ursprung des Qorāns*,
+  jest wolne na IA (`geschichtedesqor00nluoft` to t. 2, 1919). Kolumny CSV
+  **nie** przepisujemy z 1909 — zostaje mapping Tanzila z §2.4.
+- **Sadeghi, *Arabica* 58 (2011)** — **niedostępne za darmo (paywall)**.
+  `order_sadeghi` usunięte z designu (`09_DECISIONS.md` §2.4). Nie zastępujemy
+  zgadywanym uporządkowaniem.
+- **Blachère** — **niedostępne za darmo (paywall)**. Nie używane.
 
 **Ograniczenie do zaraportowania (09_DECISIONS.md §2.4):** `order_traditional`
-i `order_noldeke` roznia sie pozycja tylko dla 13 sur, wiec Spearman rho ~ 0,99.
-To **nie jest** mocna analiza wrazliwosci i tak ma byc opisane. Prawdziwy
-kontrast to `order_canonical` vs `order_traditional`; najmocniejsza kontrola to
-relabeling wersetowy z `exception_verses`.
+i `order_noldeke` różnią się pozycją tylko dla 13 sur; Spearman ρ jest w
+FIG-06b / `chronology_agreement.json`, nie tu. To **nie jest** mocna analiza
+wrażliwości. Prawdziwy kontrast to `order_canonical` vs `order_traditional`;
+najmocniejsza kontrola to relabeling wersetowy z `exception_verses`.
 
 ## 2. Markery baseline'u literaturowego F9 (T-028)
 
@@ -218,4 +233,54 @@ disambiguatora MLE→BERT. BERT moze zmienic ogon VERB/noun_prop
 Accuracy coarse 0.746 z T-014 zostaje; kubelek ADV nie jest uzywany jako
 osobna cecha przed FREEZE. Raportowac jako ograniczenie tagsetu, nie jako
 porazke taggera na rzadkiej klasie.
+
+---
+
+## 6. T-016: audyt cytatow 2×100 i miss Q33:56 (KashfWaBayan)
+
+Audyt reczny (2026-08-31, etykiety w `results/quote_audit_sample.json`):
+100/100 `true_quote` na matches (**precision = 1.000**); 98/100
+`true_negative` na nonmatches (**recall_sample = 0.98**). Dwa `missed_quote`:
+
+| # | nonmatches idx | typ | opis |
+|---|----------------|-----|------|
+| 1 | (okno z `الم`) | **strukturalny** | cytat 1-tokenowy (huruf muqatta'at); `quote_ngram_n=7` z definicji go nie lapie — nie defekt metody |
+| 2 | 65 | **realny** | 7 kolejnych tokenow = Q33:56, exact match powinien trafic |
+
+### Przypadek 65 — dowod
+
+- Ksiazka: `0427AbuIshaqThaclabi.KashfWaBayan.Shamela0023578-ara1` (tafsir)
+- `start=24371` w `data/interim/ctrl_capped/`
+- Okno CTRL: `يصلون علي النبي يا ايها الذين امنوا`
+- Q33:56 (imlaai): `... يصلون على النبي يا أيها الذين آمنوا صلوا عليه ...`
+
+Trzy hipotezy, sprawdzone programowo (`tests/test_quote_detection_regression.py`,
+sonda EQTB `chapter_id=33, verse_id=56`):
+
+**H1 — normalizacja hamzy: TAK, czesc przyczyny.** Ten sam `normalize(..., "strict")`
+na obu stronach (G2). EQTB `imlaai_token` dla slowa 9 to `ءامنُ`+`وا` → po
+zlozeniu `ءامنوا` (U+0621 HAMZA + alif). OpenITI ma `امنوا` (alif bez hamzy)
+albo `آمنوا`. Krok 5 mapuje `آ→ا`, `أ→ا`, `إ→ا`, `ٱ→ا`, ale **nie** sekwencji
+`ءا`. Po `ءا→ا` obie strony daja `امنوا`. Same to nie wystarcza: 7-gram
+krotkowy nadal sie rozjezdza (H2 ponizej).
+
+**H2 — stride / granica wersetu: NIE.** Indeks 7-gramow Koranu ma krok 1.
+Srodek Q33:56 jest w indeksie jako
+`يصلون علي النبي يايها الذين ءامنوا صلوا`. Brak przerwy na granicy ajatu.
+
+Rozjazd **tokenizacji**, nie stride'u: EQTB `word_id=7` skleja segmenty `ي` +
+`أيُها` w jedno slowo ortograficzne `يايها`. OpenITI/Shamela ma spacje i alif:
+`يا` `ايها`. Concat 7 slow Koranu vs 8 tokenow CTRL po `اا→ا` daje ten sam
+lancuch. Fuzzy Jaccard na 7-elementowych zbiorach (próg 0.8) tego nie lapie
+(okna sa przesuniete, Jaccard ≈ 0.4).
+
+**H3 — artefakt w KashfWaBayan: NIE.** Bajty UTF-8 okna audytu =
+bajty `ctrl_capped` po `split()`; `normalize` jest idempotentne; brak
+niewidocznych znakow.
+
+**Naprawa:** (1) `normalize` strict: `ءا→ا` (uzupelnienie ujednolicenia alifow
+o zapis EQTB). (2) exact match zlaczonego 7-slowa Koranu z zmienna liczba
+tokenow CTRL (`concat_key`, `اا→ا`). Shuffle G9 zostaje na krotkach 7-gramow.
+Regresja: `tests/test_quote_detection_regression.py`.
+
 

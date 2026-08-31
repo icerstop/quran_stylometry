@@ -42,6 +42,17 @@ CTRL_CAPPED_MANIFEST_PATH: Path = CTRL_CAPPED_DIR / "manifest.csv"
 OPENITI_CLEAN_DIR: Path = DATA_INTERIM_DIR / "openiti_clean"
 QUOTE_REPORT_PATH: Path = RESULTS_DIR / "quote_removal_report.json"
 QUOTE_AUDIT_PATH: Path = RESULTS_DIR / "quote_audit_sample.json"
+INTERNAL_DUP_PATH: Path = RESULTS_DIR / "internal_duplication.json"
+OPENITI_DEDUP_DIR: Path = DATA_INTERIM_DIR / "openiti_dedup"
+SEGMENTATION_REPORT_PATH: Path = RESULTS_DIR / "segmentation_report.json"
+CHRONOLOGY_AGREEMENT_PATH: Path = RESULTS_DIR / "chronology_agreement.json"
+SPLITS_PATH: Path = RESULTS_DIR / "splits.json"
+
+
+def windows_dir(window_size: int, *, overlapping: bool = False) -> Path:
+    """Katalog okien: ``data/processed/windows_{size}/`` albo ``windows_{size}_olap/``."""
+    suffix = f"{int(window_size)}_olap" if overlapping else str(int(window_size))
+    return DATA_PROCESSED_DIR / f"windows_{suffix}"
 
 
 def rel_to_repo(path: Path | str) -> str:

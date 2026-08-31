@@ -1,0 +1,48 @@
+{
+  "config_hash": "fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db",
+  "control_anchor": "shuffle: Spearman ρ(order_canonical, permutacja order_traditional); n_perm i momenty w JSON. Oczekiwane ~0.",
+  "data": {
+    "control": "rank_shuffle_traditional_vs_canonical",
+    "labels": [
+      "canonical",
+      "traditional",
+      "noldeke"
+    ],
+    "n_perm": 200,
+    "n_rank_disagree_traditional_noldeke": 13,
+    "order_sadeghi": null,
+    "shuffle_rho_mean": 0.0059592150827241265,
+    "shuffle_rho_std": 0.09361506812766056,
+    "spearman_rho": [
+      [
+        1.0,
+        -0.40619266519511554,
+        -0.4125756870051235
+      ],
+      [
+        -0.40619266519511554,
+        1.0,
+        0.9993438771997328
+      ],
+      [
+        -0.4125756870051235,
+        0.9993438771997328,
+        1.0
+      ]
+    ]
+  },
+  "do_not_conclude": "Nie wnioskuj o datowaniu sur ze stylu (F-08). Nie traktuj Nöldekego jako trzeciej niezależnej osi — Sadeghi/Blachère odpadły (paywall). FIG-06b nie jest wynikiem V.",
+  "experiment": "T-018",
+  "families": [
+    "chronology"
+  ],
+  "fig_id": "FIG-06b",
+  "generated_at": "2026-08-31T14:54:30Z",
+  "git_dirty": true,
+  "git_sha": "a657786f5710bbdcd81ed3990ba407853252d00a",
+  "git_state": null,
+  "kind": "result",
+  "reads_as": "ρ(traditional, noldeke) bliskie 1: dwie edycje Tanzila, nie niezależna chronologia. Kontrast to canonical vs traditional. Shuffle ~0 pokazuje, że wysokie ρ nie wynika z samego faktu, że obie listy mają 114 rang.",
+  "shows": "Macierz Spearman ρ: order_canonical, order_traditional, order_noldeke (114 sur). Sadeghi nieobecny.",
+  "slug": "chronology_agreement"
+}

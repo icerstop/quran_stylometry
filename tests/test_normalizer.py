@@ -40,6 +40,15 @@ def test_alif_variants_collapse_in_strict_profile() -> None:
     assert normalize("أإآٱ", "strict") == "اااا"
 
 
+def test_eqtb_hamza_alif_collapses_like_madda() -> None:
+    """Q33:56 EQTB imlaai ءامنوا vs OpenITI امنوا / آمنوا — ten sam kod, obie strony."""
+    assert normalize("ءامنوا", "strict") == "امنوا"
+    assert normalize("آمنوا", "strict") == "امنوا"
+    assert normalize("ءامنوا", "strict") == normalize("آمنوا", "strict")
+    assert normalize("ءامنوا", "light") == "ءامنوا"
+    once = normalize("ءامنوا", "strict")
+    assert normalize(once, "strict") == once
+
 def test_light_profile_preserves_alif_variants() -> None:
     assert normalize("أإآٱ", "light") == "أإآٱ"
     assert normalize("موسى مدينة مؤمن", "light") == "موسى مدينة مؤمن"
