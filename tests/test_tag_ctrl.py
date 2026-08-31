@@ -103,8 +103,23 @@ def test_write_parquet_raises_after_three_failures(tmp_path: Path) -> None:
     assert sleeps == [2.0, 5.0]
 
 
-def test_cli_tag_ctrl_blocked_on_laptop(capsys: object) -> None:
+def test_cli_tag_ctrl_blocked_on_laptop(
+    capsys: object, monkeypatch: pytest.MonkeyPatch
+) -> None:
     from src.cli import main
+    from src.config import EnvLocal
+
+    # env.local.yaml na klastrze ma host_role: cluster — bez tej podmiany
+    # test odpalilby prawdziwy BERT/MLE i wisial w camel_tools.morphology.
+    monkeypatch.setattr(
+        "src.config.load_env_local",
+        lambda *_a, **_k: EnvLocal(host_role="laptop"),
+    )
+
+    def _must_not_tag(*_a: object, **_k: object) -> None:
+        raise AssertionError("make_tagger must not run; host_role block failed")
+
+    monkeypatch.setattr("src.annotate.tag_ctrl.make_tagger", _must_not_tag)
 
     assert main(["tag", "--corpus", "ctrl"]) == 1
     err = capsys.readouterr().err  # type: ignore[attr-defined]
