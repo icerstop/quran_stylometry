@@ -7,7 +7,7 @@ Wejscie: ``data/interim/ctrl_capped/``. Dryrun: ``--limit-tokens`` 300–500k
 from __future__ import annotations
 
 import time
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
 from pathlib import Path
 from typing import Any
 
@@ -137,16 +137,33 @@ def write_parquet_with_retry(
     index: bool = False,
     attempts: int = PARQUET_RETRY_ATTEMPTS,
     delays_sec: tuple[float, ...] = PARQUET_RETRY_DELAYS_SEC,
+    sleeper: Callable[[float], None] | None = None,
+    writer: Callable[[pd.DataFrame, Path], None] | None = None,
 ) -> None:
     """Zapis parquet z backoffem na chwilowe I/O (Lustre BrokenPipe / OSError).
 
     Trzy próby, sleep 2s / 5s między 1→2 i 2→3. ``delays_sec[2]`` (10s) jest
     zarezerwowane gdyby ktoś podniósł ``attempts``. Po wyczerpaniu prób
     wyjątek idzie w górę — nie połykamy trwałej awarii dysku.
+
+    ``sleeper`` / ``writer`` to szwy testowe. Produkcja zostawia ``None``:
+    wtedy wołane są ``time.sleep`` i ``DataFrame.to_parquet``. Testy muszą
+    podać oba — pętla poza snem robi prawdziwy zapis parquet (pandas →
+    pyarrow / ewentualnie fsspec), który na Lustre potrafi wisieć do timeoutu
+    NFS (~540s), a ``patch("src.annotate.tag_ctrl.time.sleep")`` podmienia
+    stdlib ``time.sleep`` globalnie (to ten sam obiekt), nie tylko tę ramkę.
     """
+    sleep = time.sleep if sleeper is None else sleeper
+
+    def _write() -> None:
+        if writer is None:
+            frame.to_parquet(dest, index=index)
+        else:
+            writer(frame, dest)
+
     for attempt in range(attempts):
         try:
-            frame.to_parquet(dest, index=index)
+            _write()
             return
         except (OSError, BrokenPipeError) as exc:
             if attempt + 1 >= attempts:
@@ -156,7 +173,7 @@ def write_parquet_with_retry(
                 f"parquet retry {attempt + 1}/{attempts} {dest.name}: {exc!r}; sleep {pause}s",
                 flush=True,
             )
-            time.sleep(pause)
+            sleep(pause)
     raise AssertionError("write_parquet_with_retry: pętla skończyła się bez return/raise")
 
 
