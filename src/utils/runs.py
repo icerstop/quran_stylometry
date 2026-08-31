@@ -21,7 +21,7 @@ from src.utils.hashing import canonical_json
 from src.utils.io import append_jsonl, read_jsonl
 from src.utils.provenance import git_state, utc_now_iso
 
-RunStatus = Literal["done", "blocked", "skipped", "awaiting_cluster", "failed"]
+RunStatus = Literal["done", "blocked", "skipped", "awaiting_cluster", "running", "failed"]
 HostRole = Literal["laptop", "cluster"]
 
 

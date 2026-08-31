@@ -86,6 +86,21 @@ def test_blocker_requires_nonempty_question(logs: tuple[Path, Path]) -> None:
         log_blocker("T-011", "   ", path=blockers_path)
 
 
+def test_running_is_a_valid_status(logs: tuple[Path, Path]) -> None:
+    runs_path, blockers_path = logs
+    record = log_run(
+        "T-015",
+        "running",
+        host="cluster",
+        metrics={"jobid": 1066297},
+        path=runs_path,
+        blockers_path=blockers_path,
+    )
+    assert record.status == "running"
+    assert record.host == "cluster"
+    assert record.metrics["jobid"] == 1066297
+
+
 def test_awaiting_cluster_is_a_valid_status(logs: tuple[Path, Path]) -> None:
     """11_HANDOFF §4: po zbudowaniu paczki agent wpisuje `awaiting_cluster`."""
     runs_path, blockers_path = logs

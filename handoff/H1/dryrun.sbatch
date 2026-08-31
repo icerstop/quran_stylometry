@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=qs-tag-pilot
 #SBATCH --partition=hgx
-#SBATCH --account=<KONTO>
+#SBATCH --account=mgr_ptstmp
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=48G

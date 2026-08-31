@@ -1,5 +1,5 @@
 {
-  "approved_for_sbatch": false,
+  "approved_for_sbatch": true,
   "config_hash": "fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db",
   "files": [
     {
@@ -4834,6 +4834,9 @@
     }
   ],
   "job": "H1",
+  "jobid": 1066297,
   "n_files": 966,
-  "n_tokens": 19680224
+  "n_tokens": 19680224,
+  "submitted": true
+
 }

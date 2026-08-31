@@ -11,7 +11,7 @@ from typing import Any
 
 from src.annotate.tag_ctrl import PILOT_TOKEN_TARGET, SAFETY_MARGIN
 from src.config import Config
-from src.handoff.slurm import CLUSTER_ROOT, TIME_PLACEHOLDER, slurm_header
+from src.handoff.slurm import CLUSTER_ROOT, TIME_PLACEHOLDER, load_slurm_account, slurm_header
 from src.paths import CTRL_CAPPED_DIR, DATA_INTERIM_DIR, HANDOFF_DIR, REPO_ROOT
 from src.utils.hashing import sha256_file
 from src.utils.io import ensure_dir, write_json, write_yaml
@@ -104,7 +104,8 @@ Pola wyjsciowe: `*_pred` (G1). Gold EQTB nie wchodzi do tych plikow.
 
 ## Zasady
 Brak `--exclusive`. Brak `--array`. Brak `$SCRATCH` (klaster PUT: `$HOME`).
-`#SBATCH --account=<KONTO>` — podstaw przed sbatch (11_HANDOFF.md §3 pkt 4b).
+`#SBATCH --account={load_slurm_account()}` — z `handoff/slurm.yaml` (to samo
+w dryrun i job; nie podmieniaj w jednym pliku recznie).
 `CAMELTOOLS_DATA=$HOME/camel_data`, `HF_HOME=$HOME/.cache/huggingface`.
 `--checkpoint-every 200`. `--time` w job.sbatch zostaje `<Z_PILOTAZU>` do pilotażu.
 """
@@ -212,6 +213,13 @@ def pack_h1(
     }
 
 
+def _sbatch_account(script: str) -> str | None:
+    for line in script.splitlines():
+        if line.startswith("#SBATCH --account="):
+            return line.split("=", 1)[1].strip()
+    return None
+
+
 def verify_h1(*, out_dir: Path = H1_DIR, strict: bool = True) -> list[str]:
     """Kompletnosc paczki H1. Artefakty tagged/ tylko gdy --time juz wypelnione."""
     errors: list[str] = []
@@ -241,8 +249,14 @@ def verify_h1(*, out_dir: Path = H1_DIR, strict: bool = True) -> list[str]:
     combined = job + "\n" + dry
     if "$SCRATCH" in combined:
         errors.append("sbatch uzywa $SCRATCH — klaster PUT go nie ma (10_COMPUTE.md par.4, $HOME)")
-    if "--account=" not in job or "--account=" not in dry:
-        errors.append("brak #SBATCH --account=<KONTO>")
+    job_acct = _sbatch_account(job)
+    dry_acct = _sbatch_account(dry)
+    if not job_acct or not dry_acct:
+        errors.append("brak #SBATCH --account w job.sbatch albo dryrun.sbatch")
+    elif job_acct != dry_acct:
+        errors.append(
+            f"job.sbatch i dryrun.sbatch maja rozne --account ({job_acct!r} vs {dry_acct!r})"
+        )
     if f"{CLUSTER_ROOT}/data/interim" not in job:
         errors.append("job.sbatch nie wskazuje $HOME/quran-stylometry/data/interim")
     if strict and TIME_PLACEHOLDER not in job:

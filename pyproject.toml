@@ -48,6 +48,10 @@ nlp = [
   "datasketch==2.0.0",
   "ruptures==1.1.10",
   "lightgbm==4.7.0",
+  # torch (zależność camel-tools) w atexit dumpie dynamo woła tabulate.
+  # Pakiet NIE jest zależnością torcha — bez pina: AttributeError w
+  # torch._dynamo.utils przy końcu joba SLURM. 0.9.0 = bieżące stabilne.
+  "tabulate==0.9.0",
 ]
 
 # Zaleznosci systemowe (nie instalowalne przez pip):

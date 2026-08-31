@@ -5,12 +5,14 @@ from __future__ import annotations
 from pathlib import Path
 
 import pandas as pd
+import pytest
 
 from src.annotate.tag_ctrl import (
     chunk_tokens,
     format_slurm_time,
     recommended_job_time,
     tag_ctrl_corpus,
+    write_parquet_with_retry,
 )
 from src.annotate.tagger import StubTagger
 from src.cli import main
@@ -58,6 +60,41 @@ def test_tag_ctrl_with_stub_and_limit(tmp_path: Path) -> None:
     assert (dst / "book_a.parquet").exists()
     assert (dst / "book_a.done").exists()
     assert "pos_gold" not in pd.read_parquet(dst / "book_a.parquet").columns
+
+
+def test_write_parquet_succeeds_on_third_attempt(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    sleeps: list[float] = []
+    monkeypatch.setattr("src.annotate.tag_ctrl.time.sleep", sleeps.append)
+    n = {"c": 0}
+
+    def flaky(self: pd.DataFrame, dest: object, *args: object, **kwargs: object) -> None:
+        n["c"] += 1
+        if n["c"] < 3:
+            raise BrokenPipeError("lustre hiccup")
+        Path(str(dest)).write_bytes(b"ok")
+
+    monkeypatch.setattr(pd.DataFrame, "to_parquet", flaky)
+    write_parquet_with_retry(pd.DataFrame({"a": [1]}), tmp_path / "x.parquet")
+    assert n["c"] == 3
+    assert sleeps == [2.0, 5.0]
+
+
+def test_write_parquet_raises_after_three_failures(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setattr("src.annotate.tag_ctrl.time.sleep", lambda _s: None)
+    n = {"c": 0}
+
+    def boom(self: pd.DataFrame, dest: object, *args: object, **kwargs: object) -> None:
+        n["c"] += 1
+        raise OSError("disk gone")
+
+    monkeypatch.setattr(pd.DataFrame, "to_parquet", boom)
+    with pytest.raises(OSError, match="disk gone"):
+        write_parquet_with_retry(pd.DataFrame({"a": [1]}), tmp_path / "x.parquet")
+    assert n["c"] == 3
 
 
 def test_cli_tag_ctrl_blocked_on_laptop(capsys: object) -> None:

@@ -30,6 +30,8 @@ PILOT_PATH: Path = RESULTS_DIR / "tagger_pilot.json"
 DEFAULT_CORPUS_TOKENS = 19_680_224  # T-013b oczekiwane; nadpisywane z manifestu
 SAFETY_MARGIN = 1.5
 PILOT_TOKEN_TARGET = 400_000
+PARQUET_RETRY_ATTEMPTS = 3
+PARQUET_RETRY_DELAYS_SEC: tuple[float, ...] = (2.0, 5.0, 10.0)
 
 
 class CamelBERTTagger:
@@ -128,6 +130,36 @@ def _predicted_rows(tokens: Sequence[str], tagged: Sequence[PredictedWord]) -> l
     return rows
 
 
+def write_parquet_with_retry(
+    frame: pd.DataFrame,
+    dest: Path,
+    *,
+    index: bool = False,
+    attempts: int = PARQUET_RETRY_ATTEMPTS,
+    delays_sec: tuple[float, ...] = PARQUET_RETRY_DELAYS_SEC,
+) -> None:
+    """Zapis parquet z backoffem na chwilowe I/O (Lustre BrokenPipe / OSError).
+
+    Trzy próby, sleep 2s / 5s między 1→2 i 2→3. ``delays_sec[2]`` (10s) jest
+    zarezerwowane gdyby ktoś podniósł ``attempts``. Po wyczerpaniu prób
+    wyjątek idzie w górę — nie połykamy trwałej awarii dysku.
+    """
+    for attempt in range(attempts):
+        try:
+            frame.to_parquet(dest, index=index)
+            return
+        except (OSError, BrokenPipeError) as exc:
+            if attempt + 1 >= attempts:
+                raise
+            pause = delays_sec[min(attempt, len(delays_sec) - 1)]
+            print(
+                f"parquet retry {attempt + 1}/{attempts} {dest.name}: {exc!r}; sleep {pause}s",
+                flush=True,
+            )
+            time.sleep(pause)
+    raise AssertionError("write_parquet_with_retry: pętla skończyła się bez return/raise")
+
+
 def tag_ctrl_corpus(
     *,
     tagger: SentenceTagger,
@@ -166,16 +198,19 @@ def tag_ctrl_corpus(
             if remaining < len(tokens):
                 tokens = tokens[:remaining]
         if not tokens:
-            pd.DataFrame(
-                columns=["token", "pos_pred", "pos_raw_pred", "lemma_pred", "morph_pred"]
-            ).to_parquet(dest)
+            write_parquet_with_retry(
+                pd.DataFrame(
+                    columns=["token", "pos_pred", "pos_raw_pred", "lemma_pred", "morph_pred"]
+                ),
+                dest,
+            )
             done.write_text(incoming + "\n", encoding="utf-8")
             n_files += 1
             continue
         tagged: list[PredictedWord] = []
         for chunk in chunk_tokens(tokens, batch_size):
             tagged.extend(tagger.tag_sentence(chunk))
-        pd.DataFrame(_predicted_rows(tokens, tagged)).to_parquet(dest, index=False)
+        write_parquet_with_retry(pd.DataFrame(_predicted_rows(tokens, tagged)), dest, index=False)
         done.write_text(incoming + "\n", encoding="utf-8")
         n_files += 1
         n_tokens += len(tokens)

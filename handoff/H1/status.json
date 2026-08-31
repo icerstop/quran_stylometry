@@ -1,0 +1,10 @@
+{
+  "approved_for_sbatch": true,
+  "job": "H1",
+  "jobid": 1066297,
+  "slurm_time": "03:00:00",
+  "started_at": "2026-08-31T08:55:14",
+  "account": "mgr_ptstmp",
+  "submitted": true,
+  "task": "T-015"
+}

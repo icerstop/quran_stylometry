@@ -1,9 +1,9 @@
 # H1 — tagowanie CTRL (T-015)
 
-**Status: PACZKA DO AKCEPTACJI. Nie wysylaj `job.sbatch`.**
-Najpierw `dryrun.sbatch` (pilotaż BERT na 400000 tokenach).
-Dopiero po `results/tagger_pilot.json` wpisz `pilot.slurm_time` w `job.sbatch`
-jako `--time` i daj znać agentowi.
+**Status: WYSŁANE.** Job SLURM **1066297** RUNNING (start 2026-08-31T08:55:14,
+`--time=03:00:00`, konto `mgr_ptstmp`). `approved_for_sbatch=true`,
+`submitted=true`. Nie `done` — czekamy na powrot artefaktow.
+
 
 ## Co robi
 Taguje `data/interim/ctrl_capped/` disambigatorem BERT (calima-msa-r13).
@@ -14,8 +14,8 @@ Pola wyjsciowe: `*_pred` (G1). Gold EQTB nie wchodzi do tych plikow.
 
 ## Czas
 - `dryrun.sbatch`: `--time=02:00:00` (górny szacunek na 400000 tok. BERT).
-- `job.sbatch`: `--time=<Z_PILOTAZU>` — **niewazny SLURM**, celowo, zeby nie
-  poszlo przypadkiem przed pilotażem.
+- Job **1066297** na klastrze: `--time=03:00:00` (wysłany 2026-08-31T08:55:14).
+  Szablon `job.sbatch` w repo nie jest kopia robocza na klastrze.
 
 ## Wejscie
 - `966 plikow` w `data/interim/ctrl_capped/` (~19680224 tokenow)
@@ -30,6 +30,8 @@ Pola wyjsciowe: `*_pred` (G1). Gold EQTB nie wchodzi do tych plikow.
 
 ## Zasady
 Brak `--exclusive`. Brak `--array`. Brak `$SCRATCH` (klaster PUT: `$HOME`).
-`#SBATCH --account=<KONTO>` — podstaw przed sbatch (11_HANDOFF.md §3 pkt 4b).
+`#SBATCH --account=mgr_ptstmp` — z `handoff/slurm.yaml` (to samo
+w dryrun i job; nie podmieniaj w jednym pliku recznie).
 `CAMELTOOLS_DATA=$HOME/camel_data`, `HF_HOME=$HOME/.cache/huggingface`.
-`--checkpoint-every 200`. `--time` w job.sbatch zostaje `<Z_PILOTAZU>` do pilotażu.
+`--checkpoint-every 200`.
+
