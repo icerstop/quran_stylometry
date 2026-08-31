@@ -96,3 +96,64 @@ def test_verify_h1_fails_while_time_placeholder(tmp_path: Path) -> None:
     pack_h1(Config(), out_dir=out, capped_dir=tmp_path / "empty")
     errors = verify_h1(out_dir=out, strict=True)
     assert any("Z_PILOTAZU" in e for e in errors)
+
+
+def test_verify_h1_accepts_h1b_successor_with_tagged_files(tmp_path: Path) -> None:
+    import pandas as pd
+
+    from src.handoff.pack_h1b import pack_h1b
+
+    h1 = tmp_path / "H1"
+    pack_h1(Config(), out_dir=h1, capped_dir=tmp_path / "empty")
+    pack_h1b(Config(), out_dir=tmp_path / "H1b")
+    capped = tmp_path / "capped"
+    tagged = tmp_path / "tagged"
+    capped.mkdir()
+    tagged.mkdir()
+    (capped / "book_a").write_text("aa bb\n", encoding="utf-8")
+    (capped / "manifest.csv").write_text(
+        "author_id,book_id,tokens_after_cap\nA,b1,2\n",
+        encoding="utf-8",
+    )
+    frame = pd.DataFrame(
+        {
+            "token": ["aa", "bb"],
+            "pos_pred": ["NOUN", "NOUN"],
+            "pos_raw_pred": ["noun", "noun"],
+            "lemma_pred": ["aa", "bb"],
+            "morph_pred": ["aa", "bb"],
+        }
+    )
+    frame.to_parquet(tagged / "book_a.parquet", index=False)
+    (tagged / "book_a.done").write_text("x\n", encoding="utf-8")
+    errors = verify_h1(out_dir=h1, strict=True, tagged_dir=tagged, capped_dir=capped)
+    assert errors == []
+
+
+def test_verify_tagged_rejects_gold_column(tmp_path: Path) -> None:
+    import pandas as pd
+
+    from src.handoff.pack_h1 import _verify_tagged_coverage
+
+    capped = tmp_path / "capped"
+    tagged = tmp_path / "tagged"
+    capped.mkdir()
+    tagged.mkdir()
+    (capped / "book_a").write_text("aa\n", encoding="utf-8")
+    (capped / "manifest.csv").write_text(
+        "author_id,book_id,tokens_after_cap\nA,b1,1\n",
+        encoding="utf-8",
+    )
+    pd.DataFrame(
+        {
+            "token": ["aa"],
+            "pos_pred": ["NOUN"],
+            "pos_raw_pred": ["noun"],
+            "lemma_pred": ["aa"],
+            "morph_pred": ["aa"],
+            "pos_gold": ["NOUN"],
+        }
+    ).to_parquet(tagged / "book_a.parquet", index=False)
+    (tagged / "book_a.done").write_text("x\n", encoding="utf-8")
+    errors = _verify_tagged_coverage(tagged_dir=tagged, capped_dir=capped)
+    assert any("gold" in e for e in errors)

@@ -220,8 +220,97 @@ def _sbatch_account(script: str) -> str | None:
     return None
 
 
-def verify_h1(*, out_dir: Path = H1_DIR, strict: bool = True) -> list[str]:
-    """Kompletnosc paczki H1. Artefakty tagged/ tylko gdy --time juz wypelnione."""
+TAGGED_SCHEMA: tuple[str, ...] = (
+    "token",
+    "pos_pred",
+    "pos_raw_pred",
+    "lemma_pred",
+    "morph_pred",
+)
+FORBIDDEN_GOLD: tuple[str, ...] = ("pos_gold", "lemma_gold", "morph_gold", "deprel_gold")
+
+
+def _h1b_job_time_filled(h1_dir: Path) -> bool:
+    """H1b jest nastepca H1 (11_HANDOFF.md §7) — szablon H1 zostaje z placeholderem."""
+    path = h1_dir.parent / "H1b" / "job.sbatch"
+    if not path.exists():
+        return False
+    text = path.read_text(encoding="utf-8")
+    return TIME_PLACEHOLDER not in text and "#SBATCH --time=" in text
+
+
+def _verify_tagged_coverage(*, tagged_dir: Path, capped_dir: Path) -> list[str]:
+    """11_HANDOFF.md §5: pliki, schemat, brak *_gold, n_tokens vs manifest."""
+    errors: list[str] = []
+    if not capped_dir.is_dir():
+        return [f"brak katalogu wejsciowego {capped_dir}"]
+    if not tagged_dir.is_dir():
+        return ["brak data/interim/ctrl_tagged/ (powrot z klastra)"]
+    books = sorted(p for p in capped_dir.iterdir() if p.is_file() and p.name != "manifest.csv")
+    if not books:
+        return [f"brak ksiazek w {capped_dir}"]
+
+    import pyarrow.parquet as pq
+
+    n_tokens = 0
+    n_ok = 0
+    n_detail = 0
+    for src in books:
+        dest = tagged_dir / f"{src.name}.parquet"
+        done = tagged_dir / f"{src.name}.done"
+        if not dest.exists() or dest.stat().st_size == 0:
+            if n_detail < 5:
+                errors.append(f"brak albo pusty {dest.name}")
+                n_detail += 1
+            continue
+        if not done.exists():
+            if n_detail < 5:
+                errors.append(f"brak {done.name}")
+                n_detail += 1
+            continue
+        try:
+            pf = pq.ParquetFile(dest)
+        except Exception as exc:  # noqa: BLE001 — chcemy komunikat, nie traceback
+            if n_detail < 5:
+                errors.append(f"{dest.name}: nieczytelny parquet ({exc})")
+                n_detail += 1
+            continue
+        names = list(pf.schema_arrow.names)
+        missing_cols = [c for c in TAGGED_SCHEMA if c not in names]
+        if missing_cols and n_detail < 5:
+            errors.append(f"{dest.name}: brak kolumn {missing_cols}")
+            n_detail += 1
+        gold = [c for c in names if c.endswith("_gold") or c in FORBIDDEN_GOLD]
+        if gold and n_detail < 5:
+            errors.append(f"{dest.name}: kolumny gold {gold}")
+            n_detail += 1
+        n_tokens += int(pf.metadata.num_rows)
+        n_ok += 1
+
+    n_books = len(books)
+    n_parquet = len(list(tagged_dir.glob("*.parquet")))
+    if n_ok != n_books:
+        errors.append(f"kompletnych par parquet+.done {n_ok}/{n_books}")
+    if n_parquet != n_books:
+        errors.append(f"plikow parquet {n_parquet} != ksiazek {n_books}")
+    manifest = capped_dir / "manifest.csv"
+    if manifest.exists():
+        import pandas as pd
+
+        expected = int(pd.read_csv(manifest)["tokens_after_cap"].sum())
+        if n_tokens != expected:
+            errors.append(f"tokeny w parquet {n_tokens} != manifest tokens_after_cap {expected}")
+    return errors
+
+
+def verify_h1(
+    *,
+    out_dir: Path = H1_DIR,
+    strict: bool = True,
+    tagged_dir: Path | None = None,
+    capped_dir: Path | None = None,
+) -> list[str]:
+    """Kompletnosc paczki H1. Artefakty tagged/ gdy --time wypelnione albo H1b przejelo job."""
     errors: list[str] = []
     required = [
         "README.md",
@@ -239,7 +328,8 @@ def verify_h1(*, out_dir: Path = H1_DIR, strict: bool = True) -> list[str]:
     job = job_path.read_text(encoding="utf-8") if job_path.exists() else ""
     if "--exclusive" in job:
         errors.append("job.sbatch ma --exclusive")
-    if TIME_PLACEHOLDER in job:
+    h1b_ok = _h1b_job_time_filled(out_dir)
+    if TIME_PLACEHOLDER in job and not h1b_ok:
         errors.append(
             "job.sbatch nadal ma --time=<Z_PILOTAZU> — H1 niezatwierdzone "
             "(najpierw dryrun, potem wpisz pilot.slurm_time)"
@@ -259,8 +349,9 @@ def verify_h1(*, out_dir: Path = H1_DIR, strict: bool = True) -> list[str]:
         )
     if f"{CLUSTER_ROOT}/data/interim" not in job:
         errors.append("job.sbatch nie wskazuje $HOME/quran-stylometry/data/interim")
-    if strict and TIME_PLACEHOLDER not in job:
-        tagged = DATA_INTERIM_DIR / "ctrl_tagged"
-        if not tagged.is_dir() or not any(tagged.glob("*.parquet")):
-            errors.append("brak data/interim/ctrl_tagged/*.parquet (powrot z klastra)")
+    check_tagged = strict and (TIME_PLACEHOLDER not in job or h1b_ok)
+    if check_tagged:
+        tagged = tagged_dir if tagged_dir is not None else DATA_INTERIM_DIR / "ctrl_tagged"
+        capped = capped_dir if capped_dir is not None else CTRL_CAPPED_DIR
+        errors.extend(_verify_tagged_coverage(tagged_dir=tagged, capped_dir=capped))
     return errors

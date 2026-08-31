@@ -763,6 +763,8 @@ def cmd_build_handoff(args: argparse.Namespace) -> int:
 
 def cmd_verify_handoff(args: argparse.Namespace) -> int:
     from src.handoff.pack_h1 import H1_DIR, verify_h1
+    from src.paths import DATA_INTERIM_DIR
+    from src.utils.runs import log_run
 
     job = (getattr(args, "job", None) or "H1").upper()
     if job != "H1":
@@ -773,7 +775,18 @@ def cmd_verify_handoff(args: argparse.Namespace) -> int:
         for err in errors:
             print(f"HANDOFF {job}: {err}", file=sys.stderr)
         return EXIT_FAIL
+    tagged = DATA_INTERIM_DIR / "ctrl_tagged"
+    n_parquet = len(list(tagged.glob("*.parquet"))) if tagged.is_dir() else 0
     print(f"HANDOFF {job}: paczka kompletna")
+    print(f"  ctrl_tagged parquet={n_parquet}")
+    log_run(
+        task="H1",
+        status="done",
+        config_hash=_load(args).config_hash(),
+        artifacts=["data/interim/ctrl_tagged/", "handoff/H1b/status.json"],
+        metrics={"n_parquet": n_parquet, "verify_strict": 1},
+        note="make handoff-verify JOB=H1 — H1b successor, artefakty z klastra OK.",
+    )
     return EXIT_OK
 
 
