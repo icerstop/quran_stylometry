@@ -1,0 +1,11 @@
+{
+  "approved_for_sbatch": true,
+  "config_hash": "fc128adbe1eecbc0c3f6e38a5f39d03e90feb83e1bdcbd965b1ecc72553ed2db",
+  "failed_stem": "0309KuracNaml.MunajjadFiLugha.Shamela0036950-ara1",
+  "job": "H1b",
+  "n_done_at_fail": 87,
+  "n_input_books": 965,
+  "parent": "H1",
+  "parent_jobid": 1066297,
+  "parent_manifest": "handoff/H1/inputs.manifest.json"
+}

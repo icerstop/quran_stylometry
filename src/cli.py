@@ -686,14 +686,53 @@ def cmd_diagnose_adv(args: argparse.Namespace) -> int:
 
 def cmd_build_handoff(args: argparse.Namespace) -> int:
     from src.handoff.pack_h1 import pack_h1
+    from src.handoff.pack_h1b import pack_h1b
     from src.utils.runs import log_run
 
     job = (getattr(args, "job", None) or "H1").upper()
+    config = _load(args)
+    out = Path(args.out) if getattr(args, "out", None) else Path("handoff") / job
+    if job == "H1B":
+        summary = pack_h1b(config, out_dir=out)
+        print(f"zapisano {rel_to_repo(out)}")
+        print(f"  parent_jobid={summary['parent_jobid']} --time={summary['job_time']}")
+        print("  approved_for_sbatch=true  resume *.done")
+        log_run(
+            task="T-015",
+            status="failed",
+            config_hash=config.config_hash(),
+            artifacts=["logs/tag_ctrl_1066297.out"],
+            metrics={"jobid": 1066297, "n_done": 87, "n_input_books": 965},
+            note=(
+                "1066297 padl BrokenPipeError przy zapisie parquet (Lustre). "
+                "87/965 par na dysku. Successor: H1b."
+            ),
+            host="cluster",
+        )
+        log_run(
+            task="H1b",
+            status="awaiting_cluster",
+            config_hash=config.config_hash(),
+            artifacts=[
+                "handoff/H1b/README.md",
+                "handoff/H1b/job.sbatch",
+                "handoff/H1b/inputs.manifest.json",
+                "handoff/H1b/expected_outputs.json",
+                "handoff/H1b/status.json",
+            ],
+            metrics={
+                "approved_for_sbatch": 1,
+                "parent_jobid": int(summary["parent_jobid"]),
+            },
+            note=(
+                "H1b: restart T-015 po 1066297 BrokenPipeError (87/965). "
+                "Retry parquet + tabulate. Nie ruszono handoff/H1/."
+            ),
+        )
+        return EXIT_OK
     if job != "H1":
         print(f"NIEZAIMPLEMENTOWANE: handoff {job} (H2/H3 pozniej).", file=sys.stderr)
         return EXIT_NOT_IMPLEMENTED
-    config = _load(args)
-    out = Path(args.out) if getattr(args, "out", None) else Path("handoff") / job
     summary = pack_h1(config, out_dir=out)
     print(f"zapisano {rel_to_repo(out)}")
     print(f"  n_input_files={summary['n_input_files']} n_tokens={summary['n_tokens']}")

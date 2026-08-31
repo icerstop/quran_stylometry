@@ -1,0 +1,10 @@
+{
+  "approved_for_sbatch": true,
+  "job": "H1b",
+  "parent": "H1",
+  "parent_jobid": 1066297,
+  "resume": true,
+  "slurm_time": "03:00:00",
+  "submitted": false,
+  "task": "T-015"
+}
