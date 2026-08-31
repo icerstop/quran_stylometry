@@ -5,6 +5,7 @@
   "parent_jobid": 1066297,
   "resume": true,
   "slurm_time": "03:00:00",
-  "submitted": false,
+  "submitted": true,
+  "jobid": 1066299,
   "task": "T-015"
 }
